@@ -1,0 +1,18 @@
+@import url("../src/utilities/reset.css");
+
+:root{
+    background-color: var(--secondaryColor);
+    font-family: 'Work Sans', sans-serif;
+    
+    /* COLOR */
+    --whiteColor: #FFFFFF;
+    --primaryColor: #F2F4F3;
+    --secondaryColor: #67A47E;
+    --tertiaryColorHover: #A754C5;
+    --tertiaryColorActive: #9339b4;
+
+    /* RADIUS */
+    --primaryRadius: 1rem;
+    --secondaryRadius: 0.5rem;
+
+}
