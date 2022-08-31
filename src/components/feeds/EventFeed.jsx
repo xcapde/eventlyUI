@@ -1,11 +1,8 @@
+import { Sidebar } from "../navs/Sidebar";
 
 export function Feed(){
 
     return(
-        <div>
-
-        Feed
-
-        </div>
+        <Sidebar />
     )
 }
