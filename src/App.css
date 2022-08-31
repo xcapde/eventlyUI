@@ -1,4 +1,4 @@
-@import url("../src/utilities/reset.css");
+@import url("../src/styles/reset.css");
 
 :root{
     background-color: var(--secondaryColor);
@@ -15,4 +15,15 @@
     --primaryRadius: 1rem;
     --secondaryRadius: 0.5rem;
 
+
+    /*SIZES*/
+    --inputWidth: 325px;
+
+}
+
+.App{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
 }
