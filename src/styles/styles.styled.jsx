@@ -41,6 +41,7 @@ export const Wrapper = styled(Col)`
     width: ${props => props.width || '100%'};
     gap: ${props => props.gap || '1%'};
     background-color: ${props => props.backgroundColor || 'inherit'};
+    justify-content: ${props => props.justifyContent || 'center'};
 `;
 
 export const Touchable = styled(Col)`

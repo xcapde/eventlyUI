@@ -11,10 +11,13 @@ export const BottomTxt = styled.h3`
     font-size: small;
     text-align: center;
     & a{
-        color: blue;
+        color: var(--secondaryColor);
         text-transform: capitalize;
         &:hover {
-            color: yellow;
+            color: var(--tertiaryColorHover);
+        }
+        &:hover {
+            color: var(--tertiaryColorActive);
         }
     }
 `;
@@ -51,10 +54,10 @@ export const Input = styled.input`
     height: 3rem;
     border-radius: var(--secondaryRadius);
     border: none;
-    margin-bottom: 2%;
-    padding-left: 8px;
+    margin-bottom: 5%;
+    padding-left: 16px;
 
     &::placeholder{
-        padding-left: 8px;
+        /* padding-left: 8px; */
     }
 `;
