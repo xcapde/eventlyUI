@@ -3,11 +3,11 @@ import { BottomTxt, HighlightsBox, SecondaryTxt } from '../components/forms/form
 import { LoginSignupForm } from '../components/forms/LoginSignupForm';
 import { Logo } from '../components/logo/Logo';
 import { Page, Wrapper } from '../styles/styles.styled';
-import { stringFormat } from '../utils/stringUtil';
+import formatUtil from '../utils/format';
 
 export const LoginSignup = () => {
 
-    let location = stringFormat.cutString(useLocation().pathname);
+    let location = formatUtil.cutString(useLocation().pathname);
 
     return (
         <Page>
