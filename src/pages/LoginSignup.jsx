@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { BottomTxt } from '../components/forms/form.styled';
 import { LoginSignupForm } from '../components/forms/LoginSignupForm';
@@ -18,7 +19,9 @@ export const LoginSignup = () => {
                     <LoginSignupForm location={location} />
                     {/* <SecondaryTxt>Forgot your password?</SecondaryTxt> */}
                     <BottomTxt>
-                        Not a member? <Link to={location === 'log in' ? '/sign-up' : '/log-in'}> {location === 'log in' ? 'sign in' : 'log in'} </Link>
+                        {location === 'log in' ? 
+                        <React.Fragment>Not a member? <Link to='/sign-up'>Sign Up</Link></React.Fragment> 
+                        : <React.Fragment>Have an account? <Link to='/log-in'>Log In</Link></React.Fragment>}
                     </BottomTxt>
                 </Wrapper>
                 {/* <HighlightsBox></HighlightsBox> */}
