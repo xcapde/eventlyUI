@@ -54,7 +54,7 @@ export const Input = styled.input`
     height: 3rem;
     border-radius: var(--secondaryRadius);
     border: none;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
     padding-left: 16px;
 
     &::placeholder{
