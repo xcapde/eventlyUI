@@ -1,8 +1,12 @@
-import { Sidebar } from "../navs/Sidebar";
+import React from "react";
+import { Col } from "../../styles/styles.styled";
+import { MainCard } from "../cards/MainCard";
 
-export function Feed(){
+export const EventFeed = () => {
 
-    return(
-        <Sidebar />
+    return (
+        <Col style={{width: '100%', height: '100%'}}>
+            <MainCard />
+        </Col>
     )
 }
