@@ -14,8 +14,8 @@
     /* RADIUS */
     --primaryRadius: 1rem;
     --secondaryRadius: 0.5rem;
-
-
+    --cardRadius: 0.7rem;
+    
     /*SIZES*/
     --inputWidth: 317px;
 

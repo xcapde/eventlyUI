@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Img } from "../../styles/styles.styled";
 
-export const Logotip = styled.img.attrs(props => ({
+export const Logotip = styled(Img).attrs(props => ({
     src: props.imgUrl,
 }))`
 width: 8rem;

@@ -48,3 +48,10 @@ export const Touchable = styled(Col)`
     height: ${props => props.height || 'inherit'};
     width: ${props => props.width || 'inherit'};
 `;
+
+export const Img = styled.img.attrs(props => ({
+    src: props.imgUrl,
+}))`
+    width: 8rem;
+    padding: 3rem 0;
+`;
