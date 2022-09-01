@@ -5,4 +5,5 @@ export const Logotip = styled.img.attrs(props => ({
 }))`
 width: 8rem;
 padding: 3rem 0;
+scale: ${props => props.scale || '100%'};
 `
