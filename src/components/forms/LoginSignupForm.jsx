@@ -29,33 +29,33 @@ export function LoginSignupForm({ location }) {
             username : inputsData.username,
             password : inputsData.password
         }
-        makeRegister(userData)
+        location === 'sign up'? setSignup() : setLogin(userData);
     };
 
-    const makeRegister = (data) => {
-        if(isSignup === true){
-            authService.signup(inputsData).then(res => {
-                if(!res) return; 
+    const setSignup = () => {
+        authService.signup(inputsData).then(res => {
+            if(!res) return; 
 
-                navigate("/log-in")
-            }) 
+            navigate("/log-in")
+        }) 
+    };
 
-        } else {
-            authService.login(data).then(res => {
-                if(!res) return;
-    
-                const authUser = {
-                    token: res.accessToken,
-                    username: res.username,
-                    id: res.id,
-                };
-    
-                AuthService.saveAuthUser(authUser);
-                navigate('/')
-            })
-            setInputsData({})
-        }
-    }
+    const setLogin = (data) => {
+        authService.login(data).then(res => {
+            if(!res) return;
+
+            const authUser = {
+                token: res.accessToken,
+                username: res.username,
+                id: res.id,
+            };
+
+            AuthService.saveAuthUser(authUser);
+            navigate('/')
+        })
+        setInputsData({})
+    };
+
 
 
     return (

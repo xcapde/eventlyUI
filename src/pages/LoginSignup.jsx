@@ -5,6 +5,7 @@ import { LoginSignupForm } from '../components/forms/LoginSignupForm';
 import { Logo } from '../components/logo/Logo';
 import { Sidebar } from '../components/navs/Sidebar';
 import { Page, View, Wrapper } from '../styles/styles.styled';
+import ColorLogo from "../assets/logo/LogoColor.png"
 import formatUtil from '../utils/format';
 
 export const LoginSignup = () => {
@@ -16,7 +17,7 @@ export const LoginSignup = () => {
             <Sidebar />
             <View>
                 <Wrapper id="wrapper" justifyContent={'flex-start'} gap={'2%'} backgroundColor={'var(--primaryColor)'}>
-                    <Logo />
+                    <Logo scale={'100%'} imgUrl={ColorLogo}/>
                     <LoginSignupForm location={location} />
                     {/* <SecondaryTxt>Forgot your password?</SecondaryTxt> */}
                     <BottomTxt>

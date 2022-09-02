@@ -4,6 +4,7 @@ import { Logo } from "../logo/Logo";
 import { contents } from "./contents"
 import { Aside, Wrapper } from "./sidebar.styled";
 import { SidebarItem } from "./SidebarItem";
+import WhiteColor from "../../assets/logo/LogoWhite.png";
 
 export const Sidebar = () => {
     const [key, setKey] = useState(null);
@@ -31,7 +32,7 @@ export const Sidebar = () => {
         <React.Fragment>
             <Wrapper width={subcontent && '15%'}>
                 <Col>
-                    <Logo scale={'55%'} />
+                    <Logo scale={'50%'} imgUrl={WhiteColor} />
                 </Col>
                 <Col>
                     {Object.keys(contents.desktop.main).map((c, key) => <SidebarItem content={contents.desktop.main[c]} key={key} sub={subcontent !== null} callback={(e) => openSubContent(e, c)} />)}

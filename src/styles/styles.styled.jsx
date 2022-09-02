@@ -62,6 +62,7 @@ export const AvatarImg = styled.img.attrs(props => ({
     border-radius: 50%;
     width: 1.5rem;
     height: 1.5rem;
+    scale: ${props => props.scale || '100%'};
 `;
 
 export const Title = styled.h1`
