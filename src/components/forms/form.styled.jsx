@@ -29,14 +29,14 @@ export const SecondaryTxt = styled.h3`
 
 //new
 export const Form = styled.form`
-    width: 85%;
+    width: 30vw;
     height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: calc(var(--inputWidth) + 15%);
-    @media (max-width: 820px) {
-        width: 30vw;
+    @media (min-width: 820px) {
+        width: 85%;
     }
 `
 

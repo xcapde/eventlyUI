@@ -2,24 +2,26 @@ import styled from "styled-components";
 import { Col, Row } from "../../styles/styles.styled";
 
 export const Wrapper = styled(Col)`
-    height: 99.9%;
-    width: ${props => props.width || '5%'};
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    border-radius: 0 1.15rem 1.15rem 0;
-    background-color: darkgreen;
-    cursor: pointer;
-    -webkit-transition: width 3s;
-    transition: width 3s;
-    justify-content: space-between;
-    & > *{
-        width: 100%;
-        gap: 3rem;
-    }
-    @media (max-width: 820px) {
-        display: none;
+   display: none;
+    
+   @media (min-width: 820px) {
+        display: flex;
+        height: 99.9%;
+        width: ${props => props.width || '5%'};
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: var(--indexSidebar);
+        border-radius: 0 1.15rem 1.15rem 0;
+        background-color: darkgreen;
+        cursor: pointer;
+        -webkit-transition: width 3s;
+        transition: width 3s;
+        justify-content: space-between;
+        & > *{
+            width: 100%;
+            gap: 3rem;
+        }    
     }
 
     &:hover{

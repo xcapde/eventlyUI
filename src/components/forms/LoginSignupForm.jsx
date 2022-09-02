@@ -29,10 +29,10 @@ export function LoginSignupForm({ location }) {
             username : inputsData.username,
             password : inputsData.password
         }
-        location === 'sign up'? setSignup() : setLogin(userData);
+        location === 'sign up'? signup() : login(userData);
     };
 
-    const setSignup = () => {
+    const signup = () => {
         authService.signup(inputsData).then(res => {
             if(!res) return; 
 
@@ -40,7 +40,7 @@ export function LoginSignupForm({ location }) {
         }) 
     };
 
-    const setLogin = (data) => {
+    const login = (data) => {
         authService.login(data).then(res => {
             if(!res) return;
 

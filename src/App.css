@@ -1,8 +1,10 @@
 @import url("../src/styles/reset.css");
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 :root{
     background-color: var(--primaryColor);
-    font-family: 'Work Sans', sans-serif;
+    /* font-family: 'Work Sans', sans-serif; */
+    font-family: 'Manrope', sans-serif;
     
     /* COLOR */
     --whiteColor: #ffffff;
@@ -21,13 +23,18 @@
     
     /*SIZES*/
     --inputWidth: 317px;
+
+    /*CARD*/
     --cardWidth: 13rem;
     --cardHeight: 18rem;
 
     /* BREAKPOINTS */
-    --xsBP:  500px;
+    --xsBP: 600px;
     --mBP:  820px;
 
+    /* INDEX */
+    --indexSidebar: 1;
+    --indexFooter: 1;
 }
 
 .App{
