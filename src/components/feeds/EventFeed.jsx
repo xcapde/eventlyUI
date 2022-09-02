@@ -24,7 +24,6 @@ export const EventFeed = () => {
             </React.Fragment> */}
             <MainCard />
 
-            
         </Col>
     )
 }

@@ -71,7 +71,7 @@ export const Title = styled.h1`
     font-size: smaller;
 `; 
 
-export const LocationDetails = styled.h2` 
+export const Location = styled.h2` 
     color: var(--detailsTextColor);
     font-size: small;
     width: 100%;

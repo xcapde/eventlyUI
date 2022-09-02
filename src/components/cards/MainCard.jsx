@@ -1,6 +1,6 @@
 import { Col, Row } from "../../styles/styles.styled";
 import { Participations } from "../subcomponents/Participations";
-import { EventLocationDetails } from "../subcomponents/subparts/EventLocationDetails";
+import { EventLocation } from "../subcomponents/subparts/EventLocation";
 import { EventTime } from "../subcomponents/subparts/EventTime";
 import { EventTitle } from "../subcomponents/subparts/EventTitle";
 import { AvatarImgOnImg, Card, ImageCard } from "./cards.styled";
@@ -16,7 +16,7 @@ export const MainCard = () => {
             <EventTitle/>
             <EventTime/>
           </Row>
-          <EventLocationDetails/>
+          <EventLocation/>
         </Col>
         </Col>
         
