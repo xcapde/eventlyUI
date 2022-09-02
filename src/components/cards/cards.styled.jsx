@@ -3,8 +3,8 @@ import { AvatarImg, Col, Img, Title} from "../../styles/styles.styled";
 import { Schedule } from "../subcomponents/subcomponents.styled";
 
 export const Card = styled(Col)`
-    width: 13rem;
-    height: 18rem;
+    width: var(--cardWidth);
+    height: var(--cardHeight);
     border-radius: var(--cardRadius);
     background-color: var(--whiteColor);
     filter:drop-shadow(0rem 0rem .2rem var(--darkShadowOpacity));

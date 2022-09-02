@@ -21,6 +21,12 @@
     
     /*SIZES*/
     --inputWidth: 317px;
+    --cardWidth: 13rem;
+    --cardHeight: 18rem;
+
+    /* BREAKPOINTS */
+    --xsBP:  500px;
+    --mBP:  820px;
 
 }
 

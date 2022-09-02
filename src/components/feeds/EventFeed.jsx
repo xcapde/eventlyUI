@@ -1,29 +1,34 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Col } from "../../styles/styles.styled";
+import { eventService } from "../../services/API/eventService";
+import { Page } from "../../styles/styles.styled";
 import { MainCard } from "../cards/MainCard";
+import { VerticalFeed } from "./feed.styled";
 
 export const EventFeed = () => {
-    // const [events, setEvents] = useState([]);
+    const [events, setEvents] = useState([]);
 
-    // useEffect(()=>{
+    useEffect(()=>{
+        getAllData();
+    },[])
 
-    // },[])
-
-    // const getAllEvents=()=>{
-
-    // }
+    const getAllData=()=>{
+        eventService.getAllEvents().then(res => {
+            if(!res) return
+            setEvents(res)
+        })
+    }
 
     return (
-        <Col style={{width: '100%', height: '100%'}}>
-            
-            {/* <React.Fragment>{events.map((event,key) =>
+        <Page>  
+
+            <VerticalFeed>
+                {events.map((event,key) =>
                 <MainCard key={key} event={event}/>
                 ).reverse()}
-            </React.Fragment> */}
-            <MainCard />
+            </VerticalFeed>            
 
-        </Col>
+        </Page>
     )
 }
