@@ -4,7 +4,7 @@ import { Logo } from "../logo/Logo";
 import { contents } from "./contents"
 import { Aside, Wrapper } from "./sidebar.styled";
 import { SidebarItem } from "./SidebarItem";
-import WhiteColor from "../../assets/logo/LogoWhite.png";
+import WhiteColor from "../../assets/logo/LogoWhiteSimple.png";
 
 export const Sidebar = () => {
     const [key, setKey] = useState(null);

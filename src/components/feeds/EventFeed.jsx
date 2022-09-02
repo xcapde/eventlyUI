@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { eventService } from "../../services/API/eventService";
-import { Page } from "../../styles/styles.styled";
+import { View } from "../../styles/styles.styled";
 import { MainCard } from "../cards/MainCard";
 import { VerticalFeed } from "./feed.styled";
 
@@ -21,14 +21,13 @@ export const EventFeed = () => {
     }
 
     return (
-        <Page>  
-
+        <View> 
             <VerticalFeed>
                 {events.map((event,key) =>
                 <MainCard key={key} event={event}/>
                 ).reverse()}
-            </VerticalFeed>            
-
-        </Page>
+            </VerticalFeed>           
+            
+        </View>
     )
 }
