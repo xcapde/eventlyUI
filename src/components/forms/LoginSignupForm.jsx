@@ -58,7 +58,6 @@ export function LoginSignupForm({ location }) {
     }
 
 
-
     return (
         <Form onSubmit={onSubmitHandle}>
             <FormControl>

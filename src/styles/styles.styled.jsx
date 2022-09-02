@@ -11,8 +11,8 @@ export const Col = styled.div`
 
 export const Row = styled(Col)`
     flex-direction: row;
+    width: ${props => props.width || '100%'};
 `;
-
 
 //Pages
 export const Page = styled.main`
@@ -54,4 +54,25 @@ export const Img = styled.img.attrs(props => ({
 }))`
     width: 8rem;
     padding: 3rem 0;
+`;
+
+export const AvatarImg = styled.img.attrs(props => ({
+    src: props.imgUrl,
+}))`
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+`;
+
+export const Title = styled.h1`
+    color: var(--darkTextColor);
+    font-weight: 600;
+    padding: 0.3rem 0;
+    font-size: smaller;
+`; 
+
+export const LocationDetails = styled.h2` 
+    color: var(--detailsTextColor);
+    font-size: small;
+    width: 100%;
 `;

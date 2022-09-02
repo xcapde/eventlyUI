@@ -1,53 +1,47 @@
 import styled from "styled-components";
-import { Col} from "../../styles/styles.styled";
+import { AvatarImg, Col, Img, Title} from "../../styles/styles.styled";
+import { Schedule } from "../subcomponents/subcomponents.styled";
 
 export const Card = styled(Col)`
-    border: 1px solid black;
-    justify-content: space-between;
-    width: 12rem;
+    width: 13rem;
     height: 18rem;
     border-radius: var(--cardRadius);
-    background-color: var(--primaryColor);
+    background-color: var(--whiteColor);
+    filter:drop-shadow(0rem 0rem .2rem var(--darkShadowOpacity));
+    color: var(--detailsTextColor);
+    justify-content: space-between ;
+    padding:0.7rem;
+
+        & i{
+            color: var(--secondaryColor);
+        }
 `;
 
-
-export const ImageControl = styled.div`
-    width: 10rem;
-    height: 10rem;
-    border-radius: var(--cardRadius);
-    display: flex;
-    align-content: center;
-    margin: 2rem;
-    
-`;
-
-export const ImageCard = styled.img`
-    width: 100%;
-    height: 100%;
+export const ImageCard = styled(Img)`
+    width: 13rem;
+    height: 13rem;
     object-fit: cover;
     border-radius: var(--cardRadius);
+    padding: 0;
+    margin-bottom: 0.3rem;
+    position: relative;
 `;
 
-
-export const Title = styled.h1`
- 
-
+export const AvatarImgOnImg = styled(AvatarImg)`
+    z-index: 1;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
 `;
 
-export const TimeCard = styled.h2`
-    
-`;
+export const CardTitle = styled(Title)`
+    width: 100%;
+`
 
-export const Description = styled.h3`
-    
+export const CardSchedule = styled(Schedule)`
+    margin-left: 2%;
+    font-size:small;
+    width: 5rem;
+    text-align:end;
+`
 
-`;
-
-export const Participations = styled.h2`
-
-`;
-
-export const Avatar = styled.img`
-    
-
-`;
