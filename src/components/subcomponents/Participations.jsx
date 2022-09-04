@@ -4,7 +4,7 @@ export const Participations = () => {
     
     return (
         <Participants>
-            33 people joined <i className="fa-solid fa-users"></i>
+            <i className="fa-solid fa-users"></i> 33 joined
         </Participants>            
     )
 }

@@ -13,10 +13,10 @@ export const Button = styled.button`
 
 export const FormBtn = styled(Button)`
 background-color: var(--secondaryColor);
-color: var(--primaryColor);
+color: var(--mainBackgroundColor);
 width: 333px;
 height: 3rem;
-border-radius: var(--secondaryRadius);
+border-radius: var(--buttonRadius);
 border-top-left-radius: 0;
 font-weight: 700;
 padding: none;
@@ -29,3 +29,29 @@ padding: none;
     background-color: var(--tertiaryColorActive);
 }
 `;
+
+export const MainButton = styled.button`
+    height: var(--buttonHeight);
+    background-color: var(--buttonMainColor);
+    border-radius: var(--buttonRadius);
+    color: var(--buttonSecondaryColor);  
+    &:hover{
+        background-color: #29a85e;
+        color: var(--buttonSecondaryColor);   
+    } 
+`
+
+export const SecondaryButton = styled.button`
+    height: var(--buttonHeight);
+    border-style: solid;
+    border-radius: var(--buttonRadius);
+    border-width: var(--buttonBorderWidth);
+    border-color:var(--buttonMainColor);
+    color: var(--buttonMainColor);
+    background: none;   
+    &:hover{
+        background-color: var(--buttonMainColor);
+        color: var(--buttonSecondaryColor);   
+    }
+`
+

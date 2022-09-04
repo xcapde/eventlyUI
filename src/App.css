@@ -2,31 +2,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 :root{
-    background-color: var(--primaryColor);
-    /* font-family: 'Work Sans', sans-serif; */
+    background-color: var(--mainBackgroundColor);
     font-family: 'Manrope', sans-serif;
     
     /* COLOR */
+    --darkShadowOpacity:rgba(49, 49, 49, 0.062);
     --whiteColor: #ffffff;
-    --primaryColor: #F4F6F5;
+    --mainBackgroundColor: #F4F6F5;
     --secondaryColor: #67A47E;
     --tertiaryColorHover: #A754C5;
     --tertiaryColorActive: #9339b4;
-    --darkTextColor:#1d1c1c;
-    --detailsTextColor:#83817f;
-    --darkShadowOpacity:rgba(49, 49, 49, 0.062); 
+    --buttonColor:#31B595; 
 
-    /* RADIUS */
-    --primaryRadius: 1rem;
-    --secondaryRadius: 0.5rem;
-    --cardRadius: 0.7rem;
+    /* TEXT COLOR */
+    --detailsTextColor:#7D7D7D;
+    --semiDarkTextColor: #585858;
+    --darkTextColor:#1d1c1c;
+
+    /* DARK MODE COLOR */
     
-    /*SIZES*/
+    /* SIZES */
     --inputWidth: 317px;
 
-    /*CARD*/
-    --cardWidth: 13rem;
-    --cardHeight: 18rem;
+    /* RADIUS */
+    --avatarRadius:0.25rem;
+    --buttonRadius: 0.5rem;
+    --inputRadius: 0.5rem;
+    --cardRadius: 1rem;
+
+    /* CARD */
+    --cardWidth: 14.5rem;
+    --cardHeight: 20rem;
+
+    /* BUTTONS */
+    --buttonWidth: 5rem;
+    --buttonHeight: 2rem;
+    --buttonMainColor: var(--buttonColor);
+    --buttonSecondaryColor: var(--whiteColor);
+    --buttonBorderWidth: 0.15rem;
+    --buttonPadding: 1.5rem;
 
     /* BREAKPOINTS */
     --xsBP: 600px;

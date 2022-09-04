@@ -1,7 +1,9 @@
 import { CardTitle } from "../../cards/cards.styled"
 
-export const EventTitle = () => {
+export const EventTitle = ({event}) => {
     return (
-        <CardTitle> Riana's music show </CardTitle>
+        <CardTitle> 
+            Títol... 
+        </CardTitle>
     )
 }

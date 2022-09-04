@@ -59,7 +59,7 @@ export const Img = styled.img.attrs(props => ({
 export const AvatarImg = styled.img.attrs(props => ({
     src: props.imgUrl,
 }))`
-    border-radius: 50%;
+    border-radius: var(--avatarRadius);
     width: 1.5rem;
     height: 1.5rem;
     scale: ${props => props.scale || '100%'};
@@ -67,13 +67,9 @@ export const AvatarImg = styled.img.attrs(props => ({
 
 export const Title = styled.h1`
     color: var(--darkTextColor);
-    font-weight: 600;
-    padding: 0.3rem 0;
-    font-size: smaller;
+    font-weight: 700;
 `; 
 
-export const Location = styled.h2` 
+export const Location = styled.p` 
     color: var(--detailsTextColor);
-    font-size: small;
-    width: 100%;
 `;

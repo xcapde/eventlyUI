@@ -4,7 +4,7 @@ export const EventTime = () => {
     
     return (
         <CardSchedule>
-            16:08 <i className="fa-regular fa-clock"></i>    
+            <i className="fa-solid fa-clock"></i> 16:08   
         </CardSchedule> 
     )
 }

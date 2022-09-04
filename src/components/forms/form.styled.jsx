@@ -52,7 +52,7 @@ export const Input = styled.input`
     background-color: var(--whiteColor);
     width: var(--inputWidth);
     height: 3rem;
-    border-radius: var(--secondaryRadius);
+    border-radius: var(--inputRadius);
     border: none;
     margin-bottom: 2%;
     padding-left: 16px;
