@@ -1,10 +1,10 @@
-import { CardSchedule } from "../../cards/cards.styled"
+import { DetailText } from "../../../styles/styles.styled"
 
 export const EventTime = () => {
     
     return (
-        <CardSchedule>
+        <DetailText>
             <i className="fa-solid fa-clock"></i> 16:08   
-        </CardSchedule> 
+        </DetailText> 
     )
 }

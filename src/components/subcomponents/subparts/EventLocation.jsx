@@ -1,9 +1,9 @@
-import { Location } from "../../../styles/styles.styled"
+import { DetailText } from "../../../styles/styles.styled"
 
 export const EventLocation = () => {
     return (
-        <Location>
+        <DetailText>
             <i className="fa-solid fa-location-dot"></i> Location details 
-        </Location>
+        </DetailText>
     )
 }

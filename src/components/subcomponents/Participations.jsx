@@ -1,10 +1,10 @@
-import { Participants } from "./subcomponents.styled"
+import { DetailText } from "../../styles/styles.styled"
 
 export const Participations = () => {
     
     return (
-        <Participants>
+        <DetailText>
             <i className="fa-solid fa-users"></i> 33 joined
-        </Participants>            
+        </DetailText>            
     )
 }

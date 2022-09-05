@@ -11,7 +11,7 @@ export const Wrapper = styled(Col)`
         position: fixed;
         top: 0;
         left: 0;
-        z-index: var(--indexSidebar);
+        z-index: var(--index-sidebar);
         border-radius: 0 1.15rem 1.15rem 0;
         background-color: darkgreen;
         cursor: pointer;

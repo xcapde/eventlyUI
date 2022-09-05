@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { Col } from "../../styles/styles.styled";
 
 export const Wrapper = styled.div`
-    z-index: var(--indexFooter);
+    z-index: var(--index-footer);
     position: fixed;
     bottom: 0;
-    background-color: var(--whiteColor);
+    background-color: var(--color-white);
     display: flex;
-    height: 10%;
+    height: var(--footer-height);
     width: 100%;
 
     @media(min-width: 820px){
@@ -20,6 +20,6 @@ export const Tab = styled(Col)`
     height: 100%;
 
     &:hover{
-        background-color: #535353;
+        background-color: var(--button-color-hover);
     }
 `

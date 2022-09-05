@@ -2,53 +2,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 :root{
-    background-color: var(--mainBackgroundColor);
+    background-color: var(--color-main-background);
     font-family: 'Manrope', sans-serif;
     
     /* COLOR */
-    --darkShadowOpacity:rgba(49, 49, 49, 0.062);
-    --whiteColor: #ffffff;
-    --mainBackgroundColor: #F4F6F5;
-    --secondaryColor: #67A47E;
-    --tertiaryColorHover: #A754C5;
-    --tertiaryColorActive: #9339b4;
-    --buttonColor:#31B595; 
+    --card-shadow-opacity:rgba(49, 49, 49, 0.062);
+    --color-white: #ffffff;
+    --color-main-background: #F4F6F5;
+    --color-input-outline:#78e2c8;
 
     /* TEXT COLOR */
-    --detailsTextColor:#7D7D7D;
-    --semiDarkTextColor: #585858;
-    --darkTextColor:#1d1c1c;
+    --color-detail-text:#7D7D7D;
+    --color-card-icon: #585858;
+    --color-title-text:#1d1c1c;
+    --color-link-text:#31B595;
+    --color-link-text-hover:#43ccaa;
 
     /* DARK MODE COLOR */
     
-    /* SIZES */
-    --inputWidth: 317px;
+    /* SIZE */
+    --input-width: 317px;
+    --footer-height: 10%;
+    --avatar-width: 1.5rem;
+    --avatar-height: 1.5rem;
+
+    /* FONT SIZE */
+    --font-size-cardXS: x-small;
+    --font-size-card: medium;
+    --font-size-card-desktop:small;
+    --font-size-card-title: large;
 
     /* RADIUS */
-    --avatarRadius:0.25rem;
-    --buttonRadius: 0.5rem;
-    --inputRadius: 0.5rem;
-    --cardRadius: 1rem;
+    --avatar-radius:0.25rem;
+    --button-radius: 0.5rem;
+    --input-radius: 0.5rem;
+    --card-radius: 1rem;
 
     /* CARD */
-    --cardWidth: 14.5rem;
-    --cardHeight: 20rem;
+    --card-width:95%;
+    --card-height:26rem;
+    --card-width-desktop: 14.5rem;
+    --card-height-desktop: 20rem;
+
+    --cardXS-width:99%;
+    --cardXS-height:7rem;
+    --cardXS-width-desktop:22rem;
 
     /* BUTTONS */
-    --buttonWidth: 5rem;
-    --buttonHeight: 2rem;
-    --buttonMainColor: var(--buttonColor);
-    --buttonSecondaryColor: var(--whiteColor);
-    --buttonBorderWidth: 0.15rem;
-    --buttonPadding: 1.5rem;
+    --button-width: 5rem;
+    --button-height: 2rem;
+    --button-text: var(--color-white);
+    --button-border-width: 0.15rem;
+    --button-padding: 1.5rem;
+    --button-color: #31B595;
+    --button-color-hover:#43ccaa; 
 
     /* BREAKPOINTS */
     --xsBP: 600px;
     --mBP:  820px;
 
     /* INDEX */
-    --indexSidebar: 1;
-    --indexFooter: 1;
+    --index-sidebar: 1;
+    --index-footer: 1;
 }
 
 .App{

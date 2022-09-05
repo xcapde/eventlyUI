@@ -1,24 +1,23 @@
 import styled from "styled-components";
 
-//a convertir en components de react
-export const HighlightsBox = styled.div`
-    background-color: var(--secondaryRadius);
-    width: 70vw;
-    height: 97vh;
-`;
-
 export const BottomTxt = styled.h3`
     font-size: small;
     text-align: center;
+    margin-top: 2rem;
     & a{
-        color: var(--secondaryColor);
+        color: var(--color-link-text);
         text-transform: capitalize;
+        font-weight: bold;
         &:hover {
-            color: var(--tertiaryColorHover);
+            color: var(--color-link-text-hover);
         }
-        &:hover {
-            color: var(--tertiaryColorActive);
+        &:active {
+            color: var(--color-link-text);
         }
+    }
+
+    @media (min-width: 820px) {
+        margin-top: 1rem;
     }
 `;
 
@@ -34,7 +33,7 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(var(--inputWidth) + 15%);
+    width: calc(var(--input-width) + 15%);
     @media (min-width: 820px) {
         width: 85%;
     }
@@ -49,15 +48,16 @@ export const FormControl = styled.div`
 `
 
 export const Input = styled.input`
-    background-color: var(--whiteColor);
-    width: var(--inputWidth);
+    background-color: var(--color-white);
+    width: var(--input-width);
     height: 3rem;
-    border-radius: var(--inputRadius);
+    border-radius: var(--input-radius);
     border: none;
+    outline-color: var(--color-input-outline);
     margin-bottom: 2%;
     padding-left: 16px;
 
-    &::placeholder{
-        /* padding-left: 8px; */
+    @media (min-width: 820px) {
+        margin-bottom: 1%;
     }
 `;

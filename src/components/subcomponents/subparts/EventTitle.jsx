@@ -1,9 +1,9 @@
-import { CardTitle } from "../../cards/cards.styled"
+import { Title } from "../../../styles/styles.styled"
 
 export const EventTitle = ({event}) => {
     return (
-        <CardTitle> 
-            Títol... 
-        </CardTitle>
+        <Title> 
+            {event.title}
+        </Title>
     )
 }

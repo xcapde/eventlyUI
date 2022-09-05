@@ -14,6 +14,16 @@ export const Row = styled(Col)`
     width: ${props => props.width || '100%'};
 `;
 
+export const ExtremsRow = styled(Row)`
+    justify-content: space-between;
+    padding: ${props => props.padding || '0.8rem 0'};
+
+    @media (min-width: 820px) {
+        padding: 0.5rem 0;
+        padding: ${props => props.padding || '0.8rem 0'};
+    }
+`
+
 //Pages
 export const Page = styled.main`
     width: 100vw;
@@ -59,17 +69,18 @@ export const Img = styled.img.attrs(props => ({
 export const AvatarImg = styled.img.attrs(props => ({
     src: props.imgUrl,
 }))`
-    border-radius: var(--avatarRadius);
-    width: 1.5rem;
-    height: 1.5rem;
+    border-radius: var(--avatar-radius);
+    width: var(--avatar-width);
+    height: var(--avatar-height);
     scale: ${props => props.scale || '100%'};
 `;
 
 export const Title = styled.h1`
-    color: var(--darkTextColor);
+    color: var(--color-title-text);
     font-weight: 700;
-`; 
+    font-size:var(--card-title);
+`;
 
-export const Location = styled.p` 
-    color: var(--detailsTextColor);
+export const DetailText = styled.p` 
+    color: var(--color-detail-text);
 `;

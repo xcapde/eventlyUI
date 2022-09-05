@@ -22,11 +22,12 @@ export const EventFeed = () => {
 
     return (
         <View> 
+            
             <VerticalFeed>
                 {events.map((event,key) =>
                 <MainCard key={key} event={event}/>
                 ).reverse()}
-            </VerticalFeed>           
+            </VerticalFeed>     
             
         </View>
     )
