@@ -24,9 +24,22 @@ export const Tab = styled.button`
     }
     
     & i{
-        font-size: var(--font-size-nav-icons);
+        font-size: var(--font-size-nav-icon);
     }
+    & .gg-add-r {
+        width: calc(var(--font-size-nav-icon) + 2px);
+        height: calc(var(--font-size-nav-icon) + 2px);
 
+        &::after{
+            top: 6px;
+            left: 10px;
+        }
+        &::before{
+            top: 10px;
+            left: 6px;
+        }
+
+    }
     &:hover{
         color: var(--button-color);
         
