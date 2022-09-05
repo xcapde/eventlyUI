@@ -1,6 +1,6 @@
 import { DetailText } from "../../styles/styles.styled"
 
-export const Participations = () => {
+export const Participation = () => {
     
     return (
         <DetailText>

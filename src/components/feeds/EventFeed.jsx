@@ -4,6 +4,7 @@ import { useState } from "react";
 import { eventService } from "../../services/API/eventService";
 import { View } from "../../styles/styles.styled";
 import { MainCard } from "../cards/MainCard";
+import { SmallCard } from "../cards/SmallCard";
 import { VerticalFeed } from "./feed.styled";
 
 export const EventFeed = () => {
@@ -24,10 +25,17 @@ export const EventFeed = () => {
         <View> 
             
             <VerticalFeed>
+                
                 {events.map((event,key) =>
                 <MainCard key={key} event={event}/>
                 ).reverse()}
-            </VerticalFeed>     
+
+            {/* {events.map((event,key) =>
+                <SmallCard key={key} event={event}/>
+                ).reverse()} */}
+                
+            </VerticalFeed>            
+            
             
         </View>
     )

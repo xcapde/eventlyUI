@@ -14,8 +14,8 @@ export const Button = styled.button`
 export const FormBtn = styled(Button)`
 background-color: var(--button-color);
 color: var(--color-main-background);
-width: 333px;
-height: 3rem;
+width: var(--form-button-width);
+height: var(--form-button-height);
 border-radius: var(--button-radius);
 border-top-left-radius: 0;
 font-weight: 700;
@@ -30,12 +30,14 @@ padding: none;
 }
 `;
 
-export const MainButton = styled.button`
+export const MainButton = styled(Button)`
     height: var(--button-height);
     background-color: var(--button-color);
     border-radius: var(--button-radius);
     color: var(--button-text);  
     padding: 0 var(--button-padding);
+    font-size:var(--font-size-button);
+    font-weight: 500;
 
     &:hover{
         background-color: var(--button-color-hover);
@@ -45,7 +47,7 @@ export const MainButton = styled.button`
     }
 `
 
-export const SecondaryButton = styled.button`
+export const SecondaryButton = styled(Button)`
     height: var(--button-height);
     border-style: solid;
     border-radius: var(--button-radius);
@@ -56,6 +58,21 @@ export const SecondaryButton = styled.button`
     &:hover{
         background-color: var(--button-color);
         color: var(--button-text);   
+    }
+`
+
+export const LinkButton = styled.a`
+    background:none;
+    color: var(--color-link-text);
+    text-transform: capitalize;
+    font-weight: bolder;
+    padding: 0 0.2rem;
+
+    &:hover {
+        color: var(--color-link-text-hover);
+    }
+    &:active {
+        color: var(--color-link-text);
     }
 `
 

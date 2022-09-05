@@ -1,4 +1,4 @@
-import { DetailText } from "../../../styles/styles.styled"
+import { DetailText } from "../../styles/styles.styled"
 
 export const EventLocation = () => {
     return (

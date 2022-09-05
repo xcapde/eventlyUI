@@ -4,17 +4,7 @@ export const BottomTxt = styled.h3`
     font-size: small;
     text-align: center;
     margin-top: 2rem;
-    & a{
-        color: var(--color-link-text);
-        text-transform: capitalize;
-        font-weight: bold;
-        &:hover {
-            color: var(--color-link-text-hover);
-        }
-        &:active {
-            color: var(--color-link-text);
-        }
-    }
+    display: flex;
 
     @media (min-width: 820px) {
         margin-top: 1rem;

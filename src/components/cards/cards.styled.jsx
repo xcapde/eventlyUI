@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { Col, Img} from "../../styles/styles.styled";
+import { Col, ExtremsRow, Img, Row} from "../../styles/styles.styled";
 
 export const Card = styled(Col)`
-    filter:drop-shadow(0rem 0rem .2rem var(--card-shadow-opacity));
+    box-shadow: 2px 2px 15px var(--card-shadow-opacity);   
     width: var(--card-width);
     height: var(--card-height);
     border-radius: var(--card-radius);
@@ -43,8 +43,16 @@ export const CardImage = styled(Img)`
         }
 `;
 
-export const CardText = styled(Col)`
+export const CardHeader = styled(ExtremsRow)`
+    padding: 0.2rem 0;
     width: 94%;
+    @media (min-width: 820px) {
+        padding: 0.3rem 0;
+        width: 90%;
+    }
+`
+export const CardTextDetails = styled(Row)`
+    height: var(--card-details-height);
     align-items: flex-start;
     font-size: var(--font-size-card);
 
@@ -53,10 +61,32 @@ export const CardText = styled(Col)`
     }
 `
 
+export const CardLocationSchedule = styled(CardTextDetails)`
+    flex-direction: column;
+    width: 65%;
+    height: unset;
+    padding: 0 0.3rem;
+    @media (min-width: 820px) {
+        width: 65%;
+        padding: 0 0.2rem;
+    }
+`
+
+export const CardParticipation = styled(Col)`
+    width: 35%;
+    height: 3rem;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-right: 0.7rem;
+    @media (min-width: 820px) {
+        width: 35%;
+    }
+`
 export const CardXS = styled(Card)`
     flex-direction: row;
     width: var(--cardXS-width);
     height: var(--cardXS-height);
+    justify-content: space-between;
 
     @media (min-width: 820px) {
         width: var(--cardXS-width-desktop);
@@ -70,7 +100,16 @@ export const CardXSImage = styled(CardImage)`
     margin: 0 .5rem;
 `;
 
-export const CardXSText = styled(CardText)`
+export const CardXSBody = styled(Col)`
+    width:100%;
+`
+
+export const CardXSHeader = styled(CardHeader)`
+    width: 92%;
+`
+
+export const CardXSTextDetails = styled(CardTextDetails)`
+    height: var(--cardXS-details-height);
     font-size: var(--font-size-cardXS);
     font-weight: 600;
     padding-right: 0.5rem;

@@ -1,30 +1,42 @@
-import { AvatarImg, ExtremsRow } from "../../styles/styles.styled";
+import { useEffect, useState } from "react";
+import { AvatarImg } from "../../styles/styles.styled";
 import { MainButton } from "../buttons/buttons.styled";
-import { Participations } from "../subcomponents/Participations";
-import { EventDate } from "../subcomponents/subparts/EventDate";
-import { EventLocation } from "../subcomponents/subparts/EventLocation";
-import { EventTime } from "../subcomponents/subparts/EventTime";
-import { EventTitle } from "../subcomponents/subparts/EventTitle";
-import { CardXS, CardXSImage, CardXSText } from "./cards.styled";
+import { EventDate } from "../subcomponents/EventDate";
+import { EventTitle } from "../subcomponents/EventTitle";
+import { CardLocationSchedule, CardParticipation, CardXS, CardXSBody, CardXSHeader, CardXSImage, CardXSTextDetails } from "./cards.styled";
+import { EventLocation, EventTime, Participation } from "../subcomponents";
+import { Link } from "react-router-dom";
 
-export const SmallCard = () => {
+export const SmallCard = (props) => {
+  const [event, setEvent] = useState();
+
+  useEffect(() => {
+    setEvent(props.event)
+  },[props.event])
+
   
     return (
       <CardXS>
-          <CardXSImage imgUrl={'https://s1.eestatic.com/2020/01/03/ciencia/nutricion/chocolate-cenas_de_navidad-ocu_organizacion_de_consumidores_y_usuarios_456966012_141650372_1706x960.jpg'} />
-          <CardXSText>
-            <ExtremsRow padding={'0'}>
-              <EventTitle/>        
-              <AvatarImg imgUrl={'https://s1.eestatic.com/2020/01/03/ciencia/nutricion/chocolate-cenas_de_navidad-ocu_organizacion_de_consumidores_y_usuarios_456966012_141650372_1706x960.jpg'}/>
-            </ExtremsRow>        
+        <Link to={`/event/${props.event.id}`}>
+          <CardXSImage imgUrl={'https://media1.faz.net/ppmedia/video/1338146715/1.170045/default-retina/wenn-der-vater-mit-dem-sohne.jpg'} />
+        </Link>
+        <CardXSBody>
+        <CardXSHeader>
+          <EventTitle event={props.event}/>        
+          <AvatarImg imgUrl={props.event.publisher.avatar}/>
+        </CardXSHeader>        
+        <CardXSTextDetails>
+          <CardLocationSchedule>
             <EventLocation/>
             <EventDate/>
-            <EventTime/>
-            <ExtremsRow padding={'0'}>
-              <Participations/>
-              <MainButton>JOIN</MainButton>    
-              </ExtremsRow>        
-          </CardXSText>
+            <EventTime/>                
+          </CardLocationSchedule>
+          <CardParticipation>
+            <Participation/>
+            <MainButton>JOIN</MainButton>    
+          </CardParticipation>
+        </CardXSTextDetails>
+        </CardXSBody>
       </CardXS>
     );
   };

@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 :root{
-    background-color: var(--color-main-background);
+    background-color: var(--color-white-contrast);
     font-family: 'Manrope', sans-serif;
     
     /* COLOR */
-    --card-shadow-opacity:rgba(49, 49, 49, 0.062);
+    --card-shadow-opacity:rgba(0, 0, 0, 0.158);
     --color-white: #ffffff;
-    --color-main-background: #F4F6F5;
+    --color-white-contrast: #F4F6F5;
     --color-input-outline:#78e2c8;
 
     /* TEXT COLOR */
@@ -23,37 +23,42 @@
     /* SIZE */
     --input-width: 317px;
     --footer-height: 10%;
-    --avatar-width: 1.5rem;
-    --avatar-height: 1.5rem;
+    --avatar-width: 1.2rem;
+    --avatar-height: 1.2rem;
 
     /* FONT SIZE */
     --font-size-cardXS: x-small;
-    --font-size-card: medium;
-    --font-size-card-desktop:small;
-    --font-size-card-title: large;
+    --font-size-card: 0.7rem;
+    --font-size-card-desktop: 0.7rem;
+    --font-size-card-title: 0.9rem;
+    --font-size-button: 0.7rem;
 
     /* RADIUS */
     --avatar-radius:0.25rem;
     --button-radius: 0.5rem;
     --input-radius: 0.5rem;
-    --card-radius: 1rem;
+    --card-radius: 0.5rem;
 
     /* CARD */
-    --card-width:95%;
-    --card-height:26rem;
+    --card-width:85%;
+    --card-height:28rem;
     --card-width-desktop: 14.5rem;
-    --card-height-desktop: 20rem;
+    --card-height-desktop: 22rem;
+    --card-details-height: 4.5rem;
 
-    --cardXS-width:99%;
-    --cardXS-height:7rem;
+    --cardXS-width:98%;
+    --cardXS-height:6rem;
     --cardXS-width-desktop:22rem;
+    --cardXS-details-height: 3.5rem;
 
     /* BUTTONS */
-    --button-width: 5rem;
-    --button-height: 2rem;
+    --form-button-height:3rem;
+    --form-button-width:333px;
+    --button-width: 3rem;
+    --button-height: 1.75rem;
     --button-text: var(--color-white);
     --button-border-width: 0.15rem;
-    --button-padding: 1.5rem;
+    --button-padding: 1.2rem;
     --button-color: #31B595;
     --button-color-hover:#43ccaa; 
 

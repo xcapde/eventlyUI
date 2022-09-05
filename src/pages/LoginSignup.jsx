@@ -7,6 +7,7 @@ import { Sidebar } from '../components/navs/Sidebar';
 import { Page, View, Wrapper } from '../styles/styles.styled';
 import ColorLogo from "../assets/logo/LogoColor.png"
 import formatUtil from '../utils/format';
+import { LinkButton } from '../components/buttons/buttons.styled';
 
 export const LoginSignup = () => {
 
@@ -22,8 +23,8 @@ export const LoginSignup = () => {
                     {/* <SecondaryTxt>Forgot your password?</SecondaryTxt> */}
                     <BottomTxt>
                         {location === 'log in' ?
-                            <React.Fragment>Not a member? <Link to='/sign-up'>Sign Up</Link></React.Fragment>
-                            : <React.Fragment>Have an account? <Link to='/log-in'>Log In</Link></React.Fragment>}
+                            <React.Fragment>Not a member? <LinkButton><Link to='/sign-up'>Sign Up</Link></LinkButton></React.Fragment>
+                            : <React.Fragment>Have an account? <LinkButton><Link to='/log-in'>Log In</Link></LinkButton></React.Fragment>}
                     </BottomTxt>
                 </Wrapper>
                 {/* <HighlightsBox></HighlightsBox> */}

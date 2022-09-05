@@ -1,4 +1,4 @@
-import { Title } from "../../../styles/styles.styled"
+import { Title } from "../../styles/styles.styled"
 
 export const EventTitle = ({event}) => {
     return (

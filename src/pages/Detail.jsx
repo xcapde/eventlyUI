@@ -10,12 +10,15 @@ export const Detail=()=>{
     useEffect(()=>{
         if(!id) return;
         getEventInfo(id);
+
     },[id]);
 
     const getEventInfo=(id)=>{
         eventService.getEvent(id).then(res => {
             if(!res) return;
             setEventInfo(res);
+            console.log(res)
+
         })
     }
 

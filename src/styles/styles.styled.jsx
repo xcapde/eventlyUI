@@ -16,12 +16,6 @@ export const Row = styled(Col)`
 
 export const ExtremsRow = styled(Row)`
     justify-content: space-between;
-    padding: ${props => props.padding || '0.8rem 0'};
-
-    @media (min-width: 820px) {
-        padding: 0.5rem 0;
-        padding: ${props => props.padding || '0.8rem 0'};
-    }
 `
 
 //Pages
@@ -73,12 +67,14 @@ export const AvatarImg = styled.img.attrs(props => ({
     width: var(--avatar-width);
     height: var(--avatar-height);
     scale: ${props => props.scale || '100%'};
+    object-fit: cover;
 `;
 
 export const Title = styled.h1`
     color: var(--color-title-text);
     font-weight: 700;
-    font-size:var(--card-title);
+    font-size:var(--font-size-card-title);
+    padding-right: 0.3rem;
 `;
 
 export const DetailText = styled.p` 
