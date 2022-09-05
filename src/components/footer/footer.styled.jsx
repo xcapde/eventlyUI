@@ -15,11 +15,17 @@ export const Wrapper = styled.div`
     }
 `
 
-export const Tab = styled(Col)`
+export const Tab = styled.button`
     width: 20%;
-    height: 100%;
+    height: 100%;  
+    color : var(--color-detail-text);
+    
+    & i{
+        font-size: var(--font-size-nav-icons);
+    }
 
     &:hover{
         background-color: var(--button-color-hover);
+        color:var(--color-white);
     }
 `

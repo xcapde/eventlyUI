@@ -13,7 +13,7 @@ export const Button = styled.button`
 
 export const FormBtn = styled(Button)`
 background-color: var(--button-color);
-color: var(--color-main-background);
+color: var(--color-white-contrast);
 width: var(--form-button-width);
 height: var(--form-button-height);
 border-radius: var(--button-radius);

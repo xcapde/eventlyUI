@@ -15,9 +15,9 @@
     --color-detail-text:#7D7D7D;
     --color-card-icon: #585858;
     --color-title-text:#1d1c1c;
-    --color-link-text:#31B595;
-    --color-link-text-hover:#43ccaa;
-
+    --color-main: #31B595;
+    --color-main-hover: #43ccaa;
+   
     /* DARK MODE COLOR */
     
     /* SIZE */
@@ -32,6 +32,7 @@
     --font-size-card-desktop: 0.7rem;
     --font-size-card-title: 0.9rem;
     --font-size-button: 0.7rem;
+    --font-size-nav-icons: large;
 
     /* RADIUS */
     --avatar-radius:0.25rem;
@@ -59,8 +60,11 @@
     --button-text: var(--color-white);
     --button-border-width: 0.15rem;
     --button-padding: 1.2rem;
-    --button-color: #31B595;
-    --button-color-hover:#43ccaa; 
+    --button-color:var(--color-main);
+    --button-color-hover:var(--color-main-hover); 
+    --color-link-text:var(--color-main);
+    --color-link-text-hover:var(--color-main-hover);
+
 
     /* BREAKPOINTS */
     --xsBP: 600px;

@@ -5,7 +5,7 @@ import { AvatarImg  } from "../../styles/styles.styled";
 import { MainButton } from "../buttons/buttons.styled";
 import { EventDate } from "../subcomponents/EventDate";
 import { EventTitle } from "../subcomponents/EventTitle";
-import { Card, CardHeader, CardImage, CardLocationSchedule, CardParticipation, CardText, CardTextDetails} from "./cards.styled";
+import { Card, CardHeader, CardImage, CardLocationSchedule, CardParticipation, CardTextDetails} from "./cards.styled";
 import { EventLocation, EventTime, Participation } from "../subcomponents";
 
 export const MainCard = (props) => {
