@@ -56,9 +56,30 @@ export const Touchable = styled(Col)`
 export const Img = styled.img.attrs(props => ({
     src: props.imgUrl,
 }))`
-    width: 8rem;
-    padding: 3rem 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 `;
+
+export const Gradient = styled.div`
+    /* background: linear-gradient(10deg, #00000030,  #00000050,  #00000020, #00000001); */
+    background: linear-gradient(10deg, #00000030,  #0000006f,  #00000020, #00000001);
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--card-radius);
+`
+
+export const BlurEffect = styled.div`
+    z-index: 1;
+    backdrop-filter: blur(100px);
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+`
 
 export const AvatarImg = styled.img.attrs(props => ({
     src: props.imgUrl,
@@ -70,6 +91,12 @@ export const AvatarImg = styled.img.attrs(props => ({
     object-fit: cover;
 `;
 
+export const AvatarOnImg = styled(AvatarImg)`
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem; 
+`
+
 export const Title = styled.h1`
     color: var(--color-title-text);
     font-weight: 700;
@@ -79,4 +106,15 @@ export const Title = styled.h1`
 
 export const DetailText = styled.p` 
     color: var(--color-detail-text);
+`;
+
+export const PageHeader = styled.div`
+    z-index: var(--index-header);
+    position: fixed;
+    top:0;
+    height: var(--header-height);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 3%;
 `;

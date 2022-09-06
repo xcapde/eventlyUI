@@ -45,6 +45,7 @@ a{
 	text-decoration: none;
 	display: contents;
 	color: unset;
+	cursor: pointer;
 }
 button{
 	background: none;

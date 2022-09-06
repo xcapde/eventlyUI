@@ -20,7 +20,7 @@ export const Tab = styled.button`
     color : var(--color-detail-text);
 
     & img{
-        opacity: 0.5;
+        opacity: 0.6;
     }
     
     & i{
@@ -45,7 +45,7 @@ export const Tab = styled.button`
         
         & img{
         opacity: 1;
-        border: var(--button-border-width) solid var(--button-color);
+        /* border: var(--button-border-width) solid var(--button-color); */
         }
     }
 `

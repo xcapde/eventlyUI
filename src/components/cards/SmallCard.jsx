@@ -28,7 +28,7 @@ export const SmallCard = (props) => {
         <CardXSTextDetails>
           <CardLocationSchedule>
             <EventLocation/>
-            <EventDate/>
+            <EventDate event={props.event}/>
             <EventTime/>                
           </CardLocationSchedule>
           <CardParticipation>

@@ -9,22 +9,38 @@
     --card-shadow-opacity:rgba(0, 0, 0, 0.158);
     --color-white: #ffffff;
     --color-white-contrast: #F4F6F5;
+    --color-grey-background:#7D7D7D;
+    --color-main: #31B595;
+    --color-main-hover: #43ccaa;
     --color-input-outline:#78e2c8;
 
     /* TEXT COLOR */
     --color-detail-text:#7D7D7D;
     --color-card-icon: #585858;
     --color-title-text:#1d1c1c;
-    --color-main: #31B595;
-    --color-main-hover: #43ccaa;
+ 
+    /* BUTTON COLOR */
+    --button-text: var(--color-white);
+    --button-color:var(--color-main);
+    --button-color-hover:var(--color-main-hover); 
+    --color-link-text:var(--color-main);
+    --color-link-text-hover:var(--color-main-hover);
+    --back-button-color:#58585879;
+    --back-button-color-hover:#2e2e2e96;
+    --back-button-color-icon:#ffffffc7;
+    --tab-button-disabled:#7D7D7D;
+    --tab-button-activated:#1d1c1c;
+
    
     /* DARK MODE COLOR */
     
     /* SIZE */
     --input-width: 317px;
     --footer-height: 10%;
-    --avatar-width: 1.2rem;
-    --avatar-height: 1.2rem;
+    --header-height: 75px;
+    --avatar-width: 1.5rem;
+    --avatar-height: 1.5rem;
+    --back-button-size: 2.5rem;
 
     /* FONT SIZE */
     --font-size-cardXS: x-small;
@@ -33,38 +49,38 @@
     --font-size-card-title: 0.9rem;
     --font-size-button: 0.7rem;
     --font-size-nav-icon: 24px;
+    --font-size-back-icon: 1rem;
+    --font-size-tab-button: 0.8rem;
+    --font-size-detall-button: 1rem;
 
     /* RADIUS */
-    --avatar-radius:0.25rem;
+    --avatar-radius:50%;
+    --back-button-radius:50%;
     --button-radius: 0.5rem;
     --input-radius: 0.5rem;
     --card-radius: 0.5rem;
-
-    /* CARD */
-    --card-width:85%;
-    --card-height:28rem;
-    --card-width-desktop: 14.5rem;
-    --card-height-desktop: 22rem;
-    --card-details-height: 4.5rem;
-
-    --cardXS-width:98%;
-    --cardXS-height:6rem;
-    --cardXS-width-desktop:22rem;
-    --cardXS-details-height: 3.5rem;
 
     /* BUTTONS */
     --form-button-height:3rem;
     --form-button-width:333px;
     --button-width: 3rem;
     --button-height: 1.75rem;
-    --button-text: var(--color-white);
     --button-border-width: 0.15rem;
     --button-padding: 1.2rem;
-    --button-color:var(--color-main);
-    --button-color-hover:var(--color-main-hover); 
-    --color-link-text:var(--color-main);
-    --color-link-text-hover:var(--color-main-hover);
-
+    --tab-button-weight: 600;
+    --detail-button-heigth:2.5rem;
+    --detail-button-widht:6rem;
+    
+    /* CARD */
+    --card-width:85%;
+    --card-height:28rem;
+    --card-width-desktop: 14.5rem;
+    --card-height-desktop: 22rem;
+    --card-details-height: 4.5rem;
+    --cardXS-width:98%;
+    --cardXS-height:6rem;
+    --cardXS-width-desktop:22rem;
+    --cardXS-details-height: 3.5rem;
 
     /* BREAKPOINTS */
     --xsBP: 600px;
@@ -73,6 +89,8 @@
     /* INDEX */
     --index-sidebar: 1;
     --index-footer: 1;
+    --index-detail-img: 2;
+    --index-header: 3;
 }
 
 .App{

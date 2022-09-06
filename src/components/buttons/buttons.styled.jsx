@@ -76,3 +76,30 @@ export const LinkButton = styled.a`
     }
 `
 
+export const BackArrowButton = styled.button`
+    border-radius: var(--back-button-radius);
+    height: var(--back-button-size);
+    width: var(--back-button-size);
+    background-color:var(--back-button-color);
+        &:hover{
+            background-color:var(--back-button-color-hover);
+        }
+        & i{
+            color:var(--back-button-color-icon);
+            font-size: var(--font-size-back-icon);
+        }
+`
+
+export const PageTab = styled.button`
+    margin-left: 5%;
+    font-weight: var(--tab-button-weight);
+    font-size: var(--font-size-tab-button);
+    color: var(--tab-button-disabled);
+    &:hover{
+        color: var(--button-color-hover);
+    }
+    &:active{
+        color: var(--button-color);
+    }
+`
+
