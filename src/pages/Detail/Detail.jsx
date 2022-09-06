@@ -3,7 +3,7 @@ import { useState } from "react"
 import { Link, useParams } from "react-router-dom";
 import { BackButton } from "../../components/buttons/BackButton";
 import { MainButton, PageTab } from "../../components/buttons/buttons.styled";
-import { EventDate, EventLocation, EventPublisher, EventTime, EventTitle, Participation } from "../../components/subcomponents";
+import { EventDate, EventLocation, EventPublisher, EventTime, EventTitle, EventUrl, Participation } from "../../components/subcomponents";
 import { eventService } from "../../services/API/eventService";
 import { Box, Col } from "../../styles/styles.styled";
 import { Badge } from "../../components/badges/Badge";
@@ -45,7 +45,8 @@ export const Detail=()=>{
                     <EventTitle title={eventInfo.title}/>
                     <Box flexDirection={'row'} justifyContent={'flex-start'}>
                         <Box alignItems={'flex-start'}>
-                            <EventLocation/>   
+                            {eventInfo.type === "online"? 
+                            <EventUrl/> : <EventLocation/>}   
                             <EventDate date={eventInfo.date}/>
                             <EventTime hour={eventInfo.hour}/>                        
                         </Box>
