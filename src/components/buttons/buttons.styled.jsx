@@ -77,10 +77,14 @@ export const LinkButton = styled.a`
 `
 
 export const BackArrowButton = styled.button`
+    z-index: var(--index-back-button);
     border-radius: var(--back-button-radius);
     height: var(--back-button-size);
     width: var(--back-button-size);
     background-color:var(--back-button-color);
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
         &:hover{
             background-color:var(--back-button-color-hover);
         }

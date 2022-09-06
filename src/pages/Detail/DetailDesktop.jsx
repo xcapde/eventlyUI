@@ -3,7 +3,6 @@ import { useState } from "react"
 import { Link, useParams } from "react-router-dom";
 import { BackButton } from "../../components/buttons/BackButton";
 import { eventService } from "../../services/API/eventService";
-import { PageHeader } from "../../styles/styles.styled";
 import { DetailPage } from "./detail.styled";
 
 export const DetailDesktop=()=>{
@@ -25,12 +24,9 @@ export const DetailDesktop=()=>{
 
     return(
         <DetailPage>
-            <PageHeader>
-                <Link to={"/"}>
-                    <BackButton/>
-                </Link>
-            </PageHeader>
-
+            <Link to={"/"}>
+                <BackButton/>
+            </Link>
         </DetailPage>
     )
 }

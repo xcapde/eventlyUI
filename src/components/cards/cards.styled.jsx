@@ -30,8 +30,8 @@ export const Card = styled(Col)`
 
 export const CardImage = styled(Img)`
     border-radius: var(--card-radius);
-    /* border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0; */
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     padding: 0;
     position: relative;
 `;
@@ -74,6 +74,8 @@ export const CardParticipation = styled(Col)`
         width: 35%;
     }
 `
+
+// CardSmall
 export const CardXS = styled(Card)`
     flex-direction: row;
     width: var(--cardXS-width);
@@ -106,8 +108,7 @@ export const CardXSTextDetails = styled(CardTextDetails)`
     font-weight: 600;
     padding-right: 0.5rem;
 `
-// CARD MINIMAL (REFACTOR)
-
+// CardMinimal
 export const CardMinImg = styled(Img)`
     border-radius: var(--card-radius);
     padding: 0;
@@ -117,10 +118,8 @@ export const CardMinImg = styled(Img)`
 export const InfoOnImg = styled.div`
     z-index: 2;
     position: absolute;
-    /* bottom: calc(25%); */
     left: 0.5rem;
     @media (min-width: 820px) {
-        /* bottom: calc(25% + 0.5rem); */
         bottom: 8rem;
     }
 
@@ -136,7 +135,6 @@ export const InfoOnImg = styled.div`
     }
     & i{
         font-size: medium;
-        /* font-size: larger; */
         color:#ffffffb2;
         padding-right: 0.3rem;
         @media (min-width: 820px) {
@@ -149,15 +147,12 @@ export const InfoOnImg = styled.div`
 export const CardBody = styled.div`
     z-index: 1;
     background: linear-gradient(40deg, #ffffffe4, #ffffffa6);
-    /* backdrop-filter: blur(10px); */
     background:none;
-    /* border-top: 0.5px solid #ffffff1c; */
     border-radius: var(--card-radius);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     width: 100%;
     height: auto;
-    /* height: 25%; */
     position:absolute;
     bottom: 0;
     display: flex;
@@ -166,12 +161,10 @@ export const CardBody = styled.div`
     
         & div{
             width: 90%;
-            /* margin-bottom: 0.5rem; */
             margin: 1rem 0;
 
         }
         & h1{
-            /* font-size: large; */
             font-size: x-large;
             padding: 0.5rem;
             width: 90%;
@@ -199,7 +192,6 @@ export const CardBody = styled.div`
             }
         }
         & i{
-            /* color:#7D7D7D; */
             color: #ffffffb3;
         }
 `

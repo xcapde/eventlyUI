@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import { useState } from "react"
 import { Link, useParams } from "react-router-dom";
 import { BackButton } from "../../components/buttons/BackButton";
-import { PageTab } from "../../components/buttons/buttons.styled";
-import { EventDate, EventLocation, EventTime, EventTitle, Participation } from "../../components/subcomponents";
+import { MainButton, PageTab } from "../../components/buttons/buttons.styled";
+import { EventDate, EventLocation, EventPublisher, EventTime, EventTitle, Participation } from "../../components/subcomponents";
 import { eventService } from "../../services/API/eventService";
-import { AvatarImg, BlurEffect, PageHeader } from "../../styles/styles.styled";
+import { Box, Col } from "../../styles/styles.styled";
 import { Badge } from "../../components/badges/Badge";
-import { DetailBox, DetailButton, DetailFooter, DetailHeader, DetailImg, DetailPage, ImgControl, NavigationTabs, TabsContain } from "./detail.styled";
+import { DetailFooter, DetailHeader, DetailImg, DetailPage, NavTabs } from "./detail.styled";
 
 export const Detail=()=>{
     const [eventInfo, setEventInfo] = useState();
@@ -35,45 +35,42 @@ export const Detail=()=>{
     if(eventInfo)
     return(
         <DetailPage>
-            <PageHeader>
-                <Link to={"/"}>
-                    <BackButton/>
-                </Link>
-            </PageHeader> 
+            <Link to={"/"}>
+                <BackButton/>
+            </Link>
+            <DetailImg imgUrl={'https://st.depositphotos.com/1854227/3601/i/950/depositphotos_36019979-stock-photo-dog-walk.jpg'}/>
 
-            <ImgControl>                
-                <BlurEffect/>
-                <DetailImg imgUrl={'https://st.depositphotos.com/1854227/3601/i/950/depositphotos_36019979-stock-photo-dog-walk.jpg'}/>
-            </ImgControl>
-
-            <DetailBox>
+            <Box height={'50%'}>
                 <DetailHeader>
                     <EventTitle title={eventInfo.title}/>
-                    <EventLocation/>                
+                    <Box flexDirection={'row'} justifyContent={'flex-start'}>
+                        <Box alignItems={'flex-start'}>
+                            <EventLocation/>   
+                            <EventDate date={eventInfo.date}/>
+                            <EventTime hour={eventInfo.hour}/>                        
+                        </Box>
+                        <Col width={'50%'}>
+                            {eventInfo && eventInfo.publisher? 
+                            <EventPublisher publisher={eventInfo.publisher}/>:''}             
+                        </Col>
+                    </Box>
                 </DetailHeader>
-
-                {eventInfo && eventInfo.publisher? <AvatarImg imgUrl={eventInfo.publisher.avatar}/>:''}
-                <EventDate date={eventInfo.date}/>
-                <EventTime hour={eventInfo.hour}/>
-
-                <NavigationTabs>
+                
+                <NavTabs>
                     {tabContent.map((c, key)=> (<PageTab onClick={()=>setKey(c)}>{c}</PageTab>))}
-                </NavigationTabs>
-
-                <TabsContain>
+                </NavTabs>
+                <Box height='40%' width={'95%'} justifyContent={'flex-start'}>
                     {key && (key !== "description" && key !== "map")? 
                         eventInfo[key].map(item => <Badge content={item}/> )
                     : key === "description"? <h1>{eventInfo[key]}</h1> : '' 
                     }
-                </TabsContain>              
+                </Box>              
 
                 <DetailFooter>
                     <Participation participation={eventInfo.participantsCount}/>
-                    <DetailButton>JOIN</DetailButton>                 
-                </DetailFooter> 
-                
-            </DetailBox>
-            
+                    <MainButton>JOIN</MainButton>                 
+                </DetailFooter>                 
+            </Box>            
         </DetailPage>
     )
 }

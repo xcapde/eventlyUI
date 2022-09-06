@@ -2,11 +2,22 @@ import styled from "styled-components";
 
 
 //Flex model
+export const Box = styled.div`
+    display: flex;
+    width: ${props => props.width || '100%'};
+    height: ${props => props.height || '100%'};
+    padding: ${props => props.padding || '0'};
+    flex-direction: ${props => props.flexDirection || 'column'};
+    justify-content: ${props => props.justifyContent || 'center'};
+    align-items: ${props => props.alignItems || 'center'};
+`
+
 export const Col = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: ${props => props.width || 'inherit'};
 `;
 
 export const Row = styled(Col)`
@@ -53,51 +64,20 @@ export const Touchable = styled(Col)`
     width: ${props => props.width || 'inherit'};
 `;
 
-export const Gradient = styled.div`
-    /* background: linear-gradient(10deg, #00000030,  #00000050,  #00000020, #00000001); */
-    background: linear-gradient(10deg,#000000db,#0000004d,#00000020,#00000001);
-    z-index: 1;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: var(--card-radius);
-`
-
-export const BlurEffect = styled.div`
-    z-index: 1;
-    backdrop-filter: blur(100px);
-    width:100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-`
-
-export const PageHeader = styled.div`
-    z-index: var(--index-header);
-    position: fixed;
-    top:0;
-    height: var(--header-height);
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin-left: 3%;
-`;
-
+//Text
 export const Title = styled.h1`
     color: var(--color-title-text);
-    font-weight: 700;
     font-size:var(--font-size-card-title);
+    font-weight: 700;
     padding-right: 0.3rem;
 `
-
 
 export const DetailText = styled.p` 
     color: var(--color-detail-text);
     text-transform: capitalize;
-`;
+`
 
-
+//Images
 export const AvatarImg = styled.img.attrs(props => ({
     src: props.imgUrl,
 }))`
@@ -106,12 +86,11 @@ export const AvatarImg = styled.img.attrs(props => ({
     height: var(--avatar-height);
     scale: ${props => props.scale || '100%'};
     object-fit: cover;
-`
-
-export const AvatarOnImg = styled(AvatarImg)`
-    position: absolute;
-    top: 0.5rem;
-    left: 0.5rem; 
+    position:${props => props.position || 'relative'};
+    top:${props => props.top || 'none'};
+    right:${props => props.right || 'none'};
+    left:${props => props.left || 'none'};
+    bottom:${props => props.bottom || 'none'};
 `
 
 export const Img = styled.img.attrs(props => ({
@@ -120,4 +99,13 @@ export const Img = styled.img.attrs(props => ({
     height: 100%;
     width: 100%;
     object-fit: cover;
+    position: relative;
 `;
+
+export const Gradient = styled(Box)`
+    z-index: var(--index-gradient);
+    background: linear-gradient(10deg,#000000db,#0000004d,#00000020,#00000001);
+    border-radius: var(--card-radius);
+    position: absolute;
+    bottom: 0;
+`

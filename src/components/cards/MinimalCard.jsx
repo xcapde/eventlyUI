@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { AvatarOnImg, ExtremsRow, Gradient  } from "../../styles/styles.styled";
+import { AvatarImg, ExtremsRow, Gradient  } from "../../styles/styles.styled";
 import { MainButton } from "../buttons/buttons.styled";
 import { EventDate } from "../subcomponents/EventDate";
 import { EventTitle } from "../subcomponents/EventTitle";
@@ -20,7 +20,7 @@ export const MinimalCard = (props) => {
   return (
     <Card>
         <CardMinImg imgUrl={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} /> 
-        <AvatarOnImg imgUrl={props.event.publisher.avatar}/>
+        <AvatarImg imgUrl={props.event.publisher.avatar} position={'absolute'} top={'0.5rem'} left={'0.5rem'}/>
         <InfoOnImg>
           <EventDate date={props.event.date}/>
           <EventTime hour={props.event.hour}/>     

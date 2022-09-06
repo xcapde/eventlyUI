@@ -64,15 +64,14 @@
     --badge-radius:0.25rem;
 
     /* BUTTONS */
-    --form-button-height:3rem;
-    --form-button-width:333px;
     --button-width: 3rem;
     --button-height: 1.75rem;
     --button-border-width: 0.15rem;
     --button-padding: 1.2rem;
-    --tab-button-weight: 600;
+    --form-button-height:3rem;
+    --form-button-width:333px;
     --detail-button-heigth:3rem;
-    --detail-button-widht:50%;
+    --detail-button-widht:12rem;
     
     /* CARD */
     --card-width:85%;
@@ -95,10 +94,12 @@
     --mBP:  820px;
 
     /* INDEX */
-    --index-sidebar: 4;
     --index-footer: 1;
-    --index-detail-img: 2;
+    --index-gradient:1;
+    --index-detail-img: 1;
+    --index-back-button:2;
     --index-header: 3;
+    --index-sidebar: 4;
 }
 
 .App{
