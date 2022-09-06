@@ -1,10 +1,9 @@
 import { DetailText } from "../../styles/styles.styled"
 
-export const EventDate = ({date}) => {
-    
+export const EventTags = ({tags}) => {
     return (
         <DetailText>
-            <i className="fa-solid fa-calendar-day"></i> {date}
+            {tags}
         </DetailText>
     )
 }

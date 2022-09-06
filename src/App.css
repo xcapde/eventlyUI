@@ -1,9 +1,10 @@
 @import url("../src/styles/reset.css");
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root{
     background-color: var(--color-white-contrast);
-    font-family: 'Manrope', sans-serif;
+    /* font-family: 'Manrope', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
     
     /* COLOR */
     --card-shadow-opacity:rgba(0, 0, 0, 0.158);
@@ -13,6 +14,8 @@
     --color-main: #31B595;
     --color-main-hover: #43ccaa;
     --color-input-outline:#78e2c8;
+    --color-badgetBG-default:#78e2c8;
+    --color-badgetText-default:#19866b;
 
     /* TEXT COLOR */
     --color-detail-text:#7D7D7D;
@@ -30,7 +33,6 @@
     --back-button-color-icon:#ffffffc7;
     --tab-button-disabled:#7D7D7D;
     --tab-button-activated:#1d1c1c;
-
    
     /* DARK MODE COLOR */
     
@@ -59,6 +61,7 @@
     --button-radius: 0.5rem;
     --input-radius: 0.5rem;
     --card-radius: 0.5rem;
+    --badge-radius:0.25rem;
 
     /* BUTTONS */
     --form-button-height:3rem;
@@ -68,8 +71,8 @@
     --button-border-width: 0.15rem;
     --button-padding: 1.2rem;
     --tab-button-weight: 600;
-    --detail-button-heigth:2.5rem;
-    --detail-button-widht:6rem;
+    --detail-button-heigth:3rem;
+    --detail-button-widht:50%;
     
     /* CARD */
     --card-width:85%;
@@ -82,12 +85,17 @@
     --cardXS-width-desktop:22rem;
     --cardXS-details-height: 3.5rem;
 
+    /* BADGE */
+    --badge-padding:0.3rem 0.5rem;
+    --badge-font-weight: 700;
+    --badge-margin:0.15rem;
+
     /* BREAKPOINTS */
     --xsBP: 600px;
     --mBP:  820px;
 
     /* INDEX */
-    --index-sidebar: 1;
+    --index-sidebar: 4;
     --index-footer: 1;
     --index-detail-img: 2;
     --index-header: 3;

@@ -22,14 +22,14 @@ export const SmallCard = (props) => {
         </Link>
         <CardXSBody>
         <CardXSHeader>
-          <EventTitle event={props.event}/>        
+          <EventTitle title={props.event.title}/>        
           <AvatarImg imgUrl={props.event.publisher.avatar}/>
         </CardXSHeader>        
         <CardXSTextDetails>
           <CardLocationSchedule>
             <EventLocation/>
-            <EventDate event={props.event}/>
-            <EventTime/>                
+            <EventDate date={props.event.date}/>
+            <EventTime hour={props.event.hour}/>                
           </CardLocationSchedule>
           <CardParticipation>
             <Participation/>

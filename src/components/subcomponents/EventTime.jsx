@@ -1,10 +1,10 @@
 import { DetailText } from "../../styles/styles.styled"
 
-export const EventTime = () => {
+export const EventTime = ({hour}) => {
     
     return (
         <DetailText>
-            <i className="fa-solid fa-clock"></i> 16:08   
+            <i className="fa-solid fa-clock"></i> {hour}   
         </DetailText> 
     )
 }

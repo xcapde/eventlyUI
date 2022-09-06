@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { AvatarImg, Gradient  } from "../../styles/styles.styled";
+import { AvatarImg  } from "../../styles/styles.styled";
 import { MainButton } from "../buttons/buttons.styled";
 import { EventDate } from "../subcomponents/EventDate";
 import { EventTitle } from "../subcomponents/EventTitle";
@@ -21,14 +21,14 @@ export const MainCard = (props) => {
         <CardImage imgUrl={'https://media1.faz.net/ppmedia/video/1338146715/1.170045/default-retina/wenn-der-vater-mit-dem-sohne.jpg'} /> 
       </Link>
       <CardHeader>
-        <EventTitle event={props.event}/>        
+        <EventTitle title={props.event.title}/>        
         <AvatarImg imgUrl={props.event.publisher.avatar}/>
       </CardHeader>      
       <CardTextDetails>
         <CardLocationSchedule>
           <EventLocation/>
-          <EventDate event={props.event}/>
-          <EventTime/>            
+          <EventDate date={props.event.date}/>
+          <EventTime hour={props.event.hour}/>            
         </CardLocationSchedule>
         <CardParticipation>
           <Participation/>  

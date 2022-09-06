@@ -10,4 +10,21 @@ export const AuthService = {
         : false;
         return JSON.parse(authJson);
     },
-}
+
+    isPublisher(object){
+        if(this.getAuthUser().id !== object.publisher.id) return false;
+        return true;
+    },
+
+    isLogged(){
+        if(localStorage.getItem("auth")) return true;
+        return false;
+    },
+    
+    logout(confirmation){
+        if(confirmation){
+            localStorage.removeItem("auth")
+            window.location = "/"
+        } return;
+    },
+};

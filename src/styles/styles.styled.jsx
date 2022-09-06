@@ -53,17 +53,9 @@ export const Touchable = styled(Col)`
     width: ${props => props.width || 'inherit'};
 `;
 
-export const Img = styled.img.attrs(props => ({
-    src: props.imgUrl,
-}))`
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-`;
-
 export const Gradient = styled.div`
     /* background: linear-gradient(10deg, #00000030,  #00000050,  #00000020, #00000001); */
-    background: linear-gradient(10deg, #00000030,  #0000006f,  #00000020, #00000001);
+    background: linear-gradient(10deg,#000000db,#0000004d,#00000020,#00000001);
     z-index: 1;
     position: absolute;
     bottom: 0;
@@ -81,33 +73,6 @@ export const BlurEffect = styled.div`
     top: 0;
 `
 
-export const AvatarImg = styled.img.attrs(props => ({
-    src: props.imgUrl,
-}))`
-    border-radius: var(--avatar-radius);
-    width: var(--avatar-width);
-    height: var(--avatar-height);
-    scale: ${props => props.scale || '100%'};
-    object-fit: cover;
-`;
-
-export const AvatarOnImg = styled(AvatarImg)`
-    position: absolute;
-    top: 0.5rem;
-    left: 0.5rem; 
-`
-
-export const Title = styled.h1`
-    color: var(--color-title-text);
-    font-weight: 700;
-    font-size:var(--font-size-card-title);
-    padding-right: 0.3rem;
-`;
-
-export const DetailText = styled.p` 
-    color: var(--color-detail-text);
-`;
-
 export const PageHeader = styled.div`
     z-index: var(--index-header);
     position: fixed;
@@ -117,4 +82,42 @@ export const PageHeader = styled.div`
     display: flex;
     align-items: center;
     margin-left: 3%;
+`;
+
+export const Title = styled.h1`
+    color: var(--color-title-text);
+    font-weight: 700;
+    font-size:var(--font-size-card-title);
+    padding-right: 0.3rem;
+`
+
+
+export const DetailText = styled.p` 
+    color: var(--color-detail-text);
+    text-transform: capitalize;
+`;
+
+
+export const AvatarImg = styled.img.attrs(props => ({
+    src: props.imgUrl,
+}))`
+    border-radius: var(--avatar-radius);
+    width: var(--avatar-width);
+    height: var(--avatar-height);
+    scale: ${props => props.scale || '100%'};
+    object-fit: cover;
+`
+
+export const AvatarOnImg = styled(AvatarImg)`
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem; 
+`
+
+export const Img = styled.img.attrs(props => ({
+    src: props.imgUrl,
+}))`
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 `;

@@ -1,9 +1,9 @@
 import { Title } from "../../styles/styles.styled"
 
-export const EventTitle = ({event}) => {
+export const EventTitle = ({title}) => {
     return (
         <Title> 
-            {event.title}
+            {title}
         </Title>
     )
 }

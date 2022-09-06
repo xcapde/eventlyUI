@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { MainButton } from "../../components/buttons/buttons.styled";
-import { Img, Page, Row, Wrapper } from "../../styles/styles.styled";
+import { Img, Page, Row } from "../../styles/styles.styled";
 
 export const DetailPage = styled(Page)`
     flex-direction: column;
@@ -8,39 +8,74 @@ export const DetailPage = styled(Page)`
 `
 
 export const ImgControl = styled.div`
-    max-height: 50%;
+    height: 50%;
     width: 100%;
     background-color: var(--color-grey-background);
     position: relative;
 `
 
-export const BackgroundImg = styled(Img)`
-    width:100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    object-fit:cover;
-`
-
 export const DetailImg = styled(Img)`
     z-index: var(--index-detail-img);
-    object-fit: contain;
+    object-fit: cover;
     border-radius: var(--card-radius);
     position: relative;
+    border-radius: 0;
+`
+export const DetailBox = styled.div`
+    height: 50%;
+    width: 100%;
+`
+
+export const DetailHeader = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column ;
+    height:10%;
+    padding: 5%;
+    align-items: flex-start;
+
+    & p{
+        margin-top: 0.5rem;
+    }
+    & i{
+        font-size: small;
+    }
+    & h1{
+        font-size: large;
+    }
 `
 
 export const NavigationTabs = styled(Row)`
     position: relative;
-    height: 5%;
-    margin-top: 1.5rem;
+    height:10%;
+    padding: 2.5% 0;
     justify-content: flex-start;
+    overflow-x:auto;
+
+    & button{
+        font-size:smaller;
+        text-transform: capitalize;
+        width: 25%;
+        margin: 0;
+    }
+`
+
+export const TabsContain = styled.div`
+    height: 50%;
 `
 
 export const DetailFooter = styled.div`
     position: absolute;
     bottom:0;
     width: 100%;
-    height: 5%;
+    height: 15%;
+
+    & p{
+        position: absolute;
+        bottom: 2rem;
+        left: 1rem;
+    }
 `
 export const DetailButton = styled(MainButton)`
     position: absolute;

@@ -106,7 +106,7 @@ export const CardXSTextDetails = styled(CardTextDetails)`
     font-weight: 600;
     padding-right: 0.5rem;
 `
-// CARD MINIMAL
+// CARD MINIMAL (REFACTOR)
 
 export const CardMinImg = styled(Img)`
     border-radius: var(--card-radius);
@@ -117,25 +117,28 @@ export const CardMinImg = styled(Img)`
 export const InfoOnImg = styled.div`
     z-index: 2;
     position: absolute;
-    bottom: 0.5rem;
-    bottom: calc(25%);
+    /* bottom: calc(25%); */
     left: 0.5rem;
     @media (min-width: 820px) {
-        bottom: calc(25% + 0.5rem);
+        /* bottom: calc(25% + 0.5rem); */
+        bottom: 8rem;
     }
 
     & h1, p{
-        font-weight:700;
+        font-weight:600;
         font-size: medium;
         color:white;
-        padding:0.2rem 0;
+        padding:0.5rem;
         @media (min-width: 820px) {
             font-size: smaller;
+            padding:0.2rem;
         }
     }
     & i{
-        font-size: larger;
+        font-size: medium;
+        /* font-size: larger; */
         color:#ffffffb2;
+        padding-right: 0.3rem;
         @media (min-width: 820px) {
             font-size: medium;
         }
@@ -145,9 +148,10 @@ export const InfoOnImg = styled.div`
 
 export const CardBody = styled.div`
     z-index: 1;
-    background: linear-gradient(40deg, #ffffffe4, #ffffff28);
-    backdrop-filter: blur(10px);
-    border-top: 0.5px solid #ffffff1c;
+    background: linear-gradient(40deg, #ffffffe4, #ffffffa6);
+    /* backdrop-filter: blur(10px); */
+    background:none;
+    /* border-top: 0.5px solid #ffffff1c; */
     border-radius: var(--card-radius);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -159,22 +163,30 @@ export const CardBody = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    
         & div{
             width: 90%;
-            margin-bottom: 0.5rem;
+            /* margin-bottom: 0.5rem; */
+            margin: 1rem 0;
+
         }
         & h1{
-            font-size: large;
+            /* font-size: large; */
+            font-size: x-large;
             padding: 0.5rem;
             width: 90%;
             height: 2.2rem;
+            color: white;
             @media (min-width: 820px) {
                 font-size: medium;
+                height: 1rem;
             }
         }
         & p{
             font-size: small;
             font-weight: bold;
+            color: #ffffffb3;
+
         }
         & button{
             height: 35px;
@@ -187,6 +199,7 @@ export const CardBody = styled.div`
             }
         }
         & i{
-            color:#7D7D7D;
+            /* color:#7D7D7D; */
+            color: #ffffffb3;
         }
 `

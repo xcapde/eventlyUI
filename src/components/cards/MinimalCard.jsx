@@ -6,31 +6,36 @@ import { MainButton } from "../buttons/buttons.styled";
 import { EventDate } from "../subcomponents/EventDate";
 import { EventTitle } from "../subcomponents/EventTitle";
 import { Card, CardBody, CardMinImg, InfoOnImg} from "./cards.styled";
-import { EventLocation, EventTime, Participation } from "../subcomponents";
+import { EventLocation, EventTime, EventType, Participation } from "../subcomponents";
 
 export const MinimalCard = (props) => {
   const [event, setEvent] = useState();
 
   useEffect(() => {
     setEvent(props.event)
+    console.log(props.event.title)
+
   },[props.event])
 
   return (
     <Card>
         <CardMinImg imgUrl={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} /> 
         <AvatarOnImg imgUrl={props.event.publisher.avatar}/>
-            <InfoOnImg>
-            <EventDate event={props.event}/>
-            <EventTime/>         
-            <EventLocation/>   
+        <InfoOnImg>
+          <EventDate date={props.event.date}/>
+          <EventTime hour={props.event.hour}/>     
+          {props.event.type === 'online'?  <EventType type={props.event.type}/> : <EventLocation location={props.event.location}/>}  
         </InfoOnImg>
-    <Link to={`/event/${props.event.id}`}>
-        <Gradient/>
-    </Link>
+        
+
+        <Link to={`/events/${props.event.id}`}>
+            <Gradient/>
+        </Link>
+
         <CardBody>
-            <EventTitle event={props.event}/> 
+            <EventTitle title={props.event.title}/> 
             <ExtremsRow>
-                <Participation/>         
+                <Participation participation={props.event.participantsCount}/>         
                 <MainButton>JOIN</MainButton> 
             </ExtremsRow>
         </CardBody>
