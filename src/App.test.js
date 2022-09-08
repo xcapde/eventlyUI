@@ -1,8 +1,16 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+beforeEach(()=>{
+  render(<App/>);
+})
+
+test('renders home from sidebar', () => {
+  const sideBarItem = screen.getByText(/home/i);
+  expect(sideBarItem).toBeInTheDocument();
 });
+
+test('renders upload from sidebar', ()=>{
+  const sideBarItem = screen.getByText(/upload/i);
+  expect(sideBarItem).toBeInTheDocument();
+})

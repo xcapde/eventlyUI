@@ -29,7 +29,6 @@ export function LoginSignupForm({ location }) {
             username : inputsData.username,
             password : inputsData.password
         }
-        makeRegister(userData)
     };
 
     const makeRegister = (data) => {
