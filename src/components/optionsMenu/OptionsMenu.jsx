@@ -1,5 +1,6 @@
 import React from "react"
 import { Row } from "../../styles/styles.styled"
+import { SecondaryButton } from "../buttons"
 import { MenuBox } from "./optionsMenu.styled"
 
 export const OptionsMenu = () => {
@@ -7,14 +8,12 @@ export const OptionsMenu = () => {
         <React.Fragment>
             <MenuBox> 
                 <Row>
-                    <button>
-                        <i className="fa-regular fa-pen-to-square"></i> EDIT
-                    </button>
+                    <i className="fa-regular fa-pen-to-square"></i>
+                    <SecondaryButton content={'EDIT'}/>
                 </Row>
                 <Row>
-                    <button>
-                        <i className="fa-regular fa-trash-can"></i> DELETE
-                    </button>                     
+                    <i className="fa-regular fa-trash-can"></i>
+                    <SecondaryButton content={'DELETE'}/>                        
                 </Row>
             </MenuBox>
         </React.Fragment>
