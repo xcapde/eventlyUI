@@ -16,6 +16,8 @@
     --color-input-outline:#78e2c8;
     --color-badgetBG-default:#78e2c8;
     --color-badgetText-default:#19866b;
+    --color-menu-box: #7D7D7D;
+    --color-menu-text: #F4F6F5;
 
     /* TEXT COLOR */
     --color-detail-text:#7D7D7D;
@@ -97,9 +99,10 @@
     --index-footer: 1;
     --index-gradient:1;
     --index-detail-img: 1;
-    --index-back-button:2;
     --index-header: 3;
     --index-sidebar: 4;
+    --index-options-menu:4;
+    --index-back-button:5;
 }
 
 .App{

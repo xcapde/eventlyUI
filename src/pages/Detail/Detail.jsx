@@ -2,12 +2,13 @@ import React, { useEffect } from "react";
 import { useState } from "react"
 import { Link, useParams } from "react-router-dom";
 import { BackButton } from "../../components/buttons/BackButton";
-import { MainButton, PageTab } from "../../components/buttons/buttons.styled";
+import { MainButton, TabButton } from "../../components/buttons/buttons.styled";
 import { EventDate, EventLocation, EventPublisher, EventTime, EventTitle, EventUrl, Participation } from "../../components/subcomponents";
 import { eventService } from "../../services/API/eventService";
 import { Box, Col } from "../../styles/styles.styled";
 import { Badge } from "../../components/badges/Badge";
 import { DetailFooter, DetailHeader, DetailImg, DetailPage, NavTabs } from "./detail.styled";
+import { BurgerButton } from "../../components/buttons/BurgerButton";
 
 export const Detail=()=>{
     const [eventInfo, setEventInfo] = useState();
@@ -38,8 +39,8 @@ export const Detail=()=>{
             <Link to={"/"}>
                 <BackButton/>
             </Link>
+            <BurgerButton/>
             <DetailImg imgUrl={'https://st.depositphotos.com/1854227/3601/i/950/depositphotos_36019979-stock-photo-dog-walk.jpg'}/>
-
             <Box height={'50%'}>
                 <DetailHeader>
                     <EventTitle title={eventInfo.title}/>
@@ -58,7 +59,7 @@ export const Detail=()=>{
                 </DetailHeader>
                 
                 <NavTabs>
-                    {tabContent.map((c, key)=> (<PageTab onClick={()=>setKey(c)}>{c}</PageTab>))}
+                    {tabContent.map((c, key)=> (<TabButton onClick={()=>setKey(c)}>{c}</TabButton>))}
                 </NavTabs>
                 <Box height='40%' width={'95%'} justifyContent={'flex-start'}>
                     {key && (key !== "description" && key !== "map")? 

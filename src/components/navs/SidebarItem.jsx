@@ -5,7 +5,7 @@ export const SidebarItem = ({ sub, content, callback }) => {
 
     return (
         <SideBarItemRow onMouseEnter={callback ? (e) => callback(e) : null}>
-            <Link to={content.link}>
+            <Link to={content.link} name="content">
                 <SideBarItemIconCol >
                     <SideBarIcon>{content.icon}</SideBarIcon>
                 </SideBarItemIconCol>

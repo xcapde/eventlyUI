@@ -89,12 +89,21 @@ export const BackArrowButton = styled.button`
             background-color:var(--back-button-color-hover);
         }
         & i{
-            color:var(--back-button-color-icon);
+            color:var(--back-button-color-icon) !important;
             font-size: var(--font-size-back-icon);
+            margin:0 !important;
+
         }
 `
 
-export const PageTab = styled.button`
+export const BurgerBtn = styled(BackArrowButton)`
+    position: absolute;
+    top: 1rem;
+    left: unset;
+    right: 1rem;
+`
+
+export const TabButton = styled.button`
     margin-left: 5%;
     font-weight: var(--tab-button-weight);
     font-size: var(--font-size-tab-button);
@@ -106,4 +115,3 @@ export const PageTab = styled.button`
         color: var(--button-color);
     }
 `
-

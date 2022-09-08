@@ -4,7 +4,7 @@ export const EventDate = ({date}) => {
     
     return (
         <DetailText>
-            <i className="fa-solid fa-calendar-day"></i> {date}
+            <i className="fa-solid fa-calendar-day"></i> {date.split("-").join("/")}
         </DetailText>
     )
 }
