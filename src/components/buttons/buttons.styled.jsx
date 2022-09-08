@@ -61,7 +61,7 @@ export const SecondaryButton = styled(Button)`
     }
 `
 
-export const LinkButton = styled.a`
+export const LinkButton = styled.p`
     background:none;
     color: var(--color-link-text);
     text-transform: capitalize;

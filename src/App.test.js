@@ -4,11 +4,13 @@ import App from './App';
 // beforeEach(()=>{
 //   render(<App/>);
 // })
-test('renders home from sidebar', async () => {
+
+test('renders home from sidebar', () => {
   render(<App/>);
-  const sideBarItem = await screen.findByRole('link',{name:/content/i});
+  const sideBarItem = screen.getByText(/home/i);
   expect(sideBarItem).toBeInTheDocument();
 });
+
 test('renders upload from sidebar', ()=>{
   render(<App/>);
   const sideBarItem = screen.getByText(/upload/i);
