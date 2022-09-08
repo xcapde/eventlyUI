@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Col, ExtremsRow, Img, Row} from "../../styles/styles.styled";
+import { Col, Img, Row} from "../../styles/styles.styled";
 
 export const Card = styled(Col)`
     box-shadow: 2px 2px 15px var(--card-shadow-opacity);   
@@ -36,8 +36,9 @@ export const CardImage = styled(Img)`
     position: relative;
 `;
 
-export const CardHeader = styled(ExtremsRow)`
+export const CardHeader = styled(Row)`
     padding: 0.4rem 0;
+    height: unset;
     width: 94%;
     @media (min-width: 820px) {
         width: 90%;
@@ -180,16 +181,6 @@ export const CardBody = styled.div`
             font-weight: bold;
             color: #ffffffb3;
 
-        }
-        & button{
-            height: 35px;
-            width: 80px;
-            font-size: small;
-            background-color: #31B595;
-            @media (min-width: 820px) {
-                height: 30px;
-                width: 70px;
-            }
         }
         & i{
             color: #ffffffb3;

@@ -8,18 +8,19 @@ export const Button = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
+    background: none;
+    border-radius: var(--button-radius);
     padding: 18px 32px;
 `;
 
 export const FormBtn = styled(Button)`
+padding: unset;
 background-color: var(--button-color);
 color: var(--color-white-contrast);
 width: var(--form-button-width);
 height: var(--form-button-height);
-border-radius: var(--button-radius);
 border-top-left-radius: 0;
 font-weight: 700;
-padding: none;
 
 &:hover{
     background-color: var(--button-color-hover);
@@ -31,12 +32,11 @@ padding: none;
 `;
 
 export const MainButton = styled(Button)`
-    height: var(--button-height);
+    height: ${props => props.height || 'unset'};
+    width: ${props => props.width || 'unset'};
     background-color: var(--button-color);
-    border-radius: var(--button-radius);
     color: var(--button-text);  
-    padding: 0 var(--button-padding);
-    font-size:var(--font-size-button);
+    font-size: ${props => props.fontSize || 'var(--font-size-button)'};
     font-weight: 500;
 
     &:hover{
@@ -47,10 +47,9 @@ export const MainButton = styled(Button)`
     }
 `
 
-export const SecondaryButton = styled(Button)`
+export const SecondaryBtn = styled(Button)`
     height: var(--button-height);
     border-style: solid;
-    border-radius: var(--button-radius);
     border-width: var(--button-border-width);
     border-color:var(--button-color);
     color: var(--button-color);
@@ -61,7 +60,7 @@ export const SecondaryButton = styled(Button)`
     }
 `
 
-export const LinkButton = styled.p`
+export const LinkBtn = styled.p`
     background:none;
     color: var(--color-link-text);
     text-transform: capitalize;
@@ -76,15 +75,22 @@ export const LinkButton = styled.p`
     }
 `
 
-export const BackArrowButton = styled.button`
+export const DetailButton = styled(MainButton)`
+        height: var(--detail-button-heigth);
+        width: var(--detail-button-widht);
+        font-size:var(--font-size-detall-button);
+`
+
+export const BackArrowButton = styled(Button)`
     z-index: var(--index-back-button);
-    border-radius: var(--back-button-radius);
     height: var(--back-button-size);
     width: var(--back-button-size);
     background-color:var(--back-button-color);
+    padding: unset;
     position: fixed;
-    top: 1rem;
-    left: 1rem;
+    top: var(--header-button-position-top);
+    left: var(--header-button-position-side);
+
         &:hover{
             background-color:var(--back-button-color-hover);
         }
@@ -98,20 +104,62 @@ export const BackArrowButton = styled.button`
 
 export const BurgerBtn = styled(BackArrowButton)`
     position: absolute;
-    top: 1rem;
     left: unset;
-    right: 1rem;
+    top: var(--header-button-position-top);
+    right: var(--header-button-position-side);
 `
 
-export const TabButton = styled.button`
-    margin-left: 5%;
+export const TabButton = styled(Button)`
+    padding: unset;
     font-weight: var(--tab-button-weight);
     font-size: var(--font-size-tab-button);
     color: var(--tab-button-disabled);
+    
     &:hover{
         color: var(--button-color-hover);
     }
     &:active{
         color: var(--button-color);
+    }
+`
+
+export const ContentTabButton = styled(TabButton)`
+    font-size:var(--font-size-detall-tab-button);
+    width: 50%;
+    height: 1.5rem;
+    display: flex;
+    justify-content: start;
+    text-transform: capitalize;
+    font-weight: 600;
+`
+
+export const FooterTabButton = styled(TabButton)`
+    width: 20%;  
+    & img{
+        height: var(--font-size-nav-icon);
+        width: var(--font-size-nav-icon);
+        opacity: 0.6;
+    }
+    & i{
+        font-size: var(--font-size-nav-icon);
+    }
+    & .gg-add-r {
+        width: calc(var(--font-size-nav-icon) + 2px);
+        height: calc(var(--font-size-nav-icon) + 2px);
+
+        &::after{
+            top: 6px;
+            left: 10px;
+        }
+        &::before{
+            top: 10px;
+            left: 6px;
+        }
+    }
+    &:hover{
+        color: var(--button-color);
+        & img{
+        opacity: 1;
+        }
     }
 `

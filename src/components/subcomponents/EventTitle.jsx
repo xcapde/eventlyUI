@@ -1,8 +1,8 @@
 import { Title } from "../../styles/styles.styled"
 
-export const EventTitle = ({title}) => {
+export const EventTitle = ({title, margin}) => {
     return (
-        <Title> 
+        <Title margin={margin}> 
             {title}
         </Title>
     )

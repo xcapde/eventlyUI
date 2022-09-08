@@ -1,18 +1,19 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import { MinimalCard } from './components/cards/MinimalCard';
+import { EventFeed } from './components/feeds/EventFeed';
 
-// beforeEach(()=>{
-//   render(<App/>);
-// })
+// eslint-disable-next-line testing-library/no-render-in-setup
+// beforeEach(()=>{ render(<Sidebar/>)});
 
-test('renders home from sidebar', () => {
-  render(<App/>);
-  const sideBarItem = screen.getByText(/home/i);
+test('renders join button from card',  () => {
+  render(<MinimalCard/>)
+  const sideBarItem =  screen.getByRole('button',{name:/joinbutton/i});
   expect(sideBarItem).toBeInTheDocument();
 });
 
-test('renders upload from sidebar', ()=>{
-  render(<App/>);
-  const sideBarItem = screen.getByText(/upload/i);
-  expect(sideBarItem).toBeInTheDocument();
+test('renders xocolatada title from API', async ()=>{
+  render(<EventFeed/>)
+  const sideBarItem = await screen.findAllByText(/xocolatada/i);
+  expect(sideBarItem).toBeTruthy();
 })

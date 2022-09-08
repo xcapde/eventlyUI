@@ -25,7 +25,7 @@
     --color-title-text:#1d1c1c;
  
     /* BUTTON COLOR */
-    --button-text: var(--color-white);
+    --button-text: var(--color-white-contrast);
     --button-color:var(--color-main);
     --button-color-hover:var(--color-main-hover); 
     --color-link-text:var(--color-main);
@@ -41,39 +41,39 @@
     /* SIZE */
     --input-width: 317px;
     --footer-height: 10%;
-    --header-height: 75px;
-    --avatar-width: 1.5rem;
-    --avatar-height: 1.5rem;
+    --avatar-size: 2.5rem;
     --back-button-size: 2.5rem;
+    --detail-image-height: 47%;
 
     /* FONT SIZE */
     --font-size-cardXS: x-small;
-    --font-size-card: 0.7rem;
-    --font-size-card-desktop: 0.7rem;
-    --font-size-card-title: 0.9rem;
-    --font-size-button: 0.7rem;
+    --font-size-card: medium;
+    --font-size-card-desktop: medium;
+    --font-size-card-title: x-large;
+    --font-size-button: medium;
+    --font-size-button-detail: large;
+    --font-size-detall-text: small;
     --font-size-nav-icon: 24px;
-    --font-size-back-icon: 1rem;
-    --font-size-tab-button: 0.8rem;
-    --font-size-detall-button: 1rem;
+    --font-size-back-icon: large;
+    --font-size-tab-button: smaller;
+    --font-size-detall-tab-button: large;
+    --font-size-detall-participation: medium;
 
     /* RADIUS */
-    --avatar-radius:50%;
-    --back-button-radius:50%;
+    --avatar-radius:0.5rem;
     --button-radius: 0.5rem;
     --input-radius: 0.5rem;
     --card-radius: 0.5rem;
     --badge-radius:0.25rem;
 
     /* BUTTONS */
-    --button-width: 3rem;
-    --button-height: 1.75rem;
     --button-border-width: 0.15rem;
-    --button-padding: 1.2rem;
-    --form-button-height:3rem;
     --form-button-width:333px;
-    --detail-button-heigth:3rem;
-    --detail-button-widht:12rem;
+    --form-button-height:50px;
+    --detail-button-width:210px;
+    --detail-button-height:60px;
+    --header-button-position-top:3rem;
+    --header-button-position-side:1.5rem;
     
     /* CARD */
     --card-width:85%;
@@ -91,6 +91,9 @@
     --badge-font-weight: 700;
     --badge-margin:0.15rem;
 
+    /* PAGES */
+    --page-width:85%;
+    
     /* BREAKPOINTS */
     --xsBP: 600px;
     --mBP:  820px;

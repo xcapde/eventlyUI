@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import App from "../App";
-import { Detail } from "../pages/Detail/Detail";
+import { Detail } from "../pages/detail/Detail";
 import { LoginSignup } from "../pages/LoginSignup";
 
 export default function Router(){

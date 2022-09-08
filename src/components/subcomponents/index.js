@@ -10,3 +10,4 @@ export { EventMap } from "./EventMap";
 export { EventRequirements } from "./EventRequirements";
 export { EventTags } from "./EventTags";
 export { EventPublisher } from "./EventPublisher";
+export { DetailParticipation } from "./DetailParticipation";

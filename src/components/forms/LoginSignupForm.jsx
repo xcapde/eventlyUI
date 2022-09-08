@@ -70,7 +70,7 @@ export function LoginSignupForm({ location }) {
                 {isSignup && <Input onChange={onInputChange} placeholder="Email" name="email" value={inputsData.email || ""}/>}
                 <Input onChange={onInputChange} placeholder="Password" name="password" value={inputsData.password || ""} type="password"/>
             </FormControl>
-            <FormButton content={isSignup ? 'Sign up' : 'Log in'} action={'log in o sign in'}/>
+            <FormButton content={isSignup ? 'Sign up' : 'Log in'}/>
         </Form>
     )
 }

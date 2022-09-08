@@ -1,10 +1,11 @@
-import { DetailText } from "../../styles/styles.styled"
+import { Col } from "../../styles/styles.styled"
 
 export const Participation = ({participation}) => {
     
     return (
-        <DetailText>
-            <i className="fa-solid fa-users"></i> {participation} joined
-        </DetailText>            
+        <Col gap="0.5rem" width="unset">
+                <i className="fa-solid fa-users"></i>
+                {participation} joined
+        </Col>            
     )
 }

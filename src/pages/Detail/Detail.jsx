@@ -1,20 +1,20 @@
 import React, { useEffect } from "react";
 import { useState } from "react"
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { BackButton } from "../../components/buttons/BackButton";
-import { MainButton, TabButton } from "../../components/buttons/buttons.styled";
-import { EventDate, EventLocation, EventPublisher, EventTime, EventTitle, EventUrl, Participation } from "../../components/subcomponents";
 import { eventService } from "../../services/API/eventService";
-import { Box, Col } from "../../styles/styles.styled";
-import { Badge } from "../../components/badges/Badge";
-import { DetailFooter, DetailHeader, DetailImg, DetailPage, NavTabs } from "./detail.styled";
+import { Col } from "../../styles/styles.styled";
+import { DetailFooter, DetailHeader, DetailImg, DetailPage } from "./detail.styled";
 import { BurgerButton } from "../../components/buttons/BurgerButton";
+import { DetailParticipation } from "../../components/subcomponents";
+import { ModuleContent, ModuleDetails } from "../../components/eventInfo/indexj";
 
 export const Detail=()=>{
     const [eventInfo, setEventInfo] = useState();
     const id = useParams().id;
     const [key, setKey] = useState(); 
     const tabContent = ["description", "requirements", "tags", "map"];
+    const navigate = useNavigate();
 
     useEffect(()=>{
         if(!id) return;
@@ -36,43 +36,19 @@ export const Detail=()=>{
     if(eventInfo)
     return(
         <DetailPage>
-            <Link to={"/"}>
-                <BackButton/>
-            </Link>
+            <BackButton action={()=>navigate(-1)}/>
             <BurgerButton/>
             <DetailImg imgUrl={'https://st.depositphotos.com/1854227/3601/i/950/depositphotos_36019979-stock-photo-dog-walk.jpg'}/>
-            <Box height={'50%'}>
-                <DetailHeader>
-                    <EventTitle title={eventInfo.title}/>
-                    <Box flexDirection={'row'} justifyContent={'flex-start'}>
-                        <Box alignItems={'flex-start'}>
-                            {eventInfo.type === "online"? 
-                            <EventUrl/> : <EventLocation/>}   
-                            <EventDate date={eventInfo.date}/>
-                            <EventTime hour={eventInfo.hour}/>                        
-                        </Box>
-                        <Col width={'50%'}>
-                            {eventInfo && eventInfo.publisher? 
-                            <EventPublisher publisher={eventInfo.publisher}/>:''}             
-                        </Col>
-                    </Box>
-                </DetailHeader>
-                
-                <NavTabs>
-                    {tabContent.map((c, key)=> (<TabButton onClick={()=>setKey(c)}>{c}</TabButton>))}
-                </NavTabs>
-                <Box height='40%' width={'95%'} justifyContent={'flex-start'}>
-                    {key && (key !== "description" && key !== "map")? 
-                        eventInfo[key].map(item => <Badge content={item}/> )
-                    : key === "description"? <h1>{eventInfo[key]}</h1> : '' 
-                    }
-                </Box>              
-
+            
+            <Col height={'calc(100% - var(--detail-image-height))'} width={'var(--page-width)'}>
+                <DetailHeader>                  
+                    <ModuleDetails event={eventInfo}/>
+                </DetailHeader>                         
+                <ModuleContent action={setKey} tabContent={tabContent} field={key} event={eventInfo}/>
                 <DetailFooter>
-                    <Participation participation={eventInfo.participantsCount}/>
-                    <MainButton>JOIN</MainButton>                 
+                    <DetailParticipation participation={eventInfo.participantsCount}/>                 
                 </DetailFooter>                 
-            </Box>            
+            </Col>            
         </DetailPage>
     )
 }
