@@ -24,15 +24,16 @@ export const DetailHeader = styled.div`
 
 export const NavTabs = styled(Row)`
     position: relative;
-    justify-content: flex-start;
-    height:17%;
-    padding: 6% 0 4% 0;
+    justify-content: center;
+    height:20%;
+    margin: 5% 0;
     flex-wrap: wrap;
-
+    gap: 15px 0;
 `
 
 export const DetailFooter = styled.div`
     height: 20%;
-    width: 100%;
+    width: 95%;
     padding: 0 0 7.5% 0;
+    margin : 0 auto;
 `

@@ -118,11 +118,13 @@ export const TabButton = styled(Button)`
 `
 //
 export const ContentTabButton = styled(TabButton)`
-    height: 1.5rem;
-    width: 50%;
+    min-height: 1.5rem;
+    width: 45%;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     font-size:var(--font-size-detall-tab-button);
     font-weight: 600;
+    color: ${props => props.color ||'var(--color-detail-text)'};
     text-transform: capitalize;
+    outline: none;
 `

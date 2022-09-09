@@ -70,7 +70,7 @@ export const DetailText = styled.p`
     font-family: var(--detail-font);
     text-transform: capitalize;
     font-size:${props => props.fontSize || 'var(--font-size-detall-text)'};
-    font-weight: 600;
+    font-weight: 500;
     margin:${props => props.margin || '0'};
     & i{
         color: var(--color-card-icon);

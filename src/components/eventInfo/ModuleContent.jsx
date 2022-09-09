@@ -2,12 +2,12 @@ import { Col } from "../../styles/styles.styled"
 import { EventContent } from "./EventContent"
 import { EventNav } from "./EventNav"
 
-export const ModuleContent = ({callback, tabContent, event, field}) => {
+export const ModuleContent = ({ callback, tabContent, event, field }) => {
 
-    return(
+    return (
         <Col>
-            <EventNav callback={callback} tabContent={tabContent}/>
-            <EventContent event={event} field={field}/>
+            <EventNav callback={callback} tabContent={tabContent} field={field} />
+            <EventContent event={event} field={field} />
         </Col>
     )
 }
