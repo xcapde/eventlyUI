@@ -1,6 +1,6 @@
 import React from "react"
-import { Row } from "../../styles/styles.styled"
-import { SecondaryButton } from "../buttons"
+import { Row } from "../../../../../styles/styles.styled";
+import { SecondaryButton } from "../../../../buttons";
 import { MenuBox } from "./optionsMenu.styled"
 
 export const OptionsMenu = () => {

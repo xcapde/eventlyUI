@@ -1,7 +1,7 @@
 import React from "react"
-import useShowMenu from "../../hooks/useShowMenu";
-import { BurgerButton, CloseButton } from "../buttons";
-import { OptionsMenu } from "./OptionsMenu";
+import useShowMenu from "../../../../../hooks/useShowMenu";
+import { BurgerButton, CloseButton } from "../../../../buttons";
+import { OptionsMenu } from "../optionsMenu/OptionsMenu";
 
 export const MenuModule = () => {
     const {menuIsActive, showMenu} = useShowMenu(false);

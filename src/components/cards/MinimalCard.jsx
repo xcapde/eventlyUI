@@ -7,7 +7,7 @@ import { Card, CardBody, CardMinImg, InfoOnImg} from "./cards.styled";
 import { EventLocation, EventTime, EventType, Participation } from "../subcomponents";
 import { PrimaryButton } from "../buttons";
 import { Avatar } from "../avatar/Avatar";
-import { MenuModule } from "../optionsMenu/MenuModule";
+import { MenuModule } from "../buttons/burgers/CardBB/optionsMenu/MenuModule";
 
 export const MinimalCard = ({event}) => {
 
