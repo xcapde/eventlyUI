@@ -1,12 +1,15 @@
+import { useLocation } from "react-router-dom"
 import { AvatarImg } from "../../styles/styles.styled"
 import { FooterTabButton } from "../buttons/buttons.styled"
 import { Wrapper } from "./footer.styled"
 
 export const Footer = () => {
+    const location = useLocation().pathname;
+
     return (
         <Wrapper>
             <FooterTabButton>
-                <i className="fa-solid fa-house"></i>
+                <i className={location === 'home'? "fa-solid fa-house" : "fa-solid fa-house activatedTab"}></i>
             </FooterTabButton>
             <FooterTabButton>
                 <i className="fa-solid fa-magnifying-glass"></i>

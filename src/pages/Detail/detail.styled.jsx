@@ -13,7 +13,7 @@ export const DetailImg = styled(Img)`
 `
 
 export const DetailHeader = styled.div`
-    height: ${props => props.height || '15%'};
+    height: ${props => props.height || '20%'};
     display: flex;
     flex-direction: column ;
     justify-content: flex-start;

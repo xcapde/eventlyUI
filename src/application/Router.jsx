@@ -22,7 +22,7 @@ export default function Router(){
     return(
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<App/>}/>
+                <Route path="/home" element={<App/>}/>
                 <Route path="/log-in" element={<LoginSignup/>}/>
                 <Route path="/sign-up" element={<LoginSignup/>}/>
                 <Route path="/events/:id/*" element={<Detail/>}> 

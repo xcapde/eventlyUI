@@ -1,15 +1,15 @@
 import React from "react"
-import { AvatarImg, Col, DetailText } from "../../styles/styles.styled"
+import { Col } from "../../styles/styles.styled"
+import { Avatar } from "./Avatar"
+import { EventPublisherName } from "./EventPublisherName"
 
 export const EventPublisher = ({event, scale}) => {
     return (
         <Col width={'35%'} alignItems={'flex-end'}>
             {event && event.publisher?
                 <React.Fragment>
-                    <AvatarImg imgUrl={event.publisher.avatar} scale={scale}/>
-                    <DetailText>
-                        {event.publisher.username}
-                    </DetailText> 
+                    <Avatar imgUrl={event.publisher.avatar} scale={scale}/>
+                    <EventPublisherName event={event}/>
                 </React.Fragment>
                 : ''}
         </Col>

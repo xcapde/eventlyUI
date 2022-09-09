@@ -11,6 +11,7 @@ export const Col = styled.div`
     height: ${props => props.height || '100%'};
     gap: ${props => props.gap || 'none'};
     padding: ${props => props.padding || '0'};
+    margin: ${props => props.margin || '0'};
     font-size: ${props => props.fontSize || 'inherit'};
 `;
 
@@ -69,6 +70,9 @@ export const DetailText = styled.p`
     font-size:${props => props.fontSize || 'var(--font-size-detall-text)'};
     font-weight: 600;
     margin:${props => props.margin || '0'};
+    & i{
+        color: var(--color-card-icon);
+    }
 `
 
 //Images

@@ -2,25 +2,13 @@ import styled from "styled-components";
 import { Col, Img, Row} from "../../styles/styles.styled";
 
 export const Card = styled(Col)`
-    box-shadow: 2px 2px 15px var(--card-shadow-opacity);   
+    box-shadow: 1px 2px 18px var(--card-shadow-opacity);   
     width: var(--card-width);
     height: var(--card-height);
     border-radius: var(--card-radius);
     background-color: var(--color-white);
     color: var(--color-detail-text);
     position: relative;
-        & p{
-            display: flex;
-            align-items: center;
-        }
-        
-        & i{
-            display: flex;
-            justify-content: center;
-            color: var(--color-card-icon);
-            margin: 0.15rem 0.2rem 0.15rem 0;
-            width: 1.5rem;
-        }
 
         @media (min-width: 820px) {
             width: var(--card-width-desktop);
@@ -53,7 +41,6 @@ export const CardTextDetails = styled(Row)`
         font-size: var(--font-size-card-desktop);
     }
 `
-
 export const CardLocationSchedule = styled(CardTextDetails)`
     flex-direction: column;
     width: 65%;
@@ -94,21 +81,6 @@ export const CardXSImage = styled(CardImage)`
     border-radius: var(--card-radius);
     margin: 0 .5rem;
 `;
-
-export const CardXSBody = styled(Col)`
-    width:100%;
-`
-
-export const CardXSHeader = styled(CardHeader)`
-    width: 92%;
-`
-
-export const CardXSTextDetails = styled(CardTextDetails)`
-    height: var(--cardXS-details-height);
-    font-size: var(--font-size-cardXS);
-    font-weight: 600;
-    padding-right: 0.5rem;
-`
 // CardMinimal
 export const CardMinImg = styled(Img)`
     border-radius: var(--card-radius);

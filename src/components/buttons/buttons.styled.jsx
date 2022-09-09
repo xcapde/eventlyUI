@@ -113,7 +113,7 @@ export const TabButton = styled(Button)`
     padding: unset;
     font-weight: var(--tab-button-weight);
     font-size: var(--font-size-tab-button);
-    color: var(--tab-button-disabled);
+    color:${props => props.color || 'var(--tab-button-disabled)'};
     
     &:hover{
         color: var(--button-color-hover);
@@ -157,7 +157,7 @@ export const FooterTabButton = styled(TabButton)`
         }
     }
     &:hover{
-        color: var(--button-color);
+        color: var(--tab-button-active);
         & img{
         opacity: 1;
         }

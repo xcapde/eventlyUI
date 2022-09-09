@@ -2,22 +2,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root{
-    background-color: var(--color-white-contrast);
+    background-color: var(--color-white);
     /* font-family: 'Manrope', sans-serif; */
     font-family: 'Montserrat', sans-serif;
     
     /* COLOR */
-    --card-shadow-opacity:rgba(0, 0, 0, 0.158);
+    --card-shadow-opacity:rgba(0, 0, 0, 0.350);
     --color-white: #ffffff;
     --color-white-contrast: #F4F6F5;
     --color-grey-background:#7D7D7D;
+    
     --color-main: #31B595;
     --color-main-hover: #43ccaa;
     --color-input-outline:#78e2c8;
-    --color-badgetBG-default:#78e2c8;
-    --color-badgetText-default:#19866b;
-    --color-menu-box: #7D7D7D;
-    --color-menu-text: #F4F6F5;
+
+    --color-footer: #F4F6F5;
+
+    --color-badgetBG-default:#e2ab78;
+    --color-badgetText-default:#864119;
+
+    --color-menu-box: #313131;
 
     /* TEXT COLOR */
     --color-detail-text:#7D7D7D;
@@ -28,34 +32,41 @@
     --button-text: var(--color-white-contrast);
     --button-color:var(--color-main);
     --button-color-hover:var(--color-main-hover); 
+
     --color-link-text:var(--color-main);
     --color-link-text-hover:var(--color-main-hover);
+
     --back-button-color:#58585879;
     --back-button-color-hover:#2e2e2e96;
     --back-button-color-icon:#ffffffc7;
+
     --tab-button-disabled:#7D7D7D;
-    --tab-button-activated:#1d1c1c;
-   
-    /* DARK MODE COLOR */
-    
+    --tab-button-active:#31B595;
+       
     /* SIZE */
     --input-width: 317px;
     --footer-height: 10%;
     --avatar-size: 2.5rem;
     --back-button-size: 2.5rem;
     --detail-image-height: 47%;
+    --menu-box-height: 50%;
 
     /* FONT SIZE */
     --font-size-cardXS: x-small;
     --font-size-card: medium;
     --font-size-card-desktop: medium;
+    --font-size-cardXS-title: medium;
+    --font-size-cardXS-button:small;
     --font-size-card-title: x-large;
+
     --font-size-button: medium;
     --font-size-button-detail: large;
-    --font-size-detall-text: small;
+    --font-size-tab-button: smaller;
+
     --font-size-nav-icon: 24px;
     --font-size-back-icon: large;
-    --font-size-tab-button: smaller;
+    --font-size-detall-title:x-large;
+    --font-size-detall-text: small;
     --font-size-detall-tab-button: large;
     --font-size-detall-participation: medium;
 
@@ -68,10 +79,16 @@
 
     /* BUTTONS */
     --button-border-width: 0.15rem;
+
+    --cardXS-button-width: 80px;
+    --cardXS-button-height:13px;
+
     --form-button-width:333px;
     --form-button-height:50px;
+
     --detail-button-width:210px;
     --detail-button-height:60px;
+
     --header-button-position-top:3rem;
     --header-button-position-side:1.5rem;
     
@@ -81,8 +98,9 @@
     --card-width-desktop: 14.5rem;
     --card-height-desktop: 22rem;
     --card-details-height: 4.5rem;
+
     --cardXS-width:98%;
-    --cardXS-height:6rem;
+    --cardXS-height:7rem;
     --cardXS-width-desktop:22rem;
     --cardXS-details-height: 3.5rem;
 
@@ -99,13 +117,13 @@
     --mBP:  820px;
 
     /* INDEX */
-    --index-footer: 1;
     --index-gradient:1;
     --index-detail-img: 1;
     --index-header: 3;
     --index-sidebar: 4;
     --index-options-menu:4;
     --index-back-button:5;
+    --index-footer: 6;
 }
 
 .App{
@@ -113,4 +131,8 @@
     width: 100vw;
     display: flex;
     align-items: center;
+}
+
+.activatedTab{
+    color:var(--tab-button-active);
 }

@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
     z-index: var(--index-footer);
     position: fixed;
     bottom: 0;
-    background-color: var(--color-white);
+    background-color: var(--color-footer);
     display: flex;
     height: var(--footer-height);
     width: 100%;

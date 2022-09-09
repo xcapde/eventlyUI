@@ -1,9 +1,9 @@
 import { Title } from "../../styles/styles.styled"
 
-export const EventTitle = ({title, margin}) => {
+export const EventTitle = ({event, margin, fontSize}) => {
     return (
-        <Title margin={margin}> 
-            {title}
+        <Title margin={margin} fontSize={fontSize}> 
+            {event.title}
         </Title>
     )
 }

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { AvatarImg } from "../../styles/styles.styled";
-import { MainButton } from "../buttons/buttons.styled";
-import { EventDate } from "../subcomponents/EventDate";
+import { Col, Row } from "../../styles/styles.styled";
 import { EventTitle } from "../subcomponents/EventTitle";
-import { CardLocationSchedule, CardParticipation, CardXS, CardXSBody, CardXSHeader, CardXSImage, CardXSTextDetails } from "./cards.styled";
-import { EventLocation, EventTime, Participation } from "../subcomponents";
+import { CardXS, CardXSImage } from "./cards.styled";
+import { ParticipationXS} from "../subcomponents";
 import { Link } from "react-router-dom";
+import { Avatar } from "../subcomponents/Avatar";
+import { PrimaryButton } from "../buttons";
+import { EventDetails } from "../../components/eventInfo/EventDetails";
 
 export const SmallCard = (props) => {
   const [event, setEvent] = useState();
@@ -17,26 +18,25 @@ export const SmallCard = (props) => {
   
     return (
       <CardXS>
-        <Link to={`/event/${props.event.id}`}>
-          <CardXSImage imgUrl={'https://media1.faz.net/ppmedia/video/1338146715/1.170045/default-retina/wenn-der-vater-mit-dem-sohne.jpg'} />
+        <Link to={`/events/${props.event.id}`}>
+          <CardXSImage imgUrl='https://media1.faz.net/ppmedia/video/1338146715/1.170045/default-retina/wenn-der-vater-mit-dem-sohne.jpg' />
         </Link>
-        <CardXSBody>
-        <CardXSHeader>
-          <EventTitle title={props.event.title}/>        
-          <AvatarImg imgUrl={props.event.publisher.avatar}/>
-        </CardXSHeader>        
-        <CardXSTextDetails>
-          <CardLocationSchedule>
-            <EventLocation/>
-            <EventDate date={props.event.date}/>
-            <EventTime hour={props.event.hour}/>                
-          </CardLocationSchedule>
-          <CardParticipation>
-            <Participation/>
-            <MainButton>JOIN</MainButton>    
-          </CardParticipation>
-        </CardXSTextDetails>
-        </CardXSBody>
+
+        <Col width='70%' margin="0 auto">
+          <Col alignItems='flex-start'>
+            <Row height="none">
+              <EventTitle event={props.event} fontSize='var(--font-size-cardXS-title)'/>
+              <Avatar imgUrl={props.event.publisher.avatar} scale='0.5'/>
+            </Row>
+            <Row>
+              <EventDetails event={props.event} justifyContent='space-evenly'/>
+              <Col width='unset' alignItems='flex-end' padding='0 0.3rem' gap='0.5rem'>
+                <ParticipationXS participation={props.event.participantsCount}/> 
+                <PrimaryButton content='JOIN' height='var(--cardXS-button-height)' width='var(--cardXS-button-width)' fontSize='var(--font-size-cardXS-button)'/>
+              </Col>
+            </Row>
+          </Col> 
+        </Col>
       </CardXS>
     );
   };

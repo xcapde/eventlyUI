@@ -6,6 +6,8 @@ export const MenuBox = styled(Col)`
     border-radius: var(--card-radius);
     color: var(--color-white);
     position: absolute;
+    height:var(--menu-box-height);
+    width:${props => props.width || '100%'};
     bottom: 0;
     background-color: var(--color-menu-box);
 `
