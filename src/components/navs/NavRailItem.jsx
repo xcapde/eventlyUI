@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
-import { SideBarIcon, SideBarItemIconCol, SideBarItemContent, SideBarItemRow } from "./sidebar.styled"
+import { SideBarIcon, SideBarItemIconCol, SideBarItemContent, SideBarItemRow } from "./navrail.styled"
 
-export const SidebarItem = ({ sub, content, callback }) => {
+export const NavRailItem = ({ sub, content, callback }) => {
 
     return (
         <SideBarItemRow onMouseEnter={callback ? (e) => callback(e) : null}>

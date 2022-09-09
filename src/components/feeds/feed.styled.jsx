@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const VerticalFeed = styled.div`
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    width: 100%;
-    grid-gap: 1.5rem 1rem;
     justify-items: center;
+    grid-gap: 1.5rem 1rem;
     margin-top: 5%;
     padding-bottom: var(--cardXS-height);
 

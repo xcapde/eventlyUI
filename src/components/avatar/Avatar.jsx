@@ -1,4 +1,5 @@
-import { AvatarImg } from "../../styles/styles.styled"
+import { AvatarImg } from "./avatar.styled"
+
 
 export const Avatar = ({imgUrl, scale, position, top, left}) => {
     return (

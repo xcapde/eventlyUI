@@ -11,36 +11,32 @@ import { VerticalFeed } from "./feed.styled";
 export const EventFeed = () => {
     const [events, setEvents] = useState([]);
 
-    useEffect(()=>{
+    useEffect(() => {
         getAllData();
-    },[])
+    }, [])
 
-    const getAllData=()=>{
+    const getAllData = () => {
         eventService.getAllEvents().then(res => {
-            if(!res) return
+            if (!res) return
             setEvents(res)
         })
     }
 
     return (
-        <View> 
-            
+        <View>
             <VerticalFeed>
-                
-                {events.map((event,key) =>
-                <MinimalCard key={key} event={event}/>
+                {events && events.map((event, key) =>
+                    <MinimalCard key={key} event={event} />
                 ).reverse()}
 
-                {/* {events.map((event,key) =>
-                <MainCard key={key} event={event}/>
-                ).reverse()} */}
-
-            {events.map((event,key) =>
-                <SmallCard key={key} event={event}/>
+                {events && events.map((event, key) =>
+                    <SmallCard key={key} event={event} />
                 ).reverse()}
-                
-            </VerticalFeed>   
-            
+            </VerticalFeed>
         </View>
     )
 }
+
+{/* {events.map((event,key) =>
+<MainCard key={key} event={event}/>
+).reverse()} */}

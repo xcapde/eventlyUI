@@ -4,8 +4,6 @@ import { Row } from "../../styles/styles.styled";
 export function Logo({ scale, imgUrl }) {
 
     return (
-        <Row>
-            <Logotip imgUrl={imgUrl} scale={scale} />
-        </Row>
+        <Logotip imgUrl={imgUrl} scale={scale} />
     )
 }

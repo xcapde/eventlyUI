@@ -1,11 +1,11 @@
-import { BadgeBox } from "./badge.syled";
+import { BadgeCnt } from "./badge.syled";
 
-export const Badge = ({content, backgroundColor, color}) => {
-
-    return(
-        <BadgeBox backgroundColor={backgroundColor} color={color}>
+export const Badge = ({ content, callback, field, editMode }) => {
+    console.log(field)
+    return (
+        <BadgeCnt backgroundColor={field === 'requirements' && 'lightblue'} color={field === 'requirements' && 'blue'}>
             {content}
-            {/* <i className="fa-solid fa-xmark" iconcolor={color} ></i> */}
-        </BadgeBox>
+            {editMode && <i className="fa-solid fa-xmark" onClick={callback}  ></i>}
+        </BadgeCnt>
     );
 } 

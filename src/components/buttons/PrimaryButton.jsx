@@ -1,9 +1,11 @@
 import { MainButton } from "./buttons.styled"
 
-export const PrimaryButton = ({ content, action, height, width, fontSize }) => {
+export const PrimaryButton = ({ content, callback }) => {
     return (
-        <MainButton onClick={action} height={height} width={width} fontSize={fontSize}>
+        <MainButton onClick={callback} >
             {content}
         </MainButton>
     )
 }
+
+// height={height} width={width} fontSize={fontSize}

@@ -4,6 +4,7 @@ const baseURL = "http://localhost:8080";
 export const authService = {
 
     signup(data){
+        console.log(data)
         const newUser = axios.post(`${baseURL}/auth/signup`, data).then(res => {
             if(res) return res.data;
         })
@@ -11,6 +12,7 @@ export const authService = {
     },
 
     login(data){
+        console.log(data)
         const user = axios.post(`${baseURL}/auth/signin`, data).then(res => {
             if(res) return res.data;
         })

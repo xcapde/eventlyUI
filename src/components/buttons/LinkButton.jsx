@@ -1,8 +1,8 @@
 import { LinkBtn } from "./buttons.styled"
 
-export const LinkButton = ({ content, action }) => {
+export const LinkButton = ({ content, callback }) => {
     return (
-        <LinkBtn onClick={action}>
+        <LinkBtn onClick={callback}>
             {content}
         </LinkBtn>
     )

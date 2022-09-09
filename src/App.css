@@ -1,22 +1,31 @@
 @import url("../src/styles/reset.css");
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root{
+:root {
     background-color: var(--color-white);
     /* font-family: 'Manrope', sans-serif; */
-    font-family: 'Montserrat', sans-serif;
-    
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Rubik', sans-serif;
+
+
+    /*FONTS*/
+    --title-font: 'Rubik', sans-serif;
+    --detail-font: 'Rubik', sans-serif;
+
     /* COLOR */
-    --card-shadow-opacity:rgba(0, 0, 0, 0.350);
+    --card-shadow-opacity: rgba(0, 0, 0, 0.350);
     --color-white: #ffffff;
     --color-white-contrast: #F4F6F5;
-    --color-grey-background:#7D7D7D;
-    
+    --color-grey-background: #7D7D7D;
+
     --color-main: #31B595;
     --color-main-hover: #43ccaa;
-    --color-input-outline:#78e2c8;
+    --color-input-outline: #78e2c8;
 
-    --color-footer: #F4F6F5;
+    /* --color-footer: #F4F6F5; */
+    --color-footer: var(--color-white);
+    --color-item-footer: lightgray;
 
     --color-badgetBG-default: #ffc941;
     --color-badgetText-default: #cf8d0c;
@@ -24,25 +33,25 @@
     --color-menu-box: #313131;
 
     /* TEXT COLOR */
-    --color-detail-text:#7D7D7D;
+    --color-detail-text: #7D7D7D;
     --color-card-icon: #585858;
-    --color-title-text:#1d1c1c;
- 
+    --color-title-text: #1d1c1c;
+
     /* BUTTON COLOR */
     --button-text: var(--color-white-contrast);
-    --button-color:var(--color-main);
-    --button-color-hover:var(--color-main-hover); 
+    --button-color: var(--color-main);
+    --button-color-hover: var(--color-main-hover);
 
-    --color-link-text:var(--color-main);
-    --color-link-text-hover:var(--color-main-hover);
+    --color-link-text: var(--color-main);
+    --color-link-text-hover: var(--color-main-hover);
 
-    --back-button-color:#58585879;
-    --back-button-color-hover:#2e2e2e96;
-    --back-button-color-icon:#ffffffc7;
+    --back-button-color: #58585879;
+    --back-button-color-hover: #2e2e2e96;
+    --back-button-color-icon: #ffffffc7;
 
-    --tab-button-disabled:#7D7D7D;
-    --tab-button-active:#31B595;
-       
+    --tab-button-disabled: #7D7D7D;
+    --tab-button-active: #31B595;
+
     /* SIZE */
     --input-width: 317px;
     --footer-height: 10%;
@@ -56,7 +65,7 @@
     --font-size-card: medium;
     --font-size-card-desktop: medium;
     --font-size-cardXS-title: medium;
-    --font-size-cardXS-button:small;
+    --font-size-cardXS-button: small;
     --font-size-card-title: x-large;
 
     --font-size-button: medium;
@@ -65,74 +74,71 @@
 
     --font-size-nav-icon: 24px;
     --font-size-back-icon: large;
-    --font-size-detall-title:x-large;
+    --font-size-detall-title: x-large;
     --font-size-detall-text: small;
     --font-size-detall-tab-button: large;
     --font-size-detall-participation: medium;
 
     /* RADIUS */
-    --avatar-radius:0.5rem;
+    --avatar-radius: 0.5rem;
     --button-radius: 0.5rem;
     --input-radius: 0.5rem;
     --card-radius: 0.5rem;
-    --badge-radius:0.25rem;
+    --badge-radius: 0.25rem;
 
     /* BUTTONS */
+    --button-padding: 12px 26px;
     --button-border-width: 0.15rem;
 
     --cardXS-button-width: 80px;
-    --cardXS-button-height:13px;
+    --cardXS-button-height: 13px;
 
-    --form-button-width:333px;
-    --form-button-height:50px;
+    --form-button-width: 333px;
+    --form-button-height: 50px;
 
-    --detail-button-width:210px;
-    --detail-button-height:60px;
+    --detail-button-width: 210px;
+    --detail-button-height: 60px;
 
-    --header-button-position-top:3rem;
-    --header-button-position-side:1.5rem;
-    
+    --header-button-position-top: 3rem;
+    --header-button-position-side: 1.5rem;
+
     /* CARD */
-    --card-width:85%;
-    --card-height:28rem;
+    --card-width: 85%;
+    --card-height: 28rem;
     --card-width-desktop: 14.5rem;
     --card-height-desktop: 22rem;
     --card-details-height: 4.5rem;
 
-    --cardXS-width:98%;
-    --cardXS-height:7rem;
-    --cardXS-width-desktop:22rem;
+    --cardXS-width: 98%;
+    --cardXS-height: 7rem;
+    --cardXS-width-desktop: 22rem;
     --cardXS-details-height: 3.5rem;
 
     /* BADGE */
-    --badge-padding:0.3rem 0.5rem;
+    --badge-padding: 8px 12px;
     --badge-font-weight: 700;
-    --badge-margin:0.15rem;
+    --badge-margin: 0.15rem;
 
     /* PAGES */
-    --page-width:85%;
-    
+    --page-width: 85%;
+
     /* BREAKPOINTS */
     --xsBP: 600px;
-    --mBP:  820px;
+    --mBP: 820px;
 
     /* INDEX */
-    --index-gradient:1;
+    --index-gradient: 1;
     --index-detail-img: 1;
     --index-header: 3;
     --index-sidebar: 4;
-    --index-options-menu:4;
-    --index-back-button:5;
+    --index-options-menu: 4;
+    --index-back-button: 5;
     --index-footer: 6;
 }
 
-.App{
+.App {
     height: 100vh;
     width: 100vw;
     display: flex;
     align-items: center;
-}
-
-.activatedTab{
-    color:var(--tab-button-active);
 }

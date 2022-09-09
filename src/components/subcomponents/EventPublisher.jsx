@@ -1,6 +1,6 @@
 import React from "react"
 import { Col } from "../../styles/styles.styled"
-import { Avatar } from "./Avatar"
+import { Avatar } from "../avatar/Avatar"
 import { EventPublisherName } from "./EventPublisherName"
 
 export const EventPublisher = ({event, scale}) => {

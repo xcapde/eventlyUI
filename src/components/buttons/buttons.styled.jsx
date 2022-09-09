@@ -1,44 +1,43 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-    border: none;
-    outline: none;
-    box-shadow: none;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family:var(--detail-font);
     background: none;
+    padding: var(--button-padding);
+    border: none;
     border-radius: var(--button-radius);
-    padding: 18px 32px;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
 `;
 
 export const FormBtn = styled(Button)`
-padding: unset;
-background-color: var(--button-color);
-color: var(--color-white-contrast);
-width: var(--form-button-width);
-height: var(--form-button-height);
-border-top-left-radius: 0;
-font-weight: 700;
-
-&:hover{
-    background-color: var(--button-color-hover);
-}
-
-&:active{
+    width: var(--form-button-width);
+    height: var(--form-button-height);
+    font-weight: 700;
     background-color: var(--button-color);
-}
+    color: var(--color-white-contrast);
+    border-top-left-radius: 0;
+    padding: unset;
+    &:hover{
+        background-color: var(--button-color-hover);
+    }
+    &:active{
+        background-color: var(--button-color);
+    }
 `;
 
 export const MainButton = styled(Button)`
-    height: ${props => props.height || 'unset'};
-    width: ${props => props.width || 'unset'};
-    background-color: var(--button-color);
-    color: var(--button-text);  
+    /* height: ${props => props.height || 'unset'};
+    width: ${props => props.width || 'unset'}; */
     font-size: ${props => props.fontSize || 'var(--font-size-button)'};
-    font-weight: 500;
 
+    font-weight: 500;
+    color: var(--button-text);
+    background-color: var(--button-color);  
     &:hover{
         background-color: var(--button-color-hover);
     } 
@@ -49,11 +48,9 @@ export const MainButton = styled(Button)`
 
 export const SecondaryBtn = styled(Button)`
     height: var(--button-height);
-    border-style: solid;
-    border-width: var(--button-border-width);
-    border-color:var(--button-color);
-    color: var(--button-color);
     background: none;   
+    color: var(--button-color);
+    border: var(--button-border-width) solid var(--button-color);
     &:hover{
         background-color: var(--button-color);
         color: var(--button-text);   
@@ -61,12 +58,11 @@ export const SecondaryBtn = styled(Button)`
 `
 
 export const LinkBtn = styled.p`
+    text-transform: capitalize;
+    font-weight: bolder;    
     background:none;
     color: var(--color-link-text);
-    text-transform: capitalize;
-    font-weight: bolder;
     padding: 0 0.2rem;
-
     &:hover {
         color: var(--color-link-text-hover);
     }
@@ -76,45 +72,43 @@ export const LinkBtn = styled.p`
 `
 
 export const DetailButton = styled(MainButton)`
-        height: var(--detail-button-heigth);
-        width: var(--detail-button-widht);
-        font-size:var(--font-size-detall-button);
+    height: var(--detail-button-heigth);
+    width: var(--detail-button-widht);
+    font-size:var(--font-size-detall-button);
 `
 
 export const BackArrowButton = styled(Button)`
-    z-index: var(--index-back-button);
     height: var(--back-button-size);
     width: var(--back-button-size);
-    background-color:var(--back-button-color);
-    padding: unset;
     position: fixed;
     top: var(--header-button-position-top);
     left: var(--header-button-position-side);
+    background-color:var(--back-button-color);
+    padding: unset;
+    z-index: var(--index-back-button);
+    &:hover{
+        background-color:var(--back-button-color-hover);
+    }
+    & i{
+        font-size: var(--font-size-back-icon);
+        color:var(--back-button-color-icon) !important;
+        margin:0 !important;
 
-        &:hover{
-            background-color:var(--back-button-color-hover);
-        }
-        & i{
-            color:var(--back-button-color-icon) !important;
-            font-size: var(--font-size-back-icon);
-            margin:0 !important;
-
-        }
+    }
 `
 
-export const BurgerBtn = styled(BackArrowButton)`
+export const BtnCont = styled(BackArrowButton)`
     position: absolute;
     left: unset;
     top: var(--header-button-position-top);
     right: var(--header-button-position-side);
 `
-
+/*REFACTOR TABS*/
 export const TabButton = styled(Button)`
-    padding: unset;
     font-weight: var(--tab-button-weight);
     font-size: var(--font-size-tab-button);
     color:${props => props.color || 'var(--tab-button-disabled)'};
-    
+    padding: unset;
     &:hover{
         color: var(--button-color-hover);
     }
@@ -122,44 +116,13 @@ export const TabButton = styled(Button)`
         color: var(--button-color);
     }
 `
-
+//
 export const ContentTabButton = styled(TabButton)`
-    font-size:var(--font-size-detall-tab-button);
-    width: 50%;
     height: 1.5rem;
+    width: 50%;
     display: flex;
     justify-content: start;
-    text-transform: capitalize;
+    font-size:var(--font-size-detall-tab-button);
     font-weight: 600;
-`
-
-export const FooterTabButton = styled(TabButton)`
-    width: 20%;  
-    & img{
-        height: var(--font-size-nav-icon);
-        width: var(--font-size-nav-icon);
-        opacity: 0.6;
-    }
-    & i{
-        font-size: var(--font-size-nav-icon);
-    }
-    & .gg-add-r {
-        width: calc(var(--font-size-nav-icon) + 2px);
-        height: calc(var(--font-size-nav-icon) + 2px);
-
-        &::after{
-            top: 6px;
-            left: 10px;
-        }
-        &::before{
-            top: 10px;
-            left: 6px;
-        }
-    }
-    &:hover{
-        color: var(--tab-button-active);
-        & img{
-        opacity: 1;
-        }
-    }
+    text-transform: capitalize;
 `

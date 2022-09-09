@@ -1,67 +1,20 @@
 import styled from "styled-components";
 import { Col, Img, Row} from "../../styles/styles.styled";
 
+/*SIZING*/
 export const Card = styled(Col)`
-    box-shadow: 1px 2px 18px var(--card-shadow-opacity);   
-    width: var(--card-width);
     height: var(--card-height);
-    border-radius: var(--card-radius);
+    width: var(--card-width);
+    position: relative;
     background-color: var(--color-white);
     color: var(--color-detail-text);
-    position: relative;
-
-        @media (min-width: 820px) {
-            width: var(--card-width-desktop);
-            height: var(--card-height-desktop);
-        }
-`;
-
-export const CardImage = styled(Img)`
     border-radius: var(--card-radius);
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    padding: 0;
-    position: relative;
+    box-shadow: 1px 2px 18px var(--card-shadow-opacity);
+    @media (min-width: 820px) {
+        height: var(--card-height-desktop);
+        width: var(--card-width-desktop);
+    }
 `;
-
-export const CardHeader = styled(Row)`
-    padding: 0.4rem 0;
-    height: unset;
-    width: 94%;
-    @media (min-width: 820px) {
-        width: 90%;
-    }
-`
-export const CardTextDetails = styled(Row)`
-    height: var(--card-details-height);
-    align-items: flex-start;
-    font-size: var(--font-size-card);
-
-    @media (min-width: 820px) {
-        font-size: var(--font-size-card-desktop);
-    }
-`
-export const CardLocationSchedule = styled(CardTextDetails)`
-    flex-direction: column;
-    width: 65%;
-    height: unset;
-    padding: 0 0.3rem;
-    @media (min-width: 820px) {
-        width: 65%;
-        padding: 0 0.2rem;
-    }
-`
-
-export const CardParticipation = styled(Col)`
-    width: 35%;
-    height: 3rem;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding-right: 0.5rem;
-    @media (min-width: 820px) {
-        width: 35%;
-    }
-`
 
 // CardSmall
 export const CardXS = styled(Card)`
@@ -75,11 +28,42 @@ export const CardXS = styled(Card)`
     }
 `;
 
-export const CardXSImage = styled(CardImage)`
-    height: calc(var(--cardXS-height) - 1rem);
-    width: calc(var(--cardXS-height) - 1rem);
+
+/*POSITIONING*/
+export const CardHeader = styled(Row)`
+    height: unset;
+    width: 94%;
+    padding: 0.4rem 0;
+    @media (min-width: 820px) {
+        width: 90%;
+    }
+`
+/*text-cont*/
+export const DetailCardText = styled(Row)`
+    height: var(--card-details-height);
+    align-items: flex-start;
+    font-size: var(--font-size-card);
+    @media (min-width: 820px) {
+        font-size: var(--font-size-card-desktop);
+    }
+`
+export const CardLocationSchedule = styled(DetailCardText)`
+    height: unset;
+    width: 65%;
+    flex-direction: column;
+    padding: 0 0.3rem;
+    @media (min-width: 820px) {
+        width: 65%;
+        padding: 0 0.2rem;
+    }
+`;
+/*IMAGES*/
+export const CardImage = styled(Img)`
+    position: relative;
+    padding: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     border-radius: var(--card-radius);
-    margin: 0 .5rem;
 `;
 // CardMinimal
 export const CardMinImg = styled(Img)`
@@ -87,11 +71,33 @@ export const CardMinImg = styled(Img)`
     padding: 0;
     position: relative;
 `;
+export const CardXSImage = styled(CardImage)`
+    height: calc(var(--cardXS-height) - 1rem);
+    width: calc(var(--cardXS-height) - 1rem);
+    border-radius: var(--card-radius);
+    margin: 0 .5rem;
+`;
 
+
+
+/*REFACTOR TO REACT COMPONENT (AVATARS MAP)*/
+export const CardParticipation = styled(Col)`
+    height: 3rem;
+    width: 35%;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-right: 0.5rem;
+    @media (min-width: 820px) {
+        width: 35%;
+    }
+`
+
+
+/*REFACTOR TO REACT COMPONENT*/
 export const InfoOnImg = styled.div`
-    z-index: 2;
     position: absolute;
     left: 0.5rem;
+    z-index: 2;
     @media (min-width: 820px) {
         bottom: 8rem;
     }
@@ -117,6 +123,7 @@ export const InfoOnImg = styled.div`
     
 `
 
+/*REFACTOR TO REACT COMPONENT*/
 export const CardBody = styled.div`
     z-index: 1;
     background: linear-gradient(40deg, #ffffffe4, #ffffffa6);

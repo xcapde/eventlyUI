@@ -1,8 +1,8 @@
 import { BackArrowButton } from "./buttons.styled"
 
-export const BackButton = ({action}) => {
+export const BackButton = ({callback}) => {
     return(
-        <BackArrowButton onClick={action}>
+        <BackArrowButton onClick={callback}>
             <i className="fa-solid fa-arrow-left"></i>
         </BackArrowButton>
     )

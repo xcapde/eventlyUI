@@ -1,24 +1,24 @@
 import styled from "styled-components";
 
 
-export const BadgeBox = styled.div`
-    border-radius: var(--badge-radius);
-    font-size: var(--font-size-button);
-    text-transform:uppercase;
-    padding: var(--badge-padding);
-    font-weight: var(--badge-font-weight);
-    display: flex; 
+export const BadgeCnt = styled.div`
     width: fit-content;
+
+    display: flex; 
     justify-content: center;
     align-items: center;
+    column-gap: 5px;
+
+    margin: var(--badge-margin);
+    padding: var(--badge-padding);
+
+    font-family: var(--detail-font);
+    font-size: var(--font-size-button);
+    font-weight: var(--badge-font-weight);
+    text-transform: uppercase;
+
     color: ${props => props.color || 'var(--color-badgetText-default)'};
     background-color: ${props => props.backgroundColor || 'var(--color-badgetBG-default)'};
-    margin: var(--badge-margin);
-    vertical-align: center;
-    
-    & i{
-        color:${props => props.iconcolor};
-        margin-left: 0.5rem;
 
-    }
-`
+    border-radius: var(--badge-radius);
+`;
