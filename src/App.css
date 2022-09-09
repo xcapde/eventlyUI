@@ -54,6 +54,7 @@
 
     /* SIZE */
     --input-width: 317px;
+    --input-height: 3rem;
     --footer-height: 10%;
     --avatar-size: 2.5rem;
     --back-button-size: 2.5rem;
@@ -69,6 +70,7 @@
     --font-size-card-title: x-large;
 
     --font-size-button: medium;
+    --font-size-form-button: large;
     --font-size-button-detail: large;
     --font-size-tab-button: smaller;
 

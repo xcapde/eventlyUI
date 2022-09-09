@@ -17,9 +17,11 @@ export const Button = styled.button`
 export const FormBtn = styled(Button)`
     width: var(--form-button-width);
     height: var(--form-button-height);
-    font-weight: 700;
+    font-weight: 400;
+    font-size: var(--font-size-form-button);
     background-color: var(--button-color);
     color: var(--color-white-contrast);
+    text-transform: capitalize;
     border-top-left-radius: 0;
     padding: unset;
     &:hover{

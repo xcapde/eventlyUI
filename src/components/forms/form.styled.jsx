@@ -18,34 +18,52 @@ export const SecondaryTxt = styled.h3`
 
 //new
 export const Form = styled.form`
-    width: 30vw;
+    width: 85%;
     height: fit-content;
+    width: calc(var(--input-width) + 15%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(var(--input-width) + 15%);
+    gap: calc(30px - (3rem / 2) + 1.25rem);
     @media (min-width: 820px) {
         width: 85%;
     }
 `
 
-export const FormControl = styled.div`
-    width: 100%;
+export const FormCntrl = styled.div`
+    width: fit-content;
+    height: fit-content;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    &:focus-within #input-label{
+        color: var(--color-main);
+        top: -30px;
+        left: 2.5%;
+    }
 `
+
+export const Label = styled.label`
+    position: absolute;
+    left: 5%;
+    display: ${props => props.display || "block"};
+    line-height: var(--input-height);
+    color: var(--color-detail-text);
+    font-weight: 400;
+    text-transform: capitalize;
+`;
 
 export const Input = styled.input`
     background-color: var(--color-white-contrast);
+    height: var(--input-height);
     width: var(--input-width);
-    height: 3rem;
+    margin-bottom: 2%;
+    padding-left: 16px;
     border-radius: var(--input-radius);
     border: none;
     outline-color: var(--color-input-outline);
-    margin-bottom: 2%;
-    padding-left: 16px;
     &::placeholder{
         text-transform: capitalize;
     }

@@ -38,7 +38,7 @@ export const View = styled.section`
     @media (min-width: 820px) {
         height: 100vh;
         width: 95vw;
-        margin-left: 5%;
+        margin-left: 5vw;
     }
 `;
 

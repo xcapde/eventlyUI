@@ -10,12 +10,12 @@ import { Logo } from '../../components/logo/Logo';
 import { NavRail } from '../../components/navs';
 import { authService } from '../../services/API/authService';
 import { AuthService } from '../../services/AuthService';
+import { useEffect } from 'react';
 
 export const LoginSignup = () => {
 
     let location = formatUtil.cutString(useLocation().pathname);
     const navigate = useNavigate();
-
 
     const signup = (data) => {
         authService.signup(data).then(res => {
@@ -27,8 +27,6 @@ export const LoginSignup = () => {
     const login = (data) => {
         authService.login(data).then(res => {
             if (!res) return;
-
-            console.log(res)
             const authUser = {
                 token: res.token,
                 username: res.username,
