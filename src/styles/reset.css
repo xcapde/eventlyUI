@@ -47,3 +47,7 @@ a{
 	color: unset;
 	cursor: pointer;
 }
+::selection{
+	color: var(--color-white);
+	background-color: var(--color-main);
+}

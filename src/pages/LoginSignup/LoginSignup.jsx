@@ -28,13 +28,14 @@ export const LoginSignup = () => {
         authService.login(data).then(res => {
             if (!res) return;
 
+            console.log(res)
             const authUser = {
-                token: res.accessToken,
+                token: res.token,
                 username: res.username,
                 id: res.id,
             };
             AuthService.saveAuthUser(authUser);
-            navigate('/home')
+            navigate('/home');
         })
 
     };

@@ -6,7 +6,7 @@ export const authService = {
     signup(data){
         console.log(data)
         const newUser = axios.post(`${baseURL}/auth/signup`, data).then(res => {
-            if(res) return res.data;
+            return res.data;
         })
         return newUser;
     },
@@ -14,7 +14,7 @@ export const authService = {
     login(data){
         console.log(data)
         const user = axios.post(`${baseURL}/auth/signin`, data).then(res => {
-            if(res) return res.data;
+            return res.data;
         })
         return user;
     }

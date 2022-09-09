@@ -24,7 +24,7 @@ export const AuthService = {
     logout(confirmation){
         if(confirmation){
             localStorage.removeItem("auth")
-            window.location = "/"
+            window.location = "/log-in"
         } return;
     },
 };

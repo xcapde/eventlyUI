@@ -11,38 +11,37 @@ axios.interceptors.request.use(function (config) {
     return config;
 });
 
-export const tagService = {
+export const directionService = {
 
     getAll() {
-        const tags = axios.get(`/tags`).then(res => {
+        const directions = axios.get(`/directions`).then(res => {
             return res.data;
         })
-        return tags;
+        return directions;
     },
-
     getById(id) {
-        const tag = axios.get(`/events/${id}`).then(res => {
+        const direction = axios.get(`/directions/${id}`).then(res => {
             return res.data;
         })
-        return tag;
+        return direction;
     },
-    // PostMultTagsReq: {
-    //     "tags": ["pet-friendly", "party"],
-    //      "eventId": id
+    // directionReq:{
+    //     "country":"Catalunya",
+    //     "province":"Barcelona",
+    //     "city":"La Garriga",
+    //     "street":"Calabria",
+    //     "building":"9",
+    //     "door":"2n 4a",
+    //     "eventId": id
     // }
-    addTagsToEvent({id, ...tags}) {
-        const msg = axios.post(`/events/${id}/tags`, tags).then(res => {
+    createDirection({ id, ...req }) {
+        const msg = axios.post(`/events/${id}/directions`, req).then(res => {
             return res.data;
         })
         return msg;
     },
-
-    // tagReq: {
-    //     "name": "party",
-    //      "eventId": id
-    // }
-    deleteEventTag({id, ...tag}) {
-        const msg = axios.delete(`/events/${id}/tags`, tag).then(res => {
+    deleteByEventId(id) {
+        const msg = axios.delete(`/events/${id}/directions`).then(res => {
             return res.data;
         })
         return msg;

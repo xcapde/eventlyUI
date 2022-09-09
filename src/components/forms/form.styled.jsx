@@ -56,7 +56,7 @@ export const Input = styled.input`
 
 export const Select= styled.select`
     background-color: var(--color-white-contrast);
-    width: var(--input-width);
+    width: calc(var(--input-width) + 2rem);
     height: 3rem;
     border-radius: var(--input-radius);
     border: none;
