@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import App from "../App";
-import { Detail } from "../pages/detail/Detail";
+import { Detail } from "../pages/Detail/Detail";
 import { LoginSignup } from "../pages/LoginSignup";
+import { Upload } from "../pages/Upload/Upload";
 
 export default function Router(){
 
@@ -25,8 +26,8 @@ export default function Router(){
                 <Route path="/home" element={<App/>}/>
                 <Route path="/log-in" element={<LoginSignup/>}/>
                 <Route path="/sign-up" element={<LoginSignup/>}/>
-                <Route path="/events/:id/*" element={<Detail/>}> 
-                </Route>
+                <Route path="/events/:id" element={<Detail/>}/> 
+                <Route path="/upload" element={<Upload/>}/>
             </Routes>
         </BrowserRouter>
     )

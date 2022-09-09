@@ -1,4 +1,4 @@
-import { NavTabs } from "../../pages/detail/detail.styled"
+import { NavTabs } from "../../pages/Detail/detail.styled"
 import { ContentTabButton } from "../buttons/buttons.styled"
 
 export const EventNav = ({action, tabContent}) => {

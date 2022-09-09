@@ -39,7 +39,7 @@ export const Detail=()=>{
         <DetailPage>
             <BackButton action={()=>navigate(-1)}/>
             <MenuModule/>
-            <DetailImg imgUrl={'https://st.depositphotos.com/1854227/3601/i/950/depositphotos_36019979-stock-photo-dog-walk.jpg'}/>
+            <DetailImg imgUrl={eventInfo.images[0]? eventInfo.images[0] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} />
             
             <Col height={'calc(100% - var(--detail-image-height))'} width={'var(--page-width)'}>
                 <DetailHeader>                  

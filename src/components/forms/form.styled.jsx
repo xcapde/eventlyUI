@@ -46,8 +46,27 @@ export const Input = styled.input`
     outline-color: var(--color-input-outline);
     margin-bottom: 2%;
     padding-left: 16px;
-
+    &::placeholder{
+        text-transform: capitalize;
+    }
     @media (min-width: 820px) {
         margin-bottom: 1%;
     }
 `;
+
+export const Select= styled.select`
+    background-color: var(--color-white-contrast);
+    width: var(--input-width);
+    height: 3rem;
+    border-radius: var(--input-radius);
+    border: none;
+    outline-color: var(--color-input-outline);
+    margin-bottom: 2%;
+    padding-left: 16px;
+    &::placeholder{
+        text-transform: capitalize;
+    }
+    @media (min-width: 820px) {
+        margin-bottom: 1%;
+    }
+`

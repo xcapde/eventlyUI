@@ -25,5 +25,13 @@ export const eventService = {
             if(res) return res.data;
         })
         return event;
+    },
+
+    postEvent(req){
+        console.log(req);
+        const event = axios.post(`/events`, req).then(res => {
+            if(res) return res.data;
+        })
+        return event;
     }
 }

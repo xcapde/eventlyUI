@@ -11,7 +11,7 @@ export const EventContent = ({field, event}) => {
         <Col justifyContent={'flex-start'} alignItems={'flex-start'}>
             {field && (field !== "description" && field !== "map")? 
                 event[field].map(item => <Badge content={item}/> )
-            : field === "description"? <h1>{event[field]}</h1> : 'react component no mostra info' 
+            : field === "description"? <h1>{event[field]}</h1> : 'NO FIELD IN EVENT (MAP)' 
             }
         </Col>
     )
