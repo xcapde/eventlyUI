@@ -21,7 +21,9 @@ export const MinimalCard = (props) => {
   return (
     <Card>
         <MenuModule/>
-        <CardMinImg imgUrl={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} /> 
+        {/* <CardMinImg imgUrl={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} />  */}
+        <CardMinImg imgUrl={props.event.images[0]? props.event.images[0] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} /> 
+
         <Avatar imgUrl={props.event.publisher.avatar} position={'absolute'} top={'var(--header-button-position-top)'} left={'var(--header-button-position-side)'}/>
         <InfoOnImg>
           <EventDate date={props.event.date}/>

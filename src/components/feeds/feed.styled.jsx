@@ -7,6 +7,7 @@ export const VerticalFeed = styled.div`
     grid-gap: 1.5rem 1rem;
     justify-items: center;
     margin-top: 5%;
+    padding-bottom: var(--cardXS-height);
 
     @media (min-width: 820px) {
         width: 96%;

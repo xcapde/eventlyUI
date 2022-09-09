@@ -7,14 +7,14 @@ export const MenuModule = () => {
     const {menuIsActive, showMenu} = useShowMenu(false);
 
     return(
-        <React.Fragment>
+        <React.Fragment>            
             {menuIsActive? 
                 <React.Fragment>
-                <CloseButton action={showMenu}/>
-                <OptionsMenu/>
-                </React.Fragment>
-                :
-                <BurgerButton action={showMenu}/>
+                    <CloseButton action={showMenu}/>
+                        <OptionsMenu action={showMenu}/>
+                        </React.Fragment>
+                        :
+                        <BurgerButton action={showMenu}/>
             }          
         </React.Fragment>
     )

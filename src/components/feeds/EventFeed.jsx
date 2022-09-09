@@ -27,9 +27,9 @@ export const EventFeed = () => {
             
             <VerticalFeed>
                 
-                {/* {events.map((event,key) =>
+                {events.map((event,key) =>
                 <MinimalCard key={key} event={event}/>
-                ).reverse()} */}
+                ).reverse()}
 
                 {/* {events.map((event,key) =>
                 <MainCard key={key} event={event}/>

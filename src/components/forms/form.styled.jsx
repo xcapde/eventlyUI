@@ -38,7 +38,7 @@ export const FormControl = styled.div`
 `
 
 export const Input = styled.input`
-    background-color: var(--color-white);
+    background-color: var(--color-white-contrast);
     width: var(--input-width);
     height: 3rem;
     border-radius: var(--input-radius);
