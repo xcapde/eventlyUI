@@ -61,15 +61,17 @@ export const SecondaryBtn = styled(Button)`
 
 export const LinkBtn = styled.p`
     text-transform: capitalize;
-    font-weight: bolder;    
+    font-family: var(--detail-font);
+    font-weight: 500;    
     background:none;
-    color: var(--color-link-text);
+    color: ${props => props.color || 'var(--color-link-text)'};
     padding: 0 0.2rem;
+    text-decoration: underline;
     &:hover {
-        color: var(--color-link-text-hover);
+        color: ${props => props.color || 'var(--color-link-text-hover)'};
     }
     &:active {
-        color: var(--color-link-text);
+        color: ${props => props.color || 'var(--color-link-text)'};
     }
 `
 

@@ -9,6 +9,11 @@ import { Footer, Header, Main, Progress, ProgressBar } from "./multistepform.sty
 
 export const MultiStepForm = ({ event, postEvent, updateEvent, addDirection, addWebUrl, eventDirection }) => {
 
+    const hasDetails = () => {
+        if (!event) return;
+        return event.tags.length > 0 || event.requirements.length > 0 || event.images.length > 0;
+    }
+    
     const forms = [
         {
             title: `${event ? "Update" : "Upload"} your event!`,
@@ -19,16 +24,19 @@ export const MultiStepForm = ({ event, postEvent, updateEvent, addDirection, add
             view: <LocationForm event={event} addDirection={addDirection} eventDirection={eventDirection} addWebUrl={addWebUrl} />
         },
         {
-            title: `${event ? "Update" : "Upload"} details!`,
+            title: `${hasDetails() ? "Update" : "Add"} details!`,
             view: <PlusForm event={event} />
         },
     ]
 
     const [page, setPage] = useState(0);
     const [progress, setProgress] = useState(0);
+
     useEffect(() => {
         setProgress((page + 1) / 3 * 100)
     }, [page])
+
+    
 
     console.log("event: ", event)
     return (
