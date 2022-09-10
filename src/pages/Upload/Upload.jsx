@@ -5,11 +5,19 @@ import { Footer } from "../../components/footer/Footer";
 import { useState } from "react";
 import { MultiStepForm } from "./MultiStepForm";
 import { directionService } from "../../services/API/directionService";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 export const Upload = () => {
 
     const [event, setEvent] = useState();
     const [direction, setDirection] = useState();
+    const { eventId } = useParams();
+
+    useEffect(() => {
+        if (!eventId) return;
+        getEvent(eventId);
+    }, [eventId])
 
     const getEvent = (id) => {
         eventService.getEvent(id).then(res => {
@@ -29,7 +37,7 @@ export const Upload = () => {
         eventService.updateEvent({ ...data, id: event.id }).then(res => {
             if (!res) return;
             //modal
-            if(event.type !== res.type){
+            if (event.type !== res.type) {
                 setDirection("");
             }
             setEvent(res);
@@ -58,6 +66,7 @@ export const Upload = () => {
     }
 
     console.log("event: ", event)
+    console.log(eventId);
     return (
         <View style={{ height: '90vh', width: '100vw', textAlign: "center" }}>
             <NavRail />

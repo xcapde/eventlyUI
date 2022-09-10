@@ -28,6 +28,7 @@ export default function Router(){
                 <Route path="/sign-up" element={<LoginSignup/>}/>
                 <Route path="/events/:id" element={<Detail/>}/> 
                 <Route path="/upload" element={<Upload/>}/>
+                <Route path="/update/:eventId" element={<Upload/>}/>
             </Routes>
         </BrowserRouter>
     )

@@ -26,6 +26,7 @@ export const LocationForm = ({ addDirection, addWebUrl, event, eventDirection })
     
     useEffect(()=>{
         if(!event.location) return;
+        if(!eventDirection) return;
         // setFormData({});
         event.type.includes("online") ? setFormData(event.location):
         setFormData(eventDirection);
