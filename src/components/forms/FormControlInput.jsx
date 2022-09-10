@@ -2,7 +2,6 @@ import { FormCntrl, Input, Label } from "./form.styled"
 
 export const FormControlInput = ({ data, field, callback }) => {
 
-    console.log(data[field])
     return (
         <FormCntrl>
             <Input
@@ -15,7 +14,6 @@ export const FormControlInput = ({ data, field, callback }) => {
                 required
             />
             <Label display={field.includes("date") ? 'none' : ''}>{field}</Label>
-            
         </FormCntrl>
     )
 }

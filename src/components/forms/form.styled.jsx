@@ -1,29 +1,14 @@
 import styled from "styled-components";
 
-export const BottomTxt = styled.h3`
-    font-size: small;
-    text-align: center;
-    margin-top: 2rem;
-    display: flex;
-
-    @media (min-width: 820px) {
-        margin-top: 1rem;
-    }
-`;
-
-export const SecondaryTxt = styled.h3`
-    font-size: small;
-    text-align: center;
-`;
-
 //new
 export const Form = styled.form`
     width: 85%;
-    height: fit-content;
+    height: 100%;
     width: calc(var(--input-width) + 15%);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: calc(30px - (3rem / 2) + 1.25rem);
     @media (min-width: 820px) {
         width: 85%;
@@ -102,3 +87,21 @@ export const Select = styled.select`
         display: none;
     }
 `
+
+export const BottomTxt = styled.h3`
+    height: 15%;
+    display: flex;
+    text-align: center;
+    font-size: small;
+    margin-top: 2rem;
+    
+
+    @media (min-width: 820px) {
+        margin-top: 1rem;
+    }
+`;
+
+export const SecondaryTxt = styled.h3`
+    font-size: small;
+    text-align: center;
+`;

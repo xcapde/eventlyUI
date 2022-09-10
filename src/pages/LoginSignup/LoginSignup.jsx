@@ -11,6 +11,7 @@ import { NavRail } from '../../components/navs';
 import { authService } from '../../services/API/authService';
 import { AuthService } from '../../services/AuthService';
 import { useEffect } from 'react';
+import { Footer } from '../../components/footer/Footer';
 
 export const LoginSignup = () => {
 
@@ -43,15 +44,14 @@ export const LoginSignup = () => {
         <Page>
             <NavRail />
             <View>
-                <Wrapper id="wrapper" justifyContent={'flex-start'} gap={'2%'} backgroundColor={'var(--primaryColor)'} height={'70%'}>
-                    <Logo scale={'100%'} imgUrl={LogoColor} />
-                    <LoginSignupForm location={location} login={login} signup={signup} />
-                    <BottomTxt>
-                        {location === 'log in' ?
-                            <React.Fragment>Not a member? <LinkButton callback={() => navigate('/sign-up')} content="Sign Up" /></React.Fragment>
-                            : <React.Fragment>Have an account? <LinkButton callback={() => navigate('/log-in')} content="Log In" /></React.Fragment>}
-                    </BottomTxt>
-                </Wrapper>
+                <Logo scale={'100%'} imgUrl={LogoColor} />
+                <LoginSignupForm location={location} login={login} signup={signup} />
+                <BottomTxt>
+                    {location === 'log in' ?
+                        <React.Fragment>Not a member? <LinkButton callback={() => navigate('/sign-up')} content="Sign Up" /></React.Fragment>
+                        : <React.Fragment>Have an account? <LinkButton callback={() => navigate('/log-in')} content="Log In" /></React.Fragment>}
+                </BottomTxt>
+                <Footer/>
             </View>
             <noscript>tab</noscript>
         </Page>
