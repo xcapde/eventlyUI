@@ -1,9 +1,10 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { FormButton } from "../buttons";
 import { FormGrid } from "./form.styled";
 import { FormControlInput } from "./FormControlInput";
 
-export const LocationForm = ({ addDirection, addWebUrl, event }) => {
+export const LocationForm = ({ addDirection, addWebUrl, event, eventDirection }) => {
 
     const direction = {
         country: "",
@@ -15,14 +16,20 @@ export const LocationForm = ({ addDirection, addWebUrl, event }) => {
     }
 
     const webUrl = {
-        url: ""
+        url: event.location ? event.location : ""
     }
 
     const style = {grid: 'auto', inputWidth: 'var(--input-width)'}
 
     const [formData, setFormData] = useState(event.type.includes("online") ? webUrl : direction);
-    const [styles, setStyles] = useState(event.type.includes("online") ? style : {});
-
+    const styles = event.type.includes("online") ? style : {};
+    
+    useEffect(()=>{
+        if(!event.location) return;
+        // setFormData({});
+        event.type.includes("online") ? setFormData(event.location):
+        setFormData(eventDirection);
+    },[eventDirection]);    
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -30,8 +37,9 @@ export const LocationForm = ({ addDirection, addWebUrl, event }) => {
         event.type.includes("online") ? addWebUrl(formData) : addDirection(formData);
     }
 
-    console.log(event, formData)
-    console.log(Object.keys(formData).length)
+    console.log(event.location)
+    console.log(formData)
+    console.log(eventDirection)
     return (
         <FormGrid styles={styles} onSubmit={handleSubmit}>
             {Object.keys(formData).map((field, key) => (
@@ -42,7 +50,7 @@ export const LocationForm = ({ addDirection, addWebUrl, event }) => {
                     callback={setFormData}
                 />
             ))}
-            <FormButton content={'Add direction!'} />
+            <FormButton content={!event.location ? "Add" : "Update"} />
         </FormGrid>
     )
 }

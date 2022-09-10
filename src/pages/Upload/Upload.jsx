@@ -9,6 +9,7 @@ import { directionService } from "../../services/API/directionService";
 export const Upload = () => {
 
     const [event, setEvent] = useState();
+    const [direction, setDirection] = useState();
 
     const getEvent = (id) => {
         eventService.getEvent(id).then(res => {
@@ -33,10 +34,19 @@ export const Upload = () => {
     }
 
     const addDirection = (data) => {
-        directionService.createDirection({...data, id: event.id}).then(res => {
+        directionService.createDirection({ ...data, id: event.id }).then(res => {
             if (!res) return;
             //modal res.message
+            alert(res.message);
             getEvent(event.id);
+            getDirection(event.id);
+        })
+    }
+
+    const getDirection = (id) => {
+        directionService.getByEventId(id).then(res => {
+            delete res.id;
+            setDirection(res);
         })
     }
 
@@ -54,6 +64,7 @@ export const Upload = () => {
                 postEvent={postEvent}
                 updateEvent={updateEvent}
                 addDirection={addDirection}
+                eventDirection={direction}
                 addWebUrl={addWebUrl}
             />
             <Footer />

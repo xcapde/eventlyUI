@@ -25,6 +25,12 @@ export const directionService = {
         })
         return direction;
     },
+    getByEventId(id) {
+        const direction = axios.get(`/events/${id}/directions`).then(res => {
+            return res.data;
+        })
+        return direction;
+    },
     // directionReq:{
     //     "country":"Catalunya",
     //     "province":"Barcelona",
