@@ -30,29 +30,16 @@ export const Form = styled.form`
     }
 `
 
-export const FormCntrl = styled.div`
-    width: fit-content;
-    height: fit-content;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    &:focus-within #input-label{
-        color: var(--color-main);
-        top: -30px;
-        left: 2.5%;
-    }
-`
 
 export const Label = styled.label`
     position: absolute;
     left: 5%;
-    display: ${props => props.display || "block"};
+    /* display: ${props => props.display || "block"}; */
     line-height: var(--input-height);
     color: var(--color-detail-text);
     font-weight: 400;
     text-transform: capitalize;
+   
 `;
 
 export const Input = styled.input`
@@ -70,9 +57,24 @@ export const Input = styled.input`
     @media (min-width: 820px) {
         margin-bottom: 1%;
     }
+    :focus-within ~ ${Label},
+    :valid ~ ${Label}{
+        color: var(--color-main);
+        top: -30px;
+        left: 2.5%;
+    }
 `;
 
-export const Select= styled.select`
+export const FormCntrl = styled.div`
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;  
+`
+export const Select = styled.select`
     background-color: var(--color-white-contrast);
     width: calc(var(--input-width) + 2rem);
     height: 3rem;
