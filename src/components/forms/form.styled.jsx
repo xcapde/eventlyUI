@@ -34,7 +34,7 @@ export const Form = styled.form`
 export const Label = styled.label`
     position: absolute;
     left: 5%;
-    /* display: ${props => props.display || "block"}; */
+    display: ${props => props.display || "block"};
     line-height: var(--input-height);
     color: var(--color-detail-text);
     font-weight: 400;
@@ -59,9 +59,10 @@ export const Input = styled.input`
     }
     :focus-within ~ ${Label},
     :valid ~ ${Label}{
-        color: var(--color-main);
+        display: block;
         top: -30px;
         left: 2.5%;
+        color: var(--color-main);
     }
 `;
 
@@ -76,7 +77,7 @@ export const FormCntrl = styled.div`
 `
 export const Select = styled.select`
     background-color: var(--color-white-contrast);
-    width: calc(var(--input-width) + 2rem);
+    width: calc(var(--input-width) + 1.75rem);
     height: 3rem;
     border-radius: var(--input-radius);
     border: none;
@@ -88,5 +89,16 @@ export const Select = styled.select`
     }
     @media (min-width: 820px) {
         margin-bottom: 1%;
+    }
+    :focus-within ~ ${Label},
+    :focus:valid ~ ${Label},
+    :valid  ~ ${Label}{
+        display: block;
+        top: -30px;
+        left: 2.5%;
+        color: var(--color-main);
+    }
+    :not(:focus):disabled ~ ${Label}{
+        display: none;
     }
 `

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FormButton } from "../buttons/FormButton";
 import { Form } from "./form.styled";
-import { FormControl } from "./FormControl";
+import { FormControlInput } from "./FormControlInput";
 
 export function LoginSignupForm({ location, login, signup }) {
 
@@ -31,7 +31,7 @@ export function LoginSignupForm({ location, login, signup }) {
     return (
         <Form onSubmit={handleSubmit}>
             {Object.keys(user).map((field, key) => (
-                <FormControl key={key} field={field} data={user} callback={setUser} />
+                <FormControlInput key={key} field={field} data={user} callback={setUser} />
             ))}
             <FormButton content={location} />
         </Form>

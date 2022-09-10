@@ -1,10 +1,11 @@
 import { FormCntrl, Input, Label } from "./form.styled"
 
-export const FormControl = ({ data, field, callback }) => {
+export const FormControlInput = ({ data, field, callback }) => {
 
+    console.log(data[field])
     return (
         <FormCntrl>
-            <Input id="input" 
+            <Input
                 onChange={(e) => callback({ ...data, [e.target.name]: e.target.value })}
                 onFocus={(e) => e.target.select()}
                 value={data[field]}
@@ -13,7 +14,7 @@ export const FormControl = ({ data, field, callback }) => {
                 field.includes("date") ? 'datetime-local' : 'text'}
                 required
             />
-            <Label id="input-label" display={data[field] !== "" ? 'none' : ''}>{field}</Label>
+            <Label display={field.includes("date") ? 'none' : ''}>{field}</Label>
             
         </FormCntrl>
     )

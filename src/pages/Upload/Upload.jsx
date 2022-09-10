@@ -1,21 +1,32 @@
-import { UploadForm } from "../../components/forms/UploadForm";
+import { EventForm } from "../../components/forms/EventForm";
 import { EventTitle } from "../../components/subcomponents";
 import { eventService } from "../../services/API/eventService";
 import { Col, View } from "../../styles/styles.styled";
-import {NavRail} from "../../components/navs/NavRail";
-import {Footer} from "../../components/footer/Footer";
+import { NavRail } from "../../components/navs/NavRail";
+import { Footer } from "../../components/footer/Footer";
+import { useState } from "react";
 
 export const Upload = () => {
 
+    const [event, setEvent] = useState();
 
     const postEvent = (data) => {
         eventService.postEvent(data).then(res => {
-            if (!res) return //modal;
-            //bad reqeuest -> jwt
-            console.log(res);
+            if (!res) return; //modal;
+            //modal
+            setEvent(res);
         })
     }
 
+    const updateEvent = (data) => {
+        eventService.updateEvent({...data, id: event.id}).then(res => {
+            if (!res) return;
+            //modal
+            setEvent(res)
+        })
+    }
+
+    console.log(event)
     return (
         <View style={{ height: '90vh', width: '100vw', textAlign: "center" }}>
             <NavRail />
@@ -23,7 +34,7 @@ export const Upload = () => {
                 <EventTitle title={"Upload your event!"} />
             </Col>
             <Col>
-                <UploadForm postEvent={postEvent} />
+                <EventForm postEvent={postEvent} updateEvent={updateEvent} eventToUpdate={event} />
             </Col>
             <Footer />
         </View>
