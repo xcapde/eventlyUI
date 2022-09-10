@@ -2,14 +2,24 @@ import styled from "styled-components";
 
 //new
 export const Form = styled.form`
-    width: 85%;
     height: 100%;
     width: calc(var(--input-width) + 15%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: calc(30px - (3rem / 2) + 1.25rem);
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    place-content: center;
+    margin: 0 auto;
+    grid-gap: calc(30px - (3rem / 2) + 1.25rem);
+    & > div{
+        margin: 0 auto;
+    }
+    & > button{
+        position: absolute;
+        display: block;
+        bottom: 0;
+        left: calc((100% - var(--form-button-width)) / 2);
+    }
     @media (min-width: 820px) {
         width: 85%;
     }
@@ -48,6 +58,34 @@ export const Input = styled.input`
         top: -30px;
         left: 2.5%;
         color: var(--color-main);
+    }
+`;
+
+export const FormGrid = styled(Form)`
+    position: relative;
+    display: grid;
+    place-content: center;
+    grid-template-columns: ${props => props.styles.grid || 'repeat(2,1fr)'};
+    grid-template-rows: auto;
+    grid-column-gap: 0%;
+    & > div{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        margin: 0 auto;
+        & > input{
+            width: ${props => props.styles.inputWidth || 'calc(var(--input-width) / 2.5)'} ;
+        }
+    }
+    & > div:nth-of-type(4){
+        grid-column-start: 1;
+        grid-column-end: 3;
+        & > input{
+            width: var(--input-width);
+        }
+    }
+    & > div:nth-of-type(2), & > div:nth-of-type(6){
+        grid-column-start: 2;
+        grid-column-end: 2;
     }
 `;
 
@@ -94,8 +132,6 @@ export const BottomTxt = styled.h3`
     text-align: center;
     font-size: small;
     margin-top: 2rem;
-    
-
     @media (min-width: 820px) {
         margin-top: 1rem;
     }

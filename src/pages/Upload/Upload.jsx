@@ -4,10 +4,17 @@ import { NavRail } from "../../components/navs/NavRail";
 import { Footer } from "../../components/footer/Footer";
 import { useState } from "react";
 import { MultiStepForm } from "./MultiStepForm";
+import { directionService } from "../../services/API/directionService";
 
 export const Upload = () => {
 
     const [event, setEvent] = useState();
+
+    const getEvent = (id) => {
+        eventService.getEvent(id).then(res => {
+            setEvent(res);
+        })
+    }
 
     const postEvent = (data) => {
         eventService.postEvent(data).then(res => {
@@ -25,11 +32,30 @@ export const Upload = () => {
         })
     }
 
-    console.log("event: ",event)
+    const addDirection = (data) => {
+        directionService.createDirection({...data, id: event.id}).then(res => {
+            if (!res) return;
+            //modal res.message
+            getEvent(event.id);
+        })
+    }
+
+    const addWebUrl = (data) => {
+        console.log(data);
+    }
+
+
+    console.log("event: ", event)
     return (
         <View style={{ height: '90vh', width: '100vw', textAlign: "center" }}>
             <NavRail />
-            <MultiStepForm postEvent={postEvent} updateEvent={updateEvent} event={event} />
+            <MultiStepForm
+                event={event}
+                postEvent={postEvent}
+                updateEvent={updateEvent}
+                addDirection={addDirection}
+                addWebUrl={addWebUrl}
+            />
             <Footer />
         </View>
     )

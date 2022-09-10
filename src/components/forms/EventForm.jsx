@@ -45,10 +45,11 @@ export const EventForm = ({ eventToUpdate, postEvent, updateEvent }) => {
     }
 
     return (
-        <Form onSubmit={handleSubmit} style={{ gap: '15px' }}>
+        <Form onSubmit={handleSubmit}>
             {Object.keys(event).map((field, key) => (
                 <React.Fragment key={key}>
-                    {!field.includes("type") && <FormControlInput key={key} field={field} data={event} callback={setEvent} />}
+                    {!field.includes("type") &&
+                        <FormControlInput key={key} field={field} data={event} callback={setEvent} />}
                     {field.includes("type") &&
                         <FormControlSelect key={key} field={field} data={event} callback={setEvent} options={["", ...eventTypes]} />}
                 </React.Fragment>

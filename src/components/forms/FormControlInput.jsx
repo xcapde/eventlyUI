@@ -10,7 +10,10 @@ export const FormControlInput = ({ data, field, callback }) => {
                 value={data[field]}
                 name={field}
                 type={field.includes("password") ? "password" :
-                field.includes("date") ? 'datetime-local' : 'text'}
+                    field.includes("date") ? 'datetime-local' :
+                        field.includes("building") || field.includes("door") ? 'number' :
+                            field.includes("email") ? 'email' :
+                                field.includes("url") ? 'url' : 'text'}
                 required
             />
             <Label display={field.includes("date") ? 'none' : ''}>{field}</Label>

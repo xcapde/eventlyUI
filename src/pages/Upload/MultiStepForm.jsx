@@ -7,7 +7,7 @@ import { PlusForm } from "../../components/forms/PlusForm";
 import { Title, Wrapper } from "../../styles/styles.styled";
 import { Footer, Header, Main, Progress, ProgressBar } from "./multistepform.styled";
 
-export const MultiStepForm = ({ event, postEvent, updateEvent }) => {
+export const MultiStepForm = ({ event, postEvent, updateEvent, addDirection, addWebUrl }) => {
 
     const forms = [
         {
@@ -15,8 +15,8 @@ export const MultiStepForm = ({ event, postEvent, updateEvent }) => {
             view: <EventForm postEvent={postEvent} updateEvent={updateEvent} eventToUpdate={event} />
         },
         {
-            title: `Add a location!`,
-            view: <LocationForm event={event} />
+            title: `${event && !event.location ? 'Add' : 'Update'} a location!`,
+            view: <LocationForm event={event} addDirection={addDirection} addWebUrl={addWebUrl} />
         },
         {
             title: `${event ? "Update" : "Upload"} details!`,
@@ -33,7 +33,7 @@ export const MultiStepForm = ({ event, postEvent, updateEvent }) => {
     console.log("event: ", event)
     return (
         <Wrapper>
-            <Header style={{ height: '40vh' }}>
+            <Header>
                 <ProgressBar>
                     <Progress width={`${progress}%`} />
                 </ProgressBar>
@@ -48,7 +48,7 @@ export const MultiStepForm = ({ event, postEvent, updateEvent }) => {
                 <LinkButton
                     disabled={!event || page === forms.lenght - 1
                         || (page === 1 && event.location === "")}
-                    content={'skip'}
+                    content={page !== forms.length - 1 ? 'next' : 'skip'}
                     callback={() => setPage(page + 1)} />
             </Footer>
         </Wrapper>
