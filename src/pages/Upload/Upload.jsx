@@ -29,7 +29,10 @@ export const Upload = () => {
         eventService.updateEvent({ ...data, id: event.id }).then(res => {
             if (!res) return;
             //modal
-            setEvent(res)
+            if(event.type !== res.type){
+                setDirection("");
+            }
+            setEvent(res);
         })
     }
 
@@ -53,7 +56,6 @@ export const Upload = () => {
     const addWebUrl = (data) => {
         console.log(data);
     }
-
 
     console.log("event: ", event)
     return (
