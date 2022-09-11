@@ -26,12 +26,16 @@ export const imageService = {
         })
         return image;
     },
-    postImg(file) {
+    postImg(file, id) {
+        console.log(file, id)
         const fd = new FormData();
         fd.append('multipartFile', file);
-        const imgRes = axios.post(`/events/${id}/requirements`, fd).then(res => {
+        const imgRes = axios.post(`/events/${id}/images`, fd).then(res => {
             return res.data;
         })
+            .catch(err => {
+                console.log(err);
+            })
         return imgRes;
     },
     deleteById(id) {
@@ -44,7 +48,8 @@ export const imageService = {
     //     "url":"http://res.cloudinary.com/dxfdgwcka/image/upload/v1662665016/s66mtsexosvvefcmbxhk.jpg"
     // }
     deleteByUrl(req) {
-        const msg = axios.delete(`/images`, req).then(res => {
+        req = { url: req };
+        const msg = axios.delete(`/images`, { data: req }).then(res => {
             return res.data;
         })
         return msg;

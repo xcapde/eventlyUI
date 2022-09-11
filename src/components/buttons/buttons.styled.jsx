@@ -135,25 +135,22 @@ export const ContentTabButton = styled(TabButton)`
     outline: none;
 `
 
-export const UploadButton = styled(SecondaryBtn)`
-    &::before{
-        content:"Upload"
-    }
-    &:hover, &:focus + #input:valid{
+export const UploadButton = styled.button`
+    height: var(--back-button-size);
+    width: 85px;
+    font-family: var(--font-main);
+    font-size: var(--font-size-button-detail);
+    font-weight: 400;
+    background-color: var(--color-white);
+    color: var(--button-color);
+    border-radius: var(--button-radius);
+    border: var(--button-border-width) solid var(--button-color);
+    padding: unset;
+    cursor:pointer;
+    &:hover, &:focus{
         height: 50px;
         width: 50px;
-        background-color: var(--color-white);
-        border: 2px solid var(--color-main);
         border-radius: 50%;
-        padding: unset;
-        transition: all 2s ease;
-        &::before{
-            content:""
-        }
-    }
-    &:active> #upload:valid{
-        &::before{
-            content:"tic";
-        }
+        transition: all 2s ease , width 1s ease, height 1s ease, border-radius 1s ease;
     }
 `;

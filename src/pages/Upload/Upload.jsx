@@ -7,6 +7,7 @@ import { MultiStepForm } from "./MultiStepForm";
 import { directionService } from "../../services/API/directionService";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import { imageService } from "../../services/API/imageService";
 
 export const Upload = () => {
 
@@ -66,6 +67,21 @@ export const Upload = () => {
         console.log(data);
     }
 
+    const uploadImg = (data) => {
+        console.log(data)
+        imageService.postImg(data, event.id).then(res => {
+            console.log(res.message);
+            getEvent(event.id);
+        })
+    }
+
+    const deleteImg = (data) =>{
+        imageService.deleteByUrl(data).then(res =>{
+            console.log(res.message);
+            getEvent(event.id);
+        })
+    }
+
     console.log("event: ", event)
     console.log(eventId);
     return (
@@ -78,6 +94,8 @@ export const Upload = () => {
                 addDirection={addDirection}
                 eventDirection={direction}
                 addWebUrl={addWebUrl}
+                uploadImg={uploadImg}
+                deleteImg={deleteImg}
             />
             <Footer />
         </View>

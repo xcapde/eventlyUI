@@ -3,13 +3,13 @@ import { ImageForm } from "./ImageForm"
 import { ReqsForm } from "./ReqsForm"
 import { TagsForm } from "./TagsForm"
 
-export const PlusForm = ({ event , uploadImg}) => {
+export const PlusForm = ({ event , uploadImg, deleteImg}) => {
 
     return (
         <Wrapper style={{ border: '1px solid black' }}>
-            <ImageForm event={event} />
+            <ImageForm event={event} uploadImg={uploadImg} deleteImg={deleteImg}/>
             <ReqsForm event={event} />
-            <TagsForm event={event} uploadImg={uploadImg}/>
+            <TagsForm event={event} />
         </Wrapper>
     )
 }
