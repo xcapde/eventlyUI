@@ -7,7 +7,7 @@ import { PlusForm } from "../../components/forms/PlusForm";
 import { Title, Wrapper } from "../../styles/styles.styled";
 import { Footer, Header, Main, Progress, ProgressBar } from "./multistepform.styled";
 
-export const MultiStepForm = ({ event, postEvent, updateEvent, addDirection, addWebUrl, eventDirection }) => {
+export const MultiStepForm = ({ event, postEvent, updateEvent, addDirection, addWebUrl, eventDirection, uploadImg }) => {
 
     const hasDetails = () => {
         if (!event) return;
@@ -25,11 +25,11 @@ export const MultiStepForm = ({ event, postEvent, updateEvent, addDirection, add
         },
         {
             title: `${hasDetails() ? "Update" : "Add"} details!`,
-            view: <PlusForm event={event} />
+            view: <PlusForm event={event} uploadImg={uploadImg}/>
         },
     ]
 
-    const [page, setPage] = useState(0);
+    const [page, setPage] = useState(2);
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {

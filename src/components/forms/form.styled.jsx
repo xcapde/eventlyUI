@@ -38,9 +38,10 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-    background-color: var(--color-white-contrast);
     height: var(--input-height);
     width: var(--input-width);
+    display: ${props => props.display || 'block'};
+    background-color: var(--color-white-contrast);
     margin-bottom: 2%;
     padding-left: 16px;
     border-radius: var(--input-radius);
@@ -125,6 +126,15 @@ export const Select = styled.select`
         display: none;
     }
 `
+export const OutputCnt = styled.div`
+    width: fit-content;
+    min-width: 50vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    margin: 2.5%;
+    gap: .5rem;
+`;
 
 export const BottomTxt = styled.h3`
     height: 15%;

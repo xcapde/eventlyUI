@@ -36,7 +36,6 @@ export const MainButton = styled(Button)`
     /* height: ${props => props.height || 'unset'};
     width: ${props => props.width || 'unset'}; */
     font-size: ${props => props.fontSize || 'var(--font-size-button)'};
-
     font-weight: 500;
     color: var(--button-text);
     background-color: var(--button-color);  
@@ -50,9 +49,12 @@ export const MainButton = styled(Button)`
 
 export const SecondaryBtn = styled(Button)`
     height: var(--button-height);
+    width: fit-content;
+    font-size: var(--font-size-button-detail);
     background: none;   
     color: var(--button-color);
     border: var(--button-border-width) solid var(--button-color);
+    
     &:hover{
         background-color: var(--button-color);
         color: var(--button-text);   
@@ -132,3 +134,21 @@ export const ContentTabButton = styled(TabButton)`
     text-transform: capitalize;
     outline: none;
 `
+
+export const UploadButton = styled(SecondaryBtn)`
+    &::before{
+        content:"Upload"
+    }
+    &:hover, &:focus:valid{
+        height: 50px;
+        width: 50px;
+        background-color: var(--color-white);
+        border: 2px solid var(--color-main);
+        border-radius: 50%;
+        padding: unset;
+        transition: all 2s ease;
+        &::before{
+            content:""
+        }
+    }
+`;

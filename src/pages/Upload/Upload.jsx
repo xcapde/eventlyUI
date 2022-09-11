@@ -17,6 +17,7 @@ export const Upload = () => {
     useEffect(() => {
         if (!eventId) return;
         getEvent(eventId);
+        getDirection(eventId);
     }, [eventId])
 
     const getEvent = (id) => {

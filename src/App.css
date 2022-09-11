@@ -71,7 +71,7 @@
 
     --font-size-button: medium;
     --font-size-form-button: large;
-    --font-size-button-detail: large;
+    --font-size-button-detail: medium;
     --font-size-tab-button: smaller;
 
     --font-size-nav-icon: 24px;
@@ -89,7 +89,7 @@
     --badge-radius: 0.25rem;
 
     /* BUTTONS */
-    --button-padding: 12px 26px;
+    --button-padding: 8px 20px;
     --button-border-width: 0.15rem;
 
     --cardXS-button-width: 80px;

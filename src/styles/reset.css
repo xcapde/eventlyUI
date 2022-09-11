@@ -47,6 +47,9 @@ a{
 	color: unset;
 	cursor: pointer;
 }
+input::spelling-error{
+	display: none;
+}
 ::selection{
 	color: var(--color-white);
 	background-color: var(--color-main);
