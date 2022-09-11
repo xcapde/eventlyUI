@@ -29,50 +29,55 @@ export const EventFeed = () => {
 
     return (
         <View>
-            <Row style={{ height: 'fit-content' }}>tags scroll x</Row>
-            <Col style={{ gap: '5%', justifyContent: "space-evently" }}>
+            <Col id="main" sytle={{ justifyContent: 'space-around', gap: '2.5%' }}>
+                <Row style={{ height: '10vh', justifyContent: 'flex-start' }}>hi user!</Row>
+                <Row style={{ height: '20vh', justifyContent: 'flex-start' }}>tags scroll x</Row>
                 {!tagsSearch &&
                     <React.Fragment>
-                        <Col style={{gap: '2.5%'}}> <noscrip>mida definida</noscrip>
+                        {/* react component */}
+                        <Col style={{ gap: '2.5%', height: '100%', overflowY: "scroll" }}>
                             <Title>Online</Title>
                             <VerticalFeed>
                                 {events && events.map((event, key) =>
                                     <MinimalCard key={key} event={event} />
                                 ).reverse()}
 
-                                {events && events.map((event, key) =>
-                                    <SmallCard key={key} event={event} />
-                                ).reverse()}
+                                {/* {events && events.map((event, key) =>
+                                <SmallCard key={key} event={event} />
+                            ).reverse()} */}
                             </VerticalFeed>
                         </Col>
 
-
-                        <Col style={{ gap: '2.5%' }}> <noscrip>mida definida</noscrip>
+                        {/* react component */}
+                        <Col style={{ gap: '2.5%', height: '100%', overflowY: "scroll" }}>
                             <Title>Offline</Title>
                             <VerticalFeed>
                                 {events && events.map((event, key) =>
                                     <MinimalCard key={key} event={event} />
                                 ).reverse()}
 
-                                {events && events.map((event, key) =>
-                                    <SmallCard key={key} event={event} />
-                                ).reverse()}
+                                {/* {events && events.map((event, key) =>
+                                <SmallCard key={key} event={event} />
+                            ).reverse()} */}
                             </VerticalFeed>
                         </Col>
                     </React.Fragment>
                 }
-                {tagsSearch && <Col style={{ gap: '2.5%' }}>
-                    <Title>Offline</Title>
-                    <VerticalFeed>
-                        {events && events.map((event, key) =>
-                            <MinimalCard key={key} event={event} />
-                        ).reverse()}
+                {/* react component */}
+                {tagsSearch &&
+                    <Col style={{ gap: '2.5%', height: '100%', overflowY: "scroll" }}>
+                        <Title>With tag</Title>
+                        <VerticalFeed>
+                            {events && events.map((event, key) =>
+                                <MinimalCard key={key} event={event} />
+                            ).reverse()}
 
-                        {events && events.map((event, key) =>
-                            <SmallCard key={key} event={event} />
-                        ).reverse()}
-                    </VerticalFeed>
-                </Col>}
+                            {/* {events && events.map((event, key) =>
+                                <SmallCard key={key} event={event} />
+                            ).reverse()} */}
+                        </VerticalFeed>
+                    </Col>
+                }
             </Col>
         </View >
     )
