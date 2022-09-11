@@ -130,7 +130,7 @@ export const ContentTabButton = styled(TabButton)`
     justify-content: center;
     font-size:var(--font-size-detall-tab-button);
     font-weight: 600;
-    color: ${props => props.color ||'var(--color-detail-text)'};
+    color: ${props => props.color || 'var(--color-detail-text)'};
     text-transform: capitalize;
     outline: none;
 `
@@ -139,7 +139,7 @@ export const UploadButton = styled(SecondaryBtn)`
     &::before{
         content:"Upload"
     }
-    &:hover, &:focus:valid{
+    &:hover, &:focus + #input:valid{
         height: 50px;
         width: 50px;
         background-color: var(--color-white);
@@ -149,6 +149,11 @@ export const UploadButton = styled(SecondaryBtn)`
         transition: all 2s ease;
         &::before{
             content:""
+        }
+    }
+    &:active> #upload:valid{
+        &::before{
+            content:"tic";
         }
     }
 `;
