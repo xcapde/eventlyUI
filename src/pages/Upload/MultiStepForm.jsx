@@ -29,7 +29,7 @@ export const MultiStepForm = ({ event, postEvent, updateEvent, addDirection, add
         },
     ]
 
-    const [page, setPage] = useState(2);
+    const [page, setPage] = useState(0);
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {

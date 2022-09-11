@@ -29,8 +29,11 @@ export const Page = styled.main`
 `;
 
 export const View = styled.section`
-    height: 90vh;
+    height: 80vh;
     width: 100vw;
+    position: fixed;
+    top: 10vh;
+    border:1px solid black;
     display: flex;
     flex-direction: ${props => props.direction || 'column'};
     align-items: center;
