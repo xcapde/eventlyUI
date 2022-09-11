@@ -41,6 +41,7 @@ export const View = styled.section`
     @media (min-width: 820px) {
         height: 100vh;
         width: 95vw;
+        top:0;
         margin-left: 5vw;
     }
 `;

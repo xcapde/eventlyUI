@@ -69,7 +69,7 @@ export const Upload = () => {
     console.log("event: ", event)
     console.log(eventId);
     return (
-        <View style={{ height: '90vh', width: '100vw', textAlign: "center" }}>
+        <View>
             <NavRail />
             <MultiStepForm
                 event={event}

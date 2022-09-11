@@ -4,7 +4,11 @@ import { Col, Page, Row } from "../../styles/styles.styled";
 export const Header = styled(Col)`
     height: 30vh;
     justify-content: space-around;
+    align-items: center;
     border: 1px solid black;
+    & > *{
+        text-align:center;
+    }
 `;
 
 export const ProgressBar = styled.div`
