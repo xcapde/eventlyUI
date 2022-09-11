@@ -10,7 +10,7 @@ import { VerticalFeed } from "./feed.styled";
 
 export const EventFeed = () => {
     const [events, setEvents] = useState([]);
-    const [tagsSearch, setTagsSearch] = useState(true);
+    const [tagsSearch, setTagsSearch] = useState(false);
 
     useEffect(() => {
         getAllData();
