@@ -36,8 +36,8 @@ export const requirementService = {
     //     "name": "party",
     //      "eventId": id
     // }
-    createRequirement({ id, ...tags }) {
-        const msg = axios.post(`/events/${id}/requirements`, tags).then(res => {
+    createRequirement({ id, ...req }) {
+        const msg = axios.post(`/events/${id}/requirements`, req).then(res => {
             return res.data;
         })
         return msg;
@@ -47,8 +47,8 @@ export const requirementService = {
     //     "name": "party",
     //      "eventId": id
     // }
-    deleteRequirement({ id, ...tag }) {
-        const msg = axios.delete(`/events/${id}/requirements`, tag).then(res => {
+    deleteRequirement({ id, ...req }) {
+        const msg = axios.delete(`/events/${id}/requirements`, { data: req }).then(res => {
             return res.data;
         })
         return msg;

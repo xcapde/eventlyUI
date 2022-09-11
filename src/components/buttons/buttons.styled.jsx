@@ -154,3 +154,44 @@ export const UploadButton = styled.button`
         transition: all 2s ease , width 1s ease, height 1s ease, border-radius 1s ease;
     }
 `;
+
+export const AddBtn = styled.button`
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: var(--color-main);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-main);
+    border-radius: 50%;
+    font-size: xx-large;
+    position: relative;
+    left: 30%;
+    /* &::before{
+        font-family: "Font Awesome 5 Free";
+        font: var(--fa-font-solid); 
+	    font-weight: 900;
+	    content: "+";
+    } */
+`;
+
+export const TrashIcon = styled.span`
+    height: 1rem;
+    width: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: contents;
+    color: var(--color-main);
+    cursor:pointer;
+    &::after{
+        font: var(--fa-font-solid);
+        font-weight: 900;
+        content: "\f2ed";
+    }
+    &:hover{
+        color: indianred;
+    }
+`;

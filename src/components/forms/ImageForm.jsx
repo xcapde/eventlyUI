@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { Row } from "../../styles/styles.styled"
+import { Col, Row } from "../../styles/styles.styled"
 import { ImagePreview } from "../images/ImagePreview"
 import { NoPreviewSmall } from "../images/images.styled"
 import { Input, OutputCnt } from "./form.styled"
@@ -8,18 +8,18 @@ import { ImageInput } from "./ImageInput"
 
 export const ImageForm = ({ event, uploadImg, deleteImg }) => {
 
-    const [imagesLength, setImagesLength] = useState(0);
+    const [images, setImages] = useState(0);
     const [uploaded, setUploaded] = useState(false);
 
     useEffect(() => {
-        setImagesLength(event && event.images ? event.images.length : imagesLength);
+        setImages(event && event.images ? event.images : images);
     }, [])
 
     useEffect(() => {
         const s = 3;
         const ms = s * 1000;
         if (!event) return;
-        if (event.images.length === imagesLength) return;
+        if (event.images === images) return;
         setUploaded(true);
         setTimeout(() => {
             setUploaded(false);
@@ -36,19 +36,23 @@ export const ImageForm = ({ event, uploadImg, deleteImg }) => {
 
 
     return (
-        <Row style={{ border: '1px solid black', gap: '5%' }}>
-            <OutputCnt>
-                {event && event.images.length > 0 ?
-                    event.images.map((image, key) => (
-                        <ImagePreview key={key} url={image} callback={deleteImg} />
-                    )) :
-                    <NoPreviewSmall />
-                }
-                {/* {mockImages.map((image, key) => (
+        <Row>
+            <Col>
+                <OutputCnt>
+                    {event && event.images.length > 0 ?
+                        event.images.map((image, key) => (
+                            <ImagePreview key={key} url={image} callback={deleteImg} />
+                        )) :
+                        <NoPreviewSmall />
+                    }
+                    {/* {mockImages.map((image, key) => (
                     <ImagePreview key={key} url={image} callback={(data) => console.error(`url to delete: ${data}`)} />
                 ))} */}
-            </OutputCnt>
-            <ImageInput uploadImg={uploadImg} uploaded={uploaded} />
+                </OutputCnt>
+            </Col>
+            <Col style={{ width: '45%' }}>
+                <ImageInput uploadImg={uploadImg} uploaded={uploaded} />
+            </Col>
         </Row>
     )
 }

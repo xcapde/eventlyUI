@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-//new
 export const Form = styled.form`
     height: 100%;
     width: calc(var(--input-width) + 15%);
@@ -24,7 +23,6 @@ export const Form = styled.form`
         width: 85%;
     }
 `
-
 
 export const Label = styled.label`
     position: absolute;
@@ -129,11 +127,27 @@ export const Select = styled.select`
 export const OutputCnt = styled.div`
     width: fit-content;
     min-width: 50vw;
+    height: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    place-content: center;
     margin: 2.5%;
     gap: .5rem;
+`;
+
+export const SmallForm = styled.form`
+    width: calc((var(--input-width) + 15%) / 3);
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    grid-row-gap: 5%;
+    place-content: center;
+    margin: 0 auto;
+    & input{
+        width: calc( var(--input-width) / 3 );
+    }
 `;
 
 export const BottomTxt = styled.h3`

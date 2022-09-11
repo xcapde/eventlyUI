@@ -13,3 +13,23 @@ export const VerticalFeed = styled.div`
         margin: 1% 2%;
     };
 `;
+
+export const UlFeed = styled.ul`
+    height: 95%;
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: auto;
+    grid-column-gap: 2.5%;
+    place-content: space-evenly;
+    box-shadow: 1px 1px 8px lightgray;
+    border: 1px solid lightgray;
+    border-radius: .75rem;
+    padding: 5% 0%;
+    list-style: none;
+    & > li {
+        display: flex;
+        flex-direction: row;
+        gap: 5%;
+    }
+`;

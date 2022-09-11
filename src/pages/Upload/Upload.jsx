@@ -8,6 +8,7 @@ import { directionService } from "../../services/API/directionService";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { imageService } from "../../services/API/imageService";
+import { requirementService } from "../../services/API/requirementService";
 
 export const Upload = () => {
 
@@ -75,9 +76,25 @@ export const Upload = () => {
         })
     }
 
-    const deleteImg = (data) =>{
-        imageService.deleteByUrl(data).then(res =>{
+    const deleteImg = (data) => {
+        imageService.deleteByUrl(data).then(res => {
             console.log(res.message);
+            getEvent(event.id);
+        })
+    }
+
+    const addReq = (data) => {
+        requirementService.createRequirement({ name: data.requirement, id: event.id }).then(res => {
+            if (!res) return;
+            alert(res.message);
+            getEvent(event.id);
+        })
+    }
+
+    const deleteReq = (data) => {
+        requirementService.deleteRequirement({ name: data, id: event.id }).then(res => {
+            if (!res) return;
+            alert(res.message);
             getEvent(event.id);
         })
     }
@@ -96,6 +113,8 @@ export const Upload = () => {
                 addWebUrl={addWebUrl}
                 uploadImg={uploadImg}
                 deleteImg={deleteImg}
+                addReq={addReq}
+                deleteReq={deleteReq}
             />
             <Footer />
         </View>

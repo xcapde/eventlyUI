@@ -5,7 +5,6 @@ export const Header = styled(Col)`
     height: 30vh;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid black;
     & > *{
         text-align:center;
     }
@@ -34,11 +33,10 @@ export const Progress = styled(ProgressBar)`
 
 export const Main = styled(Page)`
     height: 100%;
-    width: 100%;
+    width: 95%;
 `;
 
 export const Footer = styled(Row)`
     height: 15vh;
     justify-content: space-evenly;
-    border: 1px solid black;
 `;
