@@ -56,6 +56,11 @@ export const TagsForm = ({ event, addTags, deleteTags }) => {
 
     return (
         <Col>
+            <OutputCnt>
+                {event && event.tags.length > 0 ?
+                    event.tags.map((tag, key) => (<Badge key={key} content={tag} field={'tags'} callback={deleteTags} editMode={true} />))
+                    : "No tags yet!"}
+            </OutputCnt>
             <Form onSubmit={handleSubmit}>
                 {tags &&
                     <FormCntrl>
@@ -74,11 +79,6 @@ export const TagsForm = ({ event, addTags, deleteTags }) => {
                 }
                 <AddButton style={{ left: '40%' }} />
             </Form>
-            <OutputCnt>
-                {event && event.tags.length > 0 ?
-                    event.tags.map((tag, key) => (<Badge key={key} content={tag} field={'tags'} callback={deleteTags} editMode={true} />))
-                    : "No tags yet!"}
-            </OutputCnt>
         </Col>
     );
 }
