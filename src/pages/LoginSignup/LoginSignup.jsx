@@ -2,15 +2,13 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { BottomTxt } from '../../components/forms/form.styled';
 import { LoginSignupForm } from '../../components/forms/LoginSignupForm';
-import { Page, View, Wrapper } from '../../styles/styles.styled';
-import LogoColor from "../../assets/logo/LogoColor.png";
+import { Page, View } from '../../styles/styles.styled';
 import formatUtil from '../../utils/format';
 import { LinkButton } from '../../components/buttons';
 import { Logo } from '../../components/logo/Logo';
 import { NavRail } from '../../components/navs';
 import { authService } from '../../services/API/authService';
 import { AuthService } from '../../services/AuthService';
-import { useEffect } from 'react';
 import { Footer } from '../../components/footer/Footer';
 
 export const LoginSignup = () => {
@@ -44,7 +42,7 @@ export const LoginSignup = () => {
         <Page>
             <NavRail />
             <View>
-                <Logo scale={'100%'} imgUrl={LogoColor} />
+                <Logo scale={'100%'} />
                 <LoginSignupForm location={location} login={login} signup={signup} />
                 <BottomTxt>
                     {location === 'log in' ?

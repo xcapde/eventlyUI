@@ -1,1 +1,1 @@
-export { EventFeed } from "./EventFeed"
+export { HomeFeed } from "./HomeFeed";

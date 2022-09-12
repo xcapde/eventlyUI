@@ -1,11 +1,9 @@
 import React from "react"
-import { BtnCont } from "./buttons.styled"
+import { CloseBtn } from "./buttons.styled"
 
 export const CloseButton = ({callback}) => {
     
     return(
-        <BtnCont onClick={callback}>
-            <i className="fa-solid fa-xmark"></i>
-        </BtnCont>
+        <CloseBtn onClick={callback}/>
     )
 }

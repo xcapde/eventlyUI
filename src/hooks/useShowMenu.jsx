@@ -4,7 +4,6 @@ const useShowMenu = () => {
     const [menuIsActive, setMenuIsActive] = useState(false);
     const showMenu=()=>{
         setMenuIsActive(!menuIsActive);
-        console.log('showMenu')
       };
 
     return{

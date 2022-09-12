@@ -9,10 +9,6 @@ export const Col = styled.div`
     justify-content: ${props => props.justifyContent || 'center'};
     width: ${props => props.width || '100%'};
     height: ${props => props.height || '100%'};
-    gap: ${props => props.gap || 'none'};
-    padding: ${props => props.padding || '0'};
-    margin: ${props => props.margin || '0'};
-    font-size: ${props => props.fontSize || 'inherit'};
 `;
 
 export const Row = styled(Col)`
@@ -61,23 +57,24 @@ export const Touchable = styled(Col)`
 
 //Text
 export const Title = styled.h1`
+    width: 100%;
+    display: flex;
+    align-items: center;
     color: var(--color-title-text);
     font-family: var(--title-font);
-    font-size:${props => props.fontSize || 'var(--font-size-card-title)'};
-    font-weight: 400;
-    margin: ${props => props.margin || '0'};
-    width: 100%;
+    font-size:var(--font-size-card-title);
+    font-weight: 600;
 `
 
-export const DetailText = styled.p` 
-    color: var(--color-detail-text);
+export const SecondaryText = styled.p` 
+    color: var(--color-secondary-text);
     font-family: var(--detail-font);
-    text-transform: capitalize;
-    font-size:${props => props.fontSize || 'var(--font-size-detall-text)'};
-    font-weight: 500;
-    margin:${props => props.margin || '0'};
+    font-size:var(--font-size-secondary-text);
+    font-weight: 400;
+
     & i{
         color: var(--color-card-icon);
+        margin-right: 10px;
     }
 `
 /*IMAGES*/
@@ -89,11 +86,3 @@ export const Img = styled.img.attrs(props => ({
     object-fit: cover;
     position: relative;
 `;
-
-export const Gradient = styled(Col)`
-    z-index: var(--index-gradient);
-    background: linear-gradient(10deg,#000000db,#0000004d,#00000020,#00000001);
-    border-radius: var(--card-radius);
-    position: absolute;
-    bottom: 0;
-`

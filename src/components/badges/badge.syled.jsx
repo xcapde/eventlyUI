@@ -13,7 +13,7 @@ export const BadgeCnt = styled.div`
     padding: var(--badge-padding);
 
     font-family: var(--detail-font);
-    font-size: var(--font-size-button);
+    font-size: var(--font-size-badge);
     font-weight: var(--badge-font-weight);
     text-transform: uppercase;
 

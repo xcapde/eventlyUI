@@ -1,11 +1,11 @@
-import { Col } from "../../styles/styles.styled"
+import { SecondaryText } from "../../styles/styles.styled"
 
-export const Participation = ({participation}) => {
+export const Participation = ({event}) => {
     
     return (
-        <Col gap="0.5rem" width="unset">
+        <SecondaryText style={{gap:'10%', width:'50%'}}>
                 <i className="fa-solid fa-users"></i>
-                {participation} joined
-        </Col>            
+                {event.participantsCount === 0? 'Be the first!' : `${event.participantsCount} joined`}
+        </SecondaryText>            
     )
 }

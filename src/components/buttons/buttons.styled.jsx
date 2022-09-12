@@ -20,7 +20,7 @@ export const FormBtn = styled(Button)`
     font-weight: 400;
     font-size: var(--font-size-form-button);
     background-color: var(--button-color);
-    color: var(--color-white-contrast);
+    color: var(--button-text);
     text-transform: capitalize;
     border-top-left-radius: 0;
     padding: unset;
@@ -32,26 +32,17 @@ export const FormBtn = styled(Button)`
     }
 `;
 
-export const MainButton = styled(Button)`
-    /* height: ${props => props.height || 'unset'};
-    width: ${props => props.width || 'unset'}; */
-    font-size: ${props => props.fontSize || 'var(--font-size-button)'};
-    font-weight: 500;
-    color: var(--button-text);
-    background-color: var(--button-color);  
-    &:hover{
-        background-color: var(--button-color-hover);
-    } 
-    &:active{
-        background-color: var(--button-color);
-    }
+export const MainButton = styled(FormBtn)`
+    width: var(--main-button-width);
+    height: var(--main-button-height);
+    font-size: var(--font-size-button);
 `
 
 export const SecondaryBtn = styled(Button)`
     height: var(--button-height);
     width: fit-content;
     font-size: var(--font-size-button-detail);
-    background: none;   
+    background-color: var(--color-white);   
     color: var(--button-color);
     border: var(--button-border-width) solid var(--button-color);
     
@@ -77,62 +68,74 @@ export const LinkBtn = styled.p`
     }
 `
 
-export const DetailButton = styled(MainButton)`
-    height: var(--detail-button-heigth);
-    width: var(--detail-button-widht);
-    font-size:var(--font-size-detall-button);
+export const OpacityButton = styled(Button)`
+    height: var(--opacity-button-size);
+    width: var(--opacity-button-size);
+    position: absolute;
+    font-size: var(--font-size-opacity-icon);
+    background-color:var(--opacity-button-color);
+    backdrop-filter: blur( 3px );
+    color:var(--opacity-button-color-icon);
+    z-index: var(--index-opacity-button);
+    &:hover{
+        background-color:var(--opacity-button-color-hover);
+    }
+    &::before{
+        font-family: "Font Awesome 6 Free";
+        font: var(--fa-font-solid); 
+	    font-weight: 900;
+    }
 `
 
-export const BackArrowButton = styled(Button)`
-    height: var(--back-button-size);
-    width: var(--back-button-size);
-    position: fixed;
+export const BackArrowButton = styled(OpacityButton)`
     top: var(--header-button-position-top);
     left: var(--header-button-position-side);
-    background-color:var(--back-button-color);
-    padding: unset;
-    z-index: var(--index-back-button);
-    &:hover{
-        background-color:var(--back-button-color-hover);
-    }
-    & i{
-        font-size: var(--font-size-back-icon);
-        color:var(--back-button-color-icon) !important;
-        margin:0 !important;
-
+    &::before{
+	    content: "\f060";
     }
 `
 
-export const BtnCont = styled(BackArrowButton)`
-    position: absolute;
-    left: unset;
+export const EllipsisBtn = styled(OpacityButton)`
     top: var(--header-button-position-top);
     right: var(--header-button-position-side);
+    &::before{
+	    content: "\f142";
+    }
 `
-/*REFACTOR TABS*/
+
+export const CloseBtn = styled (OpacityButton)`
+    top: var(--header-button-position-top);
+    right: var(--header-button-position-side);
+    &::before{
+	    content: "\f00d";
+    }
+`
+
+export const BurgerBtn = styled (OpacityButton)`
+    position: absolute;
+    top: var(--header-button-position-top);
+    right: var(--header-button-position-side);
+    &::before{
+	    content: "\f0c9";
+    }
+`
+
 export const TabButton = styled(Button)`
-    font-weight: var(--tab-button-weight);
-    font-size: var(--font-size-tab-button);
-    color:${props => props.color || 'var(--tab-button-disabled)'};
-    padding: unset;
+    min-height: 1.5rem;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    font-size:var(--font-size-detall-tab-button);
+    font-weight: 500;
+    color: ${props => props.color || 'var(--color-secondary-text)'};
+    text-transform: capitalize;
+    outline: none;
     &:hover{
         color: var(--button-color-hover);
     }
     &:active{
         color: var(--button-color);
     }
-`
-//
-export const ContentTabButton = styled(TabButton)`
-    min-height: 1.5rem;
-    width: 45%;
-    display: flex;
-    justify-content: center;
-    font-size:var(--font-size-detall-tab-button);
-    font-weight: 600;
-    color: ${props => props.color || 'var(--color-detail-text)'};
-    text-transform: capitalize;
-    outline: none;
 `
 
 export const UploadButton = styled(SecondaryBtn)`

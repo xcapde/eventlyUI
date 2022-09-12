@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Row } from "../../styles/styles.styled";
 
 export const VerticalFeed = styled.div`
     width: 100%;
@@ -13,3 +14,10 @@ export const VerticalFeed = styled.div`
         margin: 1% 2%;
     };
 `;
+
+export const HorizontalFeed = styled(Row)`
+    overflow-x: scroll; 
+    overflow-y: hidden; 
+    display: flex;
+    justify-content: flex-start;
+`

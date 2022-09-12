@@ -1,14 +1,15 @@
-import { EventFeed } from "../../components/feeds/EventFeed";
+import { HomeFeed } from "../../components/feeds";
 import { Footer } from "../../components/footer/Footer";
-import { NavRail } from "../../components/navs";
+import { NavRail, NavTop } from "../../components/navs";
 import { Page } from "../../styles/styles.styled";
 
 export function Home() {
 
     return (
         <Page>
+            <NavTop/>
             <NavRail />
-            <EventFeed />
+            <HomeFeed />
             <Footer />
         </Page>
     )

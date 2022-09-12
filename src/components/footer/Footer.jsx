@@ -10,8 +10,8 @@ export const Footer = () => {
         home: { icon: <i className="fa-solid fa-house"></i>, link: "/home" },
         search: { icon: <i className="fa-solid fa-magnifying-glass"></i>, link: "/search" },
         upload: { icon: <i className="fa-regular fa-square-plus"></i>, link: "/upload" },
-        notification: { icon: <i className="fa-solid fa-shuffle"></i>, link: "/notifications" },
-        profile: { icon: <Avatar imgUrl={'https://media1.faz.net/ppmedia/video/1338146715/1.170045/default-retina/wenn-der-vater-mit-dem-sohne.jpg'} />, link: "/profile" }
+        notification: { icon: <i className="fa-solid fa-bell"></i>, link: "/notifications" },
+        profile: { icon: <Avatar imgUrl={'https://media1.faz.net/ppmedia/video/1338146715/1.170045/default-retina/wenn-der-vater-mit-dem-sohne.jpg'} scale='0.6'/>, link: "/profile" }
     }
 
     return (
@@ -24,5 +24,3 @@ export const Footer = () => {
         </Wrapper>
     )
 }
-
-//<i className={location === 'home' ? "fa-solid fa-house" : "fa-solid fa-house activatedTab"}></i>
