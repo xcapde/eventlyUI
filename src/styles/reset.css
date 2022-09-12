@@ -54,7 +54,3 @@ input::spelling-error{
 	color: var(--color-white);
 	background-color: var(--color-main);
 }
-/* 
-input[type="datetime-local" i]::after{
-	padding-right: 25%;
-} */

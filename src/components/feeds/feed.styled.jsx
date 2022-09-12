@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Row } from "../../styles/styles.styled";
 
 export const VerticalFeed = styled.div`
     width: 100%;
@@ -33,3 +34,10 @@ export const UlFeed = styled.ul`
         gap: 5%;
     }
 `;
+export const HorizontalFeed = styled(Row)`
+    overflow-x: scroll; 
+    justify-content: flex-start;
+    ::-webkit-scrollbar {
+    background: none;   
+    }
+`

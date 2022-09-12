@@ -4,7 +4,7 @@ import { TabButton } from "../buttons/buttons.styled";
 
 export const Wrapper = styled.footer`
     height: var(--footer-height);
-    width: 100%;
+    width: 100vw;
     left: -1px;
     bottom: -2px;
     position: fixed;
@@ -13,7 +13,7 @@ export const Wrapper = styled.footer`
     background-color: var(--color-footer);
     z-index: var(--index-footer);
     box-shadow: 2px 0px 30px lightgrey;
-    border-radius: 1.15rem 1.15rem 0 0;
+    border-radius: var(--footer-radius);
     border: 1px solid lightgray;
     
     @media(min-width: 820px){

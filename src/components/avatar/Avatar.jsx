@@ -1,8 +1,8 @@
 import { AvatarImg } from "./avatar.styled"
 
 
-export const Avatar = ({imgUrl, scale, position, top, left}) => {
+export const Avatar = ({imgUrl, scale}) => {
     return (
-            <AvatarImg imgUrl={imgUrl} scale={scale} position={position} top={top} left={left}/>
+            <AvatarImg imgUrl={imgUrl} scale={scale}/>
     )
 }

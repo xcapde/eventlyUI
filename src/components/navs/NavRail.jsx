@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react"
 import { Col } from "../../styles/styles.styled";
-import { Logo } from "../logo/Logo";
+import { WhiteLogo } from "../logo/WhiteLogo";
 import { contents } from "./contents"
 import { Aside, Wrapper } from "./navrail.styled";
 import { NavRailItem } from "./NavRailItem";
-import WhiteColor from "../../assets/logo/LogoWhiteSimple.png";
 
 export const NavRail = () => {
     const [key, setKey] = useState(null);
@@ -32,7 +31,7 @@ export const NavRail = () => {
         <React.Fragment>
             <Wrapper width={subcontent && '15%'}>
                 <Col>
-                    <Logo scale={'50%'} imgUrl={WhiteColor} />
+                    <WhiteLogo scale={'50%'}/>
                 </Col>
                 <Col>
                     {Object.keys(contents.desktop.main).map((c, key) => <NavRailItem content={contents.desktop.main[c]} key={key} sub={subcontent !== null} callback={(e) => openSubContent(e, c)} />)}

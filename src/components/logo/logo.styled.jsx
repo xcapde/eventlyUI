@@ -6,7 +6,6 @@ width: 8rem;
 height: fit-content;
 object-fit: contain;
 scale: ${props => props.scale || '100%'};
-padding: 3rem 0;
 @media (min-width: 820px) {
     padding: 1rem 0;
 }
