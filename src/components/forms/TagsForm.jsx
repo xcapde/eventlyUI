@@ -3,7 +3,7 @@ import CreatableSelect from 'react-select/creatable';
 import { useEffect, useState } from "react";
 import { tagService } from "../../services/API/tagService";
 import { Col } from "../../styles/styles.styled";
-import { Form, OutputCnt } from "./form.styled";
+import { CreatableLabel, Form, FormCntrl, OutputCnt } from "./form.styled";
 import { AddButton } from "../buttons/AddButton";
 import format from "../../utils/format";
 import { Badge } from '../badges/Badge';
@@ -13,12 +13,22 @@ export const TagsForm = ({ event, addTags, deleteTags }) => {
 
 
     const [tags, setTags] = useState();
-    const [newTags, setNewTags] = useState();
+    const [newTags, setNewTags] = useState([]);
+    const [display, setDisplay] = useState();
     const select = React.useRef(null);
+    const style = {
+        top: '-40px',
+        left: '2.5 %',
+        color: 'var(--color-main)'
+    }
 
     useEffect(() => {
         getAll();
     }, [])
+
+    useEffect(() => {
+        moveLabel();
+    }, [newTags])
 
     const getAll = () => {
         tagService.getAll().then(res => {
@@ -37,20 +47,31 @@ export const TagsForm = ({ event, addTags, deleteTags }) => {
         addTags(newTags);
         setNewTags();
         select.current.clearValue();
+        setDisplay();
     }
 
+    const moveLabel = () => {
+        newTags.length === 0 ? setDisplay() : setDisplay(style);
+    }
+
+    console.log(newTags.length)
     return (
         <Col>
             <Form onSubmit={handleSubmit}>
                 {tags &&
-                    <CreatableSelect
-                        styles={customStyles}
-                        options={tags}
-                        isMulti
-                        onChange={handleChange}
-                        placeholder={''}
-                        ref={select}
-                    />
+                    <FormCntrl>
+                        <CreatableSelect
+                            styles={customStyles}
+                            options={tags}
+                            isMulti
+                            onChange={handleChange}
+                            placeholder={''}
+                            ref={select}
+                            onFocus={() => setDisplay(style)}
+                            onBlur={() => moveLabel()}
+                        />
+                        <CreatableLabel style={display}>Tags</CreatableLabel>
+                    </FormCntrl>
                 }
                 <AddButton style={{ left: '40%' }} />
             </Form>

@@ -33,7 +33,23 @@ export const Label = styled.label`
     color: var(--color-detail-text);
     font-weight: 400;
     text-transform: capitalize;
-   
+    transition: 1s ease;
+`;
+
+export const CreatableLabel = styled.label`
+    position: absolute;
+    z-index: 1;
+    left: 5%;
+    line-height: calc( var(--input-height) * .8);
+    color: var(--color-detail-text);
+    font-weight: 400;
+    text-transform: capitalize;
+    transition: 1s ease;
+    &:hover{
+        top: -40px;
+        left: 2.5%;
+        color: var(--color-main);
+    }
 `;
 
 export const Input = styled.input`
