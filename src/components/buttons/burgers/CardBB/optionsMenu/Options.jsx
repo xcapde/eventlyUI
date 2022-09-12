@@ -1,5 +1,5 @@
 import React from "react"
-import { SecondaryButton } from "../../..";
+import { SecondaryButton, CloseButton } from "../../..";
 import { OptionsCnt } from "./options.styled";
 
 export const Options = ({callback}) => {

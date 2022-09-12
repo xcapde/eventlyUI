@@ -4,8 +4,7 @@ import { Row } from "../../styles/styles.styled";
 export const NavTabs = styled(Row)`
     position: relative;
     justify-content: center;
-    /* height:20%; */
-    /* margin: 2% 0; */
+    height: auto;
     flex-wrap: wrap;
     gap: 10px 0;
 `

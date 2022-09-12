@@ -1,4 +1,5 @@
 export { FormButton } from "./FormButton";
+export { JoinButton } from "./JoinButton";
 export { BackButton } from "./BackButton";
 export { BurgerButton } from "./burgers/CardBB/BurgerButton";
 export { CloseButton } from "./CloseButton";

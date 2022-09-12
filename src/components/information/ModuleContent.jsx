@@ -5,7 +5,7 @@ import { Navigation } from "./Navigation"
 export const ModuleContent = ({ callback, tabContent, event, field }) => {
 
     return (
-        <Col style={{height:'50vh'}}>
+        <Col >
             <Navigation callback={callback} tabContent={tabContent} field={field} />
             <Content event={event} field={field} />
         </Col>

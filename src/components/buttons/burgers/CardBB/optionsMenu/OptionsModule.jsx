@@ -1,5 +1,6 @@
 import React from "react"
 import useShowMenu from "../../../../../hooks/useShowMenu";
+import { CloseButton } from "../../../CloseButton";
 import { EllipsisButton } from "./EllipsisButton";
 import { Options } from "./Options";
 
@@ -11,7 +12,7 @@ export const OptionsModule = () => {
             {menuIsActive?
                 <React.Fragment>
                     <Options/>
-                    <EllipsisButton callback={showMenu}/>
+                    <CloseButton callback={showMenu}/>
                 </React.Fragment>
                 :
                 <EllipsisButton callback={showMenu}/>

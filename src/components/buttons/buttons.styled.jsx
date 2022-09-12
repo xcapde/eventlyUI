@@ -23,7 +23,6 @@ export const FormBtn = styled(Button)`
     color: var(--button-text);
     text-transform: capitalize;
     border-top-left-radius: 0;
-    padding: unset;
     &:hover{
         background-color: var(--button-color-hover);
     }
@@ -73,12 +72,14 @@ export const OpacityButton = styled(Button)`
     width: var(--opacity-button-size);
     position: absolute;
     font-size: var(--font-size-opacity-icon);
-    background-color:var(--opacity-button-color);
-    backdrop-filter: blur( 3px );
+    background:none;
+    /* background-color:var(--opacity-button-color); */
+    /* backdrop-filter: blur( 3px ); */
     color:var(--opacity-button-color-icon);
     z-index: var(--index-opacity-button);
     &:hover{
         background-color:var(--opacity-button-color-hover);
+        color:var(--opacity-button-color-icon-hover)
     }
     &::before{
         font-family: "Font Awesome 6 Free";
@@ -98,6 +99,7 @@ export const BackArrowButton = styled(OpacityButton)`
 export const EllipsisBtn = styled(OpacityButton)`
     top: var(--header-button-position-top);
     right: var(--header-button-position-side);
+    z-index: var(--options-button-index);
     &::before{
 	    content: "\f141";
     }
@@ -106,6 +108,9 @@ export const EllipsisBtn = styled(OpacityButton)`
 export const CloseBtn = styled (OpacityButton)`
     top: var(--header-button-position-top);
     right: var(--header-button-position-side);
+    color: var(--color-secondary-text);
+    z-index: var(--options-button-index);
+    background:none;
     &::before{
 	    content: "\f00d";
     }
@@ -125,9 +130,9 @@ export const TabButton = styled(Button)`
     width: 45%;
     display: flex;
     justify-content: center;
-    font-size:var(--font-size-detall-tab-button);
-    font-weight: 500;
-    color: ${props => props.color || 'var(--color-secondary-text)'};
+    font-size:var(--font-size-detail-tab-button);
+    font-weight: bold;
+    color: ${props => props.color || 'var(--color-detail-text)'};
     text-transform: capitalize;
     outline: none;
     &:hover{
@@ -139,7 +144,7 @@ export const TabButton = styled(Button)`
 `
 
 export const UploadButton = styled.button`
-    height: var(--back-button-size);
+    height: var(--opacity-button-size);
     width: 85px;
     font-family: var(--font-main);
     font-size: var(--font-size-button-detail);

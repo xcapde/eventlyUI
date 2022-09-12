@@ -31,7 +31,7 @@ export const NavRail = () => {
         <React.Fragment>
             <Wrapper width={subcontent && '15%'}>
                 <Col>
-                    <WhiteLogo scale={'50%'}/>
+                    <WhiteLogo scale={'40%'}/>
                 </Col>
                 <Col>
                     {Object.keys(contents.desktop.main).map((c, key) => <NavRailItem content={contents.desktop.main[c]} key={key} sub={subcontent !== null} callback={(e) => openSubContent(e, c)} />)}

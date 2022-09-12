@@ -61,14 +61,14 @@ export const Title = styled.h1`
     align-items: center;
     color: var(--color-title-text);
     font-family: var(--title-font);
-    font-size:var(--font-size-card-title);
+    font-size: var(--font-size-card-title);
     font-weight: 600;
 `
 
 export const DetailText = styled.p` 
-    color: var(--color-secondary-text);
+    color: var(--color-detail-text);
     font-family: var(--detail-font);
-    font-size:var(--font-size-secondary-text);
+    font-size:var(--font-size-detail-text);
     font-weight: 400;
 
     & i{
@@ -84,4 +84,14 @@ export const Img = styled.img.attrs(props => ({
     width: 100%;
     object-fit: cover;
     position: relative;
+`;
+
+export const Gradient = styled.div` 
+    height: 25%;
+    width: 100%;
+    position:absolute;
+    top: 0;
+    background: linear-gradient(0deg, #00000000, #00000007, #00000030);
+    z-index: var(--index-gradient);
+    border-radius:var(--card-radius);
 `;

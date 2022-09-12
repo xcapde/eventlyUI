@@ -8,7 +8,7 @@ export const Publisher = ({event, scale}) => {
             {event && event.publisher?
                 <Col>
                     <Avatar imgUrl={event.publisher.avatar} scale={scale}/>
-                    <DetailText style={{fontSize:'smaller'}}>
+                    <DetailText>
                         {event.publisher.username}
                     </DetailText> 
                 </Col>

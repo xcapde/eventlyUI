@@ -1,19 +1,21 @@
 @import url("../src/styles/reset.css");
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 :root {
     background-color: var(--color-white);
     /* font-family: 'Manrope', sans-serif; */
     /* font-family: 'Montserrat', sans-serif; */
-    font-family: 'Rubik', sans-serif;
+    /* font-family: 'Rubik', sans-serif; */
+    font-family: 'Comfortaa', cursive;
+
 
 
     /*FONTS*/
-    --title-font: 'Rubik', sans-serif;
-    --detail-font: 'Rubik', sans-serif;
-    --card-font:'Rubik', sans-serif;
-    --home-font: 'Rubik', sans-serif;
+    --title-font: 'Comfortaa', cursive;
+    --detail-font: 'Comfortaa', cursive;
+    --card-font:'Comfortaa', cursive;
+    --home-font: 'Comfortaa', cursive;
 
     /* COLOR */
     --card-shadow-opacity: rgba(0, 0, 0, 0.350);
@@ -37,7 +39,7 @@
     --color-options-cnt: var(--color-white);
 
     /* TEXT COLOR */
-    --color-secondary-text: #7D7D7D;
+    --color-detail-text: #7D7D7D;
     --color-card-icon: #585858;
     --color-title-text: #1d1c1c;
     --color-options-text: #585858;
@@ -50,10 +52,11 @@
 
     --color-link-text: var(--color-main);
     --color-link-text-hover: var(--color-main-hover);
-
-    --opacity-button-color: #3131316e;
-    --opacity-button-color-hover: #252525c4;
+    
+    --opacity-button-color: #ebebeb6e;
+    --opacity-button-color-hover:var(--color-white);
     --opacity-button-color-icon: var(--color-white);
+    --opacity-button-color-icon-hover:var(--color-detail-text);
     
     /* BUTTONS */
     --button-padding: 8px 20px;
@@ -61,10 +64,7 @@
 
     --form-button-width: 333px;
     --form-button-height: 50px;
-
-    --main-button-width: 100px;
-    --main-button-height: 35px;
-
+    
     --cardXS-button-width: 70px;
     --cardXS-button-height: 20px;
 
@@ -78,14 +78,16 @@
     --navbar-top-height: 10vh;
     --avatar-size: 40px;
     --opacity-button-size: 40px;
-    --detail-image-height: 45vh;
+    --detail-image-height: 40vh;
     --options-cnt-height: 200px;
-    --options-cnt-width: 200px;
+    --options-cnt-width: 140px;
+    --module-tags-height: 7vh;
+    --moduleHorizontal-MainCard-height:40vh;
 
     /* FONT SIZE */
-    --font-size-cardXS-title: medium;
+    --font-size-cardXS-title: larger;
     --font-size-card: medium;
-    --font-size-card-title: larger;
+    --font-size-card-title: x-large;
 
     --font-size-button: medium;
     --font-size-form-button: large;
@@ -94,9 +96,9 @@
 
     --font-size-nav-icon: 24px;
     --font-size-opacity-icon: medium;
-    --font-size-secondary-text: smaller;
-    --font-size-detall-tab-button: medium;
-    --font-size-detall-participation: medium;
+    --font-size-detail-text: medium;
+    --font-size-detail-tab-button: medium;
+    --font-size-detail-participation: medium;
 
     /* RADIUS */
     --avatar-radius: 0.5rem;
@@ -109,15 +111,14 @@
 
     /* CARD */
     --card-width: 95%;
-    --card-height: 475px;
-    --card-img-height: 80vh;
+    --card-height: 333;
+    --card-img-height: 100%;
     --card-width-desktop: 350px;
-    --card-height-desktop: 500px;
+    --card-height-desktop: 450px;
 
     --cardXS-width: 95%;
     --cardXS-height: 110px;
     --cardXS-width-desktop: 22rem;
-    --cardXS-details-height: 3.5rem;
 
     /* BADGE */
     --badge-padding: 8px 12px;
@@ -132,11 +133,13 @@
     --mBP: 820px;
 
     /* INDEX */
-    --index-options: 1;
     --index-opacity-button: 2;
+    --index-gradient: 2;
+    --index-options: 3;
     --index-sidebar: 3;
     --index-footer: 3;
     --index-navtop: 3;
+    --options-button-index:4;
 }
 
 .App {

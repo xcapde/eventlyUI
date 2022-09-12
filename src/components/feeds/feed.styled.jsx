@@ -6,7 +6,7 @@ export const VerticalFeed = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
-    grid-gap: 1.5rem 1rem;
+    grid-gap: 1rem 1rem;
     overflow-y: scroll;
     @media (min-width: 820px) {
         width: 96%;
@@ -35,9 +35,11 @@ export const UlFeed = styled.ul`
     }
 `;
 export const HorizontalFeed = styled(Row)`
+    height: ${props => props.height || '100%'};
     overflow-x: scroll; 
     justify-content: flex-start;
+    display: -webkit-box;
     ::-webkit-scrollbar {
-    background: none;   
+    display: none;
     }
 `

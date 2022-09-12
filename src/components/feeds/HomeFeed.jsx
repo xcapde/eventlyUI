@@ -6,8 +6,11 @@ import { tagService } from "../../services/API/tagService";
 import { Col, Row, Title, View } from "../../styles/styles.styled";
 import { MainCard } from "../cards/MainCard";
 import { SmallCard } from "../cards/SmallCard";
-import { Tags } from "../tags/Tags";
 import { VerticalFeed } from "./feed.styled";
+import { ModuleVerticalSmallCard } from "./ModuleVerticalSmallCard";
+import { ModuleTags } from "./ModuleTags";
+import { ModuleHorizontalMainCard } from "./ModuleHorizontalMainCard";
+import { ModuleVerticalMainCard } from "./ModuleVerticalMainCard";
 
 export const HomeFeed = () => {
     const [events, setEvents] = useState([]);
@@ -37,33 +40,27 @@ export const HomeFeed = () => {
 
     return (
         <View>
-            <Col id="main" sytle={{ justifyContent: 'space-around', gap: '2.5%' }}>
+            <Col id="main" width='95%' sytle={{ justifyContent: 'space-around', gap: '2.5%' }}>
+                
                 <Title>Welcome!</Title>
-                <Row style={{ height: '10vh', justifyContent: 'flex-start' }}>hi user!</Row>
+                <Row style={{ height: '10vh', justifyContent: 'flex-start' }}>
+                    Hi user!
+                </Row>
+                
                 <Title>Tags</Title>
-                <Row style={{ height: '20vh', justifyContent: 'flex-start' }}><Tags tags={tags}/></Row>
+                <Row style={{ height: '20vh', justifyContent: 'flex-start' }}>
+                    <ModuleTags tags={tags}/>
+                </Row>
                 {!tagsSearch &&
 
-                    <React.Fragment>
+                    <React.Fragment>                      
                         {/* react component */}
-                        <Col style={{ gap: '2.5%', height: '100%', overflowY: "scroll" }}>
-                            <Title>Online</Title>
-                            <VerticalFeed>
-                                {events && events.filter(event => event.type.includes('online')).map((event, key) =>
-                                    <SmallCard key={key} event={event} />
-                                ).reverse()}                        
-                            </VerticalFeed>
-                        </Col>
+                        <ModuleVerticalSmallCard events={events}/>
 
                         {/* react component */}
-                        <Col style={{ gap: '2.5%', height: '100%', overflowY: "scroll" }}>
-                            <Title>Offline</Title>
-                            <VerticalFeed>
-                                {events && events.filter(event => event.type.includes('offline')).map((event, key) =>
-                                    <MainCard key={key} event={event} />
-                                ).reverse()}                               
-                            </VerticalFeed>
-                        </Col>
+                        <ModuleHorizontalMainCard events={events}/>
+                        {/* <ModuleVerticalMainCard events={events}/> */}
+
                     </React.Fragment>
                 }
                 {/* react component */}

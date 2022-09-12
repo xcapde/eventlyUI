@@ -1,12 +1,18 @@
-import { Row } from "../../styles/styles.styled"
-import { Publisher } from "../subcomponents"
-import { Details } from "./Details"
+import { Col, Row, Wrapper } from "../../styles/styles.styled"
+import { Avatar } from "../avatar/Avatar"
+import { InfoText } from "./InfoText"
 
-export const ModuleDetails = ({event}) => {
-    return(
-        <Row style={{height:'30vh'}}>
-            <Details event={event}/>
-            <Publisher event={event} scale={'0.6'}/>
-        </Row>
+export const ModuleDetails = ({ event }) => {
+    return (
+        <Col height='auto' style={{alignItems:'flex-start'}}>
+            {/*MAIN CARD NECESSITA  width: '90%', padding:'1rem 0' */}
+            <Row>
+                <InfoText event={event}/>
+                <Avatar imgUrl={event.publisher.avatar} scale='0.8'/>
+            </Row>
+            <Wrapper>
+                <br/>Component avatars
+            </Wrapper>
+        </Col>
     )
 }
