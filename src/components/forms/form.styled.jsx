@@ -54,7 +54,7 @@ export const Input = styled.input`
     :focus-within ~ ${Label},
     :valid ~ ${Label}{
         display: block;
-        top: -30px;
+        top: -40px;
         left: 2.5%;
         color: var(--color-main);
     }
@@ -116,7 +116,7 @@ export const Select = styled.select`
     :focus:valid ~ ${Label},
     :valid  ~ ${Label}{
         display: block;
-        top: -30px;
+        top: -40px;
         left: 2.5%;
         color: var(--color-main);
     }

@@ -7,6 +7,7 @@ export const Header = styled(Col)`
     align-items: center;
     & > *{
         text-align:center;
+        justify-content: center;
     }
 `;
 
