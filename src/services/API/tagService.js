@@ -28,10 +28,6 @@ export const tagService = {
         })
         return tag;
     },
-    // PostMultTagsReq: {
-    //     "tags": ["pet-friendly", "party"],
-    //      "eventId": id
-    // }
     addTagsToEvent({id, ...req}) {
         console.log(id)
         console.log({tags: req.data})
@@ -40,11 +36,6 @@ export const tagService = {
         })
         return msg;
     },
-
-    // tagReq: {
-    //     "name": "party",
-    //      "eventId": id
-    // }
     deleteEventTag({id, ...req}) {
         const msg = axios.delete(`/events/${id}/tags`,  { data: req }).then(res => {
             return res.data;
