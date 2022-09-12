@@ -7,13 +7,18 @@ import { PlusForm } from "../../components/forms/PlusForm";
 import { Title, Wrapper } from "../../styles/styles.styled";
 import { Footer, Header, Main, Progress, ProgressBar } from "./multistepform.styled";
 
-export const MultiStepForm = ({ event, postEvent, updateEvent, addDirection, addWebUrl, eventDirection, uploadImg, deleteImg, addReq, deleteReq }) => {
+export const MultiStepForm = ({ 
+    event, postEvent, updateEvent, 
+    addDirection, addWebUrl, eventDirection, 
+    uploadImg, deleteImg, 
+    addReq, deleteReq,
+    addTags, deleteTags }) => {
 
     const hasDetails = () => {
         if (!event) return;
         return event.tags.length > 0 || event.requirements.length > 0 || event.images.length > 0;
     }
-    
+
     const forms = [
         {
             title: `${event ? "Update" : "Upload"} your event!`,
@@ -25,11 +30,17 @@ export const MultiStepForm = ({ event, postEvent, updateEvent, addDirection, add
         },
         {
             title: `${hasDetails() ? "Update" : "Add"} details!`,
-            view: <PlusForm event={event} uploadImg={uploadImg} deleteImg={deleteImg} addReq={addReq} deleteReq={deleteReq}/>
+            view: <PlusForm event={event}
+                uploadImg={uploadImg}
+                deleteImg={deleteImg}
+                addReq={addReq}
+                deleteReq={deleteReq}
+                addTags={addTags}
+                deleteTags={deleteTags} />
         },
     ]
 
-  
+
 
     const [page, setPage] = useState(0);
     const [progress, setProgress] = useState(0);
@@ -38,7 +49,7 @@ export const MultiStepForm = ({ event, postEvent, updateEvent, addDirection, add
         setProgress((page + 1) / 3 * 100)
     }, [page])
 
-    
+
 
     console.log("event: ", event)
     return (

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FormBtn } from "../buttons/buttons.styled";
 
 export const Form = styled.form`
     height: 100%;
@@ -13,7 +14,7 @@ export const Form = styled.form`
     & > div{
         margin: 0 auto;
     }
-    & > button{
+    & > ${FormBtn}{
         position: absolute;
         display: block;
         bottom: 0;
@@ -100,7 +101,7 @@ export const FormCntrl = styled.div`
 export const Select = styled.select`
     background-color: var(--color-white-contrast);
     width: calc(var(--input-width) + 1.75rem);
-    height: 3rem;
+    height: var(--input-height);
     border-radius: var(--input-radius);
     border: none;
     outline-color: var(--color-input-outline);

@@ -139,7 +139,7 @@ export const TabButton = styled(Button)`
 `
 
 export const UploadButton = styled.button`
-    height: var(--back-button-size);
+    height: 4vh;
     width: 85px;
     font-family: var(--font-main);
     font-size: var(--font-size-button-detail);
