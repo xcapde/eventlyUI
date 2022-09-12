@@ -42,15 +42,11 @@ export const ImageInput = ({ uploadImg, uploaded }) => {
         uploadBtn.current.focus();
         setTimeout(() => {
             if (file === "") {
-                console.log('blur')
                 uploadBtn.current.blur();
             }
         }, ms);
     }
 
-
-    console.log(uploaded)
-    console.log(isLoading)
     return (
         <>
             <UploadButton ref={uploadBtn} onClick={clickHiddenInput}>{uploaded ? <i className="fa-solid fa-check"></i> : isLoading ? "" : "Upload"}</UploadButton>

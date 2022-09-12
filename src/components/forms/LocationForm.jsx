@@ -38,9 +38,6 @@ export const LocationForm = ({ addDirection, addWebUrl, event, eventDirection })
         event.type.includes("online") ? addWebUrl(formData) : addDirection(formData);
     }
 
-    console.log(event.location)
-    console.log(formData)
-    console.log(eventDirection)
     return (
         <FormGrid styles={styles} onSubmit={handleSubmit}>
             {Object.keys(formData).map((field, key) => (

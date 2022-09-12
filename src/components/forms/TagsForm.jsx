@@ -54,7 +54,6 @@ export const TagsForm = ({ event, addTags, deleteTags }) => {
         newTags.length === 0 ? setDisplay() : setDisplay(style);
     }
 
-    console.log(newTags.length)
     return (
         <Col>
             <Form onSubmit={handleSubmit}>

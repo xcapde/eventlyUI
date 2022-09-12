@@ -29,8 +29,6 @@ export const EventForm = ({ eventToUpdate, postEvent, updateEvent }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault(e);
-        console.log(event);
-        //validation
         eventToUpdate ? updateEvent(event) : postEvent(event);
         resetValues();
     }
