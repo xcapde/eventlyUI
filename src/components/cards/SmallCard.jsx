@@ -11,7 +11,7 @@ export const SmallCard = ({ event }) => {
     <CardXS>
       <Row>
         <Link to={`/events/${event.id}`}>
-          <CardXSImage imgUrl={event.images[0] ? event.images[0] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} />
+          <CardXSImage imgUrl={event.images[0] ? event.images[0] : 'https://images.hola.com/imagenes/cocina/tecnicas-de-cocina/20210804194039/mejores-trucos-para-hacer-barbacoas/0-981-794/barbacoa-port-adobe-t.jpg'} />
         </Link>
 
       <Col width='100%'>

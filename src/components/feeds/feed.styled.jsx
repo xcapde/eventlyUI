@@ -17,7 +17,5 @@ export const VerticalFeed = styled.div`
 
 export const HorizontalFeed = styled(Row)`
     overflow-x: scroll; 
-    overflow-y: hidden; 
-    display: flex;
     justify-content: flex-start;
 `

@@ -40,9 +40,10 @@ export const HomeFeed = () => {
             <Col id="main" sytle={{ justifyContent: 'space-around', gap: '2.5%' }}>
                 <Title>Welcome!</Title>
                 <Row style={{ height: '10vh', justifyContent: 'flex-start' }}>hi user!</Row>
-                <Title>Categories</Title>
+                <Title>Tags</Title>
                 <Row style={{ height: '20vh', justifyContent: 'flex-start' }}><Tags tags={tags}/></Row>
                 {!tagsSearch &&
+
                     <React.Fragment>
                         {/* react component */}
                         <Col style={{ gap: '2.5%', height: '100%', overflowY: "scroll" }}>

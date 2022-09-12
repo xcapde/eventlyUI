@@ -31,6 +31,8 @@
 
     --color-badgetBG-default: #ffc941;
     --color-badgetText-default: #cf8d0c;
+    --color-badgetBG-requirement: lightblue;
+    --color-badgetText-requirement: #7d7d7d;
 
     --color-options-cnt: var(--color-white);
 
@@ -119,7 +121,7 @@
 
     /* BADGE */
     --badge-padding: 8px 12px;
-    --badge-font-weight: 700;
+    --badge-font-weight: 500;
     --badge-margin: 0.15rem;
 
     /* PAGES */

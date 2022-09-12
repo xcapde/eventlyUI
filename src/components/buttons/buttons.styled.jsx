@@ -99,7 +99,7 @@ export const EllipsisBtn = styled(OpacityButton)`
     top: var(--header-button-position-top);
     right: var(--header-button-position-side);
     &::before{
-	    content: "\f142";
+	    content: "\f141";
     }
 `
 
