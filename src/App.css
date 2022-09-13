@@ -78,7 +78,7 @@
     --detail-image-height: 40vh;
     --options-cnt-height: 200px;
     --options-cnt-width: 140px;
-    --module-tags-height: 7vh;
+    --module-tags-height: 8vh;
     --moduleVertical-SmallCard-height:calc(var(--cardXS-height) * 1.5);
     --moduleHorizontal-MainCard-height:calc(var(--card-height) * 1.1);
     --moduleHorizontal-MidCard-height: calc(var(--cardMid-height) * 1.1);
