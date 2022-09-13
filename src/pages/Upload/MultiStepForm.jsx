@@ -1,48 +1,64 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { LinkButton } from "../../components/buttons";
-import { LocationForm } from "../../components/forms";
+import { ImageForm, LocationForm, ReqsForm, TagsForm } from "../../components/forms";
 import { EventForm } from "../../components/forms/EventForm";
-import { PlusForm } from "../../components/forms/PlusForm";
-import { Title, Wrapper } from "../../styles/styles.styled";
-import { Footer, Header, Main, Progress, ProgressBar } from "./multistepform.styled";
+// import { PlusForm } from "../../components/forms/PlusForm";
+import { Title } from "../../styles/styles.styled";
+import { DesktopWrapper, Footer, Header, Main, Progress, ProgressBar } from "./multistepform.styled";
 
-export const MultiStepForm = ({ event, postEvent, updateEvent, addDirection, addWebUrl, eventDirection, uploadImg, deleteImg, addReq, deleteReq }) => {
+export const MultiStepForm = ({
+    event, postEvent, updateEvent,
+    addDirection, addWebUrl, eventDirection,
+    uploadImg, deleteImg,
+    addReq, deleteReq,
+    addTags, deleteTags }) => {
 
     const hasDetails = () => {
         if (!event) return;
         return event.tags.length > 0 || event.requirements.length > 0 || event.images.length > 0;
     }
-    
-    const forms = [
-        {
-            title: `${event ? "Update" : "Upload"} your event!`,
-            view: <EventForm postEvent={postEvent} updateEvent={updateEvent} eventToUpdate={event} />
-        },
-        {
-            title: `${event && !event.location ? 'Add' : 'Update'} a location!`,
-            view: <LocationForm event={event} addDirection={addDirection} eventDirection={eventDirection} addWebUrl={addWebUrl} />
-        },
-        {
-            title: `${hasDetails() ? "Update" : "Add"} details!`,
-            view: <PlusForm event={event} uploadImg={uploadImg} deleteImg={deleteImg} addReq={addReq} deleteReq={deleteReq}/>
-        },
-    ]
-
-  
 
     const [page, setPage] = useState(0);
     const [progress, setProgress] = useState(0);
+    const navigate = useNavigate();
+
+    const forms = [
+        {
+            title: `${event ? "Update" : "Upload"} your event!`,
+            view: <EventForm postEvent={postEvent} updateEvent={updateEvent} eventToUpdate={event} next={() => setPage(page + 1)} />
+        },
+        {
+            title: `${event && !event.location ? 'Add' : 'Update'} a location!`,
+            view: <LocationForm event={event} addDirection={addDirection} eventDirection={eventDirection} addWebUrl={addWebUrl} next={() => setPage(page + 1)} />
+        },
+        {
+            title: `${hasDetails() ? "Update" : "Add"} event requirements'!`,
+            view: <ReqsForm event={event}
+                addReq={addReq}
+                deleteReq={deleteReq} />
+        },
+        {
+            title: `${hasDetails() ? "Update" : "Add"} tags!`,
+            view: <TagsForm event={event}
+                addTags={addTags}
+                deleteTags={deleteTags} />
+        },
+        {
+            title: `${hasDetails() ? "Update" : "Add"} event pictures'!`,
+            view: <ImageForm event={event}
+                uploadImg={uploadImg}
+                deleteImg={deleteImg} />
+        },
+    ]
 
     useEffect(() => {
-        setProgress((page + 1) / 3 * 100)
+        setProgress((page + 1) / (forms.length) * 100)
     }, [page])
 
-    
-
-    console.log("event: ", event)
     return (
-        <Wrapper>
+        <DesktopWrapper>
             <Header>
                 <ProgressBar>
                     <Progress width={`${progress}%`} />
@@ -56,11 +72,18 @@ export const MultiStepForm = ({ event, postEvent, updateEvent, addDirection, add
                 <LinkButton disabled={page === 0 || !event} content={'back'}
                     callback={() => setPage(page - 1)} />
                 <LinkButton
-                    disabled={!event || page === forms.length - 1
-                        || (page === 1 && event.location === "")}
-                    content={page !== forms.length - 1 ? 'next' : 'skip'}
-                    callback={() => setPage(page + 1)} />
+                    disabled={!event || (page === 1 && event.location === "")}
+                    content={page <= 1 ? 'next' : page === forms.length - 1 ? 'done' : 'skip'}
+                    callback={ page === forms.length - 1 ? ()=> navigate(`/events/${event.id}`): () => setPage(page + 1)} />
             </Footer>
-        </Wrapper>
+        </DesktopWrapper>
     )
 }
+
+{/* <PlusForm event={event}
+                uploadImg={uploadImg}
+                deleteImg={deleteImg}
+                addReq={addReq}
+                deleteReq={deleteReq}
+                addTags={addTags}
+                deleteTags={deleteTags} /> */}

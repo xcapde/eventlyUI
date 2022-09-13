@@ -32,10 +32,10 @@ export const HomeFeed = () => {
         tagService.getAll().then(res => {
             if (!res) return
             setTags(res)
-            console.log(res)
         })
     }
 
+    
     return (
         <View >
             <Col width='95%' justifyContent='space-evenly'>

@@ -129,6 +129,7 @@
 
     /* BADGE */
     --badge-padding: 8px 12px;
+    --react-select-badge-padding: 4px;
     --badge-font-weight: 500;
     --badge-margin: 0.15rem;
 

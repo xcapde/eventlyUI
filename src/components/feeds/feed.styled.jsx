@@ -18,16 +18,17 @@ export const VerticalFeed = styled.div`
 `;
 
 export const UlFeed = styled.ul`
-    height: 95%;
+        height: 95%;
     width: 95%;
     display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(5, 1fr);
+    grid-auto-flow: column;
     grid-column-gap: 2.5%;
     place-content: space-evenly;
-    box-shadow: 1px 1px 8px lightgray;
-    border: 1px solid lightgray;
-    border-radius: .75rem;
+    /* box-shadow: 1px 1px 8px lightgrey; */
+    /* border: 1px solid lightgray; */
+    border-radius: 0.75rem;
     padding: 5% 0%;
     list-style: none;
     & > li {

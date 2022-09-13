@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { imageService } from "../../services/API/imageService";
 import { requirementService } from "../../services/API/requirementService";
+import { tagService } from "../../services/API/tagService";
 
 export const Upload = () => {
 
@@ -99,6 +100,22 @@ export const Upload = () => {
         })
     }
 
+    const addTags = (data) => {
+        tagService.addTagsToEvent({ data, id: event.id }).then(res => {
+            if (!res) return;
+            alert(res.message);
+            getEvent(event.id);
+        })
+    }
+
+    const deleteTags = (data) => {
+        tagService.deleteEventTag({ name: data, id: event.id }).then(res => {
+            if (!res) return;
+            alert(res.message);
+            getEvent(event.id);
+        })
+    }
+
     console.log("event: ", event)
     console.log(eventId);
     return (
@@ -115,6 +132,8 @@ export const Upload = () => {
                 deleteImg={deleteImg}
                 addReq={addReq}
                 deleteReq={deleteReq}
+                addTags={addTags}
+                deleteTags={deleteTags}
             />
             <Footer />
         </View>
