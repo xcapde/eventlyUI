@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const ProfileGrid = styled.div`
     height: 100vh;
     width: 100%;

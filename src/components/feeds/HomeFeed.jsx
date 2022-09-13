@@ -5,15 +5,10 @@ import { eventService } from "../../services/API/eventService";
 import { tagService } from "../../services/API/tagService";
 import { Col, Title, View } from "../../styles/styles.styled";
 import { MainCard } from "../cards/MainCard";
-import { SmallCard } from "../cards/SmallCard";
 import { VerticalFeed } from "./feed.styled";
 import { ModuleVerticalSmallCard } from "./ModuleVerticalSmallCard";
 import { ModuleTags } from "./ModuleTags";
-import { ModuleHorizontalMainCard } from "./ModuleHorizontalMainCard";
-import { ModuleVerticalMainCard } from "./ModuleVerticalMainCard";
-import { MidCard } from "../cards/MidCard";
 import { ModuleHorizontalMidCard } from "./ModuleHorizontalMidCard";
-import { TagsFilter } from "./TagsFilter";
 
 export const HomeFeed = () => {
     const [events, setEvents] = useState([]);
@@ -50,7 +45,6 @@ export const HomeFeed = () => {
                     <React.Fragment>  
                         <ModuleHorizontalMidCard events={events}/>
                         <ModuleVerticalSmallCard events={events}/> 
-                        {/* <ModuleHorizontalMainCard events={events}/> */}
                     </React.Fragment>
                 }
                 {/* react component */}

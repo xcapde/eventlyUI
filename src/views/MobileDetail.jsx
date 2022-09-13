@@ -7,7 +7,6 @@ import { ModuleContent } from "../components/information/ModuleContent"
 import { ModuleDetails } from "../components/information/ModuleDetails";
 import { Col, Gradient, Img, View } from "../styles/styles.styled";
 
-
 export const MobileDetail = ({ event }) => {
     const navigate = useNavigate();
     const [key, setKey] = useState("description");
