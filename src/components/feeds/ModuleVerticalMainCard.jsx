@@ -5,7 +5,7 @@ import { VerticalFeed } from "./feed.styled"
 export const ModuleVerticalMainCard = ({events}) => {
 
     return(
-        <Col style={{ gap: '2.5%', height: '100%', overflowY: "scroll" }}>
+        <Col style={{ gap: '3%', height: '100%', overflowY: "scroll" }}>
             <Title>Online</Title>
             <VerticalFeed>
                 {events && events.filter(event => event.type.includes('online')).map((event, key) =>

@@ -11,6 +11,9 @@ import { ModuleVerticalSmallCard } from "./ModuleVerticalSmallCard";
 import { ModuleTags } from "./ModuleTags";
 import { ModuleHorizontalMainCard } from "./ModuleHorizontalMainCard";
 import { ModuleVerticalMainCard } from "./ModuleVerticalMainCard";
+import { MidCard } from "../cards/MidCard";
+import { ModuleHorizontalMidCard } from "./ModuleHorizontalMidCard";
+import { TagsFilter } from "./TagsFilter";
 
 export const HomeFeed = () => {
     const [events, setEvents] = useState([]);
@@ -39,32 +42,22 @@ export const HomeFeed = () => {
     }
 
     return (
-        <View>
-            <Col id="main" width='95%' sytle={{ justifyContent: 'space-around', gap: '2.5%' }}>
+        <View >
+            <Col width='95%' sytle={{justifyContent: 'space-between',}}>
                 
-                <Title>Welcome!</Title>
-                <Row style={{ height: '10vh', justifyContent: 'flex-start' }}>
-                    Hi user!
-                </Row>
-                
-                <Title>Tags</Title>
-                <Row style={{ height: '20vh', justifyContent: 'flex-start' }}>
-                    <ModuleTags tags={tags}/>
-                </Row>
+                <ModuleTags tags={tags}/>
                 {!tagsSearch &&
-
                     <React.Fragment>                      
-                        {/* react component */}
-                        <ModuleVerticalSmallCard events={events}/>
-
-                        {/* react component */}
-                        <ModuleHorizontalMainCard events={events}/>
-                        {/* <ModuleVerticalMainCard events={events}/> */}
-
+                        <ModuleVerticalSmallCard events={events}/> 
+                        <ModuleHorizontalMidCard events={events}/>
+                        {/* <ModuleHorizontalMainCard events={events}/> */}
                     </React.Fragment>
                 }
                 {/* react component */}
+
                 {tagsSearch &&
+                // <TagsFilter/>
+
                     <Col style={{ gap: '2.5%', height: '100%', overflowY: "scroll" }}>
                         <Title>With tag</Title>
                         <VerticalFeed>

@@ -64,9 +64,6 @@
 
     --form-button-width: 333px;
     --form-button-height: 50px;
-    
-    --cardXS-button-width: 70px;
-    --cardXS-button-height: 20px;
 
     --header-button-position-top: 3rem;
     --header-button-position-side: 1.5rem;
@@ -82,10 +79,13 @@
     --options-cnt-height: 200px;
     --options-cnt-width: 140px;
     --module-tags-height: 7vh;
-    --moduleHorizontal-MainCard-height:40vh;
+    --moduleVertical-SmallCard-height:calc(var(--cardXS-height) * 1.5);
+    --moduleHorizontal-MainCard-height:calc(var(--card-height) * 1.1);
+    --moduleHorizontal-MidCard-height: calc(var(--cardMid-height) * 1.1);
 
     /* FONT SIZE */
     --font-size-cardXS-title: larger;
+    --font-size-cardMid-title: medium;
     --font-size-card: medium;
     --font-size-card-title: x-large;
 
@@ -101,20 +101,25 @@
     --font-size-detail-participation: medium;
 
     /* RADIUS */
+    --cardMid-radius: 1.5rem;
+    --footer-radius: 1.15rem 1.15rem 0 0;
+    --card-radius: 0.5rem;
     --avatar-radius: 0.5rem;
     --button-radius: 0.5rem;
     --input-radius: 0.5rem;
-    --card-radius: 0.5rem;
     --badge-radius: 0.25rem;
-    --footer-radius: 1.15rem 1.15rem 0 0;
     --navtop-radius: 0;
 
     /* CARD */
     --card-width: 95%;
-    --card-height: 333;
+    --card-height: 350px;
     --card-img-height: 100%;
     --card-width-desktop: 350px;
     --card-height-desktop: 450px;
+
+    --cardMid-width: 225px;
+    --cardMid-height: 310px;
+    --cardMid-img-size: 90%;
 
     --cardXS-width: 95%;
     --cardXS-height: 110px;

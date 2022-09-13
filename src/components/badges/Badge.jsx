@@ -1,3 +1,4 @@
+import React from "react";
 import { BadgeCnt } from "./badge.syled";
 
 export const Badge = ({ content, callback, field, editMode }) => {

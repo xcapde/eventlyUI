@@ -3,11 +3,13 @@ import { Row } from "../../styles/styles.styled";
 
 export const VerticalFeed = styled.div`
     width: 100%;
+    height: ${props => props.height || '100%'};
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
     grid-gap: 1rem 1rem;
     overflow-y: scroll;
+    padding: 3% 0;
     @media (min-width: 820px) {
         width: 96%;
         grid-template-columns: repeat(auto-fill, minmax(calc(var(--card-width-desktop) + 0.5rem), 1fr));
@@ -39,6 +41,7 @@ export const HorizontalFeed = styled(Row)`
     overflow-x: scroll; 
     justify-content: flex-start;
     display: -webkit-box;
+    margin: 0 5%;
     ::-webkit-scrollbar {
     display: none;
     }
