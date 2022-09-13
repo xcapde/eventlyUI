@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FormBtn } from "../buttons/buttons.styled";
 
 export const Form = styled.form`
     height: 100%;
@@ -13,14 +14,15 @@ export const Form = styled.form`
     & > div{
         margin: 0 auto;
     }
-    & > button{
+    & > ${FormBtn}{
         position: absolute;
         display: block;
         bottom: 0;
         left: calc((100% - var(--form-button-width)) / 2);
     }
     @media (min-width: 820px) {
-        width: 85%;
+        width: 100%;
+        place-content: flex-start;
     }
 `
 
@@ -32,7 +34,23 @@ export const Label = styled.label`
     color: var(--color-detail-text);
     font-weight: 400;
     text-transform: capitalize;
-   
+    /* transition: 1s ease; */
+`;
+
+export const CreatableLabel = styled.label`
+    position: absolute;
+    z-index: 1;
+    left: 5%;
+    line-height: calc( var(--input-height));
+    color: var(--color-detail-text);
+    font-weight: 400;
+    text-transform: capitalize;
+    /* transition: 1s ease; */
+    &:hover{
+        top: -40px;
+        left: 2.5%;
+        color: var(--color-main);
+    }
 `;
 
 export const Input = styled.input`
@@ -40,7 +58,7 @@ export const Input = styled.input`
     width: var(--input-width);
     display: ${props => props.display || 'block'};
     background-color: var(--color-white-contrast);
-    margin-bottom: 2%;
+    /* margin-bottom: 2%; */
     padding-left: 16px;
     border-radius: var(--input-radius);
     border: none;
@@ -86,6 +104,11 @@ export const FormGrid = styled(Form)`
         grid-column-start: 2;
         grid-column-end: 2;
     }
+    @media (min-width: 820px) {
+        grid-column-gap: 14%;
+        place-content: flex-start;
+    }
+    
 `;
 
 export const FormCntrl = styled.div`
@@ -100,11 +123,11 @@ export const FormCntrl = styled.div`
 export const Select = styled.select`
     background-color: var(--color-white-contrast);
     width: calc(var(--input-width) + 1.75rem);
-    height: 3rem;
+    height: var(--input-height);
     border-radius: var(--input-radius);
     border: none;
     outline-color: var(--color-input-outline);
-    margin-bottom: 2%;
+    /* margin-bottom: 2%; */
     padding-left: 16px;
     &::placeholder{
         text-transform: capitalize;
@@ -132,7 +155,7 @@ export const OutputCnt = styled.div`
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto;
     place-content: center;
-    margin: 2.5%;
+    /* margin: 2.5%; */
     gap: .5rem;
 `;
 

@@ -4,7 +4,7 @@ import { FormButton } from "../buttons";
 import { FormGrid } from "./form.styled";
 import { FormControlInput } from "./FormControlInput";
 
-export const LocationForm = ({ addDirection, addWebUrl, event, eventDirection }) => {
+export const LocationForm = ({ addDirection, addWebUrl, event, eventDirection, next }) => {
 
     const direction = {
         country: "",
@@ -23,6 +23,8 @@ export const LocationForm = ({ addDirection, addWebUrl, event, eventDirection })
 
     const [formData, setFormData] = useState(event.type.includes("online") ? webUrl : direction);
     const styles = event.type.includes("online") ? style : {};
+    const s = 1;
+    const ms = s * 1000;
     
     useEffect(()=>{
         if(!event.location) return;
@@ -36,11 +38,9 @@ export const LocationForm = ({ addDirection, addWebUrl, event, eventDirection })
         e.preventDefault();
         //validation
         event.type.includes("online") ? addWebUrl(formData) : addDirection(formData);
+        setTimeout(next, ms)
     }
 
-    console.log(event.location)
-    console.log(formData)
-    console.log(eventDirection)
     return (
         <FormGrid styles={styles} onSubmit={handleSubmit}>
             {Object.keys(formData).map((field, key) => (

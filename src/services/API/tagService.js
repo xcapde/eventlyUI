@@ -14,9 +14,11 @@ axios.interceptors.request.use(function (config) {
 export const tagService = {
 
     getAll() {
-        const tags = axios.get(`/tags`).then(res => {
-            return res.data;
-        })
+        const tags = axios.get(`/tags`)
+            .then(res => {
+                return res.data;
+            })
+            .catch(err => console.log(err))
         return tags;
     },
 
@@ -26,23 +28,16 @@ export const tagService = {
         })
         return tag;
     },
-    // PostMultTagsReq: {
-    //     "tags": ["pet-friendly", "party"],
-    //      "eventId": id
-    // }
-    addTagsToEvent({id, ...tags}) {
-        const msg = axios.post(`/events/${id}/tags`, tags).then(res => {
+    addTagsToEvent({id, ...req}) {
+        console.log(id)
+        console.log({tags: req.data})
+        const msg = axios.post(`/events/${id}/tags`, {tags: req.data}).then(res => {
             return res.data;
         })
         return msg;
     },
-
-    // tagReq: {
-    //     "name": "party",
-    //      "eventId": id
-    // }
-    deleteEventTag({id, ...tag}) {
-        const msg = axios.delete(`/events/${id}/tags`, tag).then(res => {
+    deleteEventTag({id, ...req}) {
+        const msg = axios.delete(`/events/${id}/tags`,  { data: req }).then(res => {
             return res.data;
         })
         return msg;

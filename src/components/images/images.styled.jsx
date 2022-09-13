@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { Img } from "../../styles/styles.styled";
 
 export const SmallPreview = styled.article`
-    height: 5rem;
-    width: 5rem;    
+    height: 8rem;
+    width: 8rem;    
     position: relative;
     border-radius: .25rem;
 `
