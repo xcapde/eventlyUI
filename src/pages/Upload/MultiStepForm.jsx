@@ -54,7 +54,7 @@ export const MultiStepForm = ({
     ]
 
     useEffect(() => {
-        setProgress((page + 1) / (forms.length - 1) * 100)
+        setProgress((page + 1) / (forms.length) * 100)
     }, [page])
 
     return (
