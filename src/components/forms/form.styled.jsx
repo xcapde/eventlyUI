@@ -21,7 +21,8 @@ export const Form = styled.form`
         left: calc((100% - var(--form-button-width)) / 2);
     }
     @media (min-width: 820px) {
-        width: 85%;
+        width: 100%;
+        place-content: flex-start;
     }
 `
 
@@ -33,18 +34,18 @@ export const Label = styled.label`
     color: var(--color-detail-text);
     font-weight: 400;
     text-transform: capitalize;
-    transition: 1s ease;
+    /* transition: 1s ease; */
 `;
 
 export const CreatableLabel = styled.label`
     position: absolute;
     z-index: 1;
     left: 5%;
-    line-height: calc( var(--input-height) * .8);
+    line-height: calc( var(--input-height));
     color: var(--color-detail-text);
     font-weight: 400;
     text-transform: capitalize;
-    transition: 1s ease;
+    /* transition: 1s ease; */
     &:hover{
         top: -40px;
         left: 2.5%;
@@ -57,7 +58,7 @@ export const Input = styled.input`
     width: var(--input-width);
     display: ${props => props.display || 'block'};
     background-color: var(--color-white-contrast);
-    margin-bottom: 2%;
+    /* margin-bottom: 2%; */
     padding-left: 16px;
     border-radius: var(--input-radius);
     border: none;
@@ -103,6 +104,11 @@ export const FormGrid = styled(Form)`
         grid-column-start: 2;
         grid-column-end: 2;
     }
+    @media (min-width: 820px) {
+        grid-column-gap: 14%;
+        place-content: flex-start;
+    }
+    
 `;
 
 export const FormCntrl = styled.div`
@@ -121,7 +127,7 @@ export const Select = styled.select`
     border-radius: var(--input-radius);
     border: none;
     outline-color: var(--color-input-outline);
-    margin-bottom: 2%;
+    /* margin-bottom: 2%; */
     padding-left: 16px;
     &::placeholder{
         text-transform: capitalize;
@@ -149,7 +155,7 @@ export const OutputCnt = styled.div`
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto;
     place-content: center;
-    margin: 2.5%;
+    /* margin: 2.5%; */
     gap: .5rem;
 `;
 

@@ -27,9 +27,14 @@ export const ImageForm = ({ event, uploadImg, deleteImg }) => {
     }, [event])
 
     return (
-        <Row>
+        <Col>
             <Col>
-                <OutputCnt>
+                <OutputCnt style={event.images.length === 0 ? {
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignItems:'center'
+                } : {}}>
                     {event && event.images.length > 0 ?
                         event.images.map((image, key) => (
                             <ImagePreview key={key} url={image} callback={deleteImg} />
@@ -38,9 +43,9 @@ export const ImageForm = ({ event, uploadImg, deleteImg }) => {
                     }
                 </OutputCnt>
             </Col>
-            <Col style={{ width: '45%' }}>
+            <Col>
                 <ImageInput uploadImg={uploadImg} uploaded={uploaded} />
             </Col>
-        </Row>
+        </Col>
     )
 }

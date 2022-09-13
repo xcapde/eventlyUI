@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Col, DetailText, Row } from "../../styles/styles.styled"
 import { AddButton } from "../buttons";
-import {ReqFeed} from "../feeds/ReqFeed";
-import { SmallForm } from "./form.styled"
+import { ReqFeed } from "../feeds/ReqFeed";
+import { Form, SmallForm } from "./form.styled"
 import { FormControlInput } from "./FormControlInput"
 
 export const ReqsForm = ({ event, addReq, deleteReq }) => {
@@ -20,19 +20,19 @@ export const ReqsForm = ({ event, addReq, deleteReq }) => {
     }
 
     return (
-        <Row>
-            <Col style={{ width: '60%' }}>
+        <Col>
+            <Col>
                 {event && event.requirements.length > 0 ?
                     <ReqFeed requirements={event.requirements} deleteReq={deleteReq} /> :
                     <DetailText>No requirements yet!</DetailText>
                 }
             </Col>
-            <Col style={{ width: '40%', justifyContent: 'flex-start' }}>
-                <SmallForm style={{padding:'2%'}} onSubmit={handleSubmit}>
+            <Col>
+                <Form onSubmit={handleSubmit}>
                     <FormControlInput field={'requirement'} data={requirement} callback={setRequirement} />
                     <AddButton />
-                </SmallForm>
+                </Form>
             </Col>
-        </Row>
+        </Col>
     )
 }

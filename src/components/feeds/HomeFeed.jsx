@@ -31,10 +31,10 @@ export const HomeFeed = () => {
         tagService.getAll().then(res => {
             if (!res) return
             setTags(res)
-            console.log(res)
         })
     }
 
+    
     return (
         <View>
             <Col id="main" sytle={{ justifyContent: 'space-around', gap: '2.5%' }}>

@@ -60,6 +60,7 @@ export const LinkBtn = styled.p`
     color: ${props => props.color || 'var(--color-link-text)'};
     padding: 0 0.2rem;
     text-decoration: underline;
+    cursor:pointer;
     &:hover {
         color: ${props => props.color || 'var(--color-link-text-hover)'};
     }
@@ -103,7 +104,7 @@ export const EllipsisBtn = styled(OpacityButton)`
     }
 `
 
-export const CloseBtn = styled (OpacityButton)`
+export const CloseBtn = styled(OpacityButton)`
     top: var(--header-button-position-top);
     right: var(--header-button-position-side);
     &::before{
@@ -111,7 +112,7 @@ export const CloseBtn = styled (OpacityButton)`
     }
 `
 
-export const BurgerBtn = styled (OpacityButton)`
+export const BurgerBtn = styled(OpacityButton)`
     position: absolute;
     top: var(--header-button-position-top);
     right: var(--header-button-position-side);
@@ -149,12 +150,16 @@ export const UploadButton = styled.button`
     border-radius: var(--button-radius);
     border: var(--button-border-width) solid var(--button-color);
     padding: unset;
+    margin-top:calc(var(--input-height) + calc(30px - (3rem / 2) + 1.25rem));
     cursor:pointer;
     &:hover, &:focus{
         height: 50px;
         width: 50px;
         border-radius: 50%;
         transition: all 2s ease , width 1s ease, height 1s ease, border-radius 1s ease;
+    }
+    @media (min-width: 820px) {
+        margin-top: 0%;
     }
 `;
 
@@ -167,11 +172,11 @@ export const AddBtn = styled.button`
     margin: 0 auto;
     color: var(--color-main);
     background-color: var(--color-white);
-    border: 1px solid var(--color-main);
+    border: 2px solid var(--button-color);;
     border-radius: 50%;
     font-size: xx-large;
     position: relative;
-    left: 30%;
+    cursor:pointer;
     /* &::before{
         font-family: "Font Awesome 5 Free";
         font: var(--fa-font-solid); 

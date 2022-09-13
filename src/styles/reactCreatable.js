@@ -6,9 +6,9 @@ export const customStyles = {
         backgroundColor: state.isFocused ? 'var(--color-white-contrast)' : 'none',
         //   padding: 20,
     }),
-    container: (provided, state)=>({
+    container: (provided, state) => ({
         ...provided,
-        width: 'var(--input-width)',
+        width: 'calc( var(--input-width) * 1.05)',
         minHeight: 'var(--input-height)',
     }),
     control: (provided, state) => ({
@@ -19,13 +19,14 @@ export const customStyles = {
         borderRadius: 'var(--input-radius)',
         outline: state.isFocused ? 'auto' : 'none',
         outlineColor: state.isFocused ? 'var(--color-input-outline)' : 'none',
+        minHeight: 'var(--input-height)',
     }),
-    clearIndicator: (provided, state)=>({
+    clearIndicator: (provided, state) => ({
         ...provided,
         // display: state.isFocused ? 'none' : 'block',
         display: 'none',
     }),
-    indicatorSeparator: (provided, state)=>({
+    indicatorSeparator: (provided, state) => ({
         ...provided,
         display: 'none',
     }),
@@ -42,9 +43,9 @@ export const customStyles = {
         const transition = 'opacity 300ms';
         return { ...provided, color, backgroundColor, textTransform, fontFamily, fontSize, fontWeight, borderRadius, padding, opacity, transition };
     },
-    multiValueLabel:(provided, state)=>{
+    multiValueLabel: (provided, state) => {
         const color = 'var(--color-badgetText-default)';
         const fontSize = 'unset';
-        return {...provided, color, fontSize }
+        return { ...provided, color, fontSize }
     }
 }

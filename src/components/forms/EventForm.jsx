@@ -4,7 +4,7 @@ import { Form } from "./form.styled";
 import { FormControlInput } from "./FormControlInput";
 import { FormControlSelect } from "./FormControlSelect";
 
-export const EventForm = ({ eventToUpdate, postEvent, updateEvent }) => {
+export const EventForm = ({ eventToUpdate, postEvent, updateEvent, next }) => {
 
     const [event, setEvent] = useState(
         {
@@ -15,6 +15,8 @@ export const EventForm = ({ eventToUpdate, postEvent, updateEvent }) => {
         });
 
     const eventTypes = ["offline", "online"];
+    const s = 1;
+    const ms = s * 1000;
 
     useEffect(() => {
         if (!eventToUpdate) return;
@@ -30,6 +32,8 @@ export const EventForm = ({ eventToUpdate, postEvent, updateEvent }) => {
     const handleSubmit = (e) => {
         e.preventDefault(e);
         eventToUpdate ? updateEvent(event) : postEvent(event);
+        // resetValues();
+        setTimeout(next, ms)
         resetValues();
     }
 

@@ -7,7 +7,7 @@ import { CreatableLabel, Form, FormCntrl, OutputCnt } from "./form.styled";
 import { AddButton } from "../buttons/AddButton";
 import format from "../../utils/format";
 import { Badge } from '../badges/Badge';
-import { customStyles } from '../../styles/reactSelect';
+import { customStyles } from '../../styles/reactCreatable';
 
 export const TagsForm = ({ event, addTags, deleteTags }) => {
 
@@ -38,7 +38,7 @@ export const TagsForm = ({ event, addTags, deleteTags }) => {
     }
 
 
-    const handleChange = (newValue, actionMeta) => {
+    const handleChange = (newValue) => {
         setNewTags(format.optionsToTags(newValue));
     }
 
@@ -56,13 +56,16 @@ export const TagsForm = ({ event, addTags, deleteTags }) => {
 
     return (
         <Col>
-            <OutputCnt>
-                {event && event.tags.length > 0 ?
-                    event.tags.map((tag, key) => (<Badge key={key} content={tag} field={'tags'} callback={deleteTags} editMode={true} />))
-                    : "No tags yet!"}
-            </OutputCnt>
-            <Form onSubmit={handleSubmit}>
-                {tags &&
+            <Col>
+                <OutputCnt>
+                    {event && event.tags.length > 0 ?
+                        event.tags.map((tag, key) => (<Badge key={key} content={tag} field={'tags'} callback={deleteTags} editMode={true} />))
+                        : "No tags yet!"}
+                </OutputCnt>
+            </Col>
+            <Col>
+                <Form onSubmit={handleSubmit}>
+                    {/* {tags && */}
                     <FormCntrl>
                         <CreatableSelect
                             styles={customStyles}
@@ -76,9 +79,11 @@ export const TagsForm = ({ event, addTags, deleteTags }) => {
                         />
                         <CreatableLabel style={display}>Tags</CreatableLabel>
                     </FormCntrl>
-                }
-                <AddButton style={{ left: '40%' }} />
-            </Form>
+                    {/* } */}
+                    <AddButton />
+                </Form>
+            </Col>
+
         </Col>
     );
 }
