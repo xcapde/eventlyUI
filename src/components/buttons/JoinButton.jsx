@@ -1,9 +1,9 @@
-import { FormBtn } from "./buttons.styled"
+import { JoinBtn } from "./buttons.styled"
 
 export const JoinButton = ({ content }) => {
     return (
-        <FormBtn style={{width:'100%'}}>
+        <JoinBtn>
             {content}
-        </FormBtn>
+        </JoinBtn>
     )
 }

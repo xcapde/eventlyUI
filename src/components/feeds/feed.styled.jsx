@@ -9,11 +9,11 @@ export const VerticalFeed = styled.div`
     justify-items: center;
     grid-gap: 1rem 1rem;
     overflow-y: scroll;
-    padding: 3% 0;
+    padding: 1rem 0 0.5rem 0;
     @media (min-width: 820px) {
-        width: 96%;
-        grid-template-columns: repeat(auto-fill, minmax(calc(var(--card-width-desktop) + 0.5rem), 1fr));
-        margin: 1% 2%;
+        grid-template-columns: repeat(auto-fill, minmax(calc(var(--cardXS-width-desktop) + 1%), 1fr));
+        grid-template-rows: repeat(auto-fill, minmax(calc(var(--cardXS-height) + 10%), 1fr));
+        height: 100%;
     };
 `;
 
@@ -41,8 +41,12 @@ export const HorizontalFeed = styled(Row)`
     overflow-x: scroll; 
     justify-content: flex-start;
     display: -webkit-box;
-    margin: 0 5%;
     ::-webkit-scrollbar {
-    display: none;
+        display: none;
+    }
+    @media (min-width: 820px) {
+        ::-webkit-scrollbar {
+        display: flex;
+        }
     }
 `

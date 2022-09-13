@@ -3,7 +3,7 @@ import { Details } from "./Details"
 
 export const InfoText = ({event}) => {
     return(
-        <Col style={{gap:'1rem'}} >
+        <Col style={{gap:'1rem'}}>
             <Title >{event.title}</Title>
             <Details event={event}/>
         </Col>

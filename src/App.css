@@ -114,11 +114,13 @@
     --card-width: 95%;
     --card-height: 350px;
     --card-img-height: 100%;
-    --card-width-desktop: 350px;
-    --card-height-desktop: 450px;
+    --card-width-desktop: 220px;
+    --card-height-desktop: 300px;
 
     --cardMid-width: 225px;
     --cardMid-height: 310px;
+    --cardMid-width-desktop: 225px;
+    --cardMid-height-desktop: 310px;
     --cardMid-img-size: 90%;
 
     --cardXS-width: 95%;

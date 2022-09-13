@@ -3,8 +3,8 @@ import { Date, Location, Time, Url } from "../subcomponents"
 
 export const Details = ({ event }) => {
     return (
-        <Col style={{gap:'1rem', height:'unset', alignItems:'flex-start'}}>
-            <Row style={{gap:'3rem', height:'unset', justifyContent:'flex-start'}}>
+        <Col style={{gap:'1rem', alignItems:'flex-start'}}>
+            <Row style={{gap:'3rem', justifyContent:'flex-start'}}>
                 <Date event={event} />
                 <Time event={event} />  
             </Row>

@@ -31,6 +31,13 @@ export const FormBtn = styled(Button)`
     }
 `;
 
+export const JoinBtn = styled(FormBtn)`
+    width:100%;
+    @media(min-width: 820px){
+        width: var(--form-button-width);    
+        }
+`
+
 export const MainButton = styled(FormBtn)`
     width: var(--main-button-width);
     height: var(--main-button-height);

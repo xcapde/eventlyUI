@@ -9,8 +9,8 @@ export const ModuleTags = ({tags}) => {
     }, [tags]);
     
     return(
-        <Col height='unset' style={{ gap: '3%'}}>
-        <Title>Tags</Title>
+        <Col height='15%'>
+        <Title style={{padding:'0.75rem'}}>Tags</Title>
         <HorizontalFeed height='var(--module-tags-height)'>
                     {tags && tags.map((tag, key) =>
                     <Badge key={key} content={tag.name} tag={tag}/>

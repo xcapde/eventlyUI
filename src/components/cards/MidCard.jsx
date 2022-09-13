@@ -13,17 +13,17 @@ export const MidCard = ({ event }) => {
         </Link>
       </Wrapper>
 
-        <Col height='35%' style={{gap:'1rem', width: '90%', padding:'0.3rem 0', borderRadius:'var(--cardMid-radius)'}}>
+        <Col height='35%' style={{gap:'1rem', width: '90%', padding:'0.3rem 0 0.5rem 0', borderRadius:'var(--cardMid-radius)'}}>
               <Title style={{fontSize:'var(--font-size-cardMid-title)', fontWeight:'boler'}} >{event.title}</Title>
 
-              <Col style={{gap:'0.7rem', alignItems:'flex-start'}}>
+              <Col style={{gap:'0.5rem', alignItems:'flex-start'}}>
                 <Row style={{gap:'1rem', justifyContent:'space-between'}}>
                   <Date event={event} />
                   <Time event={event} />  
                 </Row>
                 {event.type === "online" ?
                 <Url event={event} /> : <Location event={event} />}
-                 <p style={{fontSize:"small", textAlign:'center', width:'100%'}}>Joined Component</p>
+                 <div style={{fontSize:"small", textAlign:'center', width:'100%'}}>Joined Component</div>
               </Col>
         </Col>
     </CardMid>

@@ -5,9 +5,9 @@ import { VerticalFeed } from "./feed.styled"
 export const ModuleVerticalSmallCard = ({events}) => {
 
     return(
-        <Col style={{ height:'auto', overflowY: "scroll" }}>
-            <Title>Offline</Title>
-            <VerticalFeed height='var(--moduleVertical-SmallCard-height)' style={{gap:'0.5rem'}}>
+        <Col height='25%'>
+            <Title style={{padding:'0.75rem'}}>Offline</Title>
+            <VerticalFeed height='var(--moduleVertical-SmallCard-height)'>
                 {events && events.filter(event => event.type.includes('offline')).map((event, key) =>
                     <SmallCard key={key} event={event} />
                 ).reverse()}                               

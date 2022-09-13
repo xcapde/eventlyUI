@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { eventService } from "../../services/API/eventService";
 import { tagService } from "../../services/API/tagService";
-import { Col, Row, Title, View } from "../../styles/styles.styled";
+import { Col, Title, View } from "../../styles/styles.styled";
 import { MainCard } from "../cards/MainCard";
 import { SmallCard } from "../cards/SmallCard";
 import { VerticalFeed } from "./feed.styled";
@@ -43,13 +43,13 @@ export const HomeFeed = () => {
 
     return (
         <View >
-            <Col width='95%' sytle={{justifyContent: 'space-between',}}>
+            <Col width='95%' justifyContent='space-evenly'>
                 
                 <ModuleTags tags={tags}/>
                 {!tagsSearch &&
-                    <React.Fragment>                      
-                        <ModuleVerticalSmallCard events={events}/> 
+                    <React.Fragment>  
                         <ModuleHorizontalMidCard events={events}/>
+                        <ModuleVerticalSmallCard events={events}/> 
                         {/* <ModuleHorizontalMainCard events={events}/> */}
                     </React.Fragment>
                 }

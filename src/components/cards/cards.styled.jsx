@@ -20,13 +20,14 @@ export const CardMid = styled(Card)`
     height: var(--cardMid-height);
     width: var(--cardMid-width);
     position: relative;
+    margin: 0 1rem;
     background-color: var(--color-white);
     color: var(--color-secondary-text);
     border-radius: var(--cardMid-radius);
     box-shadow: 1px 2px 18px var(--card-shadow-opacity);
     @media (min-width: 820px) {
-        height: var(--card-height-desktop);
-        width: var(--card-width-desktop);
+        height: var(--cardMid-height-desktop);
+        width: var(--cardMid-width-desktop);
     }
 `;
 
