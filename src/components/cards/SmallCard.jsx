@@ -13,9 +13,9 @@ export const SmallCard = ({ event }) => {
             <CardXSImage imgUrl={event.images[0] ? event.images[0] : 'https://images.hola.com/imagenes/cocina/tecnicas-de-cocina/20210804194039/mejores-trucos-para-hacer-barbacoas/0-981-794/barbacoa-port-adobe-t.jpg'} />
           </Col>
         </Link>
-        <Col width={'calc(100vh - var(--cardXS-img-size))'} height='90%' style={{gap:'0.5rem', padding:'0 0.5rem'}}>
+        <Col width={'calc(100vh - var(--cardXS-img-size))'} height='90%' style={{gap:'0.3rem', padding:'0 0.5rem'}}>
           <Title event={event}/>
-          <Col style={{gap:'0.5rem', height:'unset'}}>
+          <Col style={{gap:'0.2rem', height:'unset'}}>
             <Row style={{gap:'3rem'}}>
                 <Date event={event} />
                 <Time event={event} />  

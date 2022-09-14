@@ -12,7 +12,7 @@ export const AuthService = {
     },
 
     isPublisher(object){
-        if(this.getAuthUser().id !== object.publisher.id) return false;
+        if(this.getAuthUser().username !== object.publisher.username) return false;
         return true;
     },
 

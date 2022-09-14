@@ -196,7 +196,7 @@ export const AddBtn = styled.button`
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    color: var(--color-main);
+    color: var(--color-white);
     background-color: var(--button-main);
     border: 2px solid var(--color-white);;
     border-radius: 50%;

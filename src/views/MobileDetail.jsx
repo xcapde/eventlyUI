@@ -1,21 +1,33 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { BackButton, JoinButton } from "../components/buttons";
 import { OptionsModule } from "../components/buttons/burgers/CardBB/optionsMenu/OptionsModule";
 import { ModuleContent } from "../components/information/ModuleContent"
 import { ModuleDetails } from "../components/information/ModuleDetails";
 import { Col, Gradient, Img, Title, Wrapper, View } from "../styles/styles.styled";
 import { PageCntrl, ImgCntrl, SideControl } from "../pages/Detail/detail.styled";
+import { eventService } from "../services/API/eventService";
 
 export const MobileDetail = ({ event }) => {
     const navigate = useNavigate();
     const [key, setKey] = useState("description");
     const tabContent = ["description", "requirements", "tags", "map"];
+    const id = useParams().id
+
 
     useEffect(() => {
         if (!key) return;
+
     }, [key, event])
+
+    const deleteEvent = () => {
+        eventService.deleteEvent(id).then(res => {
+            alert(`${res.title} deleted!`)
+            navigate(-1)
+        });
+        alert(id)
+    }
 
     return (
         <View height='90%' direction='row' style={{top:'0'}}>
@@ -27,7 +39,7 @@ export const MobileDetail = ({ event }) => {
             <PageCntrl id="box">
                 <Gradient/>
                 <BackButton callback={() => navigate(-1)} />
-                <OptionsModule/>
+                <OptionsModule event={event} callback={deleteEvent}/>
 
                 <ImgCntrl>
                     <Img imgUrl={event.images[0] ? event.images[0] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} />

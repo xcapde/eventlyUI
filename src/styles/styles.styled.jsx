@@ -99,7 +99,7 @@ export const Img = styled.img.attrs(props => ({
 `;
 
 export const Gradient = styled.div` 
-    height: 25%;
+    height: 30%;
     width: 100%;
     position:absolute;
     top: 0;
