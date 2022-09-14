@@ -4,9 +4,6 @@ import { InfoText } from "./InfoText"
 
 export const ModuleDetails = ({ event, participations }) => {
 
-
-    participations.map(p => console.log(p.participant))
-
     return (
         <Col height='auto' style={{ alignItems: 'flex-start' }}>
             <Row>
@@ -19,8 +16,7 @@ export const ModuleDetails = ({ event, participations }) => {
             </Row>
             <Wrapper style={{ padding: '0.75rem' }}>
                 <span>count: {event.participantsCount}</span>
-                {participations && participations.map((p, key) => (<span key={key}>{p.participant.username}</span>))}
-                {/* {participations.map(part => part.participant.username)} */}
+                {participations && participations.length > 0 && participations.map((p, key) => (<span key={key}>{p.participant.username}</span>))}
             </Wrapper>
         </Col>
     )

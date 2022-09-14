@@ -26,25 +26,12 @@ export const eventService = {
         })
         return event;
     },
-    // eventReq:{
-    //     "title":"B-day party!",
-    //     "description":"Mikusa's b-day, she's getting older soon to be a nanny",
-    //     "type":"offline",
-    //     "date": "2022-09-17T09:30:15"
-    // }
     postEvent(req) {
         const event = axios.post(`/events`, req).then(res => {
             return res.data;
         })
         return event;
     },
-    // eventReq:{
-    //     "title":"B-day party!",
-    //     "description":"Mikusa's b-day, she's getting older soon to be a nanny",
-    //     "type":"offline",
-    //     "date": "2022-09-17T09:30:15",
-    //      "id":id
-    // }
     updateEvent({ id, ...rest }) {
         console.log(id);
         console.log(rest);
@@ -58,5 +45,23 @@ export const eventService = {
             return res.data;
         })
         return event;
+    },
+    getJoinedEvents() {
+        const events = axios.get(`/joined-events`).then(res => {
+            return res.data;
+        })
+        return events;
+    },
+    getPublishedEvents() {
+        const events = axios.get(`/published-events`).then(res => {
+            return res.data;
+        })
+        return events;
+    },
+    getUserPublishedEvents(id) {
+        const events = axios.get(`/users/${id}/events`).then(res => {
+            return res.data;
+        })
+        return events;
     }
 }
