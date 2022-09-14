@@ -17,7 +17,6 @@ export const MobileDetail = ({ event, participations, join, unjoin }) => {
         if (!key) return;
     }, [key, event, participations])
 
-    console.log(event)
     return (
         <View style={{ height: '90vh', top: 0, gap: '1rem' }}>
             <Gradient />

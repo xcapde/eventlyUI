@@ -31,7 +31,6 @@ export const Detail = () => {
     const getParticipations = () => {
         participationService.getByEventId(id).then(res => {
             if (!res) return;
-            console.log(res);
             setParticipations(res)
         })
     }
@@ -39,7 +38,7 @@ export const Detail = () => {
     const join = () => {
         participationService.join(id).then(res => {
             if (!res) return;
-            console.log(res);
+            alert(res);
             getEvent(id);
         })
     }
@@ -47,12 +46,11 @@ export const Detail = () => {
     const unjoin = () => {
         participationService.unjoin(id).then(res => {
             if (!res) return;
-            console.log(res);
+            alert(res);
             getEvent(id);
         })
     }
 
-    console.log(location)
     return (
         <Page>
             <NavRail />

@@ -27,7 +27,6 @@ export const Profile = () => {
     const getJoined = () => {
         eventService.getJoinedEvents().then(res => {
             if (!res) return;
-            console.log(res)
             setJoined(res);
         })
     }
@@ -35,12 +34,9 @@ export const Profile = () => {
     const getPublished = () => {
         eventService.getPublishedEvents().then(res => {
             if (!res) return;
-            console.log(res);
             setPublished(res);
         })
     }
-
-    console.log(username)
 
     return (
         <View style={{ height: '90vh', top: 0, width: '85%', left: 'calc((100% - 85%) / 2)' }}>
