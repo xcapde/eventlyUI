@@ -62,7 +62,7 @@ export const Title = styled.h1`
     color: var(--color-title-text);
     font-family: var(--title-font);
     font-size: var(--font-size-title);
-    font-weight: 600;
+    font-weight: var(--font-weight-title);
 `
 
 export const TitleCard = styled(Title)`

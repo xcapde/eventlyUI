@@ -7,7 +7,7 @@ export const Time = ({event}) => {
             <DetailIcon>
                 <i className="fa-solid fa-clock"></i>   
             </DetailIcon> 
-            <DetailText>
+            <DetailText style={{fontFamily:'var(--numbers-font)', fontWeight:'500'}}>
                 {event.hour}
             </DetailText>
         </Row>

@@ -1,7 +1,7 @@
 import { Col, Row } from "../../styles/styles.styled";
 import { CardXS, CardXSImage } from "./cards.styled";
 import { Link } from "react-router-dom";
-import { Date, Location, Time, Title, Url } from "../subcomponents";
+import { Date, Location, Participation, Time, Title, Url } from "../subcomponents";
 
 export const SmallCard = ({ event }) => {
   
@@ -23,7 +23,7 @@ export const SmallCard = ({ event }) => {
             {event.type === "online" ?
                 <Url event={event} /> : <Location event={event} />}
           </Col>
-          <p style={{fontSize:"small", textAlign:'center', width:'100%'}}>Join Component</p>
+          <Participation event={event}/>
 
         </Col>
       </Row>

@@ -43,8 +43,6 @@ export const CardXS = styled(Card)`
 `;
 
 
-/*POSITIONING*/
-
 /*IMAGES*/
 export const CardImage = styled(Img)`
     padding: 0;

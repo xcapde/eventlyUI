@@ -16,6 +16,7 @@
     --detail-font: 'Comfortaa', cursive;
     --card-font:'Comfortaa', cursive;
     --home-font: 'Comfortaa', cursive;
+    --numbers-font: 'Montserrat', sans-serif;
 
     /* COLOR */
     --card-shadow-opacity: rgba(0, 0, 0, 0.350);
@@ -103,6 +104,7 @@
     
     /* FONT WEIGTH */
     --font-weigth-detail: 600;
+    --font-weight-title: 900,
 
     /* RADIUS */
     --footer-radius: 1.15rem 1.15rem 0 0;
