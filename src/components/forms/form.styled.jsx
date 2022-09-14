@@ -152,7 +152,7 @@ export const OutputCnt = styled.div`
     min-width: 50vw;
     height: 100%;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: ${props => props.grid || 'auto auto auto'};
     grid-template-rows: auto auto;
     place-content: center;
     /* margin: 2.5%; */

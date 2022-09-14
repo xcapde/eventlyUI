@@ -38,7 +38,7 @@ export const Detail = () => {
     const join = () => {
         participationService.join(id).then(res => {
             if (!res) return;
-            alert(res);
+            alert(res.message);
             getEvent(id);
         })
     }
@@ -46,7 +46,7 @@ export const Detail = () => {
     const unjoin = () => {
         participationService.unjoin(id).then(res => {
             if (!res) return;
-            alert(res);
+            alert(res.message);
             getEvent(id);
         })
     }

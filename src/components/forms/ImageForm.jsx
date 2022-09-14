@@ -34,7 +34,7 @@ export const ImageForm = ({ event, uploadImg, deleteImg }) => {
     return (
         <Col>
             <Col>
-                <OutputCnt style={event.images.length === 0 ? {
+                <OutputCnt grid={'auto auto'} style={event.images.length === 0 ? {
                     display: 'flex',
                     flexDirection: 'row',
                     justifyContent: 'center',
