@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { Col, Row } from "../../styles/styles.styled"
+import { Col } from "../../styles/styles.styled"
 import { ImagePreview } from "../images/ImagePreview"
 import { NoPreviewSmall } from "../images/images.styled"
 import { OutputCnt } from "./form.styled"
@@ -32,7 +32,7 @@ export const ImageForm = ({ event, uploadImg, deleteImg }) => {
     return (
         <Col>
             <Col>
-                <OutputCnt style={event.images.length === 0 ? {
+                <OutputCnt grid={'auto auto'} style={event.images.length === 0 ? {
                     display: 'flex',
                     flexDirection: 'row',
                     justifyContent: 'center',

@@ -9,7 +9,7 @@ import { Col, Gradient, Img, Title, Wrapper, View } from "../styles/styles.style
 import { PageCntrl, ImgCntrl, SideControl } from "../pages/Detail/detail.styled";
 import { eventService } from "../services/API/eventService";
 
-export const MobileDetail = ({ event }) => {
+export const MobileDetail = ({ event, participations, join, unjoin }) => {
     const navigate = useNavigate();
     const [key, setKey] = useState("description");
     const tabContent = ["description", "requirements", "tags", "map"];
@@ -48,10 +48,10 @@ export const MobileDetail = ({ event }) => {
                 <Col height={'calc(100vh - var(--detail-image-height))'} width='90%' style={{marginBottom:'0.5rem'}}>
                         <Wrapper>
                             <Title style={{padding:'0.75rem'}}>{event.title}</Title>
-                            <ModuleDetails event={event}/>
+                            <ModuleDetails event={event} participations={participations}/>
                             <ModuleContent callback={setKey} tabContent={tabContent} field={key} event={event} />
                         </Wrapper>
-                    <JoinButton content={'Join'} callback={()=>console.error('not implemented yet')}/>
+                    <JoinButton content={event.participant ? "Unjoin" : "Join"} callback={() => event.participant ? unjoin() : join()} />
                 </Col>
             </PageCntrl>
             <SideControl>
