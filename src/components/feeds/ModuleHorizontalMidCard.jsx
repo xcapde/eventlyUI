@@ -6,9 +6,9 @@ export const ModuleHorizontalMidCard  = ({events}) => {
 
     return(
         <Col height='auto'>
-            <Title style={{padding:'0.75rem'}}>Online</Title>
+            <Title style={{padding:'0.75rem'}}>Offline</Title>
             <HorizontalFeed height='var(--moduleHorizontal-MidCard-height)'>
-                {events && events.filter(event => event.type.includes('online')).map((event, key) =>
+                {events && events.filter(event => event.type.includes('offline')).map((event, key) =>
                     <MidCard key={key} event={event} />
                 ).reverse()}                        
             </HorizontalFeed>

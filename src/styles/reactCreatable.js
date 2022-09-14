@@ -2,7 +2,7 @@ export const customStyles = {
     option: (provided, state) => ({
         ...provided,
         borderBottom: '1px solid var(--color-white-contrast)',
-        color: state.isFocused ? 'var(--color-main)' : 'var(--color-secondary-text)',
+        color: state.isFocused ? 'var(--color-main)' : 'var(--color-detail-text)',
         backgroundColor: state.isFocused ? 'var(--color-white-contrast)' : 'none',
         //   padding: 20,
     }),

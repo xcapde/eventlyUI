@@ -7,7 +7,7 @@ export const Card = styled(Col)`
     width: var(--card-width);
     position: relative;
     background-color: var(--color-white);
-    color: var(--color-secondary-text);
+    color: var(--color-detail-text);
     border-radius: var(--card-radius);
     box-shadow: 1px 2px 18px var(--card-shadow-opacity);
     @media (min-width: 820px) {
@@ -22,7 +22,7 @@ export const CardMid = styled(Card)`
     position: relative;
     margin: 0 1rem;
     background-color: var(--color-white);
-    color: var(--color-secondary-text);
+    color: var(--color-detail-text);
     border-radius: var(--cardMid-radius);
     box-shadow: 1px 2px 18px var(--card-shadow-opacity);
     @media (min-width: 820px) {
@@ -45,11 +45,8 @@ export const CardXS = styled(Card)`
 
 /*POSITIONING*/
 
-/*text-cont*/
-
 /*IMAGES*/
 export const CardImage = styled(Img)`
-    height: var(--card-img-height);
     padding: 0;
     border-radius: var(--card-radius);
     border-bottom-left-radius: 0;
@@ -59,26 +56,14 @@ export const CardImage = styled(Img)`
 export const CardMidImage = styled(Img)`
     height: var(--cardMid-img-size);
     width: var(--cardMid-img-size);
-    border-radius: var(--cardMid-radius);
-    padding: 5%;
+    border-radius: var(--cardMid-radius) var(--cardMid-radius) 0 0;
+    /* padding: 5%; */
+    /* border-radius: var(--cardMid-radius) 0; */
 `;
 
 export const CardXSImage = styled(Img)`
-    height: calc(var(--cardXS-height) - 20px);
-    width: calc(var(--cardXS-height) - 20px);
-    border-radius: var(--card-radius);
-    margin: 0 10px;
+    height: var(--cardXS-img-size);
+    width: var(--cardXS-img-size);
+    border-radius: var(--cardXS-img-radius);
+    padding: 5%;
 `;
-
-
-/*REFACTOR TO REACT COMPONENT (AVATARS MAP)*/
-// export const CardParticipation = styled(Col)`
-//     height: 3rem;
-//     width: 35%;
-//     justify-content: space-between;
-//     align-items: flex-end;
-//     padding-right: 0.5rem;
-//     @media (min-width: 820px) {
-//         width: 35%;
-//     }
-// `

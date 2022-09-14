@@ -7,11 +7,9 @@ export const OptionsCnt = styled(Col)`
     position: absolute;
     top: 3rem;
     right: 1.5rem;
-    background-color: var(--color-options-cnt);
+    display: flex;
+    align-items: flex-start;
+    background-color: var(--color-white);
     box-shadow: 1px 2px 18px var(--card-shadow-opacity);
-    color: var(--color-options-text);
-    border-radius: var(--card-radius);
-    border-top-right-radius:0;
     z-index: var(--index-options);
-    gap: 10%;
 `

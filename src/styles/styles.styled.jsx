@@ -25,7 +25,7 @@ export const Page = styled.main`
 `;
 
 export const View = styled.section`
-    height: 80vh;
+    height: ${props => props.height || '80vh'};
     width: 100vw;
     position: fixed;
     top: 10vh;
@@ -61,20 +61,33 @@ export const Title = styled.h1`
     align-items: center;
     color: var(--color-title-text);
     font-family: var(--title-font);
-    font-size: var(--font-size-card-title);
+    font-size: var(--font-size-title);
     font-weight: 600;
 `
 
+export const TitleCard = styled(Title)`
+    font-size: var(--font-size-card-title);
+    font-weight: bolder;
+    padding:0.25rem;
+        @media(min-width:820px){
+            font-size: var(--font-size-card-title-desktop);
+        }
+`
+
 export const DetailText = styled.p` 
+    width: 100%;
     color: var(--color-detail-text);
     font-family: var(--detail-font);
-    font-size:var(--font-size-detail-text);
-    font-weight: 400;
-
-    & i{
-        color: var(--color-card-icon);
-        margin-right: 10px;
+    font-size:var(--font-size-detail);
+    font-weight: var(--font-weigth-detail);
+    @media(min-width: 820px){
+        font-size:var(--font-size-detail-desktop);
     }
+`
+export const DetailIcon = styled(DetailText)`
+    width: unset;
+    padding-right: 0.5rem;
+    color: var(--color-detail-icon);
 `
 /*IMAGES*/
 export const Img = styled.img.attrs(props => ({
@@ -93,5 +106,4 @@ export const Gradient = styled.div`
     top: 0;
     background: linear-gradient(0deg, #00000000, #00000007, #00000030);
     z-index: var(--index-gradient);
-    border-radius:var(--card-radius);
 `;

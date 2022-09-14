@@ -36,23 +36,22 @@
     --color-badgetBG-requirement: lightblue;
     --color-badgetText-requirement: #7d7d7d;
 
-    --color-options-cnt: var(--color-white);
+    --color-options-cnt: var(--color-white-contrast);
 
     /* TEXT COLOR */
-    --color-detail-text: #7D7D7D;
-    --color-card-icon: #585858;
-    --color-title-text: #1d1c1c;
-    --color-options-text: #585858;
+    --color-detail-text: #7d7d7d;
+    --color-detail-icon: #7d7d7d;
+    --color-title-text: #181818;
 
 
     /* BUTTON COLOR */
     --button-text: var(--color-white-contrast);
-    --button-color: var(--color-main);
-    --button-color-hover: var(--color-main-hover);
+    --button-main: var(--color-main);
+    --button-main-hover: var(--color-main-hover);
 
     --color-link-text: var(--color-main);
     --color-link-text-hover: var(--color-main-hover);
-    
+    --color-disabled-button: lightgrey;
     --opacity-button-color: #ebebeb6e;
     --opacity-button-color-hover:var(--color-white);
     --opacity-button-color-icon: var(--color-white);
@@ -75,34 +74,40 @@
     --navbar-top-height: 10vh;
     --avatar-size: 40px;
     --opacity-button-size: 40px;
-    --detail-image-height: 40vh;
-    --options-cnt-height: 200px;
-    --options-cnt-width: 140px;
+    --detail-image-height: 45vh;
+    --options-cnt-height: fit-content;
+    --options-cnt-width: 150px;
     --module-tags-height: 8vh;
     --moduleVertical-SmallCard-height:calc(var(--cardXS-height) * 1.5);
     --moduleHorizontal-MainCard-height:calc(var(--card-height) * 1.1);
-    --moduleHorizontal-MidCard-height: calc(var(--cardMid-height) * 1.1);
+    --moduleHorizontal-MidCard-height: calc(var(--cardMid-height) * 1.17);
 
     /* FONT SIZE */
-    --font-size-cardXS-title: larger;
-    --font-size-cardMid-title: medium;
-    --font-size-card: medium;
-    --font-size-card-title: x-large;
+    --font-size-title: x-large;
+    --font-size-detail: small;
+    --font-size-detail-desktop: small;
+
+    --font-size-card-title: medium;
+    --font-size-card-title-desktop: medium;
+
+    /* --font-size-detail-title: larger;
+    --font-size-detail-title-desktop: larger; */
 
     --font-size-button: medium;
-    --font-size-form-button: large;
-    --font-size-button-detail: medium;
     --font-size-badge: smaller;
 
     --font-size-nav-icon: 24px;
-    --font-size-opacity-icon: medium;
-    --font-size-detail-text: medium;
     --font-size-detail-tab-button: medium;
-    --font-size-detail-participation: medium;
+    --font-size-opacity-icon: x-large;
+    --font-size-form-button: large;
+    
+    /* FONT WEIGTH */
+    --font-weigth-detail: 600;
 
     /* RADIUS */
-    --cardMid-radius: 1.5rem;
     --footer-radius: 1.15rem 1.15rem 0 0;
+    --cardMid-radius: 1.5rem;
+    --cardXS-img-radius: 1rem;
     --card-radius: 0.5rem;
     --avatar-radius: 0.5rem;
     --button-radius: 0.5rem;
@@ -117,15 +122,19 @@
     --card-width-desktop: 220px;
     --card-height-desktop: 300px;
 
-    --cardMid-width: 225px;
-    --cardMid-height: 310px;
-    --cardMid-width-desktop: 225px;
-    --cardMid-height-desktop: 310px;
-    --cardMid-img-size: 90%;
+    /* --cardMid-width: 225px;
+    --cardMid-height: 310px; */
+    --cardMid-width: 210px;
+    --cardMid-height: 280px;
+    --cardMid-width-desktop: 210px;
+    --cardMid-height-desktop: 280px;
+    /* --cardMid-img-size: 90%; */
+    --cardMid-img-size: 100%;
 
     --cardXS-width: 95%;
     --cardXS-height: 110px;
     --cardXS-width-desktop: 22rem;
+    --cardXS-img-size:90%;
 
     /* BADGE */
     --badge-padding: 8px 12px;

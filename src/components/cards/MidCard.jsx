@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { CardMid, CardMidImage } from "./cards.styled";
-import { Col, Row, Title, Wrapper } from "../../styles/styles.styled";
-import { Date, Location, Time, Url } from "../subcomponents";
+import { Col, Row, Wrapper } from "../../styles/styles.styled";
+import { Date, Location, Time, Title, Url } from "../subcomponents";
 
 export const MidCard = ({ event }) => {
 
@@ -14,7 +14,7 @@ export const MidCard = ({ event }) => {
       </Wrapper>
 
         <Col height='35%' style={{gap:'1rem', width: '90%', padding:'0.3rem 0 0.5rem 0', borderRadius:'var(--cardMid-radius)'}}>
-              <Title style={{fontSize:'var(--font-size-cardMid-title)', fontWeight:'boler'}} >{event.title}</Title>
+              <Title event={event}/>
 
               <Col style={{gap:'0.5rem', alignItems:'flex-start'}}>
                 <Row style={{gap:'1rem', justifyContent:'space-between'}}>
@@ -23,7 +23,7 @@ export const MidCard = ({ event }) => {
                 </Row>
                 {event.type === "online" ?
                 <Url event={event} /> : <Location event={event} />}
-                 <div style={{fontSize:"small", textAlign:'center', width:'100%'}}>Joined Component</div>
+                 <div style={{fontSize:"small", textAlign:'center', width:'100%'}}>Join Component</div>
               </Col>
         </Col>
     </CardMid>

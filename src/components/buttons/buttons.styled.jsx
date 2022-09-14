@@ -19,15 +19,15 @@ export const FormBtn = styled(Button)`
     height: var(--form-button-height);
     font-weight: 400;
     font-size: var(--font-size-form-button);
-    background-color: var(--button-color);
+    background-color: var(--button-main);
     color: var(--button-text);
     text-transform: capitalize;
     border-top-left-radius: 0;
     &:hover{
-        background-color: var(--button-color-hover);
+        background-color: var(--button-main-hover);
     }
     &:active{
-        background-color: var(--button-color);
+        background-color: var(--button-main);
     }
 `;
 
@@ -49,12 +49,26 @@ export const SecondaryBtn = styled(Button)`
     width: fit-content;
     font-size: var(--font-size-button-detail);
     background-color: var(--color-white);   
-    color: var(--button-color);
-    border: var(--button-border-width) solid var(--button-color);
+    color: var(--button-main);
+    border: var(--button-border-width) solid var(--button-main);
     
     &:hover{
-        background-color: var(--button-color);
+        background-color: var(--button-main);
         color: var(--button-text);   
+    }
+`
+
+export const OptionBtn = styled(Button)`
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    color:var(--color-detail-text);
+    border-bottom: 1px solid var(--color-white-contrast);
+    border-radius: 0;
+    padding: 1rem 1.5rem;
+    &:hover{
+        color:var(--color-main);
+        background-color: var(--color-options-cnt);
     }
 `
 
@@ -81,8 +95,6 @@ export const OpacityButton = styled(Button)`
     position: absolute;
     font-size: var(--font-size-opacity-icon);
     background:none;
-    /* background-color:var(--opacity-button-color); */
-    /* backdrop-filter: blur( 3px ); */
     color:var(--opacity-button-color-icon);
     z-index: var(--index-opacity-button);
     &:hover{
@@ -116,7 +128,7 @@ export const EllipsisBtn = styled(OpacityButton)`
 export const CloseBtn = styled(OpacityButton)`
     top: var(--header-button-position-top);
     right: var(--header-button-position-side);
-    color: var(--color-secondary-text);
+    color: var(--color-disabled-button);
     z-index: var(--options-button-index);
     background:none;
     &::before{
@@ -144,10 +156,10 @@ export const TabButton = styled(Button)`
     text-transform: capitalize;
     outline: none;
     &:hover{
-        color: var(--button-color-hover);
+        color: var(--button-main-hover);
     }
     &:active{
-        color: var(--button-color);
+        color: var(--button-main);
     }
 `
 
@@ -158,9 +170,9 @@ export const UploadButton = styled.button`
     font-size: var(--font-size-button-detail);
     font-weight: 400;
     background-color: var(--color-white);
-    color: var(--button-color);
+    color: var(--button-main);
     border-radius: var(--button-radius);
-    border: var(--button-border-width) solid var(--button-color);
+    border: var(--button-border-width) solid var(--button-main);
     padding: unset;
     margin-top:calc(var(--input-height) + calc(30px - (3rem / 2) + 1.25rem));
     cursor:pointer;
@@ -184,7 +196,7 @@ export const AddBtn = styled.button`
     margin: 0 auto;
     color: var(--color-main);
     background-color: var(--color-white);
-    border: 2px solid var(--button-color);;
+    border: 2px solid var(--button-main);;
     border-radius: 50%;
     font-size: xx-large;
     position: relative;

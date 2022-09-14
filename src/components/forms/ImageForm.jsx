@@ -19,12 +19,15 @@ export const ImageForm = ({ event, uploadImg, deleteImg }) => {
         const s = 3;
         const ms = s * 1000;
         if (!event) return;
-        if (event.images === images) return;
-        setUploaded(true);
+        setUploaded(isUploaded());
         setTimeout(() => {
             setUploaded(false);
         }, ms);
     }, [event])
+
+    const isUploaded = () =>{
+        return event.images.map((num, key)=> event.images[key] === images[key]).includes(false);
+    }
 
     return (
         <Col>

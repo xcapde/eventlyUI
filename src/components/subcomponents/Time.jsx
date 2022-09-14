@@ -1,10 +1,15 @@
-import { DetailText } from "../../styles/styles.styled"
+import { DetailIcon, DetailText, Row } from "../../styles/styles.styled"
 
 export const Time = ({event}) => {
     
     return (
-        <DetailText>
-            <i className="fa-solid fa-clock"></i>{event.hour}   
-        </DetailText> 
+        <Row>
+            <DetailIcon>
+                <i className="fa-solid fa-clock"></i>   
+            </DetailIcon> 
+            <DetailText>
+                {event.hour}
+            </DetailText>
+        </Row>
     )
 }

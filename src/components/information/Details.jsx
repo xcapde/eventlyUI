@@ -1,15 +1,13 @@
-import { Row, Col } from "../../styles/styles.styled"
-import { Date, Location, Time, Url } from "../subcomponents"
+import { Col } from "../../styles/styles.styled"
+import { Location, Url } from "../subcomponents"
+import { Schedule } from "../subcomponents/Schedule"
 
 export const Details = ({ event }) => {
     return (
-        <Col style={{gap:'1rem', alignItems:'flex-start'}}>
-            <Row style={{gap:'3rem', justifyContent:'flex-start'}}>
-                <Date event={event} />
-                <Time event={event} />  
-            </Row>
+        <Col style={{gap:'0.75rem'}}>
+            <Schedule event={event}/>
             {event.type === "online" ?
-                <Url event={event} /> : <Location event={event} />}
+            <Url event={event} /> : <Location event={event} />}
         </Col>
     )
 }

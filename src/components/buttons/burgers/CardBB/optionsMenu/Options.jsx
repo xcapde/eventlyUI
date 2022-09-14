@@ -1,13 +1,13 @@
 import React from "react"
-import { SecondaryButton, CloseButton } from "../../..";
+import { OptionButton } from "../../../OptionButton";
 import { OptionsCnt } from "./options.styled";
 
 export const Options = ({callback}) => {
 
     return(
         <OptionsCnt> 
-                <SecondaryButton content={'EDIT'}/>
-                <SecondaryButton content={'DELETE'}/>
+                <OptionButton content={'Edit'} callback={callback}/>
+                <OptionButton content={'Delete'} callback={callback}/>
         </OptionsCnt>                
     )
 }

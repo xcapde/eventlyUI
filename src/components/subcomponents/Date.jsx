@@ -1,10 +1,15 @@
-import { DetailText } from "../../styles/styles.styled"
+import { DetailIcon, DetailText, Row } from "../../styles/styles.styled"
 
 export const Date = ({event}) => {
     
     return (
-        <DetailText>
-            <i className="fa-solid fa-calendar-day"></i>{event.date.split("-").join("/")}
-        </DetailText>
+        <Row>
+            <DetailIcon>
+                <i className="fa-solid fa-calendar-day"></i>
+            </DetailIcon>
+            <DetailText>
+                {event.date.split("-").join("/")}
+            </DetailText>
+        </Row>
     )
 }

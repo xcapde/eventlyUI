@@ -7,3 +7,4 @@ export { SecondaryButton } from "./SecondaryButton";
 export { LinkButton } from "./LinkButton";
 export { PrimaryButton } from "./PrimaryButton";
 export { AddButton } from "./AddButton";
+export { OptionButton } from "./OptionButton";

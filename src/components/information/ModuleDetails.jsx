@@ -1,20 +1,20 @@
 import { Col, Row, Wrapper } from "../../styles/styles.styled"
 import { Avatar } from "../avatar/Avatar"
-import { InfoText } from "./InfoText"
+import { Details } from "./Details"
 
 export const ModuleDetails = ({ event }) => {
     return (
-        <Col height='auto' style={{alignItems:'flex-start'}}>
+        <Col height='auto'>
             <Row>
                 <Col width='80%'>
-                    <InfoText event={event}/>
+                    <Details event={event}/>
                 </Col>
                 <Col width='20%'>
-                    <Avatar imgUrl={event.publisher.avatar} scale='1.5'/>
+                    <Avatar imgUrl={event.publisher.avatar} scale='1.2'/>
                 </Col>
             </Row>
-            <Wrapper style={{padding:'0.75rem'}}>
-                Component avatars
+            <Wrapper style={{padding:'1rem', fontSize:'small'}}>
+                Join Component
             </Wrapper>
         </Col>
     )

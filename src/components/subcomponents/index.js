@@ -1,6 +1,8 @@
 export { Participation } from "./Participation";
+export { Title } from "./Title";
 export { Date } from "./Date";
 export { Time } from "./Time";
+export { Schedule } from "./Schedule";
 export { Location } from "./Location";
 export { Type } from "./Type";
 export { Url } from "./Url";

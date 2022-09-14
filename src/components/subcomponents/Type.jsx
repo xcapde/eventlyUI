@@ -1,19 +1,29 @@
 import React from "react"
-import { DetailText } from "../../styles/styles.styled"
+import { DetailIcon, DetailText, Row } from "../../styles/styles.styled"
 
 export const Type = ({event}) => {
     
     return (
-        <DetailText>
+        <React.Fragment>
             {event.type === 'online'? 
-            <React.Fragment>
-                <i className="fa-solid fa-earth-europe"></i> {event.type}
-            </React.Fragment>
-            : 
-            <React.Fragment>
-                <i className="fa-solid fa-link-slash"></i> {event.type}
-            </React.Fragment>
+                <Row>
+                    <DetailIcon>
+                        <i className="fa-solid fa-earth-europe"></i>
+                    </DetailIcon>
+                    <DetailText>
+                        {event.type}
+                    </DetailText>
+                </Row>
+                : 
+                <Row>
+                    <DetailIcon>
+                        <i className="fa-solid fa-link-slash"></i>
+                    </DetailIcon>
+                    <DetailText>
+                        {event.type}
+                    </DetailText>
+                </Row>
             }
-        </DetailText>
+        </React.Fragment>
     )
 }

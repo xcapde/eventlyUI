@@ -1,9 +1,14 @@
-import { DetailText } from "../../styles/styles.styled"
+import { DetailIcon, DetailText, Row } from "../../styles/styles.styled"
 
 export const Url = ({event}) => {
     return (
-        <DetailText>
-            <i className="fa-solid fa-link"></i> <a href="http://localhost:3000/home">{event.url}</a> 
-        </DetailText>
+        <Row>
+            <DetailIcon>
+                <i className="fa-solid fa-link"></i>  
+            </DetailIcon>
+            <DetailText>
+                <a href={event.url}>{event.url}</a>
+            </DetailText>
+        </Row>
     )
 }
