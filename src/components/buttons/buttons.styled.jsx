@@ -64,7 +64,6 @@ export const OptionBtn = styled(Button)`
     justify-content: flex-start;
     color:var(--color-detail-text);
     border-bottom: 1px solid var(--color-white-contrast);
-    border-radius: 0;
     padding: 1rem 1.5rem;
     &:hover{
         color:var(--color-main);
@@ -98,8 +97,8 @@ export const OpacityButton = styled(Button)`
     color:var(--opacity-button-color-icon);
     z-index: var(--index-opacity-button);
     &:hover{
-        background-color:var(--opacity-button-color-hover);
-        color:var(--opacity-button-color-icon-hover)
+        /* scale:1.2;
+        transition: 0.5s all; */
     }
     &::before{
         font-family: "Font Awesome 6 Free";
@@ -133,6 +132,9 @@ export const CloseBtn = styled(OpacityButton)`
     background:none;
     &::before{
 	    content: "\f00d";
+    }
+    &:hover{
+        color:var(--opacity-button-color-icon-hover)
     }
 `
 
@@ -169,8 +171,8 @@ export const UploadButton = styled.button`
     font-family: var(--font-main);
     font-size: var(--font-size-button-detail);
     font-weight: 400;
-    background-color: var(--color-white);
-    color: var(--button-main);
+    background-color: var(--button-main);
+    color: var(--color-white);
     border-radius: var(--button-radius);
     border: var(--button-border-width) solid var(--button-main);
     padding: unset;
@@ -195,8 +197,8 @@ export const AddBtn = styled.button`
     justify-content: center;
     margin: 0 auto;
     color: var(--color-main);
-    background-color: var(--color-white);
-    border: 2px solid var(--button-main);;
+    background-color: var(--button-main);
+    border: 2px solid var(--color-white);;
     border-radius: 50%;
     font-size: xx-large;
     position: relative;

@@ -6,8 +6,8 @@ export const ModuleVerticalSmallCard = ({events}) => {
 
     return(
         <Col height='25%'>
-            <Title style={{padding:'0.75rem'}}>Online</Title>
-            <VerticalFeed height='var(--moduleVertical-SmallCard-height)'>
+            <Title >Online</Title>
+            <VerticalFeed>
                 {events && events.filter(event => event.type.includes('online')).map((event, key) =>
                     <SmallCard key={key} event={event} />
                 ).reverse()}                               

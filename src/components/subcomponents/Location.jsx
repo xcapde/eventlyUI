@@ -7,7 +7,7 @@ export const Location = ({ event }) => {
             <DetailIcon>
                 <i className="fa-solid fa-location-dot"></i>
             </DetailIcon>
-            <DetailText style={{ textTransform: 'capitalize', lineHeight: '20px' }}>
+            <DetailText style={{ textTransform: 'capitalize', lineHeight: '20px', width:'100%' }}>
                     {event.location ?
                         `${event.location.substring(0, (event.location.lastIndexOf(',') - 3))}` 
                         : 

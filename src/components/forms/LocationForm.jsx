@@ -32,7 +32,7 @@ export const LocationForm = ({ addDirection, addWebUrl, event, eventDirection, n
         // setFormData({});
         event.type.includes("online") ? setFormData(event.location):
         setFormData(eventDirection);
-    },[eventDirection]);    
+    },[eventDirection, event.location, event.type]);    
 
     const handleSubmit = (e) => {
         e.preventDefault();

@@ -37,8 +37,8 @@ export const HomeFeed = () => {
 
     
     return (
-        <View >
-            <Col width='95%' justifyContent='space-evenly'>
+        <View>
+            <Col justifyContent='flex-start' style={{marginTop:'5%'}}>
                 
                 <ModuleTags tags={tags}/>
                 {!tagsSearch &&

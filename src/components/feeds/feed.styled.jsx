@@ -2,18 +2,19 @@ import styled from "styled-components";
 import { Row } from "../../styles/styles.styled";
 
 export const VerticalFeed = styled.div`
-    width: 100%;
     height: ${props => props.height || '100%'};
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
     grid-gap: 1rem 1rem;
     overflow-y: scroll;
-    padding: 1rem 0 0.5rem 0;
+    padding: 1rem 0 2rem 0;
     @media (min-width: 820px) {
+        height: 100%;
         grid-template-columns: repeat(auto-fill, minmax(calc(var(--cardXS-width-desktop) + 1%), 1fr));
         grid-template-rows: repeat(auto-fill, minmax(calc(var(--cardXS-height) + 10%), 1fr));
-        height: 100%;
+        padding: 1rem 0 0 0;
     };
 `;
 
@@ -39,7 +40,7 @@ export const UlFeed = styled.ul`
 `;
 export const HorizontalFeed = styled(Row)`
     height: ${props => props.height || '100%'};
-    overflow-x: scroll; 
+    overflow-x: auto; 
     justify-content: flex-start;
     display: -webkit-box;
     ::-webkit-scrollbar {

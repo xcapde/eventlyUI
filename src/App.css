@@ -53,8 +53,6 @@
     --color-link-text: var(--color-main);
     --color-link-text-hover: var(--color-main-hover);
     --color-disabled-button: lightgrey;
-    --opacity-button-color: #ebebeb6e;
-    --opacity-button-color-hover:var(--color-white);
     --opacity-button-color-icon: var(--color-white);
     --opacity-button-color-icon-hover:var(--color-detail-text);
     
@@ -104,7 +102,7 @@
     
     /* FONT WEIGTH */
     --font-weigth-detail: 600;
-    --font-weight-title: 900,
+    --font-weight-title: 900;
 
     /* RADIUS */
     --footer-radius: 1.15rem 1.15rem 0 0;
@@ -113,6 +111,7 @@
     --card-radius: 0.5rem;
     --avatar-radius: 0.5rem;
     --button-radius: 0.5rem;
+    --options-radius: 0.5rem;
     --input-radius: 0.5rem;
     --badge-radius: 0.25rem;
     --navtop-radius: 0;
@@ -134,7 +133,7 @@
     --cardMid-img-size: 100%;
 
     --cardXS-width: 95%;
-    --cardXS-height: 110px;
+    --cardXS-height: 120px;
     --cardXS-width-desktop: 22rem;
     --cardXS-img-size:90%;
 

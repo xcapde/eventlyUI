@@ -6,7 +6,7 @@ export const Url = ({event}) => {
             <DetailIcon>
                 <i className="fa-solid fa-link"></i>  
             </DetailIcon>
-            <DetailText>
+            <DetailText style={{width:'100%'}}>
                 <a href={event.url}>{event.url}</a>
             </DetailText>
         </Row>

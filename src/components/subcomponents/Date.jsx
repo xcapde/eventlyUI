@@ -7,7 +7,7 @@ export const Date = ({event}) => {
             <DetailIcon>
                 <i className="fa-solid fa-calendar-day"></i>
             </DetailIcon>
-            <DetailText style={{fontFamily:'var(--numbers-font)', fontWeight:'500'}}>
+            <DetailText style={{fontFamily:'var(--numbers-font)', fontWeight:'500',  width:'100%'}}>
                 {event.date.split("-").join("/")}
             </DetailText>
         </Row>

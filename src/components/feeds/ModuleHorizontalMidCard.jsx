@@ -5,8 +5,8 @@ import { HorizontalFeed } from "./feed.styled"
 export const ModuleHorizontalMidCard  = ({events}) => {
 
     return(
-        <Col height='auto'>
-            <Title style={{padding:'0.75rem'}}>Offline</Title>
+        <Col height='60%'>
+            <Title>Offline</Title>
             <HorizontalFeed height='var(--moduleHorizontal-MidCard-height)'>
                 {events && events.filter(event => event.type.includes('offline')).map((event, key) =>
                     <MidCard key={key} event={event} />

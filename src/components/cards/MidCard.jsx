@@ -13,11 +13,11 @@ export const MidCard = ({ event }) => {
         </Link>
       </Wrapper>
 
-        <Col height='35%' style={{gap:'1rem', width: '90%', padding:'0.3rem 0 0.5rem 0', borderRadius:'var(--cardMid-radius)'}}>
+        <Col height='35%' style={{gap:'0.5rem', width: '90%', padding:'0.3rem 0 0.5rem 0', borderRadius:'var(--cardMid-radius)'}}>
               <Title event={event}/>
 
               <Col style={{gap:'0.5rem', alignItems:'flex-start'}}>
-                <Row style={{gap:'1rem', justifyContent:'space-between'}}>
+                <Row style={{gap:'2rem', justifyContent:'space-between'}}>
                   <Date event={event} />
                   <Time event={event} />  
                 </Row>

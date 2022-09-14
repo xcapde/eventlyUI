@@ -7,7 +7,7 @@ export const Participation = ({event}) => {
             <DetailIcon>
                 <i className="fa-solid fa-users"></i>
             </DetailIcon>
-            <DetailText>
+            <DetailText style={{width:'100%'}}>
                     {event.participantsCount === 0? 
                         'Be the first!' 
                         : 
