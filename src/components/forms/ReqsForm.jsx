@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Col, DetailText, Row } from "../../styles/styles.styled"
 import { AddButton } from "../buttons";
 import { ReqFeed } from "../feeds/ReqFeed";
-import { Form, SmallForm } from "./form.styled"
+import { Form } from "./form.styled"
 import { FormControlInput } from "./FormControlInput"
 
 export const ReqsForm = ({ event, addReq, deleteReq }) => {

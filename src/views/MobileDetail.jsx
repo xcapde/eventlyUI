@@ -8,29 +8,30 @@ import { ModuleDetails } from "../components/information/ModuleDetails";
 import { Col, Gradient, Img, View } from "../styles/styles.styled";
 
 
-export const MobileDetail = ({ event }) => {
+export const MobileDetail = ({ event, participations, join, unjoin }) => {
     const navigate = useNavigate();
     const [key, setKey] = useState("description");
     const tabContent = ["description", "requirements", "tags", "map"];
 
     useEffect(() => {
         if (!key) return;
-    }, [key, event])
+    }, [key, event, participations])
 
+    console.log(event)
     return (
-        <View style={{height:'90vh', top:0, gap:'1rem'}}>
-            <Gradient/>
+        <View style={{ height: '90vh', top: 0, gap: '1rem' }}>
+            <Gradient />
             <BackButton callback={() => navigate(-1)} />
-            <OptionsModule/>
-            
-            <Img style={{height:'var(--detail-image-height)'}} imgUrl={event.images[0] ? event.images[0] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} />
+            <OptionsModule />
+
+            <Img style={{ height: 'var(--detail-image-height)' }} imgUrl={event.images[0] ? event.images[0] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} />
 
             <Col height={'calc(87vh - var(--detail-image-height))'} justifyContent='flex-start' width='90%'>
                 <Col justifyContent='space-between'>
-                    <ModuleDetails event={event}/>
+                    <ModuleDetails event={event} participations={participations} />
                     <ModuleContent callback={setKey} tabContent={tabContent} field={key} event={event} />
                 </Col>
-                <JoinButton content={'Join'} callback={()=>console.error('not implemented yet')}/>
+                <JoinButton content={event.participant ? "Unjoin" : "Join"} callback={() => event.participant ? unjoin() : join()} />
             </Col>
         </View>
     )

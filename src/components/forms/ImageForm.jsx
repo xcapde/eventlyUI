@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useState } from "react"
-import { Col, Row } from "../../styles/styles.styled"
+import { Col } from "../../styles/styles.styled"
 import { ImagePreview } from "../images/ImagePreview"
 import { NoPreviewSmall } from "../images/images.styled"
 import { OutputCnt } from "./form.styled"
@@ -19,12 +19,17 @@ export const ImageForm = ({ event, uploadImg, deleteImg }) => {
         const s = 3;
         const ms = s * 1000;
         if (!event) return;
-        if (event.images === images) return;
-        setUploaded(true);
+        setUploaded(isUploaded());
         setTimeout(() => {
             setUploaded(false);
         }, ms);
     }, [event])
+
+    const isUploaded = () =>{
+        return event.images.map((num, key)=> event.images[key] === images[key]).includes(false);
+    }
+
+    console.log(uploaded)
 
     return (
         <Col>
