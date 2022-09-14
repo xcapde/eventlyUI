@@ -43,10 +43,6 @@ export const CardXS = styled(Card)`
 `;
 
 
-/*POSITIONING*/
-
-/*text-cont*/
-
 /*IMAGES*/
 export const CardImage = styled(Img)`
     height: var(--card-img-height);
@@ -69,16 +65,3 @@ export const CardXSImage = styled(Img)`
     border-radius: var(--card-radius);
     margin: 0 10px;
 `;
-
-
-/*REFACTOR TO REACT COMPONENT (AVATARS MAP)*/
-// export const CardParticipation = styled(Col)`
-//     height: 3rem;
-//     width: 35%;
-//     justify-content: space-between;
-//     align-items: flex-end;
-//     padding-right: 0.5rem;
-//     @media (min-width: 820px) {
-//         width: 35%;
-//     }
-// `

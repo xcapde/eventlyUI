@@ -14,8 +14,13 @@
     /*FONTS*/
     --title-font: 'Comfortaa', cursive;
     --detail-font: 'Comfortaa', cursive;
-    --card-font:'Comfortaa', cursive;
-    --home-font: 'Comfortaa', cursive;
+    --header-font: 'Comfortaa', cursive;
+    --calendar-font: 'Comfortaa', cursive;
+
+     /*PROFILE*/
+    --color-dark: #161515;
+    --color-gray:#f4f3ec;
+    --color-marker: #118e62;
 
     /* COLOR */
     --card-shadow-opacity: rgba(0, 0, 0, 0.350);
@@ -133,7 +138,7 @@
     --badge-margin: 0.15rem;
 
     /* PAGES */
-    --page-width: 85%;
+    /* --page-width: 85%; */
 
     /* BREAKPOINTS */
     --xsBP: 600px;
