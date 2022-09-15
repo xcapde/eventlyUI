@@ -3,7 +3,7 @@ import { Badge } from "../badges/Badge";
 import { useEffect } from "react";
 import { Col, Title } from "../../styles/styles.styled";
 
-export const ModuleTags = ({tags}) => {
+export const ModuleTags = ({tags, callback}) => {
 
     useEffect(() => {
     }, [tags]);
@@ -13,7 +13,7 @@ export const ModuleTags = ({tags}) => {
         <Title>Tags</Title>
         <HorizontalFeed style={{overflowY:'hidden'}}>
                     {tags && tags.map((tag, key) =>
-                    <Badge key={key} content={tag.name} tag={tag}/>
+                    <Badge callback={callback} key={key} content={tag.name} tag={tag}/>
                     )}                    
         </HorizontalFeed>
         </Col>

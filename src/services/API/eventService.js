@@ -63,5 +63,26 @@ export const eventService = {
             return res.data;
         })
         return events;
+    },
+
+    getOfflineEvent(){
+        const events = axios.get(`events?type=offline`).then(res => {
+            return res.data
+        })
+        return events;
+    },
+
+    getOnlineEvent(){
+        const events = axios.get(`events?type=online`).then(res => {
+            return res.data
+        })
+        return events;
+    },
+
+    getEventsByTag(tag){
+        const events = axios.get(`events?tag=${tag}`).then(res => {
+            return res.data
+        })
+        return events;
     }
 }

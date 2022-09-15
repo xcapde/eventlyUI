@@ -1,16 +1,16 @@
 import { Col, Title } from "../../styles/styles.styled"
-import { MainCard } from "../cards/MainCard"
+import { MidCard } from "../cards/MidCard"
 import { VerticalFeed } from "./feed.styled"
 
-export const ModuleVerticalMainCard = ({events}) => {
+export const ModuleVerticalMainCard = ({title, events}) => {
 
     return(
-        <Col style={{ gap: '3%', height: '100%', overflowY: "scroll" }}>
-            <Title>Online</Title>
+        <Col height='100%'>
+            <Title >{title}</Title>
             <VerticalFeed>
-                {events && events.filter(event => event.type.includes('online')).map((event, key) =>
-                    <MainCard key={key} event={event} />
-                ).reverse()}                        
+                {events && events.map((event, key) =>
+                    <MidCard key={key} event={event}/>
+                )}                               
             </VerticalFeed>
         </Col>
     )
