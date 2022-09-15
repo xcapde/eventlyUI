@@ -3,13 +3,10 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { eventService } from "../../services/API/eventService";
 import { tagService } from "../../services/API/tagService";
-import { Col, DetailText, Row, Title, View } from "../../styles/styles.styled";
-import { MainCard } from "../cards/MainCard";
-import { VerticalFeed } from "./feed.styled";
+import { Col, DetailText, Row, View } from "../../styles/styles.styled";
 import { ModuleVerticalSmallCard } from "./ModuleVerticalSmallCard";
 import { ModuleTags } from "./ModuleTags";
 import { ModuleHorizontalMidCard } from "./ModuleHorizontalMidCard";
-import { SmallCard } from "../cards/SmallCard";
 import { LinkButton } from "../buttons/LinkButton";
 import { ModuleVerticalMainCard } from "./ModuleVerticalMainCard";
 
