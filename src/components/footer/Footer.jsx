@@ -9,20 +9,18 @@ export const Footer = () => {
     const navigate = useNavigate();
     const [img, setImg] = useState();
 
-    const images = {
-        afonttorres: "https://images2.alphacoders.com/521/521982.jpg",
-        xcapde: "https://img.ecartelera.com/noticias/fotos/52100/52153/1.jpg",
-        joelblasi: "https://img.ecartelera.com/noticias/fotos/52100/52153/1.jpg",
-        lauraparra: "https://images2.alphacoders.com/521/521982.jpg",
-        default: "https://i.pinimg.com/474x/b7/cf/46/b7cf46c96e503fdec995645e70d95705.jpg"
-    }
-
     useEffect(() => {
+        const images = {
+            afonttorres: "https://images2.alphacoders.com/521/521982.jpg",
+            xcapde: "https://img.ecartelera.com/noticias/fotos/52100/52153/1.jpg",
+            joelblasi: "https://img.ecartelera.com/noticias/fotos/52100/52153/1.jpg",
+            lauraparra: "https://images2.alphacoders.com/521/521982.jpg",
+            default: "https://i.pinimg.com/474x/b7/cf/46/b7cf46c96e503fdec995645e70d95705.jpg"
+        }
+
         let username = AuthService.getAuthUser().username;
         setImg(images[username ? username : 'default']);
     }, [])
-
-    console.log(img)
 
     const content = {
         home: { icon: <i className="fa-solid fa-house"></i>, link: "/home" },
