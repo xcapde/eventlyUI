@@ -4,7 +4,7 @@ import { AuthService } from "../../../../../services/AuthService";
 import { OptionButton } from "../../../OptionButton";
 import { OptionsCnt } from "./options.styled";
 
-export const Options = ({ remove, edit }) => {
+export const Options = ({ event, remove, edit }) => {
 
     const [location, setLocation] = useState(useLocation().pathname.substring(1, useLocation().pathname.length));
     const [view, setView] = useState();
@@ -12,7 +12,6 @@ export const Options = ({ remove, edit }) => {
 
     useEffect(() => {
         if (!location) return;
-        setClient(AuthService.getAuthUser().token ? 'isAuth' : 'default');
         if (!location.includes("/")) return;
         setLocation(location.substring(0, location.lastIndexOf("/")));
     }, [location])
@@ -20,6 +19,7 @@ export const Options = ({ remove, edit }) => {
     useEffect(() => {
         if (!location) return;
         setView(location.includes("event") ? "detail" : location);
+        setClient(!event ? AuthService.getAuthUser().token ? 'isAuth' : 'default' : AuthService.isPublisher(event) ? 'isAuth' : 'default');
     }, [location, client])
 
     const content = {
