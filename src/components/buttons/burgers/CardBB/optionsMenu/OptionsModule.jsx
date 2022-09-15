@@ -4,19 +4,19 @@ import { CloseButton } from "../../../CloseButton";
 import { EllipsisButton } from "./EllipsisButton";
 import { Options } from "./Options";
 
-export const OptionsModule = ({callback, event}) => {
-    const {menuIsActive, showMenu} = useShowMenu(false);
+export const OptionsModule = ({ event, remove, edit }) => {
+    const { menuIsActive, showMenu } = useShowMenu(false);
 
-    return(
-        <React.Fragment>            
-            {menuIsActive?
+    return (
+        <React.Fragment>
+            {menuIsActive ?
                 <React.Fragment>
-                    <Options event={event} callback={callback}/>
-                    <CloseButton callback={showMenu}/>
+                    <Options event={event} remove={remove} edit={edit} />
+                    <CloseButton callback={showMenu} />
                 </React.Fragment>
                 :
-                <EllipsisButton callback={showMenu}/>
-            }          
+                <EllipsisButton callback={showMenu} />
+            }
         </React.Fragment>
     )
 }

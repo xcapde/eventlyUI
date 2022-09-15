@@ -1,38 +1,79 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom";
 import { AuthService } from "../../../../../services/AuthService";
 import { OptionButton } from "../../../OptionButton";
 import { OptionsCnt } from "./options.styled";
 
-export const Options = ({callback, event}) => {
-    const location = useLocation().pathname
-    useEffect(()=>{
-        console.log(location)
-    })
+export const Options = ({ remove, edit }) => {
 
-    return(
-        <React.Fragment>
-            {location.includes('/events/') && 
-                <OptionsCnt> 
-                    {AuthService.isPublisher(event)?
-                    <React.Fragment>
-                        <OptionButton content={'Delete'} callback={callback}/>
-                        <OptionButton content={'Edit'} callback={callback}/>
-                    </React.Fragment>
-                    : 
-                    <React.Fragment>
-                        <OptionButton content={'Report'} callback={callback}/>
-                        <OptionButton content={'More'} callback={callback}/>
-                    </React.Fragment>
-                    }
-                </OptionsCnt>                
-            }
-            {location.includes('/profile') &&
-            <OptionsCnt> 
-                    <OptionButton content={'Log out'} callback={callback}/>
-                    <OptionButton content={'Edit'} callback={callback}/>
-            </OptionsCnt>                
+    const [location, setLocation] = useState(useLocation().pathname.substring(1, useLocation().pathname.length));
+    const [view, setView] = useState();
+    const [client, setClient] = useState();
+
+    useEffect(() => {
+        if (!location) return;
+        setClient(AuthService.getAuthUser().token ? 'isAuth' : 'default');
+        if (!location.includes("/")) return;
+        setLocation(location.substring(0, location.lastIndexOf("/")));
+    }, [location])
+
+    useEffect(() => {
+        if (!location) return;
+        setView(location.includes("event") ? "detail" : location);
+    }, [location, client])
+
+    const content = {
+        detail: {
+            isAuth: [
+                { content: "Delete", callback: () => { remove() } },
+                { content: "Edit", callback: () => { edit() } }
+            ],
+            default: [
+                { content: "Report", callback: () => console.log("not implemented yet") },
+                { content: "More", callback: () => console.log("not implemented yet") }
+            ]
+        },
+        profile: {
+            isAuth: [
+                { content: "Log out", callback: () => AuthService.logOut(true) },
+                { content: "Settings", callback: () => console.log("not implemented yet") }
+            ],
+            default: [
+                { content: "Log out", callback: () => AuthService.logOut() },
+                { content: "Settings", callback: () => console.log("not implemented yet") }
+            ]
         }
-        </React.Fragment>
+    }
+
+    return (
+        <React.Fragment >
+            <OptionsCnt>
+                {view && client && content[view][client].map((button, key) => (
+                    <OptionButton key={key} content={button.content} callback={button.callback} />
+                ))}
+            </OptionsCnt>
+        </React.Fragment >
     )
 }
+
+{/* {location.includes('/events/') &&
+                <OptionsCnt>
+                    {AuthService.isPublisher(event) ?
+                        <React.Fragment>
+                            <OptionButton content={'Delete'} callback={callback} />
+                            <OptionButton content={'Edit'} callback={callback} />
+                        </React.Fragment>
+                        :
+                        <React.Fragment>
+                            <OptionButton content={'Report'} callback={callback} />
+                            <OptionButton content={'More'} callback={callback} />
+                        </React.Fragment>
+                    }
+                </OptionsCnt>
+            }
+            {location.includes('profile') &&
+                <OptionsCnt>
+                    <OptionButton content={'Log out'} callback={callback} />
+                    <OptionButton content={'Edit'} callback={callback} />
+                </OptionsCnt>
+            } */}

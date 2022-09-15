@@ -17,7 +17,6 @@ export const MobileDetail = ({ event, participations, join, unjoin }) => {
 
     useEffect(() => {
         if (!key) return;
-
     }, [key, event])
 
     const deleteEvent = () => {
@@ -27,29 +26,33 @@ export const MobileDetail = ({ event, participations, join, unjoin }) => {
         });
     }
 
+    const updateEvent = () => {
+        navigate(`/update/${event.id}`);
+    }
+
     return (
-        <View height='90%' direction='row' style={{top:'0'}}>
+        <View height='90%' direction='row' style={{ top: '0' }}>
             <SideControl>
                 <ImgCntrl>
                     <Img imgUrl={event.images[0] ? event.images[0] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} />
                 </ImgCntrl>
             </SideControl>
             <PageCntrl id="box">
-                <Gradient/>
+                <Gradient />
                 <BackButton callback={() => navigate(-1)} />
-                <OptionsModule  event={event} callback={deleteEvent}/>
+                <OptionsModule event={event} remove={deleteEvent} edit={updateEvent} />
 
                 <ImgCntrl>
                     <Img imgUrl={event.images[0] ? event.images[0] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} />
                 </ImgCntrl>
 
-                <Col height={'calc(100vh - var(--detail-image-height))'} width='90%' style={{marginBottom:'0.5rem'}}>
-                        <Wrapper>
-                            <Title style={{padding:'0.75rem'}}>{event.title}</Title>
-                            <ModuleDetails event={event} participations={participations}/>
-                            <ModuleContent callback={setKey} tabContent={tabContent} field={key} event={event} />
-                        </Wrapper>
-                    <JoinButton content={event.participant ? "Unjoin" : "Join"} callback={() => event.participant ? unjoin() : join()} color={event.participant ? "var(--button-unjoin)" : ""}/>
+                <Col height={'calc(100vh - var(--detail-image-height))'} width='90%' style={{ marginBottom: '0.5rem' }}>
+                    <Wrapper>
+                        <Title style={{ padding: '0.75rem' }}>{event.title}</Title>
+                        <ModuleDetails event={event} participations={participations} />
+                        <ModuleContent callback={setKey} tabContent={tabContent} field={key} event={event} />
+                    </Wrapper>
+                    <JoinButton content={event.participant ? "Unjoin" : "Join"} callback={() => event.participant ? unjoin() : join()} color={event.participant ? "var(--button-unjoin)" : ""} />
                 </Col>
             </PageCntrl>
             <SideControl>
