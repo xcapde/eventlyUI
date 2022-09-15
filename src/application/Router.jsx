@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Notifications } from "../components/notifications";
-import { Profile } from "../components/profile/Porfile";
 import { Search } from "../components/search/Search";
 import { Detail } from "../pages/Detail/Detail";
 import { LoginSignup } from "../pages/LoginSignup";
+import { Profile } from "../pages/Profile/Profile";
 import { Upload } from "../pages/Upload/Upload";
 import { AuthService } from "../services/AuthService";
 import App from "../App";

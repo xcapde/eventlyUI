@@ -24,9 +24,8 @@ export const MobileDetail = ({ event, participations, join, unjoin }) => {
     const deleteEvent = () => {
         eventService.deleteEvent(id).then(res => {
             alert(`${res.title} deleted!`)
-            navigate(-1)
+            navigate('/home')
         });
-        alert(id)
     }
 
     return (

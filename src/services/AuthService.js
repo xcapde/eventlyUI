@@ -21,10 +21,10 @@ export const AuthService = {
         return false;
     },
     
-    logout(confirmation){
+    logOut(confirmation){
         if(confirmation){
             localStorage.removeItem("auth")
-            window.location = "/log-in"
+            window.location = "/home"
         } return;
     },
 };
