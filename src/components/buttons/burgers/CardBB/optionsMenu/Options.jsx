@@ -39,7 +39,7 @@ export const Options = ({ event, remove, edit }) => {
                 { content: "Settings", callback: () => console.log("not implemented yet") }
             ],
             default: [
-                { content: "Log out", callback: () => AuthService.logOut() },
+                { content: "Log out", callback: () => AuthService.logOut(false) },
                 { content: "Settings", callback: () => console.log("not implemented yet") }
             ]
         }
