@@ -9,56 +9,57 @@ import { AuthService } from "../services/AuthService";
 import App from "../App";
 
 
-export default function Router(){
+export default function Router() {
 
-    const AuthRoute = ({children}) => {
+    const AuthRoute = ({ children }) => {
         if (AuthService.getAuthUser())
-            return <Navigate to="/home"/>;
+            return <Navigate to="/home" />;
         return children
     };
 
-    const AuthRequired = ({children}) => {
-        if(!AuthService.getAuthUser())
-            return <Navigate to="/log-in"/>;
+    const AuthRequired = ({ children }) => {
+        if (!AuthService.getAuthUser())
+            return <Navigate to="/log-in" />;
         return children;
     };
 
-    return(
+    return (
         <BrowserRouter>
             <Routes>
-                <Route path="/home" element={<App/>}/>
-                <Route path="/events/:id" element={<Detail/>}/> 
-                <Route path="/search" element ={<Search/>}/>                
+                <Route path="/" element={<App />} />
+                <Route path="/home" element={<App />} />
+                <Route path="/events/:id" element={<Detail />} />
+                <Route path="/search" element={<Search />} />
                 <Route path="/log-in" element={
                     <AuthRoute>
-                        <LoginSignup/>
+                        <LoginSignup />
                     </AuthRoute>
-                }/>
+                } />
                 <Route path="/sign-up" element={
                     <AuthRoute>
-                        <LoginSignup/>
+                        <LoginSignup />
                     </AuthRoute>
-                }/>                
+                } />
                 <Route path="/upload" element={
                     <AuthRequired>
-                        <Upload/>
+                        <Upload />
                     </AuthRequired>
-                }/>
+                } />
                 <Route path="/update/:eventId" element={
                     <AuthRequired>
-                        <Upload/>
+                        <Upload />
                     </AuthRequired>
-                }/>
-                <Route path="/notifications" element ={
+                } />
+                <Route path="/notifications" element={
                     <AuthRequired>
-                        <Notifications/>
+                        <Notifications />
                     </AuthRequired>
-                }/>
-                <Route path="/profile" element ={
+                } />
+                <Route path="/profile" element={
                     <AuthRequired>
-                        <Profile/>
+                        <Profile />
                     </AuthRequired>
-                }/>
+                } />
             </Routes>
         </BrowserRouter>
     )

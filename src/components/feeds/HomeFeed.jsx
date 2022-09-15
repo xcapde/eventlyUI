@@ -17,6 +17,7 @@ export const HomeFeed = () => {
     const [eventsByTag, setEventsByTag] = useState();
     const [onlineEvents, setOnlineEvents] = useState([]);
     const [offlineEvents, setOfflineEvents] = useState([]);
+    const [seeAll, setSeeAll] = useState(false);
 
 
     useEffect(() => {
@@ -27,12 +28,13 @@ export const HomeFeed = () => {
     }, [])
 
     useEffect(() => {
-        if(!tag) return
+        if (!tag) return
         getEventsByTag(tag);
     }, [tag])
 
-    
+
     useEffect(() => {
+        if (!eventsByTag) return;
     }, [eventsByTag])
 
     const getAllData = () => {
@@ -69,32 +71,45 @@ export const HomeFeed = () => {
             setOfflineEvents(res)
         })
     }
-
+    
     return (
         <View>
-            <Col justifyContent='flex-start' style={{marginTop:'5%'}}>
-                
-                <ModuleTags tags={tags} callback={setTag}/>
-                {!eventsByTag &&
-                    <React.Fragment>  
-                        <ModuleHorizontalMidCard title={'Offline'} events={offlineEvents}/>
-                        <ModuleVerticalSmallCard title={'Online'} events={onlineEvents}/> 
+            <Col justifyContent='flex-start' style={{ marginTop: '5%', width: '95%' }}>
+                <Row height='unset' style={{ justifyContent: 'flex-end' }}>
+                    {tag ?
+                        <LinkButton callback={() => { setTag(); setEventsByTag(); setSeeAll(false) }} content={'Clear'} />
+                        :
+                        !seeAll ?
+                            <LinkButton callback={() => { setSeeAll(true); setTag(); setEventsByTag() }} content={'See All'} /> :
+                            <LinkButton callback={() => { setSeeAll(false); setTag(); setEventsByTag() }} content={'By type'} />}
+                </Row>
+                <ModuleTags tags={tags} callback={(data) => {setTag(data); setSeeAll(false)} } />
+                {!eventsByTag && !seeAll &&
+                    <React.Fragment>
+                        <ModuleHorizontalMidCard title={'Offline'} events={offlineEvents} />
+                        <ModuleVerticalSmallCard title={'Online'} events={onlineEvents} />
                     </React.Fragment>
                 }
                 {/* react component */}
 
-                {eventsByTag &&
-                // <TagsFilter/>
+                {!seeAll && eventsByTag &&
+                    // <TagsFilter/>
 
                     <Col style={{ gap: '2.5%', height: '100%', overflowY: "scroll" }}>
-                        <Row height='unset' style={{justifyContent:'flex-end'}}>
-                            <LinkButton callback={()=>{setTag();setEventsByTag()}} content={'Clear'}/>
-                        </Row>
-                        {eventsByTag.length> 0?  
-                        <ModuleVerticalMainCard title={'By tag'} events={eventsByTag}/> 
-                        :
-                        <DetailText>There are no events with {tag}</DetailText>
-                    }
+                        {eventsByTag.length > 0 ?
+                            <ModuleVerticalMainCard title={'By tag'} events={eventsByTag} />
+                            :
+                            <DetailText>There are no events with {tag}</DetailText>
+                        }
+                    </Col>
+                }
+                {seeAll && !eventsByTag &&
+                    <Col style={{ gap: '2.5%', height: '100%', overflowY: "scroll" }}>
+                        {events.length > 0 ?
+                            <ModuleVerticalMainCard title={'All'} events={events} />
+                            :
+                            <DetailText>There are no events</DetailText>
+                        }
                     </Col>
                 }
             </Col>
