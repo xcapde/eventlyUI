@@ -1,6 +1,6 @@
 import { View } from "../../styles/styles.styled"
-import { Footer } from "../footer/Footer"
-import { NavTop } from "../navs"
+import { Footer } from "../../components/footer/Footer"
+import { NavTop } from "../../components/navs/NavTop"
 
 export const Search = () => {
 

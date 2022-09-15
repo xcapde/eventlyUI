@@ -138,15 +138,6 @@ export const CloseBtn = styled(OpacityButton)`
     }
 `
 
-export const BurgerBtn = styled(OpacityButton)`
-    position: absolute;
-    top: var(--header-button-position-top);
-    right: var(--header-button-position-side);
-    &::before{
-	    content: "\f0c9";
-    }
-`
-
 export const TabButton = styled(Button)`
     min-height: 1.5rem;
     width: 45%;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Col } from "../../../../../styles/styles.styled";
+import { Col } from "../../../styles/styles.styled";
 
 export const OptionsCnt = styled(Col)`
     height:var(--options-cnt-height);

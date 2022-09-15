@@ -7,7 +7,8 @@ import { Footer } from "../../components/footer/Footer"
 import { CalendarCnt, HeaderCnt, InformationCnt } from "./profile.styled"
 import { Navigation } from "../../components/information/Navigation"
 import { SmallCard } from "../../components/cards/SmallCard"
-import { OptionsModule } from "../../components/buttons/burgers/CardBB/optionsMenu/OptionsModule"
+import { OptionsModule } from "../../components/buttons/burgers/OptionsModule"
+import { NavRail } from "../../components/navs"
 
 export const Profile = () => {
     const [username, setUsername] = useState([]);
@@ -51,6 +52,7 @@ export const Profile = () => {
 
     return (
         <View style={{ height: '90vh', top: 0 }}>
+            <NavRail/>
             <Wrapper gap='0'>
                 <HeaderCnt>
                     <Row style={{width:'80%', gap:'5%', padding:'0 10%'}}>
@@ -70,7 +72,7 @@ export const Profile = () => {
 
                 <Col>
                     {key && key === "joined"?
-                        <Col justifyContent='flex-start'>
+                        <Col justifyContent='flex-start' style={{ gap: '2.5%'  }}>
                             <Title style={{fontSize:'medium', justifyContent:'center', padding:'1rem'}}>
                                 {joined.length} Joined Events
                             </Title>
@@ -80,7 +82,7 @@ export const Profile = () => {
                             }
                         </Col>
                         : key === "published" ?
-                        <Col justifyContent='flex-start'>
+                        <Col justifyContent='flex-start' style={{ gap: '2.5%'  }}>
                             <Title style={{fontSize:'medium', justifyContent:'center', padding:'1rem'}}>
                                 {published.length} Published Events
                             </Title>
@@ -91,36 +93,11 @@ export const Profile = () => {
                         </Col> 
                          : 'NO FIELD'
                     }
-                </Col>
-                    
-                    
+                </Col>                                     
    
                 </InformationCnt>
             </Wrapper>            
             <Footer/>
         </View>
-        
-        // <View style={{ height: '90vh', top: 0, width: '85%', left: 'calc((100% - 85%) / 2)' }}>
-        //     {/* <ProfileGrid> */}
-        //     <Col style={{ height: '20vh', gap: '5%' }}>
-        //         <Title>Hi {username}!</Title>
-        //     </Col>
-        //     <Col style={{ height: '40vh', gap: '5%'  }}>
-        //         <Title>Joined Events</Title>
-        //         {joined && joined.length > 0 ?
-        //             joined.map((event, key) => (<span key={key}>{event.title}</span>)) :
-        //             <DetailText>You did not join any event yet!</DetailText>}
-        //     </Col>
-        //     <Col style={{ height: '40vh' , gap: '5%' }}>
-        //         <Title>Published Events</Title>
-        //         {published && published.length > 0 ?
-        //             published.map((event, key) => (<span key={key}>{event.title}</span>)) :
-        //             <DetailText>What are you waiting to publish your first event?!</DetailText>
-        //         }
-        //     </Col>
-        //     <Footer />
-        //     {/* </ProfileGrid> */}
-
-        // </View>
     )
 }

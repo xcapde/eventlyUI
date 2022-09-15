@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { BackButton, JoinButton } from "../components/buttons";
-import { OptionsModule } from "../components/buttons/burgers/CardBB/optionsMenu/OptionsModule";
+import { OptionsModule } from "../components/buttons/burgers/OptionsModule";
 import { ModuleContent } from "../components/information/ModuleContent"
 import { ModuleDetails } from "../components/information/ModuleDetails";
 import { Col, Gradient, Img, Title, Wrapper, View } from "../styles/styles.styled";

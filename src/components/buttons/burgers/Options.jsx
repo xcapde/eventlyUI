@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom";
-import { AuthService } from "../../../../../services/AuthService";
-import { OptionButton } from "../../../OptionButton";
+import { AuthService } from "../../../services/AuthService";
+import { OptionButton } from "../OptionButton";
 import { OptionsCnt } from "./options.styled";
 
 export const Options = ({ event, remove, edit }) => {

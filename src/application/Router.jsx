@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { Notifications } from "../components/notifications";
-import { Search } from "../components/search/Search";
+import { Notifications } from "../pages/notifications/Notifications";
+import { Search } from "../pages/search/Search";
 import { Detail } from "../pages/Detail/Detail";
 import { LoginSignup } from "../pages/LoginSignup";
 import { Profile } from "../pages/Profile/Profile";

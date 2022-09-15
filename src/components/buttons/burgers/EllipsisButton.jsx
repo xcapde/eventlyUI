@@ -1,4 +1,4 @@
-import { EllipsisBtn } from "../../../buttons.styled"
+import { EllipsisBtn } from "../buttons.styled"
 
 export const EllipsisButton = ({ callback }) => {
 

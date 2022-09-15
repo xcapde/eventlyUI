@@ -1,6 +1,6 @@
 import React from "react"
-import useShowMenu from "../../../../../hooks/useShowMenu";
-import { CloseButton } from "../../../CloseButton";
+import useShowMenu from "../../../hooks/useShowMenu";
+import { CloseButton } from "../CloseButton";
 import { EllipsisButton } from "./EllipsisButton";
 import { Options } from "./Options";
 
