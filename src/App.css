@@ -19,7 +19,7 @@
     --calendar-font: 'Comfortaa', cursive;
 
      /*PROFILE*/
-    --color-dark: #161515;
+    --color-dark: #464646;
     --color-gray:#f4f3ec;
     --color-marker: #118e62;
 
@@ -54,6 +54,7 @@
     --button-text: var(--color-white-contrast);
     --button-main: var(--color-main);
     --button-main-hover: var(--color-main-hover);
+    --button-unjoin:#7d7d7d;
 
     --color-link-text: var(--color-main);
     --color-link-text-hover: var(--color-main-hover);

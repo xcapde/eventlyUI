@@ -5,7 +5,7 @@ import { NavTop } from "../navs"
 export const Notifications = () => {
 
     return (
-        <View>
+        <View style={{justifyContent:'center'}}>
             <NavTop/>
 
             NOTIFICATIONS

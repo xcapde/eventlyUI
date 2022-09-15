@@ -5,10 +5,10 @@ import { NavTop } from "../navs"
 export const Search = () => {
 
     return (
-        <View>
+        <View style={{justifyContent:'center'}}>
             <NavTop/>
 
-            SEARCH
+            soon... SEARCH
 
             <Footer/>
         </View>

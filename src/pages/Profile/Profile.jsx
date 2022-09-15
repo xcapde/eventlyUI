@@ -13,8 +13,8 @@ export const Profile = () => {
     const [username, setUsername] = useState([]);
     const [joined, setJoined] = useState([]);
     const [published, setPublished] = useState([]);
-    const [key, setKey] = useState("Joined");
-    const tabContent = ["Joined", "Published"];
+    const [key, setKey] = useState("joined");
+    const tabContent = ["joined", "published"];
 
     useEffect(() => {
         if (!key) return;
@@ -52,25 +52,24 @@ export const Profile = () => {
     return (
         <View style={{ height: '90vh', top: 0 }}>
             <Wrapper gap='0'>
-                <HeaderCnt style={{width:'80%', gap:'5%', padding:'0 10%'}}>
-                    <Col>
-                        <Title style={{color:'var(--color-white-contrast'}}>Hi {username}!</Title>
-                        {/* {joined.length} joined events */}
-                    </Col>
-                    <Row>
-                    {/* <OptionsModule/> */}
-                    <button onClick={logOut}>Log Out</button>
+                <HeaderCnt>
+                    <Row style={{width:'80%', gap:'5%', padding:'0 10%'}}>
+                        <Col>
+                            <Title style={{color:'var(--color-white-contrast'}}>Hi {username}!</Title>
+                            {/* {joined.length} joined events */}
+                        </Col>
+                        <OptionsModule callback={logOut}/>
                     </Row>
                 </HeaderCnt>                         
                 <CalendarCnt style={{ gap: '5%'  }}> 
                     
-                <Navigation tabContent={tabContent} callback={setKey}/>
+                <Navigation tabContent={tabContent} callback={setKey} field={key}/>
 
                 </CalendarCnt>
                 <InformationCnt style={{ gap: '5%' }}> 
 
                 <Col>
-                    {key && key === "Joined"?
+                    {key && key === "joined"?
                         <Col justifyContent='flex-start'>
                             <Title style={{fontSize:'medium', justifyContent:'center', padding:'1rem'}}>
                                 {joined.length} Joined Events
@@ -80,7 +79,7 @@ export const Profile = () => {
                             : <DetailText>You did not join any event yet!</DetailText>
                             }
                         </Col>
-                        : key === "Published" ?
+                        : key === "published" ?
                         <Col justifyContent='flex-start'>
                             <Title style={{fontSize:'medium', justifyContent:'center', padding:'1rem'}}>
                                 {published.length} Published Events

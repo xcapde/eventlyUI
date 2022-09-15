@@ -15,7 +15,6 @@ export const MobileDetail = ({ event, participations, join, unjoin }) => {
     const tabContent = ["description", "requirements", "tags", "map"];
     const id = useParams().id
 
-
     useEffect(() => {
         if (!key) return;
 
@@ -38,7 +37,7 @@ export const MobileDetail = ({ event, participations, join, unjoin }) => {
             <PageCntrl id="box">
                 <Gradient/>
                 <BackButton callback={() => navigate(-1)} />
-                <OptionsModule event={event} callback={deleteEvent}/>
+                <OptionsModule  event={event} callback={deleteEvent}/>
 
                 <ImgCntrl>
                     <Img imgUrl={event.images[0] ? event.images[0] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} />
@@ -50,7 +49,7 @@ export const MobileDetail = ({ event, participations, join, unjoin }) => {
                             <ModuleDetails event={event} participations={participations}/>
                             <ModuleContent callback={setKey} tabContent={tabContent} field={key} event={event} />
                         </Wrapper>
-                    <JoinButton content={event.participant ? "Unjoin" : "Join"} callback={() => event.participant ? unjoin() : join()} />
+                    <JoinButton content={event.participant ? "Unjoin" : "Join"} callback={() => event.participant ? unjoin() : join()} color={event.participant ? "var(--button-unjoin)" : ""}/>
                 </Col>
             </PageCntrl>
             <SideControl>
