@@ -52,6 +52,8 @@ export const Wrapper = styled(Col)`
 export const Touchable = styled(Col)`
     height: ${props => props.height || 'inherit'};
     width: ${props => props.width || 'inherit'};
+    z-index: ${props => props.zIndex || 'inherit'};
+    position: ${props => props.position || 'inherit'};
 `;
 
 //Text

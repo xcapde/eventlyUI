@@ -9,14 +9,14 @@ export const ImgCntrl = styled.div`
 export const PageCntrl = styled(Col)`
     @media(min-width: 820px){
         height: 100vh;
-        width:60%;
+        width:35%;
         display: flex;
     }
 `
 export const SideControl = styled(Col)`
     display:none;
     @media(min-width: 820px){
-        width: 20%;
+        width: 32%;
         display: flex;
         justify-content: flex-start;
         opacity: 0.8;

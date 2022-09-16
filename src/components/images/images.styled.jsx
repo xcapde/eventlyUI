@@ -6,6 +6,7 @@ export const SmallPreview = styled.article`
     width: 8rem;    
     position: relative;
     border-radius: .25rem;
+    scale: ${props => props.scale || 1};
 `
 export const NoPreviewSmall = styled(SmallPreview)`
     background-color: var(--color-white);
@@ -58,4 +59,9 @@ export const PartAvatar = styled(Img)`
     border-radius: 50%;
     border: 2px solid white;
     left: ${props => props.left};
+`;
+
+export const SliderPreview = styled(SmallPreview)`
+    height: 4rem;
+    width: 4rem; 
 `;

@@ -8,11 +8,13 @@ import { ModuleDetails } from "../components/information/ModuleDetails";
 import { Col, Gradient, Img, Title, Wrapper, View } from "../styles/styles.styled";
 import { PageCntrl, ImgCntrl, SideControl } from "../pages/Detail/detail.styled";
 import { eventService } from "../services/API/eventService";
+import { Slider } from "../components/slider/Slider";
 
 export const MobileDetail = ({ event, participations, join, unjoin }) => {
     const navigate = useNavigate();
     const [key, setKey] = useState("description");
     const tabContent = ["description", "requirements", "tags", "map"];
+    const [centralIndex, setCentralIndex] = useState(0);
     const id = useParams().id
 
     useEffect(() => {
@@ -30,11 +32,12 @@ export const MobileDetail = ({ event, participations, join, unjoin }) => {
         navigate(`/update/${event.id}`);
     }
 
+    console.log(centralIndex)
     return (
         <View height='90%' direction='row' style={{ top: '0' }}>
             <SideControl>
                 <ImgCntrl>
-                    <Img imgUrl={event.images[0] ? event.images[0] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} />
+                    <Img imgUrl={event.images.length > 0 ? event.images[centralIndex - 1] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} />
                 </ImgCntrl>
             </SideControl>
             <PageCntrl id="box">
@@ -43,7 +46,8 @@ export const MobileDetail = ({ event, participations, join, unjoin }) => {
                 <OptionsModule event={event} remove={deleteEvent} edit={updateEvent} />
 
                 <ImgCntrl>
-                    <Img imgUrl={event.images[0] ? event.images[0] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} />
+                    <Slider images={event.images} coordinateSliders={setCentralIndex}/>
+                    {/* <Img imgUrl={event.images[0] ? event.images[0] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} /> */}
                 </ImgCntrl>
 
                 <Col height={'calc(100vh - var(--detail-image-height))'} width='90%' style={{ marginBottom: '0.5rem' }}>
@@ -56,8 +60,8 @@ export const MobileDetail = ({ event, participations, join, unjoin }) => {
                 </Col>
             </PageCntrl>
             <SideControl>
-                <ImgCntrl>
-                    <Img imgUrl={event.images[0] ? event.images[0] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} />
+            <ImgCntrl>
+                    <Img imgUrl={event.images.length > 0 ? event.images[centralIndex + 1] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} />
                 </ImgCntrl>
             </SideControl>
         </View>

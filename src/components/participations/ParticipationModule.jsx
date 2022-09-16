@@ -5,7 +5,6 @@ import { PartsCounter } from "./participations.styled"
 
 
 export const ParticipationModule = ({ participations, participantsCount }) => {
-    console.log(participantsCount)
     return (
         <Col>
             {participantsCount > 0 &&
