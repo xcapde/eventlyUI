@@ -62,6 +62,6 @@ export const PartAvatar = styled(Img)`
 `;
 
 export const SliderPreview = styled(SmallPreview)`
-    height: 4rem;
-    width: 4rem; 
+    height: 5rem;
+    width: 5rem; 
 `;

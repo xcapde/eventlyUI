@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
     height: fit-content;
     width: fit-content;
     position: fixed;
-    top: 17%;
+    top: 10%;
     right: 2%;
     display: grid;
     grid-template-columns: auto;
@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
     @media(min-width:820px){
         top: 20%;
         right: 32%;
-        top: 37%;
+        top: 35%;
         right: 32%;
         display: flex;
         flex-direction: row;
@@ -28,7 +28,7 @@ export const Wrapper = styled.div`
         cursor: pointer;
         outline: none;
         & > article{
-        padding: 0;
+        padding: .5% 0%;
     }
     }
     

@@ -7,7 +7,7 @@ export const ModuleVerticalMainCard = ({ title, events, width }) => {
     return (
         <Col height='100%'>
             <FeedTitle>{title}</FeedTitle>
-            <VerticalFeed>
+            <VerticalFeed style={{justifyContent: 'center'}}>
                 {events && events.map((event, key) =>
                     <MidCard key={key} event={event} width={width} />
                 )}
