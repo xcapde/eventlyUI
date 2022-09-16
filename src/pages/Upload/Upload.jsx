@@ -116,8 +116,6 @@ export const Upload = () => {
         })
     }
 
-    console.log("event: ", event)
-    console.log(eventId);
     return (
         <View>
             <NavRail />

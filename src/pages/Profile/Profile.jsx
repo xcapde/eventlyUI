@@ -45,59 +45,59 @@ export const Profile = () => {
         })
     }
 
-    const logOut=()=>{
+    const logOut = () => {
         let confirmation = window.confirm(`Close your session?`)
         AuthService.logOut(confirmation);
     }
 
     return (
         <View style={{ height: '90vh', top: 0 }}>
-            <NavRail/>
+            <NavRail />
             <Wrapper gap='0'>
-                <HeaderCnt>
-                    <Row style={{width:'80%', gap:'5%', padding:'0 10%'}}>
+                <HeaderCnt style={{height: '25vh'}}>
+                    <Row style={{ width: '80%', gap: '5%', padding: '0 10%' }}>
                         <Col>
-                            <Title style={{color:'var(--color-white-contrast'}}>Hi {username}!</Title>
+                            <Title style={{ color: 'var(--color-white-contrast' }}>Hi {username}!</Title>
                             {/* {joined.length} joined events */}
                         </Col>
-                        <OptionsModule callback={logOut}/>
+                        <OptionsModule callback={logOut} />
                     </Row>
-                </HeaderCnt>                         
-                <CalendarCnt style={{ gap: '5%'  }}> 
-                    
-                <Navigation tabContent={tabContent} callback={setKey} field={key}/>
+                </HeaderCnt>
+                <CalendarCnt style={{ gap: '5%', height: '15vh' }}>
+
+                    <Navigation tabContent={tabContent} callback={setKey} field={key} />
 
                 </CalendarCnt>
-                <InformationCnt style={{ gap: '5%' }}> 
+                <InformationCnt style={{ gap: '5%', height: '65vh' }}>
 
-                <Col>
-                    {key && key === "joined"?
-                        <Col justifyContent='flex-start' style={{ gap: '2.5%'  }}>
-                            <Title style={{fontSize:'medium', justifyContent:'center', padding:'1rem'}}>
-                                {joined.length} Joined Events
-                            </Title>
-                            {joined && joined.length > 0 ?
-                            joined.map((event, key) => <SmallCard key={key} event={event}/>).reverse() 
-                            : <DetailText>You did not join any event yet!</DetailText>
-                            }
-                        </Col>
-                        : key === "published" ?
-                        <Col justifyContent='flex-start' style={{ gap: '2.5%'  }}>
-                            <Title style={{fontSize:'medium', justifyContent:'center', padding:'1rem'}}>
-                                {published.length} Published Events
-                            </Title>
-                            {published && published.length > 0 ?
-                            published.map((event, key) => <SmallCard key={key} event={event}/>).reverse() 
-                            : <DetailText>What are you waiting to publish your first event?!</DetailText>
-                            }
-                        </Col> 
-                         : 'NO FIELD'
-                    }
-                </Col>                                     
-   
+                    <Col>
+                        {key && key === "joined" ?
+                            <Col justifyContent='flex-start' style={{ gap: '2.5%', overflowY: 'scroll', overflowX: 'hidden' }}>
+                                <Title style={{ fontSize: 'medium', justifyContent: 'center', padding: '1rem' }}>
+                                    {joined.length} Joined Events
+                                </Title>
+                                {joined && joined.length > 0 ?
+                                    joined.map((event, key) => <SmallCard key={key} event={event} />).reverse()
+                                    : <DetailText>You did not join any event yet!</DetailText>
+                                }
+                            </Col>
+                            : key === "published" ?
+                                <Col justifyContent='flex-start' style={{ gap: '2.5%', overflowY: 'scroll', overflowX: 'hidden' }}>
+                                    <Title style={{ fontSize: 'medium', justifyContent: 'center', padding: '1rem' }}>
+                                        {published.length} Published Events
+                                    </Title>
+                                    {published && published.length > 0 ?
+                                        published.map((event, key) => <SmallCard key={key} event={event} />).reverse()
+                                        : <DetailText>What are you waiting to publish your first event?!</DetailText>
+                                    }
+                                </Col>
+                                : 'NO FIELD'
+                        }
+                    </Col>
+
                 </InformationCnt>
-            </Wrapper>            
-            <Footer/>
+            </Wrapper>
+            <Footer />
         </View>
     )
 }

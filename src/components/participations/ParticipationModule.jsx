@@ -3,7 +3,6 @@ import { ParticipationAvatar } from "./ParticipationAvatar"
 
 
 export const ParticipationModule = ({ participations }) => {
-    console.log(participations)
     return (
         <Row style={{ position: 'relative', margin: "2.5% auto", height: '30px' }}>
             {participations && participations.map((participation, key) => (

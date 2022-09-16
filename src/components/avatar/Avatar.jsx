@@ -24,7 +24,6 @@ export const Avatar = ({imgUrl, scale, publisher}) => {
         setImg(images[username]);
     }, [publisher])
 
-    console.log(publisher)
     return (
             <AvatarImg imgUrl={publisher ? img : imgUrl} scale={scale}/>
     )
