@@ -16,8 +16,7 @@ export const ModuleDetails = ({ event, participations }) => {
                 </Col>
             </Row>
             <Wrapper style={{ padding: '0.75rem' }}>
-                <ParticipationModule participations={participations} />
-                <DetailText>Joined: {event.participantsCount}</DetailText>
+                <ParticipationModule participations={participations} participantsCount={event.participantsCount} />
             </Wrapper>
         </Col>
     )

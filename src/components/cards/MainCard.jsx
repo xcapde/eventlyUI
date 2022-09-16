@@ -15,7 +15,6 @@ export const MainCard = ({ event }) => {
 
       <Col height='auto' style={{alignItems:'flex-start', width: '90%', padding:'1rem 0'}}>
           <Row>
-
               <Avatar imgUrl={event.publisher.avatar} scale='0.8'/>
           </Row>
           <Wrapper>

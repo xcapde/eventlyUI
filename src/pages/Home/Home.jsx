@@ -10,7 +10,7 @@ import { Page } from "../../styles/styles.styled";
 export function Home() {
 
     const [events, setEvents] = useState([]);
-    const [participations, setParticipations] = useState([]);
+    const [participations, setParticipations] = useState();
     const [tags, setTags] = useState([]);
     const [tag, setTag] = useState();
     const [eventsByTag, setEventsByTag] = useState();
@@ -20,11 +20,15 @@ export function Home() {
 
 
     useEffect(() => {
-        getAllData();
+        getParts();
         getAllTags();
         getOnlineEvents();
         getOfflineEvents();
     }, [])
+
+    useEffect(()=>{
+        getAllEvents()
+    },[participations])
 
     useEffect(() => {
         if (!tag) return
@@ -36,17 +40,16 @@ export function Home() {
         if (!eventsByTag) return;
     }, [eventsByTag])
 
-    const getAllData = () => {
+    const getAllEvents = () => {
         eventService.getAllEvents().then(res => {
             if (!res) return;
-            getParts();
-            if(!participations) return;
-            let eventsWithParts = res.map((event, key)=>{
-               let eventPart =  participations.filter((part, key) => part.event.id === event.id);
-               return {...event, participations: eventPart}
+            if (!participations) return;
+            let eventsWithParts = res.map((event, key) => {
+                let eventPart = participations.filter((part, key) => part.event.id === event.id);
+                return { ...event, participations: eventPart }
             })
             setEvents(eventsWithParts);
-           
+
         })
     }
 

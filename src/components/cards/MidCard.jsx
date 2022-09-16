@@ -6,8 +6,6 @@ import { ParticipationModule } from "../participations/ParticipationModule";
 
 export const MidCard = ({ event, width }) => {
 
-  console.log(event.participations)
-
   return (
     <CardMid width={width}>
       <Wrapper height='65%' style={{ borderRadius: 'var(--cardMid-radius)' }}>
@@ -20,19 +18,20 @@ export const MidCard = ({ event, width }) => {
         <Title event={event} />
 
         <Col style={{ gap: '0.5rem', alignItems: 'flex-start' }}>
-          <Row style={{ gap: '2rem', justifyContent: 'space-between' }}>
+          <Row style={{ gap: '2rem', justifyContent: 'flex-start', position: 'relative' }}>
             <Date event={event} />
             <Time event={event} />
+            {width &&
+              <FloatingCnt position="absolute" bottom="-3rem" right="0%">
+                <ParticipationModule participations={event.participations} participantsCount={event.participantsCount} />
+              </FloatingCnt>}
           </Row>
           {event.type === "online" ?
             <Url event={event} /> : <Location event={event} />}
-            <Participation event={event}/>
+          {(!width || (width && event.participations <= 0 ) ) && <Participation event={event} />}
         </Col>
       </Col>
-      {width &&
-            <FloatingCnt top="5%" left="5%">
-              <ParticipationModule participations={event.participations} />
-            </FloatingCnt>}
+
     </CardMid>
   );
 };

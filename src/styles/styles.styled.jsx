@@ -108,9 +108,12 @@ export const Gradient = styled.div`
 `;
 
 export const FloatingCnt = styled(Col)`
-    position: absolute;
+    position: ${props => props.position || 'relative'};
     width: fit-content;
+    max-width: 11rem;
     height: fit-content;
-    top: ${props => props.top};
-    left: ${props => props.left};
+    top: ${props => props.top || 'unset'};
+    left: ${props => props.left || 'unset'};
+    bottom: ${props => props.bottom || 'unset'};
+    right: ${props => props.right || 'unset'};
 `;
