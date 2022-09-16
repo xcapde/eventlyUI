@@ -27,7 +27,7 @@ export const CardMid = styled(Card)`
     box-shadow: 1px 2px 18px var(--card-shadow-opacity);
     @media (min-width: 820px) {
         height: var(--cardMid-height-desktop);
-        width: ${props => props.width || 'var(--cardMid-width-desktop)'};
+        width: ${props => `calc( ${props.width} *.85)` || 'var(--cardMid-width-desktop)'};
     }
 `;
 

@@ -10,68 +10,8 @@ import { ModuleHorizontalMidCard } from "./ModuleHorizontalMidCard";
 import { LinkButton } from "../buttons/LinkButton";
 import { ModuleVerticalMainCard } from "./ModuleVerticalMainCard";
 
-export const HomeFeed = () => {
-    const [events, setEvents] = useState([]);
-    const [tags, setTags] = useState([]);
-    const [tag, setTag] = useState();
-    const [eventsByTag, setEventsByTag] = useState();
-    const [onlineEvents, setOnlineEvents] = useState([]);
-    const [offlineEvents, setOfflineEvents] = useState([]);
-    const [seeAll, setSeeAll] = useState(false);
-
-
-    useEffect(() => {
-        getAllData();
-        getAllTags();
-        getOnlineEvents();
-        getOfflineEvents();
-    }, [])
-
-    useEffect(() => {
-        if (!tag) return
-        getEventsByTag(tag);
-    }, [tag])
-
-
-    useEffect(() => {
-        if (!eventsByTag) return;
-    }, [eventsByTag])
-
-    const getAllData = () => {
-        eventService.getAllEvents().then(res => {
-            if (!res) return
-            setEvents(res)
-        })
-    }
-
-    const getAllTags = () => {
-        tagService.getAll().then(res => {
-            if (!res) return
-            setTags(res)
-        })
-    }
-
-    const getEventsByTag = (tag) => {
-        eventService.getEventsByTag(tag).then(res => {
-            if (!res) return
-            setEventsByTag(res)
-        })
-    }
-
-    const getOnlineEvents = () => {
-        eventService.getOnlineEvent().then(res => {
-            if (!res) return
-            setOnlineEvents(res)
-        })
-    }
-
-    const getOfflineEvents = () => {
-        eventService.getOfflineEvent().then(res => {
-            if (!res) return
-            setOfflineEvents(res)
-        })
-    }
-
+export const HomeFeed = ({ events, tags, tag, setTag, eventsByTag, setEventsByTag, onlineEvents, offlineEvents, seeAll, setSeeAll, participations }) => {
+  
     return (
         <View>
             <Col justifyContent='flex-start' style={{ marginTop: '5%', width: '95%' }}>
@@ -90,14 +30,11 @@ export const HomeFeed = () => {
                         <ModuleVerticalSmallCard title={'Online'} events={onlineEvents} />
                     </React.Fragment>
                 }
-                {/* react component */}
 
                 {!seeAll && eventsByTag &&
-                    // <TagsFilter/>
-
                     <Col style={{ gap: '2.5%', height: '100%', overflowY: "scroll" }}>
                         {eventsByTag.length > 0 ?
-                            <ModuleVerticalMainCard title={'By tag'} events={eventsByTag}  width={'29rem'} />
+                            <ModuleVerticalMainCard title={'By tag'} events={eventsByTag} width={'29rem'} />
                             :
                             <DetailText>There are no events with {tag}</DetailText>
                         }

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Row } from "../../styles/styles.styled";
+import { Row, Title } from "../../styles/styles.styled";
 
 export const VerticalFeed = styled.div`
     height: ${props => props.height || '100%'};
@@ -12,8 +12,11 @@ export const VerticalFeed = styled.div`
     padding: 1rem 0 2rem 0;
     @media (min-width: 820px) {
         height: 100%;
-        grid-template-columns: repeat(auto-fill, minmax(calc(var(--cardXS-width-desktop) + 1%), 1fr));
-        grid-template-rows: repeat(auto-fill, minmax(calc(var(--cardXS-height) + 10%), 1fr));
+        /* grid-template-columns: repeat(auto-fill, minmax(calc(var(--cardXS-width-desktop) + 1%), 1fr));
+        grid-template-rows: repeat(auto-fill, minmax(calc(var(--cardXS-height) + 10%), 1fr)); */
+        grid-template-columns: auto auto auto auto;
+        justify-content: flex-start;
+        grid-gap: 2rem 1rem;
         padding: 1rem 0 0 0;
     };
 `;
@@ -52,3 +55,7 @@ export const HorizontalFeed = styled(Row)`
         }
     }
 `
+
+export const FeedTitle = styled(Title)`
+    height: var(--feed-title-height)
+`;

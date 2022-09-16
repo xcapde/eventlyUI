@@ -3,7 +3,7 @@ import { DetailIcon, DetailText, Row } from "../../styles/styles.styled"
 export const Participation = ({event}) => {
     
     return (
-        <Row>
+        <Row height="fit-content">
             <DetailIcon>
                 <i className="fa-solid fa-users"></i>
             </DetailIcon>

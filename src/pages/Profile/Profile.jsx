@@ -94,7 +94,6 @@ export const Profile = () => {
                                 : 'NO FIELD'
                         }
                     </Col>
-
                 </InformationCnt>
             </Wrapper>
             <Footer />

@@ -54,6 +54,7 @@ export const PartAvatar = styled(Img)`
     height: 30px;
     width: 30px;
     position: relative;
+    background-color: transparent;
     border-radius: 50%;
     border: 2px solid white;
     left: ${props => props.left};

@@ -30,5 +30,11 @@ export const participationService = {
             return res.data;
         })
         return participations;
+    },
+    getAll(){
+        const participations = axios.get(`/participations`).then(res => {
+            return res.data;
+        })
+        return participations;
     }
 }

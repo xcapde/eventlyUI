@@ -106,3 +106,11 @@ export const Gradient = styled.div`
     background: linear-gradient(0deg, #00000000, #00000007, #00000030);
     z-index: var(--index-gradient);
 `;
+
+export const FloatingCnt = styled(Col)`
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    top: ${props => props.top};
+    left: ${props => props.left};
+`;
