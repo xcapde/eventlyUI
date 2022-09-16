@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { ImgCntrl } from "../../pages/Detail/detail.styled";
+import { ImgCnt } from "../../views/detail.styled";
 import { Img, Touchable } from "../../styles/styles.styled";
 import { SliderPiker } from "./SliderPicker";
 
@@ -53,7 +53,7 @@ export const Slider = ({ images, coordinateSliders }) => {
     }
 
     return (
-        <ImgCntrl>
+        <ImgCnt>
             <Touchable zIndex={'calc(var(--index-gradient) + 1)'}
                 position="relative"
                 onTouchStart={(e) => setStart(e.changedTouches[0].clientX)}
@@ -67,6 +67,6 @@ export const Slider = ({ images, coordinateSliders }) => {
                     } />
                 {images.length > 0 && <SliderPiker images={images} current={current} callback={slideOnClick} />}
             </Touchable>
-        </ImgCntrl>
+        </ImgCnt>
     );
 }

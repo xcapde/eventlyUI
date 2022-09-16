@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Row } from "../../styles/styles.styled";
+import { Row, Col } from "../../styles/styles.styled";
 
 export const NavTabs = styled(Row)`
     position: relative;
@@ -13,3 +13,22 @@ export const NavTabs = styled(Row)`
 
     }
 `
+
+export const ModuleContentCnt = styled(Col)`
+    height: fit-content;
+`;
+
+export const ContentGrid = styled.div`
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-auto-flow: column;
+    justify-content: ${props => props.justify || 'center'};
+    place-content: center;
+    height: 10vh;
+    margin: 2.5%;
+    width: 95%;
+    @media(min-width: 820px){
+        height: 22vh;
+        grid-template-rows: auto auto auto auto auto;
+    } 
+`;

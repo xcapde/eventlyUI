@@ -6,7 +6,7 @@ import { NavRail } from "../../components/navs/NavRail";
 import { eventService } from "../../services/API/eventService";
 import { participationService } from "../../services/API/participationService";
 import { Page } from "../../styles/styles.styled";
-import { MobileDetail } from "../../views/MobileDetail";
+import { VDetail } from "../../views/VDetail";
 
 export const Detail = () => {
     const location = useLocation();
@@ -54,13 +54,7 @@ export const Detail = () => {
     return (
         <Page>
             <NavRail />
-            {event &&
-                <React.Fragment>
-                    <MobileDetail event={event} participations={participations} join={join} unjoin={unjoin} />
-                    {/* <DesktopDetail /> */}
-                </React.Fragment>
-            }
-            <noscript>event not found component?</noscript>
+            {event && <VDetail event={event} participations={participations} join={join} unjoin={unjoin} />}
             <Footer />
         </Page>
     )

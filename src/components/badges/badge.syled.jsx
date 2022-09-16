@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const BadgeCnt = styled.div`
     width: fit-content;
+    max-height: .65rem;
 
     display: flex; 
     justify-content: center;

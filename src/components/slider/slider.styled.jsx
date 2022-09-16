@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
             top: 20%;
             right: 32%;
             top: 35%;
-            right: 32%;
+            right: calc( 100% / 3); 
             display: flex;
             flex-direction: row;
             padding: 8px;
