@@ -129,13 +129,10 @@
     --card-width-desktop: 220px;
     --card-height-desktop: 300px;
 
-    /* --cardMid-width: 225px;
-    --cardMid-height: 310px; */
     --cardMid-width: 210px;
     --cardMid-height: 280px;
     --cardMid-width-desktop: 210px;
     --cardMid-height-desktop: 280px;
-    /* --cardMid-img-size: 90%; */
     --cardMid-img-size: 100%;
 
     --cardXS-width: 95%;
@@ -148,9 +145,6 @@
     --react-select-badge-padding: 4px;
     --badge-font-weight: 500;
     --badge-margin: 0.15rem;
-
-    /* PAGES */
-    /* --page-width: 85%; */
 
     /* BREAKPOINTS */
     --xsBP: 600px;

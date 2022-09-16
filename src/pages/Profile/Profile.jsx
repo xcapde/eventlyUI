@@ -77,7 +77,7 @@ export const Profile = () => {
                                 {joined.length} Joined Events
                             </Title>
                             {joined && joined.length > 0 ?
-                            joined.map((event, key) => <SmallCard key={key} event={event}/>) 
+                            joined.map((event, key) => <SmallCard key={key} event={event}/>).reverse() 
                             : <DetailText>You did not join any event yet!</DetailText>
                             }
                         </Col>
@@ -87,7 +87,7 @@ export const Profile = () => {
                                 {published.length} Published Events
                             </Title>
                             {published && published.length > 0 ?
-                            published.map((event, key) => <SmallCard key={key} event={event}/>) 
+                            published.map((event, key) => <SmallCard key={key} event={event}/>).reverse() 
                             : <DetailText>What are you waiting to publish your first event?!</DetailText>
                             }
                         </Col> 

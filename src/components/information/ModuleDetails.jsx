@@ -1,6 +1,5 @@
 import { Col, Row, Wrapper } from "../../styles/styles.styled"
 import { Avatar } from "../avatar/Avatar"
-import { Participation } from "../subcomponents"
 import { Details } from "./Details"
 
 export const ModuleDetails = ({ event, participations }) => {

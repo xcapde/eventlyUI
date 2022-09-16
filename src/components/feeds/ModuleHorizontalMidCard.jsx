@@ -10,7 +10,7 @@ export const ModuleHorizontalMidCard  = ({title, events}) => {
             <HorizontalFeed height='var(--moduleHorizontal-MidCard-height)'>
                 {events && events.map((event, key) =>
                     <MidCard key={key} event={event} />
-                )}                        
+                ).reverse()}                        
             </HorizontalFeed>
         </Col>
     )
