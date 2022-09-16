@@ -18,8 +18,9 @@ export const Footer = () => {
             default: "https://i.pinimg.com/474x/b7/cf/46/b7cf46c96e503fdec995645e70d95705.jpg"
         }
 
-        let username = AuthService.getAuthUser().username;
-        setImg(images[username ? username : 'default']);
+        let auth = AuthService.getAuthUser().username;
+        let key = (!auth || !Object.keys(images).includes(auth)) ? 'default' : auth;
+        setImg(images[key]);
     }, [])
 
     const content = {

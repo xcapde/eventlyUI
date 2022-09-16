@@ -49,3 +49,12 @@ export const IconBg = styled.span`
         margin-top: 12.5%;
     }
 `;
+
+export const PartAvatar = styled(Img)`
+    height: 30px;
+    width: 30px;
+    position: relative;
+    border-radius: 50%;
+    border: 2px solid white;
+    left: ${props => props.left};
+`;

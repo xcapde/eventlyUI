@@ -18,7 +18,7 @@ export const Card = styled(Col)`
 
 export const CardMid = styled(Card)`
     height: var(--cardMid-height);
-    width: var(--cardMid-width);
+    width: ${props => props.width || 'var(--cardMid-width)'};
     position: relative;
     margin: 0 1rem;
     background-color: var(--color-white);
@@ -27,7 +27,7 @@ export const CardMid = styled(Card)`
     box-shadow: 1px 2px 18px var(--card-shadow-opacity);
     @media (min-width: 820px) {
         height: var(--cardMid-height-desktop);
-        width: var(--cardMid-width-desktop);
+        width: ${props => props.width || 'var(--cardMid-width-desktop)'};
     }
 `;
 

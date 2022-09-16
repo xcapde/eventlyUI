@@ -2,15 +2,15 @@ import { Col, Title } from "../../styles/styles.styled"
 import { MidCard } from "../cards/MidCard"
 import { VerticalFeed } from "./feed.styled"
 
-export const ModuleVerticalMainCard = ({title, events}) => {
+export const ModuleVerticalMainCard = ({ title, events, width }) => {
 
-    return(
+    return (
         <Col height='100%'>
             <Title >{title}</Title>
             <VerticalFeed>
                 {events && events.map((event, key) =>
-                    <MidCard key={key} event={event}/>
-                )}                               
+                    <MidCard key={key} event={event} width={width} />
+                )}
             </VerticalFeed>
         </Col>
     )

@@ -24,7 +24,6 @@ export const SmallCard = ({ event }) => {
                 <Url event={event} /> : <Location event={event} />}
           </Col>
           <Participation event={event}/>
-
         </Col>
       </Row>
     </CardXS>

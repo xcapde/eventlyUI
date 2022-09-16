@@ -1,5 +1,6 @@
-import { Col, Row, Wrapper } from "../../styles/styles.styled"
+import { Col, DetailText, Row, Wrapper } from "../../styles/styles.styled"
 import { Avatar } from "../avatar/Avatar"
+import { ParticipationModule } from "../participations/ParticipationModule"
 import { Details } from "./Details"
 
 export const ModuleDetails = ({ event, participations }) => {
@@ -11,12 +12,12 @@ export const ModuleDetails = ({ event, participations }) => {
                     <Details event={event} />
                 </Col>
                 <Col width='20%'>
-                    <Avatar imgUrl={event.publisher.avatar} scale='1.5' />
+                    <Avatar imgUrl={event.publisher.avatar} publisher={event.publisher} scale='1.5' />
                 </Col>
             </Row>
             <Wrapper style={{ padding: '0.75rem' }}>
-                <span>count: {event.participantsCount}</span>
-                {participations && participations.length > 0 && participations.map((p, key) => (<span key={key}>{p.participant.username}</span>))}
+                <ParticipationModule participations={participations} />
+                <DetailText>Joined: {event.participantsCount}</DetailText>
             </Wrapper>
         </Col>
     )

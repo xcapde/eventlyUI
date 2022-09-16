@@ -71,7 +71,7 @@ export const HomeFeed = () => {
             setOfflineEvents(res)
         })
     }
-    
+
     return (
         <View>
             <Col justifyContent='flex-start' style={{ marginTop: '5%', width: '95%' }}>
@@ -83,7 +83,7 @@ export const HomeFeed = () => {
                             <LinkButton callback={() => { setSeeAll(true); setTag(); setEventsByTag() }} content={'See All'} /> :
                             <LinkButton callback={() => { setSeeAll(false); setTag(); setEventsByTag() }} content={'By type'} />}
                 </Row>
-                <ModuleTags tags={tags} callback={(data) => {setTag(data); setSeeAll(false)} } />
+                <ModuleTags tags={tags} callback={(data) => { setTag(data); setSeeAll(false) }} />
                 {!eventsByTag && !seeAll &&
                     <React.Fragment>
                         <ModuleHorizontalMidCard title={'Offline'} events={offlineEvents} />
@@ -97,7 +97,7 @@ export const HomeFeed = () => {
 
                     <Col style={{ gap: '2.5%', height: '100%', overflowY: "scroll" }}>
                         {eventsByTag.length > 0 ?
-                            <ModuleVerticalMainCard title={'By tag'} events={eventsByTag} />
+                            <ModuleVerticalMainCard title={'By tag'} events={eventsByTag}  width={'29rem'} />
                             :
                             <DetailText>There are no events with {tag}</DetailText>
                         }
@@ -106,7 +106,7 @@ export const HomeFeed = () => {
                 {seeAll && !eventsByTag &&
                     <Col style={{ gap: '2.5%', height: '100%', overflowY: "scroll" }}>
                         {events.length > 0 ?
-                            <ModuleVerticalMainCard title={'All'} events={events} />
+                            <ModuleVerticalMainCard title={'All'} events={events} width={'29rem'} />
                             :
                             <DetailText>There are no events</DetailText>
                         }

@@ -3,10 +3,10 @@ import { CardMid, CardMidImage } from "./cards.styled";
 import { Col, Row, Wrapper } from "../../styles/styles.styled";
 import { Date, Location, Participation, Time, Title, Url } from "../subcomponents";
 
-export const MidCard = ({ event }) => {
+export const MidCard = ({ event, width }) => {
 
   return (
-    <CardMid>
+    <CardMid width={width}>
       <Wrapper height='65%' style={{borderRadius:'var(--cardMid-radius)'}}>
         <Link to={`/events/${event.id}`}>
           <CardMidImage imgUrl={event.images[0]? event.images[0] : 'https://media.revistagq.com/photos/62962efda59bf62af3fe45e7/16:9/w_2560%2Cc_limit/GettyImages-482135475.jpg'} />
