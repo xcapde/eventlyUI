@@ -13,7 +13,9 @@ export const ModuleVerticalSmallCard = ({ title, events }) => {
                         <SmallCard key={key} event={event} />
                     ).reverse()
                     :
-                    <DetailText>There are no {title.toLowerCase()} events.</DetailText>
+                    <Col>
+                        <DetailText>There are no {title.toLowerCase()} events.</DetailText>
+                    </Col>
                 }
             </VerticalFeed>
         </Col>

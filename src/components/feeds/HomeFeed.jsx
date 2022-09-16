@@ -30,7 +30,7 @@ export const HomeFeed = ({ events, tags, tag, setTag, eventsByTag, setEventsByTa
                             <ModuleVerticalSmallCard title={'Online'} events={onlineEvents} />
                         </React.Fragment>
                     }
-                    {!seeAll && eventsByTag && <ModuleVerticalMainCard title={'By tag'} events={eventsByTag} width={'29rem'} />}
+                    {!seeAll && eventsByTag && <ModuleVerticalMainCard tag={tag} title={'By tag'} events={eventsByTag} width={'29rem'} />}
                     {seeAll && !eventsByTag && <ModuleVerticalMainCard title={'All'} events={events} width={'29rem'} />}
                 </FeedCnt>
             </Wrapper>

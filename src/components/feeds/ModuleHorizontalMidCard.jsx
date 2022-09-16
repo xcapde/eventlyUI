@@ -13,7 +13,9 @@ export const ModuleHorizontalMidCard = ({ title, events }) => {
                         <MidCard key={key} event={event} />
                     ).reverse()
                     :
-                    <DetailText>There are no {title.toLowerCase()} events.</DetailText>
+                    <Col>
+                        <DetailText>There are no {title.toLowerCase()} events.</DetailText>
+                    </Col>
                 }
             </HorizontalFeed>
         </Col>
