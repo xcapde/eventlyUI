@@ -17,19 +17,19 @@ export const Wrapper = styled.div`
         padding: 5% 0;
     }
     @media(min-width:820px){
-        top: 20%;
-        right: 32%;
-        top: 35%;
-        right: 32%;
-        display: flex;
-        flex-direction: row;
-        padding: 8px;
-        grid-gap: 5%;
-        cursor: pointer;
-        outline: none;
-        & > article{
-        padding: .5% 0%;
-    }
+            top: 20%;
+            right: 32%;
+            top: 35%;
+            right: 32%;
+            display: flex;
+            flex-direction: row;
+            padding: 8px;
+            grid-gap: 5%;
+            cursor: pointer;
+            outline: none;
+            & > article{
+            padding: .5% 0%;
+        }
     }
     
 `;
