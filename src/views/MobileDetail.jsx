@@ -32,7 +32,6 @@ export const MobileDetail = ({ event, participations, join, unjoin }) => {
         navigate(`/update/${event.id}`);
     }
 
-    console.log(centralIndex)
     return (
         <View height='90%' direction='row' style={{ top: '0' }}>
             <SideControl>

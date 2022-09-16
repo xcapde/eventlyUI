@@ -13,8 +13,6 @@ export const Wrapper = styled.div`
     background-color: rgba(49, 181, 149, .6);
     background-color: rgba(255, 255, 255, .6);
     padding: 8px;
-    cursor: pointer;
-    outline: none;
     & > article{
         padding: 5% 0;
     }
@@ -27,6 +25,8 @@ export const Wrapper = styled.div`
         flex-direction: row;
         padding: 8px;
         grid-gap: 5%;
+        cursor: pointer;
+        outline: none;
         & > article{
         padding: 0;
     }

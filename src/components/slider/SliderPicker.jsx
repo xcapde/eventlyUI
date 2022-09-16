@@ -6,7 +6,7 @@ export const SliderPiker = ({ images, current, callback }) => {
     return (
         <Wrapper>
             {images.map((image, key) => (
-                <SliderPreview scale={key === current ? '1.1' : '1'}  key={key} onClick={() => {callback(key); console.log(key)}} >
+                <SliderPreview scale={key === current ? '1.1' : '1'}  key={key} onClick={() => callback(key)} >
                     <SmallPreviewImg imgUrl={image}/>
                 </SliderPreview>
             ))}
