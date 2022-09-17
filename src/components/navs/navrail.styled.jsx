@@ -12,7 +12,7 @@ export const ToggleBtn = styled.button`
     cursor: pointer;
     grid-row: 2/3;
     &::before{
-        content:'\f142 \f142';
+        content:'\f142  \f142';
         font-family: "Font Awesome 6 Free";
         font: var(--fa-font-solid); 
         font-weight: 900;

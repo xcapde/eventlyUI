@@ -16,7 +16,7 @@ export const NavSection = ({ opened, content, section, openSub, callback }) => {
     return (
         <Section columns={opened && 'repeat(7, 1fr)'} flow={opened && 'row'}>
             {Object.keys(content).map((field, key) => (
-                <NavRow row={field === "profile" ? "5/7 !important" : null}
+                <NavRow row={field === "profile" ? "4/7 !important" : null}
                     onClick={(e) => callback(e, section, field, content[field].link)}
                     style={!opened ? { pointerEvents: 'none' } : { pointerEvents: 'all' }} key={key}>
                     {!field.includes("profile") ?
