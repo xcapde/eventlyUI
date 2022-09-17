@@ -16,7 +16,7 @@ export const SmallCard = ({ event }) => {
         <Col width={'calc(100vh - var(--cardXS-img-size))'} height='90%' style={{gap:'0.3rem', padding:'0 0.5rem'}}>
           <Title event={event}/>
           <Col style={{gap:'0.2rem', height:'unset'}}>
-            <Row style={{gap:'3rem'}}>
+            <Row gap="1.5rem" justifyContent="flex-start">
                 <Date event={event} />
                 <Time event={event} />  
             </Row>

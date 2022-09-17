@@ -1,15 +1,15 @@
 import React from "react"
 import { Col, DetailText, Row } from "../../styles/styles.styled"
 import { ParticipationAvatar } from "./ParticipationAvatar"
-import { PartsCounter } from "./participations.styled"
+import { PartsCounter, Wrapper } from "./participations.styled"
 
 
 export const ParticipationModule = ({ participations, participantsCount }) => {
     return (
-        <Col>
+        <Wrapper>
             {participantsCount > 0 &&
                 <React.Fragment>
-                    <Row style={{ position: 'relative', margin: "2.5% auto", height: '30px', backgroundColor: 'transparent', width: 'fit-content' }}>
+                    <Row>
                         {participations && participations.map((participation, key) => (
                             key <= 5 && <ParticipationAvatar key={key} participation={participation} left={key !== 0 ? `-${key * 12}px` : '0px'} />
                         ))}
@@ -20,6 +20,6 @@ export const ParticipationModule = ({ participations, participantsCount }) => {
                     <DetailText>{participantsCount} people joined</DetailText>
                 </React.Fragment>
             }
-        </Col>
+        </Wrapper>
     )
 }

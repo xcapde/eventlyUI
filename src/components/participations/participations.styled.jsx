@@ -1,9 +1,16 @@
 import styled from "styled-components";
+import { Col } from "../../styles/styles.styled";
 
+export const Wrapper = styled(Col)`
+    height: 55px;
+    width: fit-content;
+    align-self: center;
+    gap: 5px;
+    margin: 0 auto;
+`;
 
-//Flex model
 export const PartsCounter = styled.div`
-    height: 15px;
+    height: 55px;
     width: 15px;
     border-radius: 50%;
     background-color: var(--color-main);
@@ -17,3 +24,4 @@ export const PartsCounter = styled.div`
     left: ${props => props.left || '0px'};
     scale: 1.1;
 `;
+

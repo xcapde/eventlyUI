@@ -18,6 +18,10 @@ export const FeedCnt = styled(Col)`
     gap: 2.5%;
 `;
 
+export const FeedTitle = styled(Title)`
+    height: var(--feed-title-height)
+`;
+
 export const VerticalFeed = styled.div`
     height: ${props => props.height || '100%'};
     width: 100%;
@@ -70,8 +74,11 @@ export const HorizontalFeed = styled(Row)`
         display: flex;
         }
     }
-`
+`;
 
-export const FeedTitle = styled(Title)`
-    height: var(--feed-title-height)
+export const ProfFeed = styled(Col)`
+    justify-content: flex-start;
+    gap: 2.5%;
+    overflow-y: scroll;
+    overflow-x: hidden;
 `;

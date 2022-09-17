@@ -1,14 +1,15 @@
-import { Row, Wrapper } from "../../styles/styles.styled"
 import { useEffect, useState } from "react"
 import { eventService } from "../../services/API/eventService"
 import { AuthService } from "../../services/AuthService"
-import { Col, DetailText, Title, View } from "../../styles/styles.styled"
+import { Col, Row, DetailText, Title, NoNavView } from "../../styles/styles.styled"
 import { Footer } from "../../components/footer/Footer"
-import { CalendarCnt, HeaderCnt, InformationCnt } from "./profile.styled"
+import { NavCnt, Header, Main } from "./profile.styled"
 import { Navigation } from "../../components/information/Navigation"
 import { SmallCard } from "../../components/cards/SmallCard"
 import { OptionsModule } from "../../components/buttons/burgers/OptionsModule"
-import { NavRail } from "../../components/navs"
+import { NavRail } from "../../components/navs";
+import { FeedCnt } from "../../components/feeds/feed.styled";
+import { ProfileFeed } from "../../components/feeds/ProfileFeed"
 
 export const Profile = () => {
     const [username, setUsername] = useState([]);
@@ -51,52 +52,29 @@ export const Profile = () => {
     }
 
     return (
-        <View style={{ height: '90vh', top: 0 }}>
+        <NoNavView>
             <NavRail />
-            <Wrapper gap='0'>
-                <HeaderCnt style={{height: '25vh'}}>
-                    <Row style={{ width: '80%', gap: '5%', padding: '0 10%' }}>
-                        <Col>
-                            <Title style={{ color: 'var(--color-white-contrast' }}>Hi {username}!</Title>
-                            {/* {joined.length} joined events */}
-                        </Col>
-                        <OptionsModule callback={logOut} />
-                    </Row>
-                </HeaderCnt>
-                <CalendarCnt style={{ gap: '5%', height: '15vh' }}>
-
+            <Header>
+                <Row>
+                    <Title>Hi {username}!</Title>
+                    <OptionsModule callback={logOut} />
+                </Row>
+                <Row>
+                    <Title>calendar</Title>
+                </Row>
+                <NavCnt>
                     <Navigation tabContent={tabContent} callback={setKey} field={key} />
+                </NavCnt>
+            </Header>
 
-                </CalendarCnt>
-                <InformationCnt style={{ gap: '5%', height: '65vh' }}>
-
-                    <Col>
-                        {key && key === "joined" ?
-                            <Col justifyContent='flex-start' style={{ gap: '2.5%', overflowY: 'scroll', overflowX: 'hidden' }}>
-                                <Title style={{ fontSize: 'medium', justifyContent: 'center', padding: '1rem' }}>
-                                    {joined.length} Joined Events
-                                </Title>
-                                {joined && joined.length > 0 ?
-                                    joined.map((event, key) => <SmallCard key={key} event={event} />).reverse()
-                                    : <DetailText>You did not join any event yet!</DetailText>
-                                }
-                            </Col>
-                            : key === "published" ?
-                                <Col justifyContent='flex-start' style={{ gap: '2.5%', overflowY: 'scroll', overflowX: 'hidden' }}>
-                                    <Title style={{ fontSize: 'medium', justifyContent: 'center', padding: '1rem' }}>
-                                        {published.length} Published Events
-                                    </Title>
-                                    {published && published.length > 0 ?
-                                        published.map((event, key) => <SmallCard key={key} event={event} />).reverse()
-                                        : <DetailText>What are you waiting to publish your first event?!</DetailText>
-                                    }
-                                </Col>
-                                : 'NO FIELD'
-                        }
-                    </Col>
-                </InformationCnt>
-            </Wrapper>
+            <Main>
+                {key && key === "joined" ?
+                    <ProfileFeed events={joined} title={"Joined"} />
+                    :
+                    <ProfileFeed events={published} title={"Published"} />
+                }
+            </Main>
             <Footer />
-        </View>
+        </NoNavView>
     )
 }

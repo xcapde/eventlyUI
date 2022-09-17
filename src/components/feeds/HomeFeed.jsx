@@ -12,7 +12,7 @@ export const HomeFeed = ({ events, tags, tag, setTag, eventsByTag, setEventsByTa
     return (
         <View>
             <Wrapper>
-                <Row height='unset' justifyContent="flex-end">
+                <Row height='5vh' justifyContent="flex-end">
                     {tag ?
                         <LinkButton callback={() => { setTag(); setEventsByTag(); setSeeAll(false) }} content={'Clear'} />
                         :

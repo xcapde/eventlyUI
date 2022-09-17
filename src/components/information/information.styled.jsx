@@ -6,7 +6,7 @@ export const NavTabs = styled(Row)`
     justify-content: center;
     height: auto;
     flex-wrap: wrap;
-    gap: 10px 0;
+    gap: 0;
 
     @media(min-width: 820px){
         flex-wrap:nowrap;

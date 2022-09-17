@@ -3,12 +3,13 @@ import styled from "styled-components";
 
 //Flex model
 export const Col = styled.div`
+    height: ${props => props.height || '100%'};
+    width: ${props => props.width || '100%'};
     display: flex;
     flex-direction: ${props => props.flexDirection || 'column'};
     align-items: ${props => props.alignItems || 'center'};
     justify-content: ${props => props.justifyContent || 'center'};
-    width: ${props => props.width || '100%'};
-    height: ${props => props.height || '100%'};
+    gap: ${props => props.gap || 'unset'};
 `;
 
 export const Row = styled(Col)`
@@ -38,6 +39,18 @@ export const View = styled.section`
         width: 95vw;
         top:0;
         margin-left: 5vw;
+    }
+`;
+
+
+export const NoNavView = styled(View)`
+    height: calc(100% - var(--footer-height));
+    width: 100%;
+    top: 0;
+    align-items: flex-start;
+    @media(min-width: 820px){
+        height: 100%;
+        width: 100%;
     }
 `;
 

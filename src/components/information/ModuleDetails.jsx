@@ -6,8 +6,8 @@ import { Details } from "./Details"
 export const ModuleDetails = ({ event, participations }) => {
 
     return (
-        <Col height='auto' style={{ alignItems: 'flex-start' }}>
-            <Row>
+        <Col height='auto' alignItems="flex-start">
+            <Row height="50%">
                 <Col width='80%'>
                     <Details event={event} />
                 </Col>
@@ -15,9 +15,7 @@ export const ModuleDetails = ({ event, participations }) => {
                     <Avatar imgUrl={event.publisher.avatar} publisher={event.publisher} scale='1.5' />
                 </Col>
             </Row>
-            <Wrapper style={{ padding: '0.75rem' }}>
-                <ParticipationModule participations={participations} participantsCount={event.participantsCount} />
-            </Wrapper>
+            <ParticipationModule participations={participations} participantsCount={event.participantsCount} />
         </Col>
     )
 }

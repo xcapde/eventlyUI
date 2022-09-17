@@ -3,7 +3,7 @@ import { Col } from "../../../styles/styles.styled";
 
 export const OptionsCnt = styled(Col)`
     height:var(--options-cnt-height);
-    width:var(--options-cnt-width);
+    width:var(--options-cnt-width) !important;
     position: absolute;
     top: 3rem;
     right: 1.5rem;
