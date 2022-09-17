@@ -38,7 +38,7 @@ export const NavCnt = styled(Col)`
 
 
 export const Main = styled(Col)`
-    height: 64vh;
+    height: 60vh;
     background-color: var(--color-white);
     color:var(--color-dark);
     font-family: var(--header-font);

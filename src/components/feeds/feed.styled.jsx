@@ -15,7 +15,7 @@ export const Wrapper = styled(Col)`
 export const FeedCnt = styled(Col)`
     height: 100%;
     overflow: hidden;
-    gap: 2.5%;
+    gap: ${props => props.gap || '2.5%'};
 `;
 
 export const FeedTitle = styled(Title)`
@@ -78,7 +78,8 @@ export const HorizontalFeed = styled(Row)`
 
 export const ProfFeed = styled(Col)`
     justify-content: flex-start;
-    gap: 2.5%;
     overflow-y: scroll;
     overflow-x: hidden;
+    gap: 2.5%;
+    padding: 2%;
 `;
