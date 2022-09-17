@@ -24,6 +24,7 @@ export const NavRail = () => {
 
     const openSubContent = (e, section, field) => {
         setSubcontent(contents[section][field].subcontent);
+        console.log(e.target.offsetTop)
         setTop(section.includes("profile") ? null : e.target.offsetTop + 'px');
         setBottom(section.includes("profile") ? '1%' : null);
     }

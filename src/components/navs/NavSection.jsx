@@ -21,7 +21,7 @@ export const NavSection = ({ opened, content, section, openSub, callback }) => {
                     style={!opened ? { pointerEvents: 'none' } : { pointerEvents: 'all' }} key={key}>
                     {!field.includes("profile") ?
                         <NavIcon column={opened && '1/2'}>{content[field].icon}</NavIcon> :
-                        <Avatar left={!opened && '1.35rem'} publisher={publisher} />
+                        <Avatar left={!opened && '1rem'} publisher={publisher} />
                     }
                     <NavCont display={opened && 'block'} color={opened && 'white'}>
                         {publisher && field.includes("profile") && publisher.username ?

@@ -42,12 +42,13 @@ export const Wrapper = styled.section`
         grid-template-rows: repeat(7, 1fr);
         grid-auto-flow: row;
         place-content: center;
-        gap: 1rem;
+        row-gap: 1.35rem;
         z-index: var(--index-sidebar);
         border-radius: 0 .75rem .75rem 0;
         background-color: var(--color-navrail-contrast);
         cursor: pointer;
         outline: none;
+        overflow: hidden;
         /* transition: width .5s linear; */
         & > *{
             z-index: 6;
@@ -102,11 +103,13 @@ export const NavRow = styled.div`
 
 export const Section = styled.div`
     height: 30vh;
+    /* position: relative; */
     display: grid;
     grid-column: 1/8;
     grid-template-columns: ${props => props.columns || 'auto'};
     grid-template-rows: repeat(5, 1fr);
     grid-auto-flow: ${props => props.flow || 'row'};
+    /* border-top: 1px solid rgba(255, 255, 255, .45); */
     place-content: space-evenly;
     & > div:nth-child(1){
         grid-row: 2/3;
@@ -117,7 +120,26 @@ export const Section = styled.div`
     & > div:nth-child(3){
         grid-row: 4/5;
     }
+    /* &::before{
+        content: "";
+        position: absolute;
+        top: -3px;
+        left: 0;
+        height: 5px;
+        width: 2rem;
+        background-color: var(--color-navrail-contrast);
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        top: -3px;
+        right: 0;
+        height: 5px;
+        width: 2rem;
+        background-color: var(--color-navrail-contrast);
+    } */
 `;
+
 
 export const NavIcon = styled.span`
     grid-column: ${props => props.column || ' 3/8'};
