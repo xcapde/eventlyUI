@@ -70,7 +70,7 @@ export const Wrapper = styled.section`
         }
         /* &::before{
             content: "";
-            width: 5vw;
+            width: 6rem;
             height: 100vh;
             top: 0;
             left: 0;

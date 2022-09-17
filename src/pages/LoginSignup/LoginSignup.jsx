@@ -41,6 +41,7 @@ export const LoginSignup = () => {
     return (
         <Page>
             <NavRail />
+            <noscript>arreglar desktop</noscript>
             <View>
                 <Logo scale={'100%'} />
                 <LoginSignupForm location={location} login={login} signup={signup} />
@@ -49,9 +50,8 @@ export const LoginSignup = () => {
                         <React.Fragment>Not a member? <LinkButton callback={() => navigate('/sign-up')} content="Sign Up" /></React.Fragment>
                         : <React.Fragment>Have an account? <LinkButton callback={() => navigate('/log-in')} content="Log In" /></React.Fragment>}
                 </BottomTxt>
-                <Footer/>
+                <Footer />
             </View>
-            <noscript>tab</noscript>
         </Page>
     )
 }
