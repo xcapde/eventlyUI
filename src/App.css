@@ -36,6 +36,8 @@
     --color-footer: var(--color-white);
     --color-item-footer: lightgray;
     --color-navtop: var(--color-white);
+    --color-navrail: rgba(26, 92, 76, 1);
+    --color-navrail-contrast: rgba(18, 112, 89, 1);
 
     --color-badgetBG-default: #ffc941;
     --color-badgetText-default: #cf8d0c;
@@ -102,6 +104,7 @@
     --font-size-badge: smaller;
 
     --font-size-nav-icon: 24px;
+    --font-size-navRail: small;
     --font-size-detail-tab-button: medium;
     --font-size-opacity-icon: x-large;
     --font-size-form-button: large;

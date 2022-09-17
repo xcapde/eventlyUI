@@ -1,90 +1,171 @@
 import styled from "styled-components";
-import { Col, Row } from "../../styles/styles.styled";
+import { Img } from "../../styles/styles.styled";
 
-export const Wrapper = styled(Col)`
-   display: none;
-    
+export const ToggleBtn = styled.button`
+    height: 3rem;
+    width: 3rem;
+    background-color: transparent;
+    border-radius: .75rem;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    grid-row: 2/3;
+    &::before{
+        content:'\f142 \f142';
+        font-family: "Font Awesome 6 Free";
+        font: var(--fa-font-solid); 
+        font-weight: 900;
+        font-size: 18px;
+        color: var(--color-white);
+    }
+`;
+
+export const Logo = styled(Img)`
+    height: fit-content;
+    width: 3rem;
+    object-fit: contain;
+    grid-row: 3/4;
+`;
+
+export const Wrapper = styled.section`
+    display: none;
    @media (min-width: 820px) {
-        display: flex;
-        height: 99.9%;
-        width: ${props => props.width || '5%'};
+        height: 100vh;
+        width: ${props => props.width || '6rem'};
         position: fixed;
         top: 0;
         left: 0;
+        display: grid;
+        display: grid;
+        grid-template-columns: repeat(7,1fr);
+        grid-template-rows: repeat(7, 1fr);
+        grid-auto-flow: row;
+        place-content: center;
+        gap: 1rem;
         z-index: var(--index-sidebar);
-        border-radius: 0 1.15rem 1.15rem 0;
-        background-color: darkgreen;
+        border-radius: 0 .75rem .75rem 0;
+        background-color: var(--color-navrail-contrast);
         cursor: pointer;
-        -webkit-transition: width 3s;
-        transition: width 3s;
-        justify-content: space-between;
+        outline: none;
+        /* transition: width .5s linear; */
         & > *{
-            width: 100%;
-            gap: 3rem;
-        }    
-    }
+            z-index: 6;
+        }
+        & > button, & > img{
+            grid-column: ${props => props.column || '3/6'};
+        }
+        & > div:nth-child(3){
+            grid-row: 4/5;
 
-    &:hover{
-        width: 15%;
-    }
+        }
+        & > div:nth-child(4){
+            grid-row: 5/6;
 
-    &:hover #sidebar-content{
-        display: flex;
-        color: white;
-        transition: color 4s display 2s; 
+        }
+        & > div:nth-child(5){
+            height: 15vh;
+            grid-row: 6/7;
+
+        }
+        /* &::before{
+            content: "";
+            width: 5vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            position: absolute;
+            background-color:  var(--color-navrail);
+            z-index: 5;
+        } */
     }
 `;
 
-export const SideBarItemRow = styled(Row)`
-    width: 85%;
-    padding: 5% 0;
-    gap: 5%;
-    margin: 0 auto;
-    &:hover{
-        background-color: rgba( 255, 255, 255, 55%);
+export const NavRow = styled.div`
+        height: fit-content;
+        display: grid;
+        grid-column: 2/7;
+        grid-template-columns: repeat(7,1fr);
+        grid-template-rows: auto;
+        grid-auto-flow: row;
+        place-content: space-evenly;
+        padding: 5% 6%;
+        align-items: flex-end;
+        justify-items: start;
         border-radius: .25rem;
+        background-color: ${props => props.bg || 'transparent'};
+        grid-row: ${props => props.row|| 'inherit'};
+        &:hover{
+            background-color: rgba(255, 255, 255, .25);
+        }
+`;
+
+export const Section = styled.div`
+    height: 30vh;
+    display: grid;
+    grid-column: 1/8;
+    grid-template-columns: ${props => props.columns || 'auto'};
+    grid-template-rows: repeat(5, 1fr);
+    grid-auto-flow: ${props => props.flow || 'row'};
+    place-content: space-evenly;
+    & > div:nth-child(1){
+        grid-row: 2/3;
+    }
+    & > div:nth-child(2){
+        grid-row: 3/4;
+    }
+    & > div:nth-child(3){
+        grid-row: 4/5;
     }
 `;
 
-export const SideBarItemIconCol = styled(Col)`
-    width: 30%;
-`;
-
-export const SideBarItemContent = styled(Col)`
-    width: 80%;
-    display: ${props => props.sub ? 'flex' : 'none'};
-    color: ${props => props.sub ? 'white' : 'transparent'};
-    align-items: baseline;
-    transition: color 4s display 2s;
-`;
-
-export const SideBarIcon = styled.span`
-    font-size: xx-large;
+export const NavIcon = styled.span`
+    grid-column: ${props => props.column || ' 3/8'};
+    width: fit-content;
+    font-size: 13px;
     color: white;
     &:hover{
         color: lightgray;
     }
 `
+export const NavCont = styled.span`
+    display: ${props => props.display || 'none'};
+    grid-column: 3/8;
+    width: fit-content;
+    font-family: var(--detail-font);
+    font-size: var(--font-size-navRail);
+    color: ${props => props.color || 'transparent'};
+    white-space: nowrap;
+    transition: display 6s ease, color 2s linear, grid-column none;
+    &:hover{
+        color: lightgray;
+    }
+`;
 
 export const Aside = styled.aside`
-    min-width: fit-content;
-    /* min-height: 25%; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    top: 0%;
-    top: calc(${props => props.top} - 1.1rem);
-    left: 15%;
     height: fit-content;
-    width: 15.5%;
-    gap: 5%;
-    background-color: darkgreen;
-    position: absolute;
+    width: fit-content;
+    min-width: 12rem;
+    position: fixed;
+    top: calc(${props => props.top} - 1.1rem);
+    bottom: ${props => props.bottom};
+    left: 12.5rem;
+    background-color: var(--color-navrail-contrast);
     border-radius: .75rem;
-    z-index: 1;
-    row-gap: 1rem;
-    padding: 1rem;
+    z-index: var(--index-sidebar);
+    padding: .5rem;
+    gap: 5%;
     cursor: pointer;
     transition: all 2s;
+    & > div{
+        height: fit-content;
+        min-height: 10vh;
+        grid-template-rows: auto;
+        & > div {
+            grid-column: 1/8;
+        }
+        & > div > span:nth-child(2){
+            grid-column: 2/7;
+        }
+    }
 `;

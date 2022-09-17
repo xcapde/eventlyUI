@@ -28,6 +28,7 @@ export function Home() {
 
     useEffect(()=>{
         getAllEvents()
+        // eslint-disable-next-line
     },[participations])
 
     useEffect(() => {

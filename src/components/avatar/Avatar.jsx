@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AvatarImg } from "./avatar.styled"
 
 
-export const Avatar = ({imgUrl, scale, publisher}) => {
+export const Avatar = ({imgUrl, scale, left, publisher}) => {
 
     const [img, setImg] = useState();
 
@@ -25,6 +25,6 @@ export const Avatar = ({imgUrl, scale, publisher}) => {
     }, [publisher])
 
     return (
-            <AvatarImg imgUrl={publisher ? img : imgUrl} scale={scale}/>
+            <AvatarImg left={left} imgUrl={publisher ? img : imgUrl} scale={scale}/>
     )
 }
