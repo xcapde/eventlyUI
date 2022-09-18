@@ -63,8 +63,10 @@ export const Calendar = ({ pickDay, pickedDay }) => {
             {week.map((day, key) => (
                 <Day
                     onClick={() => pickDay(day)}
-                    color={pickedDay && day.date === pickedDay.date ? 'rgba(255, 255, 255, .25)' :
+                    bg={pickedDay && day.date === pickedDay.date ? 'rgba(255, 255, 255, .25)' :
                         !pickedDay && day.date === today.toLocaleString().split(",")[0] ? 'rgba(255, 255, 255, .25)' : 'transparent'}
+                    color={pickedDay && day.date === pickedDay.date ? 'var(--color-main)' :
+                        !pickedDay && day.date === today.toLocaleString().split(",")[0] ? 'var(--color-main)' : 'var(--color-white)'}
                     key={key}>
                     <DetailText>{day.day}</DetailText>
                     <DetailText>{day.date.split("/")[0]}</DetailText>

@@ -5,8 +5,9 @@ import { Col, Row } from "../../styles/styles.styled";
 export const CalendarCnt = styled(Row)`
    gap: 1rem;
    @media(min-width: 820px){
-        width: 60% !important;
+        width: 80% !important;
         justify-content: space-evenly;
+        margin-left: 5rem !important;
     }
 `;
 
@@ -17,7 +18,7 @@ export const Day = styled(Col)`
     justify-content: center;
     border-radius: 1.4rem;
     padding: 15px 0;
-    background-color: ${props => props.color};
+    background-color: ${props => props.bg};
     gap: 2rem;
     & > p{
         color: var(--color-white);
@@ -25,6 +26,18 @@ export const Day = styled(Col)`
     @media(min-width: 820px){
         gap: 3rem;
         cursor: pointer;
+        width: calc(100%/7);
+        border-right: 1px solid rgba(255, 255, 255, .25);
+        border-radius: inherit;
+        align-items: flex-end;
+        padding-right: 1rem;
+        background-color: transparent;
+        & > p{
+            color: ${props => props.color};
+        }
+        & > p:nth-child(2){
+            font-size: 24px;
+        }
     }
     
 `;
