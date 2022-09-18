@@ -5,7 +5,7 @@ import { CalendarCnt, Day } from "./calendar.styled";
 
 export const Calendar = ({ pickDay, pickedDay }) => {
 
-    const today = new Date(2022, 8, 28);
+    const today = new Date();
     const [month, setMonth] = useState();
     const [year, setYear] = useState();
     const [daysInMonth, setDaysInMonth] = useState();
