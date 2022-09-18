@@ -11,19 +11,20 @@ export const CalendarCnt = styled(Row)`
 `;
 
 export const Day = styled(Col)`
-    height: 50%;
+    height: fit-content;
+    width: fit-content;
+    width: 45px;
     justify-content: center;
     border-radius: 1.4rem;
+    padding: 15px 0;
     background-color: ${props => props.color};
-    gap: 1rem;
+    gap: 2rem;
     & > p{
         color: var(--color-white);
     }
     @media(min-width: 820px){
-        cursor: pointer;
-        width: fit-content;
         gap: 3rem;
-        padding: 15px 10px;
+        cursor: pointer;
     }
     
 `;
