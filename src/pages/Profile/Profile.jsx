@@ -71,7 +71,7 @@ export const Profile = () => {
     const views = {
         joined: <ProfileFeed events={joined} title={"joined"} />,
         published: <ProfileFeed events={published} title={"published"} />,
-        by_Date: <ProfileFeed events={byDate} title={""} date={pickedDay ? pickedDay.date : 'this day'} />
+        by_Date: <ProfileFeed events={byDate} title={"joined"} date={pickedDay ? pickedDay.date : 'this day'} />
     }
 
     return (
