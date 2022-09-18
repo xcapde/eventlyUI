@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react"
 import { eventService } from "../../services/API/eventService"
 import { AuthService } from "../../services/AuthService"
-import { Col, Row, DetailText, Title, NoNavView } from "../../styles/styles.styled"
+import { Row, Title, NoNavView } from "../../styles/styles.styled"
 import { Footer } from "../../components/footer/Footer"
 import { NavCnt, Header, Main } from "./profile.styled"
 import { Navigation } from "../../components/information/Navigation"
-import { SmallCard } from "../../components/cards/SmallCard"
 import { OptionsModule } from "../../components/buttons/burgers/OptionsModule"
 import { NavRail } from "../../components/navs";
-import { FeedCnt } from "../../components/feeds/feed.styled";
 import { ProfileFeed } from "../../components/feeds/ProfileFeed"
 
 export const Profile = () => {

@@ -1,4 +1,4 @@
-import { Col, DetailText, Row, Wrapper } from "../../styles/styles.styled"
+import { Col, Row } from "../../styles/styles.styled"
 import { Avatar } from "../avatar/Avatar"
 import { ParticipationModule } from "../participations/ParticipationModule"
 import { Details } from "./Details"

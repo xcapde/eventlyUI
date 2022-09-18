@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Col, Row, Title } from "../../styles/styles.styled";
+import { Col, Title } from "../../styles/styles.styled";
 
 export const Header = styled(Col)`
     height: 30vh;

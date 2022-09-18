@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Col, Img} from "../../styles/styles.styled";
+import { Col, Img, Title} from "../../styles/styles.styled";
 
 /*SIZING*/
 export const Card = styled(Col)`
@@ -16,18 +16,18 @@ export const Card = styled(Col)`
     }
 `;
 
-export const CardMid = styled(Card)`
-    height: var(--cardMid-height);
-    width: ${props => props.width || 'var(--cardMid-width)'};
+export const CardMain = styled(Card)`
+    height: var(--cardMain-height);
+    width: ${props => props.width || 'var(--cardMain-width)'};
     position: relative;
     margin: 0 1rem;
     background-color: var(--color-white);
     color: var(--color-detail-text);
-    border-radius: var(--cardMid-radius);
+    border-radius: var(--cardMain-radius);
     box-shadow: 1px 2px 18px var(--card-shadow-opacity);
     @media (min-width: 820px) {
-        height: var(--cardMid-height-desktop);
-        width: ${props => `calc( ${props.width} *.85)` || 'var(--cardMid-width-desktop)'};
+        height: var(--cardMain-height-desktop);
+        width: ${props => `calc( ${props.width} *.85)` || 'var(--cardMain-width-desktop)'};
     }
 `;
 
@@ -51,12 +51,10 @@ export const CardImage = styled(Img)`
     border-bottom-right-radius: 0;
 `;
 
-export const CardMidImage = styled(Img)`
-    height: var(--cardMid-img-size);
-    width: var(--cardMid-img-size);
-    border-radius: var(--cardMid-radius) var(--cardMid-radius) 0 0;
-    /* padding: 5%; */
-    /* border-radius: var(--cardMid-radius) 0; */
+export const CardMainImage = styled(Img)`
+    height: var(--cardMain-img-size);
+    width: var(--cardMain-img-size);
+    border-radius: var(--cardMain-radius) var(--cardMain-radius) 0 0;
 `;
 
 export const CardXSImage = styled(Img)`
@@ -65,3 +63,14 @@ export const CardXSImage = styled(Img)`
     border-radius: var(--cardXS-img-radius);
     padding: 5%;
 `;
+
+/* TEXT */ 
+
+export const TitleCard = styled(Title)`
+    font-size: var(--font-size-card-title);
+    font-weight: bolder;
+    padding:0.25rem 0;
+        @media(min-width:820px){
+            font-size: var(--font-size-card-title-desktop);
+        }
+`

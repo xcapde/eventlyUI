@@ -2,7 +2,7 @@ import React from "react";
 import { Row, View } from "../../styles/styles.styled";
 import { ModuleVerticalSmallCard } from "./ModuleVerticalSmallCard";
 import { ModuleTags } from "./ModuleTags";
-import { ModuleHorizontalMidCard } from "./ModuleHorizontalMidCard";
+import { ModuleHorizontalMainCard } from "./ModuleHorizontalMainCard";
 import { LinkButton } from "../buttons/LinkButton";
 import { ModuleVerticalMainCard } from "./ModuleVerticalMainCard";
 import { Wrapper, FeedCnt } from "./feed.styled.jsx";
@@ -26,7 +26,7 @@ export const HomeFeed = ({ events, tags, tag, setTag, eventsByTag, setEventsByTa
                 <FeedCnt>
                     {!eventsByTag && !seeAll &&
                         <React.Fragment>
-                            <ModuleHorizontalMidCard title={'Offline'} events={offlineEvents} />
+                            <ModuleHorizontalMainCard title={'Offline'} events={offlineEvents} />
                             <ModuleVerticalSmallCard title={'Online'} events={onlineEvents} />
                         </React.Fragment>
                     }

@@ -1,5 +1,5 @@
 import { Col, DetailText } from "../../styles/styles.styled";
-import { MidCard } from "../cards/MidCard";
+import { MainCard } from "../cards/MainCard";
 import { FeedTitle, VerticalFeed } from "./feed.styled";
 
 export const ModuleVerticalMainCard = ({ title, events, tag, width, justify }) => {
@@ -11,7 +11,7 @@ export const ModuleVerticalMainCard = ({ title, events, tag, width, justify }) =
             <VerticalFeed justify={justify}>
                 {events && events.length > 0 ?
                     events.map((event, key) =>
-                        <MidCard key={key} event={event} width={width} />
+                        <MainCard key={key} event={event} width={width} />
                     ) :
                     <Col>
                         <DetailText>{title.includes("tag") ? "No events found with "+tag : "No events found"}</DetailText>

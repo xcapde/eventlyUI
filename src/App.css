@@ -86,8 +86,7 @@
     --options-cnt-width: 150px;
     --module-tags-height: 8vh;
     --moduleVertical-SmallCard-height:calc(var(--cardXS-height) * 1.5);
-    --moduleHorizontal-MainCard-height:calc(var(--card-height) * 1.1);
-    --moduleHorizontal-MidCard-height: calc(var(--cardMid-height) * 1.17);
+    --moduleHorizontal-MainCard-height: calc(var(--cardMain-height) * 1.17);
 
     /* FONT SIZE */
     --font-size-title: x-large;
@@ -118,7 +117,7 @@
 
     /* RADIUS */
     --footer-radius: 1.15rem 1.15rem 0 0;
-    --cardMid-radius: 1.5rem;
+    --cardMain-radius: 1.5rem;
     --cardXS-img-radius: 1rem;
     --card-radius: 0.5rem;
     --avatar-radius: 0.5rem;
@@ -129,17 +128,11 @@
     --navtop-radius: 0;
 
     /* CARD */
-    --card-width: 95%;
-    --card-height: 350px;
-    --card-img-height: 100%;
-    --card-width-desktop: 220px;
-    --card-height-desktop: 300px;
-
-    --cardMid-width: 210px;
-    --cardMid-height: 280px;
-    --cardMid-width-desktop: 210px;
-    --cardMid-height-desktop: 280px;
-    --cardMid-img-size: 100%;
+    --cardMain-width: 210px;
+    --cardMain-height: 280px;
+    --cardMain-width-desktop: 210px;
+    --cardMain-height-desktop: 280px;
+    --cardMain-img-size: 100%;
 
     --cardXS-width: 95%;
     --cardXS-height: 110px;

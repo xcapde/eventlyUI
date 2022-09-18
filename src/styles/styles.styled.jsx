@@ -80,15 +80,6 @@ export const Title = styled.h1`
     font-weight: var(--font-weight-title);
 `
 
-export const TitleCard = styled(Title)`
-    font-size: var(--font-size-card-title);
-    font-weight: bolder;
-    padding:0.25rem 0;
-        @media(min-width:820px){
-            font-size: var(--font-size-card-title-desktop);
-        }
-`
-
 export const DetailText = styled.p` 
     color: var(--color-detail-text);
     font-family: var(--detail-font);
