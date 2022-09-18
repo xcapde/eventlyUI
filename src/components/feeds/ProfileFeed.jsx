@@ -18,10 +18,10 @@ export const ProfileFeed = ({ events, title, date }) => {
                         :
 
                         <DetailText>
-                            {title.toLowerCase().includes('join') ?
-                                "You did not join any event yet!"
-                                : title.toLowerCase().includes('published') ?
-                                    "What are you waiting to publish your first event?!"
+                            {title.toLowerCase().includes('published') ?
+                                "What are you waiting to publish your first event?!"
+                                : !date ?
+                                    "You did not join any event yet!"
                                     :
                                     "You don't have events programmed for this day"
                             }
