@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react"
-import { eventService } from "../../services/API/eventService"
-import { AuthService } from "../../services/AuthService"
-import { Row, Title, NoNavView } from "../../styles/styles.styled"
-import { Footer } from "../../components/footer/Footer"
-import { NavCnt, Header, Main } from "./profile.styled"
-import { Navigation } from "../../components/information/Navigation"
-import { OptionsModule } from "../../components/buttons/burgers/OptionsModule"
+import { useEffect, useState } from "react";
+import { eventService } from "../../services/API/eventService";
+import { AuthService } from "../../services/AuthService";
+import { Row, Title, NoNavView } from "../../styles/styles.styled";
+import { Footer } from "../../components/footer/Footer";
+import { NavCnt, Header, Main } from "./profile.styled";
+import { Navigation } from "../../components/information/Navigation";
+import { OptionsModule } from "../../components/buttons/burgers/OptionsModule";
 import { NavRail } from "../../components/navs";
 import { ProfileFeed } from "../../components/feeds/ProfileFeed";
 import { Calendar } from "../../components/calendar";
-import format from "../../utils/format"
+import format from "../../utils/format";
 
 export const Profile = () => {
     const [username, setUsername] = useState([]);
