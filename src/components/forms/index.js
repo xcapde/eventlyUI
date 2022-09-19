@@ -8,3 +8,4 @@ export { ImageForm } from "./ImageForm";
 export { ReqsForm } from "./ReqsForm";
 export { TagsForm } from "./TagsForm";
 export { ImageInput } from "./ImageInput";
+export { SearchInput } from "./SearchInput";

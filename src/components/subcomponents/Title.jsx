@@ -1,4 +1,4 @@
-import { TitleCard } from "../../styles/styles.styled"
+import { TitleCard } from "../cards/cards.styled"
 
 export const Title = ({event}) => {
     

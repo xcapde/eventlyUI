@@ -10,12 +10,16 @@ import { useEffect } from "react";
 import { imageService } from "../../services/API/imageService";
 import { requirementService } from "../../services/API/requirementService";
 import { tagService } from "../../services/API/tagService";
+import { Modal } from "../../components/modal/Modal";
+import useModal from "../../hooks/useModal";
 
 export const Upload = () => {
 
     const [event, setEvent] = useState();
     const [direction, setDirection] = useState();
     const { eventId } = useParams();
+    const { modalIsActive, modalIsAsking, message, setModalIsActive, runModal } = useModal();
+
 
     useEffect(() => {
         if (!eventId) return;
@@ -31,8 +35,8 @@ export const Upload = () => {
 
     const postEvent = (data) => {
         eventService.postEvent(data).then(res => {
-            if (!res) return; //modal;
-            //modal
+            if (!res) return; 
+            // runModal(`${res.title} created!`)
             setEvent(res);
         })
     }
@@ -40,7 +44,7 @@ export const Upload = () => {
     const updateEvent = (data) => {
         eventService.updateEvent({ ...data, id: event.id }).then(res => {
             if (!res) return;
-            //modal
+            runModal(`${res.title} has been updated!`)
             if (event.type !== res.type) {
                 setDirection("");
             }
@@ -51,8 +55,7 @@ export const Upload = () => {
     const addDirection = (data) => {
         directionService.createDirection({ ...data, id: event.id }).then(res => {
             if (!res) return;
-            //modal res.message
-            alert(res.message);
+            // runModal(res.message)
             getEvent(event.id);
             getDirection(event.id);
         })
@@ -71,14 +74,14 @@ export const Upload = () => {
 
     const uploadImg = (data) => {
         imageService.postImg(data, event.id).then(res => {
-            console.log(res.message);
+            runModal(res.message);
             getEvent(event.id);
         })
     }
 
     const deleteImg = (data) => {
         imageService.deleteByUrl(data).then(res => {
-            console.log(res.message);
+            runModal(res.message);
             getEvent(event.id);
         })
     }
@@ -86,7 +89,7 @@ export const Upload = () => {
     const addReq = (data) => {
         requirementService.createRequirement({ name: data.requirement, id: event.id }).then(res => {
             if (!res) return;
-            alert(res.message);
+            // runModal(res.message)
             getEvent(event.id);
         })
     }
@@ -94,7 +97,7 @@ export const Upload = () => {
     const deleteReq = (data) => {
         requirementService.deleteRequirement({ name: data, id: event.id }).then(res => {
             if (!res) return;
-            alert(res.message);
+            // runModal(res.message)
             getEvent(event.id);
         })
     }
@@ -102,7 +105,7 @@ export const Upload = () => {
     const addTags = (data) => {
         tagService.addTagsToEvent({ data, id: event.id }).then(res => {
             if (!res) return;
-            alert(res.message);
+            // runModal(res.message)
             getEvent(event.id);
         })
     }
@@ -110,7 +113,7 @@ export const Upload = () => {
     const deleteTags = (data) => {
         tagService.deleteEventTag({ name: data, id: event.id }).then(res => {
             if (!res) return;
-            alert(res.message);
+            // runModal(res.message)
             getEvent(event.id);
         })
     }
@@ -118,6 +121,7 @@ export const Upload = () => {
     return (
         <View>
             <NavRail />
+            {modalIsActive && <Modal message={message} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive}/>}
             <MultiStepForm
                 event={event}
                 postEvent={postEvent}

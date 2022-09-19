@@ -43,7 +43,7 @@ export const LoginSignup = () => {
             <NavRail />
             <noscript>arreglar desktop</noscript>
             <View>
-                <Logo scale={'100%'} />
+                <Logo scale={'200%'} />
                 <LoginSignupForm location={location} login={login} signup={signup} />
                 <BottomTxt>
                     {location === 'log in' ?

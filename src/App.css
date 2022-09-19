@@ -16,17 +16,14 @@
     --detail-font: 'Comfortaa', cursive;
     --numbers-font: 'Montserrat', sans-serif;
     --header-font: 'Comfortaa', cursive;
-    --calendar-font: 'Comfortaa', cursive;
-
-     /*PROFILE*/
-    --color-dark: #464646;
-    --color-gray:#f4f3ec;
-    --color-marker: #118e62;
+    --calendar-font: 'Comfortaa', cursive;    
 
     /* COLOR */
     --card-shadow-opacity: rgba(0, 0, 0, 0.350);
-    --color-white: #ffffff;
+    --color-dark: #464646;
+    --color-gray:#f4f3ec;
     --color-white-contrast: #F4F6F5;
+    --color-white: #ffffff;
 
     --color-main: #31B595;
     --color-main-hover: #43ccaa;
@@ -38,6 +35,8 @@
     --color-navtop: var(--color-white);
     --color-navrail: rgba(26, 92, 76, 1);
     --color-navrail-contrast: rgba(18, 112, 89, 1);
+    --color-modalBG: var(--color-white);
+    --color-modalText:var(--color-detail-text);
 
     --color-badgetBG-default: #ffc941;
     --color-badgetText-default: #cf8d0c;
@@ -51,16 +50,17 @@
     --color-detail-icon: #7d7d7d;
     --color-title-text: #181818;
 
-
     /* BUTTON COLOR */
     --button-text: var(--color-white-contrast);
     --button-main: var(--color-main);
     --button-main-hover: var(--color-main-hover);
-    --button-unjoin:#31B595;
+    --button-unjoin:var(--color-main);
+
+    --searcher-button:lightgrey;
 
     --color-link-text: var(--color-main);
     --color-link-text-hover: var(--color-main-hover);
-    --color-disabled-button: lightgrey;
+    --opacity-button-inactive: lightgrey;
     --opacity-button-color-icon: var(--color-white);
     --opacity-button-color-icon-hover:var(--color-detail-text);
     
@@ -85,9 +85,7 @@
     --options-cnt-height: fit-content;
     --options-cnt-width: 150px;
     --module-tags-height: 8vh;
-    --moduleVertical-SmallCard-height:calc(var(--cardXS-height) * 1.5);
-    --moduleHorizontal-MainCard-height:calc(var(--card-height) * 1.1);
-    --moduleHorizontal-MidCard-height: calc(var(--cardMid-height) * 1.17);
+    --moduleHorizontal-MainCard-height: calc(var(--cardMain-height) * 1.17);
 
     /* FONT SIZE */
     --font-size-title: x-large;
@@ -96,9 +94,6 @@
 
     --font-size-card-title: medium;
     --font-size-card-title-desktop: medium;
-
-    /* --font-size-detail-title: larger;
-    --font-size-detail-title-desktop: larger; */
 
     --font-size-button: medium;
     --font-size-badge: smaller;
@@ -118,28 +113,23 @@
 
     /* RADIUS */
     --footer-radius: 1.15rem 1.15rem 0 0;
-    --cardMid-radius: 1.5rem;
+    --cardMain-radius: 1.5rem;
     --cardXS-img-radius: 1rem;
     --card-radius: 0.5rem;
     --avatar-radius: 0.5rem;
     --button-radius: 0.5rem;
     --options-radius: 0.5rem;
+    --modal-radius: 0.5rem;
     --input-radius: 0.5rem;
     --badge-radius: 0.25rem;
     --navtop-radius: 0;
 
     /* CARD */
-    --card-width: 95%;
-    --card-height: 350px;
-    --card-img-height: 100%;
-    --card-width-desktop: 220px;
-    --card-height-desktop: 300px;
-
-    --cardMid-width: 210px;
-    --cardMid-height: 280px;
-    --cardMid-width-desktop: 210px;
-    --cardMid-height-desktop: 280px;
-    --cardMid-img-size: 100%;
+    --cardMain-width: 210px;
+    --cardMain-height: 280px;
+    --cardMain-width-desktop: 210px;
+    --cardMain-height-desktop: 280px;
+    --cardMain-img-size: 100%;
 
     --cardXS-width: 95%;
     --cardXS-height: 110px;
@@ -157,13 +147,15 @@
     --mBP: 820px;
 
     /* INDEX */
-    --index-opacity-button: 4;
     --index-gradient: 2;
-    --index-options: 4;
     --index-sidebar: 3;
     --index-footer: 3;
     --index-navtop: 3;
-    --options-button-index:4;
+    --index-header:4;
+    --index-options: 4;
+    --index-opacity-button: 4;
+    --index-opacityBG:5;
+    --index-modal:6;
 }
 
 .App {

@@ -58,19 +58,6 @@ export const SecondaryBtn = styled(Button)`
     }
 `
 
-export const OptionBtn = styled(Button)`
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    color:var(--color-detail-text);
-    border-bottom: 1px solid var(--color-white-contrast);
-    padding: 1rem 1.5rem;
-    &:hover{
-        color:var(--color-main);
-        background-color: var(--color-options-cnt);
-    }
-`
-
 export const LinkBtn = styled.p`
     text-transform: capitalize;
     font-family: var(--detail-font);
@@ -85,6 +72,19 @@ export const LinkBtn = styled.p`
     }
     &:active {
         color: ${props => props.color || 'var(--color-link-text)'};
+    }
+`
+
+export const OptionBtn = styled(Button)`
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    color:var(--color-detail-text);
+    border-bottom: 1px solid var(--color-white-contrast);
+    padding: 1rem 1.5rem;
+    &:hover{
+        color:var(--color-main);
+        background-color: var(--color-options-cnt);
     }
 `
 
@@ -118,7 +118,6 @@ export const BackArrowButton = styled(OpacityButton)`
 export const EllipsisBtn = styled(OpacityButton)`
     top: var(--header-button-position-top);
     right: var(--header-button-position-side);
-    z-index: var(--options-button-index);
     &::before{
 	    content: "\f141";
     }
@@ -127,16 +126,42 @@ export const EllipsisBtn = styled(OpacityButton)`
 export const CloseBtn = styled(OpacityButton)`
     top: var(--header-button-position-top);
     right: var(--header-button-position-side);
-    color: var(--color-disabled-button);
-    z-index: var(--options-button-index);
-    background:none;
+    color: var(--opacity-button-inactive);
     &::before{
 	    content: "\f00d";
     }
     &:hover{
         color:var(--opacity-button-color-icon-hover)
     }
-`
+`;
+
+export const CancelBtn = styled(CloseBtn)`
+    top:unset;
+    right:unset;
+    position:relative;    
+`;
+
+export const SearchBtn = styled(OpacityButton)`
+    left: 0.5rem;
+    color:var(--searcher-button);
+    &::before{
+        content:"\f002";
+    }
+`;
+
+export const FiltertBtn = styled(OpacityButton)`
+    height: var(--input-height);
+    width: var(--input-height);
+    position: relative;
+    background-color: var(--color-white-contrast);
+    color: var(--opacity-button-inactive);
+    &::before{
+        content:"\f0b0";
+    } 
+    &:hover, &:active{
+        color:var(--color-detail-icon);
+    } 
+`;
 
 export const TabButton = styled(Button)`
     min-height: 1.5rem;

@@ -10,7 +10,7 @@ export const OptionsCnt = styled(Col)`
     display: flex;
     align-items: flex-start;
     background-color: var(--color-white);
-    box-shadow: 1px 2px 18px var(--card-shadow-opacity);
+    box-shadow: 0px 0px 8px var(--card-shadow-opacity);
     border-radius: var(--options-radius);
     z-index: var(--index-options);
     & > button:nth-of-type(1){

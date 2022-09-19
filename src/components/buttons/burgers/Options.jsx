@@ -46,12 +46,10 @@ export const Options = ({ event, remove, edit }) => {
     }
 
     return (
-        <React.Fragment >
             <OptionsCnt>
                 {view && client && content[view][client].map((button, key) => (
                     <OptionButton key={key} content={button.content} callback={button.callback} />
                 ))}
             </OptionsCnt>
-        </React.Fragment >
     )
 }

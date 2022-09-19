@@ -11,7 +11,7 @@ const format = {
     eventDateToCalendarDate(str) {
         let date = str.split("-").join("/");
         return date.split("/").map(n => {
-            if (n[0] != 0) return n;
+            if (n[0] !== 0) return n;
             return n[1]
         }).join("/")
     }

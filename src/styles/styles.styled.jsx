@@ -34,6 +34,7 @@ export const View = styled.section`
     flex-direction: ${props => props.direction || 'column'};
     align-items: center;
     align-self: flex-start;
+    z-index: ${props => props.index || 'inherit'};
     @media (min-width: 820px) {
         height: 100vh;
         width: 95vw;
@@ -78,32 +79,25 @@ export const Title = styled.h1`
     font-family: var(--title-font);
     font-size: var(--font-size-title);
     font-weight: var(--font-weight-title);
-`
-
-export const TitleCard = styled(Title)`
-    font-size: var(--font-size-card-title);
-    font-weight: bolder;
-    padding:0.25rem 0;
-        @media(min-width:820px){
-            font-size: var(--font-size-card-title-desktop);
-        }
-`
+`;
 
 export const DetailText = styled.p` 
     color: var(--color-detail-text);
     font-family: var(--detail-font);
     font-size:var(--font-size-detail);
     font-weight: var(--font-weigth-detail);
+    text-align: ${props=> props.textAlign || 'inherit'};
     @media(min-width: 820px){
         font-size:var(--font-size-detail-desktop);
     }
-`
+`;
 export const DetailIcon = styled(DetailText)`
     width: unset;
     padding-right: 0.5rem;
     color: var(--color-detail-icon);
-`
-/*IMAGES*/
+`;
+
+/*images*/
 export const Img = styled.img.attrs(props => ({
     src: props.imgUrl,
 }))`
@@ -131,4 +125,17 @@ export const FloatingCnt = styled(Col)`
     left: ${props => props.left || 'unset'};
     bottom: ${props => props.bottom || 'unset'};
     right: ${props => props.right || 'unset'};
+`;
+
+/*background*/
+export const OpacityBackground = styled.div`
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top:0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: var(--card-shadow-opacity);
+    z-index: var(--index-opacityBG);
 `;
