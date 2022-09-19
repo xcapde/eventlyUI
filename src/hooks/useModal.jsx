@@ -9,7 +9,7 @@ const useModal = () => {
         setModalIsActive(true);
         setModalIsAsking(false);
         setMessage(msg);
-        // setTimeout(()=>setModalIsActive(false), 1500);
+        setTimeout(()=>setModalIsActive(false), 1500);
     }
 
     const runAskingModal = (msg) => {
@@ -17,15 +17,6 @@ const useModal = () => {
         setModalIsAsking(true);
         setMessage(msg);
     }
-
-    // const runModal = (msg) => {
-    //     setModalIsActive(true)
-    //     setMessage(msg)
-    //     {!modalIsAsking?
-    //         setTimeout(()=>setModalIsActive(false), 1500)
-    //     : 
-    //         console.log('asking')}
-    // }
 
     return{
         modalIsActive,

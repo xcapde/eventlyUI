@@ -1,8 +1,9 @@
+import { CancelBtn } from "./buttons.styled"
 
 export const CancelButton = ({ content, callback }) => {
     return (
-        <CancelButton onClick={() => callback()}>
+        <CancelBtn onClick={() => callback()}>
             {content}
-        </CancelButton>
+        </CancelBtn>
     )
 }

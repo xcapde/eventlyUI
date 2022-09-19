@@ -13,7 +13,7 @@ import { VDetail } from "../../views/VDetail";
 export const Detail = () => {
     const [event, setEvent] = useState();
     const [participations, setParticipations] = useState();
-    const { modalIsActive, modalIsAsking, message, setModalIsActive, runAskingModal, runModal } = useModal();
+    const { modalIsActive, modalIsAsking, message, setModalIsActive, runModal } = useModal();
 
 
     const id = useParams().id;
@@ -49,7 +49,7 @@ export const Detail = () => {
     const unjoin = () => {
         participationService.unjoin(id).then(res => {
             if (!res) return;
-            runAskingModal(res.message);
+            runModal(res.message);
             getEvent(id);
         })
     }

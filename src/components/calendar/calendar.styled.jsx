@@ -5,25 +5,39 @@ import { Col, Row } from "../../styles/styles.styled";
 export const CalendarCnt = styled(Row)`
    gap: 1rem;
    @media(min-width: 820px){
-        width: 60% !important;
+        width: 80% !important;
         justify-content: space-evenly;
+        margin-left: 5rem !important;
     }
 `;
 
 export const Day = styled(Col)`
-    height: 50%;
+    height: fit-content;
+    width: fit-content;
+    width: 45px;
     justify-content: center;
     border-radius: 1.4rem;
-    background-color: ${props => props.color};
-    gap: 1rem;
+    padding: 15px 0;
+    background-color: ${props => props.bg};
+    gap: 2rem;
     & > p{
         color: var(--color-white);
     }
     @media(min-width: 820px){
-        cursor: pointer;
-        width: fit-content;
         gap: 3rem;
-        padding: 15px 10px;
+        cursor: pointer;
+        width: calc(100%/7);
+        border-right: 1px solid rgba(255, 255, 255, .25);
+        border-radius: inherit;
+        align-items: flex-end;
+        padding-right: 1rem;
+        background-color: transparent;
+        & > p{
+            color: ${props => props.color};
+        }
+        & > p:nth-child(2){
+            font-size: 24px;
+        }
     }
     
 `;

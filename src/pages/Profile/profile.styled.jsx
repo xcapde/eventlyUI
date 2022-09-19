@@ -37,7 +37,7 @@ export const Header = styled(Col)`
 
 export const NavCnt = styled(Col)`
     height: 15vh;
-    background-color: var(--color-gray);
+    background-color: var(--color-white);
     color:var(--color-dark);
     font-family: var(--calendar-font);
     & > div > button{

@@ -2,21 +2,7 @@ import styled from "styled-components";
 import { Col, Img, Title} from "../../styles/styles.styled";
 
 /*SIZING*/
-export const Card = styled(Col)`
-    height: var(--card-height);
-    width: var(--card-width);
-    position: relative;
-    background-color: var(--color-white);
-    color: var(--color-detail-text);
-    border-radius: var(--card-radius);
-    box-shadow: 1px 2px 18px var(--card-shadow-opacity);
-    @media (min-width: 820px) {
-        height: var(--card-height-desktop);
-        width: var(--card-width-desktop);
-    }
-`;
-
-export const CardMain = styled(Card)`
+export const CardMain = styled(Col)`
     height: var(--cardMain-height);
     width: ${props => props.width || 'var(--cardMain-width)'};
     position: relative;
@@ -24,14 +10,14 @@ export const CardMain = styled(Card)`
     background-color: var(--color-white);
     color: var(--color-detail-text);
     border-radius: var(--cardMain-radius);
-    box-shadow: 1px 2px 18px var(--card-shadow-opacity);
+    box-shadow: 0px 0px 8px var(--card-shadow-opacity);;
     @media (min-width: 820px) {
         height: var(--cardMain-height-desktop);
         width: ${props => `calc( ${props.width} *.85)` || 'var(--cardMain-width-desktop)'};
     }
 `;
 
-export const CardXS = styled(Card)`
+export const CardXS = styled(CardMain)`
     flex-direction: row;
     width: var(--cardXS-width);
     height: var(--cardXS-height);
@@ -44,12 +30,6 @@ export const CardXS = styled(Card)`
 
 
 /*IMAGES*/
-export const CardImage = styled(Img)`
-    padding: 0;
-    border-radius: var(--card-radius);
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-`;
 
 export const CardMainImage = styled(Img)`
     height: var(--cardMain-img-size);

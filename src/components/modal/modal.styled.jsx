@@ -11,7 +11,7 @@ export const ModalCnt = styled.div`
     top:2.5%;
     background-color: var(--color-modalBG);
     color: var(--color-modalText);
-    box-shadow: 1px 2px 18px var(--card-shadow-opacity);
+    box-shadow: 0px 0px 8px var(--card-shadow-opacity);
     border-radius: var(--modal-radius);
     padding: 1rem;
     gap: 1rem;    

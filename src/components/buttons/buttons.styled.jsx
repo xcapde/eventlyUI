@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Button = styled.button`
     display: flex;
@@ -135,6 +135,12 @@ export const CloseBtn = styled(OpacityButton)`
     }
 `;
 
+export const CancelBtn = styled(CloseBtn)`
+    top:unset;
+    right:unset;
+    position:relative;    
+`;
+
 export const SearchBtn = styled(OpacityButton)`
     left: 0.5rem;
     color:var(--searcher-button);
@@ -175,6 +181,43 @@ export const TabButton = styled(Button)`
     }
 `
 
+const pulse = keyframes`
+ 0% { transform: scale(.5); opacity: 0; }
+ 50% { transform: scale(1); opacity: 1; };
+ 100% { transform: scale(1.4); opacity: 0;  };
+`
+
+
+export const Pulse = styled.div`
+    height: fit-content;
+    width: fit-content;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top:calc(var(--input-height) + calc(30px - (3rem / 2) + 1.25rem));
+    &::before{
+        content: "";
+        position: absolute;
+        height: calc(100% + 15px);
+        width: calc(100% + 15px);
+        border: ${props => props.border};
+        border-radius: 50%;
+        animation: ${pulse} 1.5s linear infinite;
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        height: calc(100% + 15px);
+        width: calc(100% + 15px);
+        border: ${props => props.border};
+        border-radius: 50%;
+        animation: ${pulse} 1.5s linear infinite;
+        animation-delay: .4s;
+    }
+`;
+
 export const UploadButton = styled.button`
     height: 4vh;
     width: 85px;
@@ -183,12 +226,14 @@ export const UploadButton = styled.button`
     font-weight: 400;
     background-color: var(--button-main);
     color: var(--color-white);
-    border-radius: var(--button-radius);
+    border-radius: ${props => props.borderRadius};
+    pointer-events: ${props => props.pointer};
     border: var(--button-border-width) solid var(--button-main);
     padding: unset;
-    margin-top:calc(var(--input-height) + calc(30px - (3rem / 2) + 1.25rem));
+    z-index: 2;
+    /* margin-top:calc(var(--input-height) + calc(30px - (3rem / 2) + 1.25rem)); */
     cursor:pointer;
-    &:hover, &:focus{
+    &:hover{
         height: 50px;
         width: 50px;
         border-radius: 50%;
