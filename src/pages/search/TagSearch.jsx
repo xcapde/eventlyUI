@@ -1,14 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CancelButton } from "../../components/buttons";
 import { ModuleVerticalSmallCard } from "../../components/feeds/ModuleVerticalSmallCard";
 import { Footer } from "../../components/footer/Footer";
 import { NavTop } from "../../components/navs/NavTop";
+import { eventService } from "../../services/API/eventService";
 import { Row, Title, View } from "../../styles/styles.styled";
 
 export const TagSearch = ({callback}) => {
     const [tag, setTag] = useState();
-    // const [eventsByTag, setEventsByTag] = useState([]);
+    const [eventsByTag, setEventsByTag] = useState();    
 
+    useEffect(()=>{
+        if(!tag) return;
+        getEventsByTag(tag)
+    },[tag]);
+
+    const getEventsByTag = (tag) => {
+        eventService.getEventsByTag(tag).then(res => {
+            if (!res) return
+            setEventsByTag(res)
+        })
+    }
 
     return (
         <View height='80%'>
@@ -18,7 +30,7 @@ export const TagSearch = ({callback}) => {
                         <CancelButton callback={callback}/>
                 </Row>
 
-                <ModuleVerticalSmallCard title={''} event={[]}/>
+                <ModuleVerticalSmallCard title={'Tags, o no tags'} event={eventsByTag}/>
 
             <Footer/>
         </View>

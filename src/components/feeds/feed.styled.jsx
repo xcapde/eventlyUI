@@ -28,6 +28,7 @@ export const VerticalFeed = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+    align-content: start;
     grid-gap: 1rem 1rem;
     overflow: hidden;
     overflow-y: scroll;

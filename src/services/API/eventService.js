@@ -84,5 +84,12 @@ export const eventService = {
             return res.data
         })
         return events;
+    },
+
+    getEventsBySearch(search){
+        const events = axios.get(`events?search=${search}`).then(res => {
+            return res.data
+        })
+        return events;
     }
 }

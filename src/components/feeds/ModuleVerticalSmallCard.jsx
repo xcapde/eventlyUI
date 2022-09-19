@@ -2,10 +2,10 @@ import { Col, DetailText } from "../../styles/styles.styled"
 import { SmallCard } from "../cards/SmallCard"
 import { FeedTitle, VerticalFeed } from "./feed.styled"
 
-export const ModuleVerticalSmallCard = ({ title, events }) => {
+export const ModuleVerticalSmallCard = ({ title, events, height }) => {
 
     return (
-        <Col height='30%'>
+        <Col height={height}>
             <FeedTitle>{title}</FeedTitle>
             <VerticalFeed>
                 {events && events.length > 0 ?
