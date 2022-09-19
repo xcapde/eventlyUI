@@ -1,4 +1,4 @@
-import { Row, Title, View } from "../../styles/styles.styled"
+import { Row, View } from "../../styles/styles.styled"
 import { Footer } from "../../components/footer/Footer"
 import { NavTop } from "../../components/navs/NavTop"
 import { useState } from "react"

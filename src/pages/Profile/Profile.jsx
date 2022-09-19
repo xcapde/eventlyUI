@@ -7,14 +7,18 @@ import { NavCnt, Header, Main } from "./profile.styled"
 import { Navigation } from "../../components/information/Navigation"
 import { OptionsModule } from "../../components/buttons/burgers/OptionsModule"
 import { NavRail } from "../../components/navs";
-import { ProfileFeed } from "../../components/feeds/ProfileFeed"
+import { ProfileFeed } from "../../components/feeds/ProfileFeed";
+import { Calendar } from "../../components/calendar";
+import format from "../../utils/format"
 
 export const Profile = () => {
     const [username, setUsername] = useState([]);
     const [joined, setJoined] = useState([]);
     const [published, setPublished] = useState([]);
-    const [key, setKey] = useState("joined");
-    const tabContent = ["joined", "published"];
+    const [byDate, setByDate] = useState();
+    const [key, setKey] = useState("by_Date");
+    const tabContent = ["by_Date", "joined", "published"];
+    const [pickedDay, setPickedDay] = useState();
 
     useEffect(() => {
         if (!key) return;
@@ -22,6 +26,11 @@ export const Profile = () => {
         getJoined();
         getPublished();
     }, [key])
+
+    useEffect(() => {
+        if (!pickedDay || !joined) return;
+        getByDay();
+    }, [pickedDay, joined])
 
 
     const getAuth = () => {
@@ -49,6 +58,21 @@ export const Profile = () => {
         AuthService.logOut(confirmation);
     }
 
+
+    const pickDay = (day) => {
+        setPickedDay(day)
+    }
+
+    const getByDay = () => {
+        setByDate(joined.filter(e => format.eventDateToCalendarDate(e.date) === pickedDay.date));
+    }
+
+    const views = {
+        joined: <ProfileFeed events={joined} title={"joined"} />,
+        published: <ProfileFeed events={published} title={"published"} />,
+        by_Date: <ProfileFeed events={byDate} title={""} date={pickedDay ? pickedDay.date : 'this day'} />
+    }
+
     return (
         <NoNavView>
             <NavRail />
@@ -58,7 +82,7 @@ export const Profile = () => {
                     <OptionsModule callback={logOut} />
                 </Row>
                 <Row>
-                    <Title>calendar</Title>
+                    <Calendar pickDay={pickDay} pickedDay={pickedDay} />
                 </Row>
                 <NavCnt>
                     <Navigation tabContent={tabContent} callback={setKey} field={key} />
@@ -66,11 +90,10 @@ export const Profile = () => {
             </Header>
 
             <Main>
-                {key && key === "joined" ?
-                    <ProfileFeed events={joined} title={"Joined"} />
-                    :
-                    <ProfileFeed events={published} title={"Published"} />
+                {byDate &&
+                    views[key]
                 }
+
             </Main>
             <Footer />
         </NoNavView>

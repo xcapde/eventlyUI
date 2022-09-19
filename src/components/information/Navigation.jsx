@@ -4,7 +4,14 @@ import { NavTabs } from "./information.styled"
 export const Navigation = ({ callback, tabContent, field }) => {
     return (
         <NavTabs>
-            {tabContent.map((tab, key) => (<TabButton color={tab === field ? 'var(--color-main)' : ''}  key={key} onClick={() => callback(tab)}>{tab}</TabButton>))}
+            {tabContent.map((tab, key) => (
+                <TabButton
+                    key={key}
+                    onClick={() => callback(tab)}
+                    color={tab === field ? 'var(--color-main)' : ''}
+                >
+                    {tab.includes('_') ? tab.split("_").join(" ") : tab}
+                </TabButton>))}
         </NavTabs>
     )
 }

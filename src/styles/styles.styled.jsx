@@ -126,7 +126,6 @@ export const FloatingCnt = styled(Col)`
 `;
 
 /*BACKGROUND*/
-
 export const OpacityBackground = styled.div`
     height: 100%;
     width: 100%;
