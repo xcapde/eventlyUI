@@ -1,4 +1,4 @@
-import { ProfileFeedTitle } from "../../pages/Profile/profile.styled";
+import { ProfileFeedTitle } from "../../pages/profile/profile.styled";
 import { Col, DetailText } from "../../styles/styles.styled";
 import { SmallCard } from "../cards/SmallCard";
 import { FeedCnt, ProfFeed } from "./feed.styled";
