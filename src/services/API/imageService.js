@@ -27,7 +27,6 @@ export const imageService = {
         return image;
     },
     postImg(file, id) {
-        console.log(file, id)
         const fd = new FormData();
         fd.append('multipartFile', file);
         const imgRes = axios.post(`/events/${id}/images`, fd).then(res => {

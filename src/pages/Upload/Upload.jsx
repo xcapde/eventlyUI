@@ -70,7 +70,6 @@ export const Upload = () => {
     }
 
     const uploadImg = (data) => {
-        console.log(data)
         imageService.postImg(data, event.id).then(res => {
             console.log(res.message);
             getEvent(event.id);

@@ -1,7 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { UploadButton } from "../buttons/buttons.styled";
+import { Col } from "../../styles/styles.styled";
+import { Pulse, UploadButton } from "../buttons/buttons.styled";
 import { Input } from "./form.styled"
 
 export const ImageInput = ({ uploadImg, uploaded }) => {
@@ -17,12 +18,16 @@ export const ImageInput = ({ uploadImg, uploaded }) => {
         if (uploaded) {
             setIsLoading(false);
         }
-        if(!uploaded && file){
+        if (!uploaded && file) {
             uploadBtn.current.focus();
             uploadBtn.current.blur();
             setFile(null);
         }
     }, [uploaded, file])
+
+
+    useEffect(() => {
+    }, [isLoading])
 
     const handleFileChange = (e) => {
         e.preventDefault();
@@ -47,9 +52,22 @@ export const ImageInput = ({ uploadImg, uploaded }) => {
         }, ms);
     }
 
+    console.log(isLoading, uploaded)
     return (
         <>
-            <UploadButton ref={uploadBtn} onClick={clickHiddenInput}>{uploaded ? <i className="fa-solid fa-check"></i> : isLoading ? "" : "Upload"}</UploadButton>
+            <Col>
+                <Pulse border={isLoading ? '2px solid var(--color-main)' : 'none'}>
+                    <UploadButton
+                        borderRadius={!isLoading ? 'var(--button-radius)' : '50%'}
+                        pointer={uploaded ? 'none' : 'all'}
+                        ref={uploadBtn}
+                        onClick={clickHiddenInput}>
+                        {uploaded ? <i className="fa-solid fa-check"></i> : isLoading ? "" : "Upload"}
+                    </UploadButton>
+                </Pulse>
+
+            </Col>
+
             <Input
                 id="upload"
                 type={'file'}

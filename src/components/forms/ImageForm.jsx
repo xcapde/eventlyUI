@@ -26,8 +26,11 @@ export const ImageForm = ({ event, uploadImg, deleteImg }) => {
     }, [event])
 
     const isUploaded = () =>{
+        if(images === 0) return;
         return event.images.map((num, key)=> event.images[key] === images[key]).includes(false);
     }
+
+    console.log(images)
 
     return (
         <Col>

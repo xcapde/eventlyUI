@@ -24,7 +24,6 @@ export const NavRail = () => {
 
     const openSubContent = (e, section, field) => {
         setSubcontent(contents[section][field].subcontent);
-        console.log(e.target.offsetTop)
         setTop(section.includes("profile") ? null : e.target.offsetTop + 'px');
         setBottom(section.includes("profile") ? '1%' : null);
     }
@@ -55,8 +54,6 @@ export const NavRail = () => {
                 <Aside top={top} bottom={bottom}>
                     <NavSection content={subcontent} opened={opened} callback={callback} />
                 </Aside>}
-
-
         </React.Fragment>
     )
 }
