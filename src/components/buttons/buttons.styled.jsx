@@ -58,19 +58,6 @@ export const SecondaryBtn = styled(Button)`
     }
 `
 
-export const OptionBtn = styled(Button)`
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    color:var(--color-detail-text);
-    border-bottom: 1px solid var(--color-white-contrast);
-    padding: 1rem 1.5rem;
-    &:hover{
-        color:var(--color-main);
-        background-color: var(--color-options-cnt);
-    }
-`
-
 export const LinkBtn = styled.p`
     text-transform: capitalize;
     font-family: var(--detail-font);
@@ -85,6 +72,19 @@ export const LinkBtn = styled.p`
     }
     &:active {
         color: ${props => props.color || 'var(--color-link-text)'};
+    }
+`
+
+export const OptionBtn = styled(Button)`
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    color:var(--color-detail-text);
+    border-bottom: 1px solid var(--color-white-contrast);
+    padding: 1rem 1.5rem;
+    &:hover{
+        color:var(--color-main);
+        background-color: var(--color-options-cnt);
     }
 `
 
@@ -133,13 +133,6 @@ export const CloseBtn = styled(OpacityButton)`
     &:hover{
         color:var(--opacity-button-color-icon-hover)
     }
-`;
-
-export const ConfirmBtn = styled(OpacityButton)`
-    position: relative;
-    &::before{
-        content:"\f00c";
-    }  
 `;
 
 export const SearchBtn = styled(OpacityButton)`

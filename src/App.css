@@ -35,6 +35,8 @@
     --color-navtop: var(--color-white);
     --color-navrail: rgba(26, 92, 76, 1);
     --color-navrail-contrast: rgba(18, 112, 89, 1);
+    --color-modalBG: var(--color-white);
+    --color-modalText:var(--color-detail-text);
 
     --color-badgetBG-default: #ffc941;
     --color-badgetText-default: #cf8d0c;
@@ -117,6 +119,7 @@
     --avatar-radius: 0.5rem;
     --button-radius: 0.5rem;
     --options-radius: 0.5rem;
+    --modal-radius: 0.5rem;
     --input-radius: 0.5rem;
     --badge-radius: 0.25rem;
     --navtop-radius: 0;
@@ -148,9 +151,11 @@
     --index-sidebar: 3;
     --index-footer: 3;
     --index-navtop: 3;
+    --index-header:4;
     --index-options: 4;
     --index-opacity-button: 4;
     --index-opacityBG:5;
+    --index-modal:6;
 }
 
 .App {

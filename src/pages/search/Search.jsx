@@ -9,7 +9,6 @@ import { FilterButton } from "../../components/buttons"
 export const Search = () => {
     const [searchValue, setSearchValue] = useState('');
     // const [searchList, setSearchList] = useState([]);
-    // const [tagValue, setTagValue] = useState('');
 
 
     const onInputChange=(e)=>{
@@ -24,20 +23,12 @@ export const Search = () => {
 
     return (
         <View height='80%'>
-            <NavTop/>
-            {/* {tagValue?
-                <Row height='15vh' width="90%">
-                    <Title>{tagValue}</Title>
-                </Row>
-                : */}
-
+            <NavTop/>        
                 <Row height='15vh' width="90%">
                         <SearchInput submit={handleSubmit} callback={onInputChange} data={searchValue ||''} field={"search.."}/>               
                         <FilterButton/>
                         {/* <FiltersModule/> */}
                 </Row>
-
-                {/* } */}
 
                 <ModuleVerticalSmallCard title={''} event={[]}/>
 

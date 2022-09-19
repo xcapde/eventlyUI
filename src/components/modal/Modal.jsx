@@ -1,25 +1,41 @@
-import { OpacityBackground, Row, Title } from '../../styles/styles.styled';
-import useModal from "../../hooks/useModal";
+import { DetailText, OpacityBackground, Row, View } from '../../styles/styles.styled';
 import { CloseButton } from '../buttons/CloseButton';
-import { ConfirmButton } from '../buttons/CheckButton';
-import { ModalCnt } from './modal.styled';
+import { ModalCnt, ButtonsControl, ModalAskingCnt } from './modal.styled';
+import { PrimaryButton, SecondaryButton } from '../buttons';
 
 export const Modal = ({message, modalIsAsking, setModalIsActive}) => {
 
-    return(
-        <OpacityBackground>
-            <ModalCnt>
-                <Row>
-                <Title>{message}MODAL</Title>
-                {!modalIsAsking && <CloseButton callback={setModalIsActive(false)}/>}
-                </Row>
-                {/* {!isAsking &&
-                <Row>
-                    <CloseButton content={'Cancel'} callback={showModal}/>
-                    <ConfirmButton content={'Confirm'} callback={callback}/>
-                </Row>
-                } */}
-            </ModalCnt>
-        </OpacityBackground>
+    // const action = () => {
+    //     {message.includes('join')?
+    //         alert('join')
+    //         : message.includes('delete')?
+    //             alert('delete') 
+    //         : alert('other')
+    //         }
+    //     setModalIsActive(false)
+    // }
+
+    return(       
+        <View index='var(--index-modal)'>
+                {modalIsAsking &&<OpacityBackground/>}
+                
+                {modalIsAsking? 
+                <ModalAskingCnt>
+                    <DetailText textAlign='center'>{message}</DetailText>
+                    <ButtonsControl>
+                        <SecondaryButton content={'Cancel'} callback={()=>setModalIsActive(false)}/>
+                        {/* <PrimaryButton content={'Confirm'} callback={()=>action()}/> */}
+                        <PrimaryButton content={'Confirm'}/>
+                    </ButtonsControl>
+                </ModalAskingCnt>
+                :
+                <ModalCnt>
+                    <Row gap='2rem' justifyContent="center">
+                    <DetailText>{message}</DetailText>
+                    <CloseButton callback={()=>setModalIsActive(false)}/>
+                    </Row>
+                </ModalCnt>
+                }
+        </View>
     )
 }

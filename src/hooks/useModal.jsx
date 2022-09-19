@@ -1,27 +1,40 @@
 import { useState } from "react";
 
 const useModal = () => {
-    const [modalIsActive, setModalIsActive] = useState(false);
-    const [modalIsAsking, setModalIsAsking] = useState(false);
+    const [modalIsActive, setModalIsActive] = useState();
+    const [modalIsAsking, setModalIsAsking] = useState();
     const [message, setMessage] = useState();
     
-    const showModal=({msg})=>{
-        setModalIsActive(true)
-        setModalIsAsking(false)
-        setMessage(msg)
-        setTimeout(()=>setModalIsActive(false), 5000);
-        console.log(msg)
-      };
+    const runModal = (msg) => {
+        setModalIsActive(true);
+        setModalIsAsking(false);
+        setMessage(msg);
+        // setTimeout(()=>setModalIsActive(false), 1500);
+    }
 
+    const runAskingModal = (msg) => {
+        setModalIsActive(true);
+        setModalIsAsking(true);
+        setMessage(msg);
+    }
 
+    // const runModal = (msg) => {
+    //     setModalIsActive(true)
+    //     setMessage(msg)
+    //     {!modalIsAsking?
+    //         setTimeout(()=>setModalIsActive(false), 1500)
+    //     : 
+    //         console.log('asking')}
+    // }
 
     return{
         modalIsActive,
-        message,
         modalIsAsking,
+        message,
         setModalIsActive,
         setModalIsAsking,
-        showModal
+        runAskingModal,
+        runModal
     }
 }
 
