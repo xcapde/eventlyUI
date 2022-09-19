@@ -16,6 +16,7 @@ export const Header = styled(Col)`
     & > div:nth-child(1){
         background-color: var(--color-dark);
         justify-content: flex-start;
+        height: 35%;
         & > h1{
             position: relative;
             width: 90%;
@@ -25,7 +26,7 @@ export const Header = styled(Col)`
         }
     }
     & > div:nth-child(2){
-        height: 40vh;
+        height: 50%;
         width: 100%;
         /* background-color: var(--color-navrail-contrast); */
         @media(min-width: 820px){
@@ -39,7 +40,7 @@ export const Header = styled(Col)`
 `;
 
 export const NavCnt = styled(Col)`
-    height: 15vh;
+    height: 15%;
     background-color: var(--color-white);
     color:var(--color-dark);
     font-family: var(--calendar-font);

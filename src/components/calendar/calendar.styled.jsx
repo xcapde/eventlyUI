@@ -8,6 +8,8 @@ export const Month = styled(DetailText)`
     color: var(--color-white);
     font-size: var(--font-size-card-title);
     align-self: flex-start;
+    height: 20px;
+    line-height: 20px;
     @media(min-width: 820px){
         text-transform: uppercase;
     }

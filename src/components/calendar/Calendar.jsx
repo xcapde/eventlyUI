@@ -38,7 +38,7 @@ export const Calendar = ({ pickDay, pickedDay }) => {
 
     useEffect(() => {
         pickDay(week.filter(d => d.date === today.toLocaleString().split(",")[0])[0])
-    }, [week, today, pickDay])
+    }, [week])
 
     const calcMonthDays = (year, month) => {
         return new Date(year, month, 0).getDate();
