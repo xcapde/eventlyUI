@@ -14,6 +14,10 @@ const format = {
             if (n[0] !== 0) return n;
             return n[1]
         }).join("/")
+    },
+    cutUrl(str) {
+        let url = str.substring(str.indexOf('w'), str.length);
+        return url.substring(0, url.indexOf("/"));
     }
 }
 

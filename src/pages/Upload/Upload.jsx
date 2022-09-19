@@ -12,11 +12,13 @@ import { requirementService } from "../../services/API/requirementService";
 import { tagService } from "../../services/API/tagService";
 import { Modal } from "../../components/modal/Modal";
 import useModal from "../../hooks/useModal";
+import { webUrlService } from "../../services/API/webUrlService";
 
 export const Upload = () => {
 
     const [event, setEvent] = useState();
     const [direction, setDirection] = useState();
+    const [url, setUrl] = useState();
     const { eventId } = useParams();
     const { modalIsActive, modalIsAsking, message, setModalIsActive, runModal } = useModal();
 
@@ -24,12 +26,13 @@ export const Upload = () => {
     useEffect(() => {
         if (!eventId) return;
         getEvent(eventId);
-        getDirection(eventId);
     }, [eventId])
 
     const getEvent = (id) => {
         eventService.getEvent(id).then(res => {
             setEvent(res);
+            console.log(res.type)
+            res.type === "offline" ? getDirection(id) : getWebUrl(id);
         })
     }
 
@@ -69,7 +72,18 @@ export const Upload = () => {
     }
 
     const addWebUrl = (data) => {
-        console.log(data);
+        webUrlService.createWebUrl({...data, id: event.id}).then(res =>{
+            if(!res)return;
+            getEvent(event.id);
+            getWebUrl(event.id);
+        })
+    }
+
+    const getWebUrl = (id) =>{
+        webUrlService.getByEventId(id).then(res =>{
+            delete res.id;
+            setUrl(res);
+        })
     }
 
     const uploadImg = (data) => {
