@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { Notifications } from "../pages/Notifications/Notifications";
-import { Search } from "../pages/Search/Search";
-import { Detail } from "../pages/Detail/Detail";
-import { LoginSignup } from "../pages/LoginSignup";
-import { Profile } from "../pages/Profile/Profile";
-import { Upload } from "../pages/Upload/Upload";
+import { Notifications } from "../pages/notifications/Notifications";
+import { Search } from "../pages/search/Search";
+import { Detail } from "../pages/detail/Detail";
+import { LoginSignup } from "../pages/loginSignup";
+import { Profile } from "../pages/profile/Profile";
+import { Upload } from "../pages/upload/Upload";
 import { AuthService } from "../services/AuthService";
 import App from "../App";
 
