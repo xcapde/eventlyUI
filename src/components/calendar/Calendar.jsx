@@ -1,9 +1,13 @@
+import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { DetailText } from "../../styles/styles.styled";
-import { CalendarCnt, Day } from "./calendar.styled";
+import { CalendarCnt, Day, Wrapper, Month } from "./calendar.styled";
 
 export const Calendar = ({ pickDay, pickedDay }) => {
+
+    const months = ["January", "February", "March", "April", "May", "June", "July",
+                    "August", "September", "October", "November", "December"];
 
     const today = new Date();
     const [month, setMonth] = useState();
@@ -23,23 +27,20 @@ export const Calendar = ({ pickDay, pickedDay }) => {
     useEffect(() => {
         setMonth(today.getMonth());
         setYear(today.getFullYear());
+        setDaysInMonth(calcMonthDays(today.getFullYear(), today.getMonth()));
     }, [today]);
-
-    useEffect(() => {
-        if (!year) return;
-        setDaysInMonth(calcMonthDays());
-    }, [today, month, year]);
 
     useEffect(() => {
         if (!daysInMonth) return;
         setWeekDates();
+        // eslint-disable-next-line
     }, [daysInMonth])
 
     useEffect(() => {
         pickDay(week.filter(d => d.date === today.toLocaleString().split(",")[0])[0])
-    }, [week])
+    }, [week, today, pickDay])
 
-    const calcMonthDays = () => {
+    const calcMonthDays = (year, month) => {
         return new Date(year, month, 0).getDate();
     }
 
@@ -59,19 +60,22 @@ export const Calendar = ({ pickDay, pickedDay }) => {
     }
 
     return (
-        <CalendarCnt>
-            {week.map((day, key) => (
-                <Day
-                    onClick={() => pickDay(day)}
-                    bg={pickedDay && day.date === pickedDay.date ? 'rgba(255, 255, 255, .25)' :
-                        !pickedDay && day.date === today.toLocaleString().split(",")[0] ? 'rgba(255, 255, 255, .25)' : 'transparent'}
-                    color={pickedDay && day.date === pickedDay.date ? 'var(--color-main)' :
-                        !pickedDay && day.date === today.toLocaleString().split(",")[0] ? 'var(--color-main)' : 'var(--color-white)'}
-                    key={key}>
-                    <DetailText>{day.day}</DetailText>
-                    <DetailText>{day.date.split("/")[0]}</DetailText>
-                </Day>
-            ))}
-        </CalendarCnt>
+        <Wrapper>
+            <Month>{months[month]}</Month>
+            <CalendarCnt>
+                {week.map((day, key) => (
+                    <Day
+                        onClick={() => pickDay(day)}
+                        bg={pickedDay && day.date === pickedDay.date ? 'rgba(255, 255, 255, .25)' :
+                            !pickedDay && day.date === today.toLocaleString().split(",")[0] ? 'rgba(255, 255, 255, .25)' : 'transparent'}
+                        color={pickedDay && day.date === pickedDay.date ? 'var(--color-main)' :
+                            !pickedDay && day.date === today.toLocaleString().split(",")[0] ? 'var(--color-main)' : 'var(--color-white)'}
+                        key={key}>
+                        <DetailText>{day.day}</DetailText>
+                        <DetailText>{day.date.split("/")[0]}</DetailText>
+                    </Day>
+                ))}
+            </CalendarCnt>
+        </Wrapper>
     )
 }
