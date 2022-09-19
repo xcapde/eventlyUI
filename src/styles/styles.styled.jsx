@@ -78,7 +78,7 @@ export const Title = styled.h1`
     font-family: var(--title-font);
     font-size: var(--font-size-title);
     font-weight: var(--font-weight-title);
-`
+`;
 
 export const DetailText = styled.p` 
     color: var(--color-detail-text);
@@ -88,12 +88,13 @@ export const DetailText = styled.p`
     @media(min-width: 820px){
         font-size:var(--font-size-detail-desktop);
     }
-`
+`;
 export const DetailIcon = styled(DetailText)`
     width: unset;
     padding-right: 0.5rem;
     color: var(--color-detail-icon);
-`
+`;
+
 /*IMAGES*/
 export const Img = styled.img.attrs(props => ({
     src: props.imgUrl,
@@ -122,4 +123,16 @@ export const FloatingCnt = styled(Col)`
     left: ${props => props.left || 'unset'};
     bottom: ${props => props.bottom || 'unset'};
     right: ${props => props.right || 'unset'};
+`;
+
+/*BACKGROUND*/
+
+export const OpacityBackground = styled.div`
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    background-color: var(--card-shadow-opacity);
+    z-index: var(--index-opacityBG);
 `;

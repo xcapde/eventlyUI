@@ -4,6 +4,7 @@ import { CloseBtn } from "./buttons.styled"
 export const CloseButton = ({callback}) => {
     
     return(
-        <CloseBtn onClick={callback}/>
+        <CloseBtn onClick={callback}>
+        </CloseBtn>
     )
 }

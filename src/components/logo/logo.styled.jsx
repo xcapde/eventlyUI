@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Img } from "../../styles/styles.styled";
 
 export const Logotip = styled(Img)`
-width: 8rem;
+width: 4rem;
 height: fit-content;
 object-fit: contain;
 scale: ${props => props.scale || '100%'};

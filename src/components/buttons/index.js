@@ -7,3 +7,6 @@ export { LinkButton } from "./LinkButton";
 export { PrimaryButton } from "./PrimaryButton";
 export { AddButton } from "./AddButton";
 export { OptionButton } from "./OptionButton";
+export { SearchButton } from "./SearchButton";
+export { FilterButton } from "./FilterButton";
+export { ConfirmButton } from "./CheckButton";

@@ -16,17 +16,14 @@
     --detail-font: 'Comfortaa', cursive;
     --numbers-font: 'Montserrat', sans-serif;
     --header-font: 'Comfortaa', cursive;
-    --calendar-font: 'Comfortaa', cursive;
-
-     /*PROFILE*/
-    --color-dark: #464646;
-    --color-gray:#f4f3ec;
-    --color-marker: #118e62;
+    --calendar-font: 'Comfortaa', cursive;    
 
     /* COLOR */
     --card-shadow-opacity: rgba(0, 0, 0, 0.350);
-    --color-white: #ffffff;
+    --color-dark: #464646;
+    --color-gray:#f4f3ec;
     --color-white-contrast: #F4F6F5;
+    --color-white: #ffffff;
 
     --color-main: #31B595;
     --color-main-hover: #43ccaa;
@@ -51,16 +48,17 @@
     --color-detail-icon: #7d7d7d;
     --color-title-text: #181818;
 
-
     /* BUTTON COLOR */
     --button-text: var(--color-white-contrast);
     --button-main: var(--color-main);
     --button-main-hover: var(--color-main-hover);
-    --button-unjoin:#31B595;
+    --button-unjoin:var(--color-main);
+
+    --searcher-button:lightgrey;
 
     --color-link-text: var(--color-main);
     --color-link-text-hover: var(--color-main-hover);
-    --color-disabled-button: lightgrey;
+    --opacity-button-inactive: lightgrey;
     --opacity-button-color-icon: var(--color-white);
     --opacity-button-color-icon-hover:var(--color-detail-text);
     
@@ -85,7 +83,6 @@
     --options-cnt-height: fit-content;
     --options-cnt-width: 150px;
     --module-tags-height: 8vh;
-    --moduleVertical-SmallCard-height:calc(var(--cardXS-height) * 1.5);
     --moduleHorizontal-MainCard-height: calc(var(--cardMain-height) * 1.17);
 
     /* FONT SIZE */
@@ -95,9 +92,6 @@
 
     --font-size-card-title: medium;
     --font-size-card-title-desktop: medium;
-
-    /* --font-size-detail-title: larger;
-    --font-size-detail-title-desktop: larger; */
 
     --font-size-button: medium;
     --font-size-badge: smaller;
@@ -150,13 +144,13 @@
     --mBP: 820px;
 
     /* INDEX */
-    --index-opacity-button: 4;
     --index-gradient: 2;
-    --index-options: 4;
     --index-sidebar: 3;
     --index-footer: 3;
     --index-navtop: 3;
-    --options-button-index:4;
+    --index-options: 4;
+    --index-opacity-button: 4;
+    --index-opacityBG:5;
 }
 
 .App {

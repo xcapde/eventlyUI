@@ -7,7 +7,7 @@ export const NavTop = () => {
     return (
         <Wrapper>
             <Link to='/home'>
-                <Logo scale={'40%'}/>
+                <Logo/>
             </Link>
         </Wrapper>
     )

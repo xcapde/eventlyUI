@@ -1,21 +1,21 @@
 import React from "react"
-import useShowMenu from "../../../hooks/useShowMenu";
+import useOptions from "../../../hooks/useOptions";
 import { CloseButton } from "../CloseButton";
 import { EllipsisButton } from "./EllipsisButton";
 import { Options } from "./Options";
 
 export const OptionsModule = ({ event, remove, edit }) => {
-    const { menuIsActive, showMenu } = useShowMenu(false);
+    const { optionsIsActive, showOptions } = useOptions(false);
 
     return (
         <React.Fragment>
-            {menuIsActive ?
+            {optionsIsActive ?
                 <React.Fragment>
                     <Options event={event} remove={remove} edit={edit} />
-                    <CloseButton callback={showMenu} />
+                    <CloseButton callback={showOptions} />
                 </React.Fragment>
                 :
-                <EllipsisButton callback={showMenu} />
+                <EllipsisButton callback={showOptions} />
             }
         </React.Fragment>
     )
