@@ -20,7 +20,7 @@ export const CalendarCnt = styled(Row)`
    @media(min-width: 820px){
         width: 80% !important;
         justify-content: space-evenly;
-        margin-left: 5rem !important;
+        margin-right: 10rem !important;
     }
 `;
 

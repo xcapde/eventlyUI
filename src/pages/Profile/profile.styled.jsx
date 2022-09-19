@@ -17,6 +17,9 @@ export const Header = styled(Col)`
         background-color: var(--color-dark);
         justify-content: flex-start;
         height: 35%;
+        @media(min-width: 820px){
+            height: 30%;
+        }
         & > h1{
             position: relative;
             width: 90%;
@@ -46,6 +49,9 @@ export const NavCnt = styled(Col)`
     font-family: var(--calendar-font);
     & > div > button{
         width: calc(100% / 3);
+    }
+    @media(min-width: 820px){
+            height: 20%;
     }
 `;
 
