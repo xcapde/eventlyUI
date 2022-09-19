@@ -12,7 +12,7 @@ export const Wrapper = styled.footer`
     justify-content:center;
     background-color: var(--color-footer);
     z-index: var(--index-footer);
-    box-shadow: 0px 0px 10px lightgrey;
+    box-shadow: 0px 0px 8px lightgrey;
     border-radius: var(--footer-radius);
     border: 1px solid lightgray;
     

@@ -1,2 +1,2 @@
 export { Search } from "./Search";
-export { SearchInput } from "./SearchInput";
+export { TagSearch } from "./TagSearch";

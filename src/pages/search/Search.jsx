@@ -3,8 +3,8 @@ import { Footer } from "../../components/footer/Footer"
 import { NavTop } from "../../components/navs/NavTop"
 import { useState } from "react"
 import { ModuleVerticalSmallCard } from "../../components/feeds/ModuleVerticalSmallCard"
-import { SearchInput } from "./SearchInput"
 import { FilterButton } from "../../components/buttons"
+import { SearchInput } from "../../components/forms/SearchInput"
 
 export const Search = () => {
     const [searchValue, setSearchValue] = useState('');
@@ -25,7 +25,7 @@ export const Search = () => {
         <View height='80%'>
             <NavTop/>        
                 <Row height='15vh' width="90%">
-                        <SearchInput submit={handleSubmit} callback={onInputChange} data={searchValue ||''} field={"search.."}/>               
+                        <SearchInput submit={handleSubmit} callback={onInputChange} data={searchValue || ''} field={"search.."}/>               
                         <FilterButton/>
                         {/* <FiltersModule/> */}
                 </Row>

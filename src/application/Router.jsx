@@ -7,6 +7,7 @@ import { Profile } from "../pages/profile/Profile";
 import { Upload } from "../pages/upload/Upload";
 import { AuthService } from "../services/AuthService";
 import App from "../App";
+import { TagSearch } from "../pages/search/TagSearch";
 
 
 export default function Router() {
@@ -30,6 +31,7 @@ export default function Router() {
                 <Route path="/home" element={<App />} />
                 <Route path="/events/:id" element={<Detail />} />
                 <Route path="/search" element={<Search />} />
+                {/* <Route path="/search" element={<TagSearch />} /> */}
                 <Route path="/log-in" element={
                     <AuthRoute>
                         <LoginSignup />
