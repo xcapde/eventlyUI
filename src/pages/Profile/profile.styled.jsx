@@ -1,11 +1,14 @@
 import styled from "styled-components";
-import { Col, Row, Title } from "../../styles/styles.styled";
+import { Col, Title } from "../../styles/styles.styled";
 
 export const Header = styled(Col)`
-    height: 30vh;
+    height: 35vh;
     color: var(--color-white);
     font-family: var(--header-font);
     background-color: var(--color-dark);
+    @media(min-width: 820px){
+        height: 30vh;
+        }
     & > div > div {
         width: 90%;
         margin: 0 auto;
@@ -47,10 +50,13 @@ export const NavCnt = styled(Col)`
 
 
 export const Main = styled(Col)`
-    height: 60vh;
+    height: 55vh;
     background-color: var(--color-white);
     color:var(--color-dark);
     font-family: var(--header-font);
+    @media(min-width: 820px){
+        height: 60vh;
+        }
 `;
 
 export const ProfileFeedTitle = styled(Title)`

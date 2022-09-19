@@ -1,6 +1,17 @@
 import styled from "styled-components";
-import { Col, Row } from "../../styles/styles.styled";
+import { Col, DetailText, Row } from "../../styles/styles.styled";
 
+export const Wrapper = styled(Col)`
+`;
+
+export const Month = styled(DetailText)`
+    color: var(--color-white);
+    font-size: var(--font-size-card-title);
+    align-self: flex-start;
+    @media(min-width: 820px){
+        text-transform: uppercase;
+    }
+`;
 
 export const CalendarCnt = styled(Row)`
    gap: 1rem;
