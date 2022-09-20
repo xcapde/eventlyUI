@@ -13,6 +13,7 @@ export const Col = styled.div`
 `;
 
 export const Row = styled(Col)`
+    max-width: ${props => props.maxWidth || '100%'};
     flex-direction: row;
 `;
 
@@ -97,7 +98,7 @@ export const DetailIcon = styled(DetailText)`
     color: var(--color-detail-icon);
 `;
 
-/*images*/
+/*Images*/
 export const Img = styled.img.attrs(props => ({
     src: props.imgUrl,
 }))`
@@ -127,7 +128,7 @@ export const FloatingCnt = styled(Col)`
     right: ${props => props.right || 'unset'};
 `;
 
-/*background*/
+/*Background*/
 export const OpacityBackground = styled.div`
     height: 100%;
     width: 100%;

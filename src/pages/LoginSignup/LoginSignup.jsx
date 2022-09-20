@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { BottomTxt } from '../../components/forms/form.styled';
 import { LoginSignupForm } from '../../components/forms/LoginSignupForm';
-import { Page, View } from '../../styles/styles.styled';
+import { Page } from '../../styles/styles.styled';
 import formatUtil from '../../utils/format';
 import { LinkButton } from '../../components/buttons';
 import { Logo } from '../../components/logo/Logo';
@@ -10,6 +10,7 @@ import { NavRail } from '../../components/navs';
 import { authService } from '../../services/API/authService';
 import { AuthService } from '../../services/AuthService';
 import { Footer } from '../../components/footer/Footer';
+import { LoginView, LogoCntrl } from './loginsSignup.styled';
 
 export const LoginSignup = () => {
 
@@ -42,8 +43,10 @@ export const LoginSignup = () => {
         <Page>
             <NavRail />
             <noscript>arreglar desktop</noscript>
-            <View>
-                <Logo scale={'200%'} />
+            <LoginView>
+                <LogoCntrl>
+                    <Logo scale={'200%'} />
+                </LogoCntrl>
                 <LoginSignupForm location={location} login={login} signup={signup} />
                 <BottomTxt>
                     {location === 'log in' ?
@@ -51,7 +54,7 @@ export const LoginSignup = () => {
                         : <React.Fragment>Have an account? <LinkButton callback={() => navigate('/log-in')} content="Log In" /></React.Fragment>}
                 </BottomTxt>
                 <Footer />
-            </View>
+            </LoginView>
         </Page>
     )
 }

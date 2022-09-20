@@ -2,11 +2,11 @@ import { Row, View } from "../../styles/styles.styled"
 import { Footer } from "../../components/footer/Footer"
 import { NavTop } from "../../components/navs/NavTop"
 import { useState } from "react"
-import { ModuleVerticalSmallCard } from "../../components/feeds/ModuleVerticalSmallCard"
 import { FilterButton } from "../../components/buttons"
 import { SearchInput } from "../../components/forms/SearchInput"
 import { eventService } from "../../services/API/eventService"
 import { Wrapper } from "./search.styled"
+import { ModuleVerticalMultiCard } from "../../components/feeds/ModuleVerticalMultiCard"
 
 export const Search = () => {
     const [searchValue, setSearchValue] = useState('');
@@ -42,7 +42,8 @@ export const Search = () => {
                             <FilterButton/>
                             {/* <FiltersModule/> */}
                     </Row>
-                <ModuleVerticalSmallCard title={searchList?'Your results':''} events={searchList} height={'85%'}/>
+
+                    <ModuleVerticalMultiCard title={searchList?'Your results':''} events={searchList} height={'85%'}/>
                 </Wrapper>
 
             <Footer/>

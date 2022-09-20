@@ -7,17 +7,17 @@ export const ModuleVerticalSmallCard = ({ title, events, height }) => {
     return (
         <Col height={height}>
             <FeedTitle>{title}</FeedTitle>
+            {events && events.length > 0? 
             <VerticalFeed>
-                {events && events.length > 0 ?
-                    events.map((event, key) =>
+                    {events.map((event, key) =>
                         <SmallCard key={key} event={event} />
-                    ).reverse()
-                    :
-                    <Col>
-                        <DetailText>There are no {title.toLowerCase()} events.</DetailText>
-                    </Col>
-                }
+                    ).reverse()}
             </VerticalFeed>
+            :
+            <Col>
+                <DetailText>There are no {title.toLowerCase()} events.</DetailText>
+            </Col>
+            }
         </Col>
     )
 }

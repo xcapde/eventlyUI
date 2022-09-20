@@ -48,6 +48,7 @@ export const NavCnt = styled(Col)`
 
 export const Main = styled(Col)`
     height: 60vh;
+    justify-content: flex-start;
     background-color: var(--color-white);
     color:var(--color-dark);
     font-family: var(--header-font);

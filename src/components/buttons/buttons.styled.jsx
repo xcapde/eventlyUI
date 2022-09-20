@@ -59,6 +59,7 @@ export const SecondaryBtn = styled(Button)`
 `
 
 export const LinkBtn = styled.p`
+    height: fit-content;
     text-transform: capitalize;
     font-family: var(--detail-font);
     font-weight: 500;    

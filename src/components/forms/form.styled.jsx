@@ -22,7 +22,7 @@ export const Form = styled.form`
     }
     @media (min-width: 820px) {
         width: 100%;
-        place-content: flex-start;
+        place-content: center;
     }
 `
 
@@ -196,10 +196,7 @@ export const BottomTxt = styled.h3`
     display: flex;
     text-align: center;
     font-size: small;
-    margin-top: 2rem;
-    @media (min-width: 820px) {
-        margin-top: 1rem;
-    }
+    margin-top: 1rem
 `;
 
 export const SecondaryTxt = styled.h3`

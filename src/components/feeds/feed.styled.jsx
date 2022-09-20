@@ -19,7 +19,7 @@ export const FeedCnt = styled(Col)`
 `;
 
 export const FeedTitle = styled(Title)`
-    height: var(--feed-title-height)
+    height: var(--feed-title-height);
 `;
 
 export const VerticalFeed = styled.div`
@@ -28,7 +28,7 @@ export const VerticalFeed = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
-    align-content: start;
+    align-content:${props => props.alignContent || "start"};
     grid-gap: 1rem 1rem;
     overflow: hidden;
     overflow-y: scroll;
@@ -41,6 +41,20 @@ export const VerticalFeed = styled.div`
         justify-content: ${props => props.justify || 'flex-start'};
         grid-gap: 2rem 1rem;
         padding: 1rem 0 0 0;
+    }
+`;
+
+export const VerticalFeedMobile = styled(VerticalFeed)`
+     @media (min-width: 820px) {
+        display:none;
+    }
+`;
+
+export const VerticalFeedDesktop = styled(VerticalFeed)`
+    display: none;
+    @media (min-width: 820px) {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(var(--cardMain-width), 1fr));
     }
 `;
 
