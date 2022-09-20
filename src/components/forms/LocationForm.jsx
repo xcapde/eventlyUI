@@ -4,7 +4,7 @@ import { FormButton } from "../buttons";
 import { FormGrid } from "./form.styled";
 import { FormControlInput } from "./FormControlInput";
 
-export const LocationForm = ({ addDirection, addWebUrl, event, eventDirection, next }) => {
+export const LocationForm = ({ event, addDirection, addWebUrl, eventDirection, eventUrl, next }) => {
 
     const direction = {
         country: "",
@@ -16,23 +16,21 @@ export const LocationForm = ({ addDirection, addWebUrl, event, eventDirection, n
     }
 
     const webUrl = {
-        url: event.location ? event.location : ""
+        url: ""
     }
 
-    const style = {grid: 'auto', inputWidth: 'var(--input-width)'}
+    const style = { grid: 'auto', inputWidth: 'var(--input-width)' }
 
-    const [formData, setFormData] = useState(event.type.includes("online") ? webUrl : direction);
-    const styles = event.type.includes("online") ? style : {};
+    const [formData, setFormData] = useState();
+    const [styles, setStyles] = useState();
     const s = 1;
     const ms = s * 1000;
-    
-    useEffect(()=>{
-        if(!event.location) return;
-        if(!eventDirection) return;
-        // setFormData({});
-        event.type.includes("online") ? setFormData(event.location):
-        setFormData(eventDirection);
-    },[eventDirection, event.location, event.type]);    
+
+    useEffect(() => {
+        if (!event) return;
+        event.type.includes("online") ? setFormData(eventUrl ? eventUrl : webUrl) : setFormData(eventDirection ? eventDirection : direction);
+        event.type.includes("online") ? setStyles(style) : setStyles({});
+    }, [event, eventUrl, eventDirection]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -41,6 +39,7 @@ export const LocationForm = ({ addDirection, addWebUrl, event, eventDirection, n
         setTimeout(next, ms)
     }
 
+    if(styles)
     return (
         <FormGrid styles={styles} onSubmit={handleSubmit}>
             {Object.keys(formData).map((field, key) => (
