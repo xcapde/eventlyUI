@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { CardMain, CardMainImage } from "./cards.styled";
-import { Col, FloatingCnt, Row, Wrapper } from "../../styles/styles.styled";
-import { Date, Location, Participation, Time, Title, Url } from "../subcomponents";
-import { ParticipationModule } from "../participations/ParticipationModule";
+import { BodyCntrl, CardMain, CardMainImage } from "./cards.styled";
+import { Wrapper } from "../../styles/styles.styled";
+import { Title } from "../subcomponents";
+import { Details } from "../information/Details";
 
 export const MainCard = ({ event, width }) => {
 
@@ -14,23 +14,17 @@ export const MainCard = ({ event, width }) => {
         </Link>
       </Wrapper>
 
-      <Col height='35%' style={{ gap: '0.5rem', width: '90%', padding: '0.3rem 0 0.5rem 0', borderRadius: 'var(--cardMain-radius)' }}>
+      <BodyCntrl height='35%'>
         <Title event={event} />
+        <Details event={event}/>
 
-        <Col style={{ gap: '0.5rem', alignItems: 'flex-start' }}>
-          <Row style={{ gap: '2rem', justifyContent: 'flex-start', position: 'relative' }}>
-            <Date event={event} />
-            <Time event={event} />
-            {width &&
-              <FloatingCnt position="absolute" bottom="-3rem" right="0%">
-                <ParticipationModule participations={event.participations} participantsCount={event.participantsCount} />
-              </FloatingCnt>}
-          </Row>
-          {event.type === "online" ?
-            <Url event={event} /> : <Location event={event} />}
-          {(!width || (width && event.participations <= 0 ) ) && <Participation event={event} />}
-        </Col>
-      </Col>
+            {/* {width &&
+            <FloatingCnt position="absolute" bottom="-3rem" right="0%">
+              <ParticipationModule participations={event.participations} participantsCount={event.participantsCount} />
+            </FloatingCnt>}
+            {(!width || (width && event.participations <= 0 ) ) && <Participation event={event} />} */}
+      
+      </BodyCntrl>
 
     </CardMain>
   );

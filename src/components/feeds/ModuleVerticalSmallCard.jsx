@@ -5,7 +5,7 @@ import { FeedTitle, VerticalFeed } from "./feed.styled"
 export const ModuleVerticalSmallCard = ({ title, events, height }) => {
 
     return (
-        <Col height={height}>
+        <Col width='unset' height={height}>
             <FeedTitle>{title}</FeedTitle>
             {events && events.length > 0? 
             <VerticalFeed>

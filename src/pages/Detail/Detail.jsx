@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react"
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Footer } from "../../components/footer/Footer";
 import { Modal } from "../../components/modal/Modal";
 import { NavRail } from "../../components/navs/NavRail";
@@ -13,9 +13,9 @@ import { VDetail } from "../../views/VDetail";
 export const Detail = () => {
     const [event, setEvent] = useState();
     const [participations, setParticipations] = useState();
-    const { modalIsActive, modalIsAsking, message, setModalIsActive, runModal } = useModal();
-
-
+    const { modalIsActive, modalIsAsking, message, setModalIsActive, runModal, runAskingModal } = useModal();
+    
+    const navigate = useNavigate();
     const id = useParams().id;
 
     useEffect(() => {
@@ -28,6 +28,18 @@ export const Detail = () => {
             if (!res) return;
             setEvent(res);
             getParticipations(id);
+        })
+    }
+
+    const deletConfirmation = () => {
+        runAskingModal(`Delete ${event.title}?`)
+    }
+
+    const deleteEvent = () => {
+        eventService.deleteEvent(id).then(res => {
+            if(!res) return
+            runModal(`${event.title} deleted!`)
+            setTimeout(()=>navigate('/home'), 1500);
         })
     }
 
@@ -56,9 +68,10 @@ export const Detail = () => {
 
     return (
         <Page>
-            {modalIsActive && <Modal message={message} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive}/>}
             <NavRail />
-            {event && <VDetail event={event} participations={participations} join={join} unjoin={unjoin} />}
+            {modalIsActive && <Modal message={message} callback={deleteEvent} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive}/>}
+            
+            {event && <VDetail event={event} participations={participations} join={join} unjoin={unjoin} deletConfirmation={deletConfirmation} deleteEvent={deleteEvent}/>}
             <Footer />
         </Page>
     )

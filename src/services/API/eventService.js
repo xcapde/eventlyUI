@@ -41,9 +41,12 @@ export const eventService = {
         return event;
     },
     deleteEvent(id) {
+        console.log(id)
+
         const event = axios.delete(`/events/${id}`).then(res => {
             return res.data;
         })
+        .catch(error => console.log(error))
         return event;
     },
     getJoinedEvents() {

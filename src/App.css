@@ -113,7 +113,8 @@
 
     /* RADIUS */
     --footer-radius: 1.15rem 1.15rem 0 0;
-    --cardMain-radius: 1.5rem;
+    /* --cardMain-radius: 1.5rem; */
+    --cardMain-radius: 1rem;
     --cardXS-img-radius: 1rem;
     --card-radius: 0.5rem;
     --avatar-radius: 0.5rem;
@@ -131,10 +132,14 @@
     --cardMain-height-desktop: 280px;
     --cardMain-img-size: 100%;
 
+    /* --cardXS-width: 310px; */
     --cardXS-width: 95%;
-    --cardXS-height: 110px;
+    --cardXS-height: 100px;
     --cardXS-width-desktop: 22rem;
-    --cardXS-img-size:90%;
+    --cardXS-imgCntrl-size: var(--cardXS-height);
+    /* --cardXS-img-size: 90%; */
+    --cardXS-img-size: 100%;
+
 
     /* BADGE */
     --badge-padding: 8px 12px;

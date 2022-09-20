@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Col, Img, Title} from "../../styles/styles.styled";
+import { Col, Img, Row, Title} from "../../styles/styles.styled";
 
 /*SIZING*/
 export const CardMain = styled(Col)`
@@ -18,9 +18,10 @@ export const CardMain = styled(Col)`
 `;
 
 export const CardXS = styled(CardMain)`
-    flex-direction: row;
     width: var(--cardXS-width);
+    max-width: 400px;
     height: var(--cardXS-height);
+    flex-direction: row;
     justify-content: space-between;
 
     @media (min-width: 820px) {
@@ -28,28 +29,39 @@ export const CardXS = styled(CardMain)`
     }
 `;
 
-
 /*IMAGES*/
-
 export const CardMainImage = styled(Img)`
     height: var(--cardMain-img-size);
     width: var(--cardMain-img-size);
     border-radius: var(--cardMain-radius) var(--cardMain-radius) 0 0;
+`;
+export const ImgCntrl = styled(Row)`
+    height: var(--cardXS-imgCntrl-size);
+    width: var(--cardXS-imgCntrl-size);
 `;
 
 export const CardXSImage = styled(Img)`
     height: var(--cardXS-img-size);
     width: var(--cardXS-img-size);
     border-radius: var(--cardXS-img-radius);
-    padding: 5%;
+
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
 `;
 
 /* TEXT */ 
+export const BodyCntrl = styled(Col)`
+    height: ${props => props.height || '90%'};
+    width: ${props => props.width || '90%'};
+    justify-content: space-between;
+    padding:0 0.5rem 0.5rem 0.5rem;
+`
 
 export const TitleCard = styled(Title)`
+    /* justify-content: center; */
     font-size: var(--font-size-card-title);
     font-weight: bolder;
-    padding:0.25rem 0;
+    padding:0.5rem 0;
         @media(min-width:820px){
             font-size: var(--font-size-card-title-desktop);
         }

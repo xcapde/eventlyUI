@@ -52,7 +52,7 @@ export const Search = () => {
                             <ModuleVerticalMultiCard events={searchList}/>
                         </>
                         :
-                        <DetailText>There are no events.</DetailText>
+                        <DetailText>There are no results.</DetailText>
                         }
                     </Col>
                 </Wrapper>

@@ -3,9 +3,9 @@ import { DetailIcon, DetailText, Row } from "../../styles/styles.styled"
 export const Participation = ({event}) => {
     
     return (
-        <Row height="fit-content">
+        <Row>
             <DetailIcon>
-                <i className="fa-solid fa-users"></i>
+                <i className="fa-solid fa-user"></i>
             </DetailIcon>
             <DetailText style={{width:'100%'}}>
                     {event.participantsCount === 0? 
