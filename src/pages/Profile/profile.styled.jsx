@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Col, Title } from "../../styles/styles.styled";
 
 export const Header = styled(Col)`
-    height: 35vh;
+    height: 30vh;
     color: var(--color-white);
     font-family: var(--header-font);
     background-color: var(--color-dark);
@@ -16,10 +16,7 @@ export const Header = styled(Col)`
     & > div:nth-child(1){
         background-color: var(--color-dark);
         justify-content: flex-start;
-        height: 35%;
-        @media(min-width: 820px){
-            height: 30%;
-        }
+        height: 40%;
         & > h1{
             position: relative;
             width: 90%;
@@ -29,12 +26,8 @@ export const Header = styled(Col)`
         }
     }
     & > div:nth-child(2){
-        height: 50%;
+        height: 60%;
         width: 100%;
-        /* background-color: var(--color-navrail-contrast); */
-        @media(min-width: 820px){
-            background-color: var(--color-dark);
-        }
         & > h1{
         justify-content: center;
         width: fit-content;
@@ -50,14 +43,11 @@ export const NavCnt = styled(Col)`
     & > div > button{
         width: calc(100% / 3);
     }
-    @media(min-width: 820px){
-            height: 20%;
-    }
 `;
 
 
 export const Main = styled(Col)`
-    height: 55vh;
+    height: 60vh;
     background-color: var(--color-white);
     color:var(--color-dark);
     font-family: var(--header-font);

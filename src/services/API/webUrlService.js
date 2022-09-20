@@ -32,7 +32,6 @@ export const webUrlService = {
         return url;
     },
     createWebUrl({ id, ...req }) {
-        console.log(id, req)
         const msg = axios.post(`/events/${id}/webUrls`, req).then(res => {
             return res.data;
         })

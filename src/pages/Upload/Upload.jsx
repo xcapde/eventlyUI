@@ -31,14 +31,14 @@ export const Upload = () => {
     const getEvent = (id) => {
         eventService.getEvent(id).then(res => {
             setEvent(res);
-            console.log(res.type)
+            if (res.location === "") return;
             res.type === "offline" ? getDirection(id) : getWebUrl(id);
         })
     }
 
     const postEvent = (data) => {
         eventService.postEvent(data).then(res => {
-            if (!res) return; 
+            if (!res) return;
             // runModal(`${res.title} created!`)
             setEvent(res);
         })
@@ -72,15 +72,15 @@ export const Upload = () => {
     }
 
     const addWebUrl = (data) => {
-        webUrlService.createWebUrl({...data, id: event.id}).then(res =>{
-            if(!res)return;
+        webUrlService.createWebUrl({ ...data, id: event.id }).then(res => {
+            if (!res) return;
             getEvent(event.id);
             getWebUrl(event.id);
         })
     }
 
-    const getWebUrl = (id) =>{
-        webUrlService.getByEventId(id).then(res =>{
+    const getWebUrl = (id) => {
+        webUrlService.getByEventId(id).then(res => {
             delete res.id;
             setUrl(res);
         })
@@ -135,7 +135,7 @@ export const Upload = () => {
     return (
         <View>
             <NavRail />
-            {modalIsActive && <Modal message={message} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive}/>}
+            {modalIsActive && <Modal message={message} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive} />}
             <MultiStepForm
                 event={event}
                 postEvent={postEvent}

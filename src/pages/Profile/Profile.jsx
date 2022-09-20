@@ -84,12 +84,13 @@ export const Profile = () => {
                 <Row>
                     <Calendar pickDay={pickDay} pickedDay={pickedDay} />
                 </Row>
-                <NavCnt>
-                    <Navigation tabContent={tabContent} callback={setKey} field={key} />
-                </NavCnt>
+
             </Header>
 
             <Main>
+                <NavCnt>
+                    <Navigation tabContent={tabContent} callback={setKey} field={key} />
+                </NavCnt>
                 {byDate &&
                     views[key]
                 }

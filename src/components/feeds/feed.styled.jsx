@@ -13,7 +13,7 @@ export const Wrapper = styled(Col)`
 `;
 
 export const FeedCnt = styled(Col)`
-    height: 100%;
+    height: ${props => props.height || '100%'};
     overflow: hidden;
     gap: ${props => props.gap || '2.5%'};
 `;
