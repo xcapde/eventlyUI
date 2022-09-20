@@ -18,7 +18,6 @@ export function Home() {
     const [offlineEvents, setOfflineEvents] = useState([]);
     const [seeAll, setSeeAll] = useState(false);
 
-
     useEffect(() => {
         getParts();
         getAllTags();
@@ -104,6 +103,7 @@ export function Home() {
                 offlineEvents={offlineEvents}
                 seeAll={seeAll}
                 setSeeAll={setSeeAll}
+                participations={participations}
             />
             <Footer />
         </Page>

@@ -2,7 +2,7 @@ import { Col, DetailText } from "../../styles/styles.styled"
 import { MainCard } from "../cards/MainCard"
 import { FeedTitle, HorizontalFeed } from "./feed.styled"
 
-export const ModuleHorizontalMainCard = ({ title, events }) => {
+export const ModuleHorizontalMainCard = ({ title, events, participations }) => {
 
     return (
         <Col justifyContent="flex-start" height='fit-content'>
@@ -10,7 +10,7 @@ export const ModuleHorizontalMainCard = ({ title, events }) => {
             <HorizontalFeed height='var(--moduleHorizontal-MainCard-height)'>
                 {events && events.length > 0 ?
                     events.map((event, key) =>
-                        <MainCard key={key} event={event} />
+                        <MainCard key={key} event={event} participations={participations}/>
                     ).reverse()
                     :
                     <Col>

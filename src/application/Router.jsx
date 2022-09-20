@@ -31,7 +31,7 @@ export default function Router() {
                 <Route path="/home" element={<App />} />
                 <Route path="/events/:id" element={<Detail />} />
                 <Route path="/search" element={<Search />} />
-                {/* <Route path="/search" element={<TagSearch />} /> */}
+                <Route path="/search/:tag" element={<TagSearch />} />
                 <Route path="/log-in" element={
                     <AuthRoute>
                         <LoginSignup />

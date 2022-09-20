@@ -6,7 +6,6 @@ import { ModuleHorizontalMainCard } from "./ModuleHorizontalMainCard";
 import { LinkButton } from "../buttons/LinkButton";
 import { ModuleVerticalMainCard } from "./ModuleVerticalMainCard";
 import { Wrapper, FeedCnt } from "./feed.styled.jsx";
-import { ModuleVerticalMultiCard } from "./ModuleVerticalMultiCard";
 
 export const HomeFeed = ({ events, tags, tag, setTag, eventsByTag, setEventsByTag, onlineEvents, offlineEvents, seeAll, setSeeAll, participations }) => {
 
@@ -27,12 +26,12 @@ export const HomeFeed = ({ events, tags, tag, setTag, eventsByTag, setEventsByTa
                 <FeedCnt>
                     {!eventsByTag && !seeAll &&
                         <React.Fragment>
-                            <ModuleHorizontalMainCard title={'Offline'} events={offlineEvents} />
+                            <ModuleHorizontalMainCard title={'Offline'} events={offlineEvents} participations={participations}/>
                             <ModuleVerticalSmallCard title={'Online'} height={'30%'} events={onlineEvents} />
                         </React.Fragment>
                     }
-                    {!seeAll && eventsByTag && <ModuleVerticalMainCard tag={tag} title={`${tag}`} events={eventsByTag} width={'var(--cardAllTags-width)'}/>}
-                    {seeAll && !eventsByTag && <ModuleVerticalMainCard title={'All'} events={events} width={'var(--cardAllTags-width)'}/>}
+                    {!seeAll && eventsByTag && <ModuleVerticalMainCard participations={participations} tag={tag} title={`${tag}`} events={eventsByTag} width={'var(--cardAllTags-width)'}/>}
+                    {seeAll && !eventsByTag && <ModuleVerticalMainCard participations={participations} title={'All'} events={events} width={'var(--cardAllTags-width)'}/>}
                 </FeedCnt>
             </Wrapper>
         </View >
