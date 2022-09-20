@@ -17,7 +17,7 @@ export const ParticipationModule = ({ participations, participantsCount }) => {
                             participantsCount >= 3 &&
                             <PartsCounter left={`${-(participations.length) * 12}px`}>{participantsCount}</PartsCounter>}
                     </Row>
-                    <DetailText>{participantsCount} people joined</DetailText>
+                    {/* <DetailText>{participantsCount} people joined</DetailText> */}
                 </React.Fragment>
             }
         </Wrapper>

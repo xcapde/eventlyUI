@@ -59,6 +59,7 @@ export const NoNavView = styled(View)`
 export const Wrapper = styled(Col)`
     height: ${props => props.height || '100%'};
     width: ${props => props.width || '100%'};
+    position: ${props => props.position || 'relative'};
     gap: ${props => props.gap || '1%'};
     background-color: ${props => props.backgroundColor || 'inherit'};
     justify-content: ${props => props.justifyContent || 'center'};

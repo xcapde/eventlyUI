@@ -2,7 +2,7 @@ import { Col, DetailText } from "../../styles/styles.styled";
 import { MainCard } from "../cards/MainCard";
 import { FeedTitle, VerticalFeed } from "./feed.styled";
 
-export const ModuleVerticalMainCard = ({ title, events, tag, width, justify }) => {
+export const ModuleVerticalMainCard = ({ title, events, tag, width, justify}) => {
 
 
     return (

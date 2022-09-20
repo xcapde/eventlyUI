@@ -10,7 +10,7 @@ export const Wrapper = styled(Col)`
 `;
 
 export const PartsCounter = styled.div`
-    height: 55px;
+    height: 15px;
     width: 15px;
     border-radius: 50%;
     background-color: var(--color-main);

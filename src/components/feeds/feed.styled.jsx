@@ -37,10 +37,13 @@ export const VerticalFeed = styled.div`
         height: 100%;
         /* grid-template-columns: repeat(auto-fill, minmax(calc(var(--cardXS-width-desktop) + 1%), 1fr));
         grid-template-rows: repeat(auto-fill, minmax(calc(var(--cardXS-height) + 10%), 1fr)); */
-        grid-template-columns: auto auto auto auto auto;
-        justify-content: ${props => props.justify || 'flex-start'};
+        
         grid-gap: 2rem 1rem;
         padding: 1rem 0 0 0;
+        /* grid-template-columns: auto auto auto auto auto;
+        justify-content: ${props => props.justify || 'flex-start'}; */
+        grid-template-columns: repeat(auto-fill, minmax(var(--cardMain-width), 1fr));
+
     }
 `;
 

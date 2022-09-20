@@ -13,7 +13,8 @@ export const CardMain = styled(Col)`
     box-shadow: 0px 0px 8px var(--card-shadow-opacity);;
     @media (min-width: 820px) {
         height: var(--cardMain-height-desktop);
-        width: ${props => `calc( ${props.width} *.85)` || 'var(--cardMain-width-desktop)'};
+        /* width: ${props => `calc( ${props.width} *.85)` || 'var(--cardMain-width-desktop)'}; */
+        width: var(--cardMain-width-desktop);
     }
 `;
 

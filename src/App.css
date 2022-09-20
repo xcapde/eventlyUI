@@ -140,6 +140,9 @@
     /* --cardXS-img-size: 90%; */
     --cardXS-img-size: 100%;
 
+    /* --cardAllTags-width:29rem; */
+    --cardAllTags-width:80%;
+
 
     /* BADGE */
     --badge-padding: 8px 12px;
