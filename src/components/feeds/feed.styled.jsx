@@ -32,7 +32,7 @@ export const VerticalFeed = styled.div`
     grid-gap: 1rem 1rem;
     overflow: hidden;
     overflow-y: scroll;
-    padding: 1rem 0 2rem 0;
+    padding: ${props => props.padding || '1rem 0 2rem 0'};
     @media (min-width: 820px) {
         height: 100%;
         /* grid-template-columns: repeat(auto-fill, minmax(calc(var(--cardXS-width-desktop) + 1%), 1fr));
@@ -53,6 +53,7 @@ export const VerticalFeedMobile = styled(VerticalFeed)`
 export const VerticalFeedDesktop = styled(VerticalFeed)`
     display: none;
     @media (min-width: 820px) {
+        width: 95%;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(var(--cardMain-width), 1fr));
     }

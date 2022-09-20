@@ -1,4 +1,4 @@
-import { Row, View } from "../../styles/styles.styled"
+import { Col, DetailText, Row, View } from "../../styles/styles.styled"
 import { Footer } from "../../components/footer/Footer"
 import { NavTop } from "../../components/navs/NavTop"
 import { useState } from "react"
@@ -7,6 +7,7 @@ import { SearchInput } from "../../components/forms/SearchInput"
 import { eventService } from "../../services/API/eventService"
 import { Wrapper } from "./search.styled"
 import { ModuleVerticalMultiCard } from "../../components/feeds/ModuleVerticalMultiCard"
+import { FeedTitle } from "../../components/feeds/feed.styled"
 
 export const Search = () => {
     const [searchValue, setSearchValue] = useState('');
@@ -42,8 +43,18 @@ export const Search = () => {
                             <FilterButton/>
                             {/* <FiltersModule/> */}
                     </Row>
-
-                    <ModuleVerticalMultiCard title={searchList?'Your results':''} events={searchList} height={'85%'}/>
+                    
+                    
+                    <Col height='85%'>
+                        {searchList && searchList.length > 0 ?
+                        <>
+                            <FeedTitle>{searchList?'Your results':''}</FeedTitle>
+                            <ModuleVerticalMultiCard events={searchList}/>
+                        </>
+                        :
+                        <DetailText>There are no events.</DetailText>
+                        }
+                    </Col>
                 </Wrapper>
 
             <Footer/>

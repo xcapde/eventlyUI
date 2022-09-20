@@ -1,27 +1,17 @@
-import { Col, DetailText } from "../../styles/styles.styled"
+import { Col } from "../../styles/styles.styled"
 import { SmallCard } from "../cards/SmallCard"
 import { MainCard } from "../cards/MainCard"
-import { FeedTitle, VerticalFeed, VerticalFeedDesktop, VerticalFeedMobile } from "./feed.styled"
+import { VerticalFeedDesktop, VerticalFeedMobile } from "./feed.styled"
 
-export const ModuleVerticalMultiCard = ({ title, events, tag, width, height }) => {
+export const ModuleVerticalMultiCard = ({ events, width, height }) => {
 
 
     return (
             <Col height={height}>
-                <FeedTitle>{title}</FeedTitle>
-            
-                {events && events.length > 0 ?
-                <>
                     <VerticalFeedMobile>
-                        <Col height='unset'>
-                            
-                            <VerticalFeed>
-                                    {events.map((event, key) =>
-                                        <SmallCard key={key} event={event} />
-                                    ).reverse()}
-                            </VerticalFeed>                      
-                            
-                        </Col>
+                            {events.map((event, key) =>
+                                <SmallCard key={key} event={event} />
+                            ).reverse()}
                     </VerticalFeedMobile>
 
                     <VerticalFeedDesktop>                    
@@ -29,12 +19,6 @@ export const ModuleVerticalMultiCard = ({ title, events, tag, width, height }) =
                                 <MainCard key={key} event={event} width={width} />
                             )}                    
                     </VerticalFeedDesktop>
-                </>
-                :
-                <Col>
-                    <DetailText>There are no events.</DetailText>
-                </Col>
-                }
             </Col>
     )
 }

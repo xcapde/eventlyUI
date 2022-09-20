@@ -2,6 +2,7 @@ import { ProfileFeedTitle } from "../../pages/profile/profile.styled";
 import { Col, DetailText } from "../../styles/styles.styled";
 import { SmallCard } from "../cards/SmallCard";
 import { FeedCnt, ProfFeed } from "./feed.styled";
+import { ModuleVerticalMultiCard } from "./ModuleVerticalMultiCard";
 
 
 export const ProfileFeed = ({ events, title, date }) => {
@@ -12,9 +13,7 @@ export const ProfileFeed = ({ events, title, date }) => {
             <ProfFeed>
                 {
                     events && events.length > 0 ?
-                        events.map((event, key) =>
-                            <SmallCard key={key} event={event} />
-                        ).reverse()
+                        <ModuleVerticalMultiCard events={events}/>
                         :
                         <Col>
                             <DetailText>
