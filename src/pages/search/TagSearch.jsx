@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { BackButton } from "../../components/buttons";
 import { ModuleVerticalMultiCard } from "../../components/feeds/ModuleVerticalMultiCard";
 import { Footer } from "../../components/footer/Footer";
@@ -7,9 +8,9 @@ import { eventService } from "../../services/API/eventService";
 import { Col, DetailText, Row, Title, View } from "../../styles/styles.styled";
 import { Wrapper } from "./search.styled";
 
-export const TagSearch = ({callback}) => {
-    const [tag, setTag] = useState();
+export const TagSearch = () => {
     const [eventsByTag, setEventsByTag] = useState();    
+    const tag = useParams().tag;
 
     useEffect(()=>{
         if(!tag) return;
