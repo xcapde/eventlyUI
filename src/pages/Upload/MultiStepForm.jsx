@@ -10,7 +10,8 @@ import { DesktopWrapper, Footer, Header, Main, Progress, ProgressBar } from "./m
 
 export const MultiStepForm = ({
     event, postEvent, updateEvent,
-    addDirection, addWebUrl, eventDirection,
+    addDirection, addWebUrl, 
+    eventDirection, eventUrl,
     uploadImg, deleteImg,
     addReq, deleteReq,
     addTags, deleteTags }) => {
@@ -31,7 +32,7 @@ export const MultiStepForm = ({
         },
         {
             title: `${event && !event.location ? 'Add' : 'Update'} a location!`,
-            view: <LocationForm event={event} addDirection={addDirection} eventDirection={eventDirection} addWebUrl={addWebUrl} next={() => setPage(page + 1)} />
+            view: <LocationForm event={event} addDirection={addDirection} eventDirection={eventDirection} eventUrl={eventUrl} addWebUrl={addWebUrl} next={() => setPage(page + 1)} />
         },
         {
             title: `${hasDetails() ? "Update" : "Add"} event requirements'!`,

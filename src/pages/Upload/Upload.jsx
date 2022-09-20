@@ -39,8 +39,7 @@ export const Upload = () => {
     const postEvent = (data) => {
         eventService.postEvent(data).then(res => {
             if (!res) return;
-            // runModal(`${res.title} created!`)
-            setEvent(res);
+            getEvent(res.id);
         })
     }
 
@@ -50,8 +49,9 @@ export const Upload = () => {
             runModal(`${res.title} has been updated!`)
             if (event.type !== res.type) {
                 setDirection("");
+                setUrl("");
             }
-            setEvent(res);
+            getEvent(res.id);
         })
     }
 
@@ -143,6 +143,7 @@ export const Upload = () => {
                 addDirection={addDirection}
                 eventDirection={direction}
                 addWebUrl={addWebUrl}
+                eventUrl={url}
                 uploadImg={uploadImg}
                 deleteImg={deleteImg}
                 addReq={addReq}
