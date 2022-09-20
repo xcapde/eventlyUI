@@ -64,8 +64,6 @@ export const Profile = () => {
     }
 
     const getByDay = () => {
-        console.log(pickedDay.date)
-        console.log(joined.filter(e => format.eventDateToCalendarDate(e.date) === pickedDay.date))
         setByDate(joined.filter(e => format.eventDateToCalendarDate(e.date) === pickedDay.date));
     }
 
