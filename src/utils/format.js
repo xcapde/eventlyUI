@@ -16,7 +16,7 @@ const format = {
         }).join("/")
     },
     cutUrl(str) {
-        let url = str.substring(str.indexOf('w'), str.length);
+        let url = str.substring(str.indexOf('://')+3, str.length);
         return url.substring(0, url.indexOf("/"));
     }
 }
