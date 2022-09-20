@@ -24,6 +24,7 @@ export const eventService = {
         const event = axios.get(`/events/${id}`).then(res => {
             return res.data;
         })
+        .catch(err => console.log("get by id ", err))
         return event;
     },
     postEvent(req) {
@@ -38,6 +39,7 @@ export const eventService = {
         const event = axios.put(`/events/${id}`, rest).then(res => {
             return res.data;
         })
+        .catch(err => console.log("update err:", err))
         return event;
     },
     deleteEvent(id) {

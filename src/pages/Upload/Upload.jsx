@@ -28,6 +28,8 @@ export const Upload = () => {
         getEvent(eventId);
     }, [eventId])
 
+    useEffect(() =>{}, [event])
+
     const getEvent = (id) => {
         eventService.getEvent(id).then(res => {
             setEvent(res);
@@ -51,6 +53,7 @@ export const Upload = () => {
                 setDirection("");
                 setUrl("");
             }
+            console.log(res.id);
             getEvent(res.id);
         })
     }
@@ -132,6 +135,7 @@ export const Upload = () => {
         })
     }
 
+    console.log(event);
     return (
         <View>
             <NavRail />
