@@ -1,13 +1,14 @@
 import { Col } from "../../styles/styles.styled"
 import { SmallCard } from "../cards/SmallCard"
 import { MainCard } from "../cards/MainCard"
-import { VerticalFeedDesktop, VerticalFeedMobile } from "./feed.styled"
+import { FeedTitle, VerticalFeedDesktop, VerticalFeedMobile } from "./feed.styled"
 
-export const ModuleVerticalMultiCard = ({ events, width, height }) => {
+export const ModuleVerticalMultiCard = ({ events, width, height, title }) => {
 
 
     return (
             <Col height={height}>
+                <FeedTitle>{title}</FeedTitle>
                     <VerticalFeedMobile>
                             {events.map((event, key) =>
                                 <SmallCard key={key} event={event} />

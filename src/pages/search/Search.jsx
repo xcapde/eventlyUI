@@ -47,10 +47,7 @@ export const Search = () => {
                     
                     <Col height='85%'>
                         {searchList && searchList.length > 0 ?
-                        <>
-                            <FeedTitle>{searchList?'Your results':''}</FeedTitle>
-                            <ModuleVerticalMultiCard events={searchList}/>
-                        </>
+                        <ModuleVerticalMultiCard events={searchList} title={searchList?'Your results':''}/>
                         :
                         <DetailText>There are no results.</DetailText>
                         }
