@@ -60,5 +60,5 @@ export const Main = styled(Col)`
 export const ProfileFeedTitle = styled(Title)`
     font-size: medium;
     justify-content: center;
-    padding: 1rem;
+    padding: 1rem 0;
 `;

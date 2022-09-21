@@ -9,7 +9,7 @@ import { eventService } from "../../services/API/eventService";
 import { Col, DetailText, Row, View } from "../../styles/styles.styled";
 import { Wrapper } from "./search.styled";
 
-export const TagSearch = () => {
+export const PublishedList = () => {
     const [eventsByTag, setEventsByTag] = useState();    
     const navigate = useNavigate();
     const location = useLocation()

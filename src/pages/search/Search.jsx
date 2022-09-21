@@ -46,14 +46,14 @@ export const Search = () => {
                 <Wrapper>
                     <Row height='15%' width="90%">
                             <SearchInput submit={handleSubmit} callback={onInputChange} data={searchValue || ''} field={"search.."}/>               
-                            <FilterButton/>
-                            {/* <FiltersModule/> */}
+                            {/* <FilterButton/> */}
+                            <FiltersModule/>
                     </Row>
                     
                     
                     <Col height='85%'>
                         {searchList && searchList.length > 0 ?
-                        <ModuleVerticalMultiCard events={searchList} title={searchList.length === 1?`${searchList.length} event`: searchList.length > 1? `${searchList.length} events` : ''}/>
+                        <ModuleVerticalMultiCard events={searchList} title={searchList.length === 1?`${searchList.length} event found`: searchList.length > 1? `${searchList.length} events found` : ''}/>
                         :
                         <DetailText>There are no results.</DetailText>
                         }

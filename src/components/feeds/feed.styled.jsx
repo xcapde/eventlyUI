@@ -15,6 +15,7 @@ export const Wrapper = styled(Col)`
 export const FeedCnt = styled(Col)`
     height: ${props => props.height || '100%'};
     overflow: hidden;
+    align-items: flex-start;
     gap: ${props => props.gap || '2.5%'};
 `;
 
@@ -34,16 +35,18 @@ export const VerticalFeed = styled.div`
     overflow-y: scroll;
     padding: ${props => props.padding || '1rem 0 2rem 0'};
     @media (min-width: 820px) {
-        height: 100%;
-        /* grid-template-columns: repeat(auto-fill, minmax(calc(var(--cardXS-width-desktop) + 1%), 1fr));
-        grid-template-rows: repeat(auto-fill, minmax(calc(var(--cardXS-height) + 10%), 1fr)); */
-        
+        height: 100%;        
+        grid-template-columns: auto auto auto auto auto;
         grid-gap: 2rem 1rem;
+        justify-content: ${props => props.justify || 'flex-start'};
         padding: 1rem 0 0 0;
-        /* grid-template-columns: auto auto auto auto auto;
-        justify-content: ${props => props.justify || 'flex-start'}; */
-        grid-template-columns: repeat(auto-fill, minmax(var(--cardMain-width), 1fr));
+    }
+`;
 
+export const VerticalFeedMainCard = styled(VerticalFeed)`
+    @media (min-width: 820px) {
+            grid-template-columns: repeat(auto-fill, minmax(var(--cardMain-width), 1fr));
+            grid-gap: 3rem 3rem;
     }
 `;
 
@@ -53,12 +56,10 @@ export const VerticalFeedMobile = styled(VerticalFeed)`
     }
 `;
 
-export const VerticalFeedDesktop = styled(VerticalFeed)`
+export const VerticalFeedDesktop = styled(VerticalFeedMainCard)`
     display: none;
     @media (min-width: 820px) {
-        width: 95%;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(var(--cardMain-width), 1fr));
     }
 `;
 
@@ -100,5 +101,5 @@ export const ProfFeed = styled(Col)`
     overflow-y: scroll;
     overflow-x: hidden;
     gap: 2.5%;
-    padding: 2%;
+    /* padding: 2%; */
 `;

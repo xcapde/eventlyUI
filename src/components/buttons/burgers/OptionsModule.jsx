@@ -10,7 +10,7 @@ export const OptionsModule = ({ event, remove, edit }) => {
     return (
         <React.Fragment>
             {optionsIsActive &&
-                    <Options event={event} remove={remove} edit={edit} />}
+                    <Options event={event} remove={remove} edit={edit} callback={showOptions}/>}
             {optionsIsActive? <CloseButton callback={showOptions}/> : <EllipsisButton callback={showOptions}/>}
         </React.Fragment>
     )

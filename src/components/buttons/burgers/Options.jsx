@@ -4,7 +4,7 @@ import { AuthService } from "../../../services/AuthService";
 import { OptionButton } from "../OptionButton";
 import { OptionsCnt } from "./options.styled";
 
-export const Options = ({ event, remove, edit }) => {
+export const Options = ({ event, remove, edit, callback }) => {
 
     const [location, setLocation] = useState(useLocation().pathname.substring(1, useLocation().pathname.length));
     const [view, setView] = useState();
@@ -25,8 +25,8 @@ export const Options = ({ event, remove, edit }) => {
     const content = {
         detail: {
             isAuth: [
-                { content: "Delete", callback: () => { remove() } },
-                { content: "Edit", callback: () => { edit() } }
+                { content: "Delete", callback: () => { (remove())(callback()) } },
+                { content: "Edit", callback: () => { (edit())(callback()) } }
             ],
             default: [
                 { content: "Report", callback: () => console.log("not implemented yet") },

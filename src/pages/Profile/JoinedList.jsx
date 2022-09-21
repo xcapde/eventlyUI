@@ -7,9 +7,9 @@ import { Footer } from "../../components/footer/Footer";
 import { NavTop } from "../../components/navs/NavTop";
 import { eventService } from "../../services/API/eventService";
 import { Col, DetailText, Row, View } from "../../styles/styles.styled";
-import { Wrapper } from "./search.styled";
+import { Wrapper } from "../search/search.styled";
 
-export const TagSearch = () => {
+export const JoinedList = () => {
     const [eventsByTag, setEventsByTag] = useState();    
     const navigate = useNavigate();
     const location = useLocation()

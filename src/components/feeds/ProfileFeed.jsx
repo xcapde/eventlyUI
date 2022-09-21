@@ -1,6 +1,5 @@
 import { ProfileFeedTitle } from "../../pages/profile/profile.styled";
 import { Col, DetailText } from "../../styles/styles.styled";
-import { SmallCard } from "../cards/SmallCard";
 import { FeedCnt, ProfFeed } from "./feed.styled";
 import { ModuleVerticalMultiCard } from "./ModuleVerticalMultiCard";
 

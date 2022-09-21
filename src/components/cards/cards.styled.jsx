@@ -10,7 +10,7 @@ export const CardMain = styled(Col)`
     background-color: var(--color-white);
     color: var(--color-detail-text);
     border-radius: var(--cardMain-radius);
-    box-shadow: 0px 0px 8px var(--card-shadow-opacity);;
+    box-shadow: 0px 0px 5px var(--card-shadow-opacity);;
     @media (min-width: 820px) {
         height: var(--cardMain-height-desktop);
         /* width: ${props => `calc( ${props.width} *.85)` || 'var(--cardMain-width-desktop)'}; */
@@ -45,7 +45,6 @@ export const CardXSImage = styled(Img)`
     height: var(--cardXS-img-size);
     width: var(--cardXS-img-size);
     border-radius: var(--cardXS-img-radius);
-
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 `;

@@ -5,10 +5,9 @@ import { Detail } from "../pages/detail/Detail";
 import { LoginSignup } from "../pages/loginSignup/LoginSignup";
 import { Profile } from "../pages/profile/Profile";
 import { Upload } from "../pages/upload/Upload";
+import { TagSearch } from "../pages/search/TagSearch";
 import { AuthService } from "../services/AuthService";
 import App from "../App";
-import { TagSearch } from "../pages/search/TagSearch";
-
 
 export default function Router() {
 
@@ -31,7 +30,7 @@ export default function Router() {
                 <Route path="/home" element={<App />} />
                 <Route path="/events/:id" element={<Detail />} />
                 <Route path="/search" element={<Search />} />
-                <Route path="/search/:tag" element={<TagSearch />} />
+                <Route path="/events" search="?tag=tag" element={<TagSearch />} />
                 <Route path="/log-in" element={
                     <AuthRoute>
                         <LoginSignup />
