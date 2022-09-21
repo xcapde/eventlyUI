@@ -12,12 +12,12 @@ export const contents = {
                 myEvents: {
                     icon: <i className="fa-solid fa-calendar"></i>,
                     content: 'Published events',
-                    link: '/user/id/events',
+                    link: '/events/published',
                 },
                 assitedEvents: {
                     icon: <i className="fa-solid fa-calendar"></i>,
                     content: 'Joined events',
-                    link: '/events',
+                    link: '/events/joined',
                 }
             }
         },

@@ -13,7 +13,7 @@ import { VDetail } from "../../views/VDetail";
 export const Detail = () => {
     const [event, setEvent] = useState();
     const [participations, setParticipations] = useState();
-    const { modalIsActive, modalIsAsking, message, setModalIsActive, runModal, runAskingModal } = useModal();
+    const { modalIsActive, modalIsAsking, modalIsAlert, message, setModalIsActive, runModal, runAskingModal, runAlertModal } = useModal();
     
     const navigate = useNavigate();
     const id = useParams().id;
@@ -53,7 +53,8 @@ export const Detail = () => {
     const join = () => {
         participationService.join(id).then(res => {
             if (!res) return;
-            runModal(res.message);
+            // runModal(res.message);
+            runAlertModal(res.message);
             getEvent(id);
         })
     }
@@ -69,7 +70,7 @@ export const Detail = () => {
     return (
         <Page>
             <NavRail />
-            {modalIsActive && <Modal message={message} callback={deleteEvent} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive}/>}
+            {modalIsActive && <Modal message={message} callback={deleteEvent} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive} modalIsAlert={modalIsAlert}/>}
             
             {event && <VDetail event={event} participations={participations} join={join} unjoin={unjoin} deletConfirmation={deletConfirmation} deleteEvent={deleteEvent}/>}
             <Footer />

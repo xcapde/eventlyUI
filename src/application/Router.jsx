@@ -8,8 +8,8 @@ import { Upload } from "../pages/upload/Upload";
 import { TagSearch } from "../pages/search/TagSearch";
 import { AuthService } from "../services/AuthService";
 import App from "../App";
-import { JoinedList } from "../pages/profile/JoinedList";
-import { PublishedList } from "../pages/profile/PublishedList";
+import { JoinedList } from "../pages/events/JoinedList";
+import { PublishedList } from "../pages/events/PublishedList";
 
 export default function Router() {
 

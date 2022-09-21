@@ -35,8 +35,13 @@
     --color-navtop: var(--color-white);
     --color-navrail: rgba(26, 92, 76, 1);
     --color-navrail-contrast: rgba(18, 112, 89, 1);
+    
     --color-modalBG: var(--color-white);
     --color-modalText:var(--color-detail-text);
+    --color-alertBG:#ffc8c8;
+    --color-alertText:#8d0101;    
+    --color-button-alert:#f55e5e;
+    --color-button-alert-hover:#e04040;
 
     --color-badgetBG-default: #ffc941;
     --color-badgetText-default: #cf8d0c;
