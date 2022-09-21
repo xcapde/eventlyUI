@@ -66,3 +66,57 @@ export const TitleCard = styled(Title)`
             font-size: var(--font-size-card-title-desktop);
         }
 `
+
+export const NotiCard = styled.article`
+    max-height: 9rem;
+    height: fit-content;
+    min-height: 7rem;
+    left: ${props => props.left};
+    grid-column: ${props => props.col || '2/13'};
+    box-shadow: 0px 0px 8px lightgray;
+    border-radius: 1.25rem 0 0 1.25rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-auto-flow: column;
+    place-content: center;
+    transition: left 1.5s linear;
+    & > p:nth-child(1){
+        height: fit-content;
+        grid-column: 2/7;
+        grid-row: 2/3;
+        font-weight: 900 !important;
+        color: var(--color-dark);
+    }
+    & > p:nth-child(2){
+        grid-column: 2/7;
+        grid-row: 3/4;
+        font-weight: lighter;
+        line-height: 125%;
+        & > a{
+            color: var(--color-main);
+            text-decoration: underline !important;
+            display: initial;
+        }
+    }
+`;
+
+export const NotiStatus = styled.div`
+    height: 8px;
+    width: 8px;
+    grid-column: 7/8;
+    grid-row: 1/2;
+    background-color: ${props => props.color || 'var(--color-main)'};
+    align-self: flex-end;
+    justify-self: center;
+    border-radius: 50%;
+`;
+
+export const CreatedAt = styled.span`
+    font-size: xx-small;
+    font-family: var(--numbers-font);
+    grid-column: 6/12;
+    grid-row: 4/5;
+    align-self: center;
+`;

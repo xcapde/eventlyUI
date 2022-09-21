@@ -26,7 +26,10 @@ export const Upload = () => {
     useEffect(() => {
         if (!eventId) return;
         getEvent(eventId);
+        // eslint-disable-next-line
     }, [eventId])
+
+    useEffect(() =>{}, [event])
 
     const getEvent = (id) => {
         eventService.getEvent(id).then(res => {
@@ -51,6 +54,7 @@ export const Upload = () => {
                 setDirection("");
                 setUrl("");
             }
+            console.log(res.id);
             getEvent(res.id);
         })
     }
@@ -132,6 +136,7 @@ export const Upload = () => {
         })
     }
 
+    console.log(event);
     return (
         <View>
             <NavRail />

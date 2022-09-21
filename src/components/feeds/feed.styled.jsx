@@ -14,6 +14,8 @@ export const Wrapper = styled(Col)`
 
 export const FeedCnt = styled(Col)`
     height: ${props => props.height || '100%'};
+    width: ${props => props.width || '100%'};
+    margin: ${props => props.margin || 'inherit'};
     overflow: hidden;
     align-items: flex-start;
     gap: ${props => props.gap || '2.5%'};
@@ -104,4 +106,24 @@ export const ProfFeed = styled(Col)`
     gap: 2.5%;
     margin: 0 auto;
     /* padding: 2%; */
+    padding: 2%;
+`;
+
+export const NotiFeedTitle = styled(FeedTitle)`
+    width: 95%;
+    margin: 0 auto;
+`;
+
+export const NotiFeed = styled.section`
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-flow: column;
+    grid-auto-rows: max-content;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    place-content: flex-start;
+    row-gap: 1rem;
+    padding: 1rem;
 `;
