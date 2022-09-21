@@ -26,6 +26,7 @@ export const Upload = () => {
     useEffect(() => {
         if (!eventId) return;
         getEvent(eventId);
+        // eslint-disable-next-line
     }, [eventId])
 
     useEffect(() =>{}, [event])

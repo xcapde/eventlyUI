@@ -1,8 +1,7 @@
-import { useEffect } from "react"
-import { useState } from "react"
-import { DetailText } from "../../styles/styles.styled"
-import format from "../../utils/format"
-import { NotiCard, NotiStatus, CreatedAt } from "./cards.styled"
+import { useState } from "react";
+import { DetailText } from "../../styles/styles.styled";
+import format from "../../utils/format";
+import { NotiCard, NotiStatus, CreatedAt } from "./cards.styled";
 
 export const NotificationCard = ({ notification, toggleCheck, deleteNotification }) => {
 
