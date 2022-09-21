@@ -20,14 +20,14 @@ export const CardMain = styled(Col)`
 
 export const CardXS = styled(CardMain)`
     width: var(--cardXS-width);
-    max-width: 400px;
+    /* max-width: 400px; */
     height: var(--cardXS-height);
     flex-direction: row;
     justify-content: space-between;
-
+/* 
     @media (min-width: 820px) {
         width: var(--cardXS-width-desktop);
-    }
+    } */
 `;
 
 /*IMAGES*/

@@ -97,9 +97,11 @@ export const HorizontalFeed = styled(Row)`
 `;
 
 export const ProfFeed = styled(Col)`
+    width: 95%;
     justify-content: flex-start;
     overflow-y: scroll;
     overflow-x: hidden;
     gap: 2.5%;
+    margin: 0 auto;
     /* padding: 2%; */
 `;
