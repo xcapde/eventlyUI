@@ -23,7 +23,7 @@ export const HomeFeed = ({ events, tags, tag, setTag, eventsByTag, setEventsByTa
 
                 <ModuleTags tags={tags} callback={(data) => { setTag(data); setSeeAll(false) }} />
 
-                <FeedCnt>
+                <FeedCnt margin="0">
                     {!eventsByTag && !seeAll &&
                         <React.Fragment>
                             <ModuleHorizontalMainCard title={'Offline'} events={offlineEvents} participations={participations}/>
