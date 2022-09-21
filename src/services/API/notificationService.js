@@ -13,11 +13,23 @@ axios.interceptors.request.use(function (config) {
 
 export const notificationService = {
 
-    getAuthNotifications(){
+    getAuthNotifications() {
         const notifications = axios.get(`/auth-notifications`).then(res => {
             console.log(res.data)
             return res.data;
         })
         return notifications;
+    },
+    toggleCheck(id) {
+        const message = axios.patch(`/auth-notifications/${id}/check`).then(res => {
+            return res.data;
+        })
+        return message;
+    },
+    delete(id) {
+        const message = axios.delete(`/auth-notifications/${id}`).then(res => {
+            return res.data;
+        })
+        return message;
     }
 }

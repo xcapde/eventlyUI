@@ -9,7 +9,6 @@ const format = {
         return Object.keys(obj).map(k => obj[k].value);
     },
     eventDateToCalendarDate(str) {
-        console.log(str)
         let date = str.split("-").join("/");
         return date.split("/").map(n => {
             if (n[0] != 0) return n;

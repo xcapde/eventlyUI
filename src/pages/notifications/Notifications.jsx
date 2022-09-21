@@ -20,11 +20,26 @@ export const Notifications = () => {
         })
     }
 
-    console.log(notifications);
+    const toggleCheck = (id) => {
+        notificationService.toggleCheck(id).then(res => {
+            if (!res) return;
+            console.log(res);
+            getNotifications();
+        })
+    }
+
+    const deleteNotification = (id) => {
+        notificationService.delete(id).then(res => {
+            if (!res) return;
+            console.log(res);
+            getNotifications();
+        })
+    }
+
     return (
         <View style={{ justifyContent: 'center' }}>
             <NavTop />
-            <NotificationFeed notifications={notifications} />
+            <NotificationFeed notifications={notifications} toggleCheck={toggleCheck} deleteNotification={deleteNotification} />
             <Footer />
         </View>
     )

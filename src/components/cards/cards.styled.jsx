@@ -59,6 +59,7 @@ export const NotiCard = styled.article`
     max-height: 9rem;
     height: fit-content;
     min-height: 7rem;
+    left: ${props => props.left};
     grid-column: ${props => props.col || '2/13'};
     box-shadow: 0px 0px 8px lightgray;
     border-radius: 1.25rem 0 0 1.25rem;
@@ -68,6 +69,7 @@ export const NotiCard = styled.article`
     grid-template-rows: repeat(4, 1fr);
     grid-auto-flow: column;
     place-content: center;
+    transition: left 1.5s linear;
     & > p:nth-child(1){
         height: fit-content;
         grid-column: 2/7;
