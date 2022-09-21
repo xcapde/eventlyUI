@@ -9,7 +9,7 @@ export const ParticipationModule = ({ participations, participantsCount }) => {
         <Wrapper>
             {participantsCount > 0 &&
                 <React.Fragment>
-                    <Row>
+                    <Row marginLeft='38px'>
                         {participations && participations.map((participation, key) => (
                             key <= 5 && <ParticipationAvatar key={key} participation={participation} left={key !== 0 ? `-${key * 12}px` : '0px'} />
                         ))}

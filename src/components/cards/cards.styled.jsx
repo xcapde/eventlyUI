@@ -59,7 +59,7 @@ export const BodyCntrl = styled(Col)`
 `
 
 export const TitleCard = styled(Title)`
-    /* justify-content: center; */
+    justify-content: ${props => props.justifyContent || 'flex-start'};
     font-size: var(--font-size-card-title);
     font-weight: bolder;
     padding:0.5rem 0;

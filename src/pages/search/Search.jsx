@@ -8,6 +8,8 @@ import { eventService } from "../../services/API/eventService"
 import { Wrapper } from "./search.styled"
 import { ModuleVerticalMultiCard } from "../../components/feeds/ModuleVerticalMultiCard"
 import { FeedTitle } from "../../components/feeds/feed.styled"
+import { FiltersModule } from "../../components/filters/FiltersModule"
+import { NavRail } from "../../components/navs"
 
 export const Search = () => {
     const [searchValue, setSearchValue] = useState('');
@@ -17,8 +19,11 @@ export const Search = () => {
     const onInputChange=(e)=>{
         const value = e.target.value;
         setSearchValue(value); 
+        if(value.length === 0){
+            setSearchList();
+        }
         if(value.length < 3) return;
-        getEventsBySearch(value);
+            getEventsBySearch(value);
     }    
 
     const handleSubmit=(e)=>{
@@ -37,6 +42,7 @@ export const Search = () => {
     return (
         <View height='80%'>
             <NavTop/>
+            <NavRail/>
                 <Wrapper>
                     <Row height='15%' width="90%">
                             <SearchInput submit={handleSubmit} callback={onInputChange} data={searchValue || ''} field={"search.."}/>               
@@ -47,7 +53,7 @@ export const Search = () => {
                     
                     <Col height='85%'>
                         {searchList && searchList.length > 0 ?
-                        <ModuleVerticalMultiCard events={searchList} title={searchList?'Your results':''}/>
+                        <ModuleVerticalMultiCard events={searchList} title={searchList.length === 1?`${searchList.length} event`: searchList.length > 1? `${searchList.length} events` : ''}/>
                         :
                         <DetailText>There are no results.</DetailText>
                         }

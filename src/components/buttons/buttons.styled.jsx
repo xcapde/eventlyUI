@@ -115,6 +115,12 @@ export const BackArrowButton = styled(OpacityButton)`
 	    content: "\f060";
     }
 `
+export const BackBtn = styled(BackArrowButton)`
+    top:unset;
+    left:unset;
+    position:relative;    
+    color: var(--color-dark);
+`;
 
 export const EllipsisBtn = styled(OpacityButton)`
     top: var(--header-button-position-top);

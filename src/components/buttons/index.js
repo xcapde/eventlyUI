@@ -1,6 +1,7 @@
 export { FormButton } from "./FormButton";
 export { JoinButton } from "./JoinButton";
 export { BackButton } from "./BackButton";
+export { BackButtonRelative } from "./BackButtonRelative";
 export { CloseButton } from "./CloseButton";
 export { CancelButton } from "./CancelButton";
 export { SecondaryButton } from "./SecondaryButton";

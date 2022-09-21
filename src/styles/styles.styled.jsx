@@ -15,6 +15,7 @@ export const Col = styled.div`
 export const Row = styled(Col)`
     max-width: ${props => props.maxWidth || '100%'};
     flex-direction: row;
+    margin-left: ${props => props.marginLeft || '0'};
 `;
 
 
