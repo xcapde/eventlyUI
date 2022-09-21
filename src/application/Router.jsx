@@ -8,6 +8,8 @@ import { Upload } from "../pages/upload/Upload";
 import { TagSearch } from "../pages/search/TagSearch";
 import { AuthService } from "../services/AuthService";
 import App from "../App";
+import { JoinedList } from "../pages/profile/JoinedList";
+import { PublishedList } from "../pages/profile/PublishedList";
 
 export default function Router() {
 
@@ -59,6 +61,16 @@ export default function Router() {
                 <Route path="/profile" element={
                     <AuthRequired>
                         <Profile />
+                    </AuthRequired>
+                } />
+                <Route path="/events/joined" element={
+                    <AuthRequired>
+                        <JoinedList />
+                    </AuthRequired>
+                } />
+                <Route path="/events/published" element={
+                    <AuthRequired>
+                        <PublishedList />
                     </AuthRequired>
                 } />
             </Routes>

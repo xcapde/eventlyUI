@@ -18,6 +18,9 @@ const format = {
     cutUrl(str) {
         let url = str.substring(str.indexOf('://')+3, str.length);
         return url.substring(0, url.indexOf("/"));
+    },
+    uppercaseFirstLetter(word) {
+        return word.charAt(0).toUpperCase()+word.slice(1);
     }
 }
 

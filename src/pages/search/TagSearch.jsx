@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { unstable_HistoryRouter, useLocation, useNavigate } from "react-router-dom";
 import { BackButtonRelative } from "../../components/buttons";
 import { TitleCard } from "../../components/cards/cards.styled";
 import { ModuleVerticalMultiCard } from "../../components/feeds/ModuleVerticalMultiCard";
@@ -7,13 +7,14 @@ import { Footer } from "../../components/footer/Footer";
 import { NavTop } from "../../components/navs/NavTop";
 import { eventService } from "../../services/API/eventService";
 import { Col, DetailText, Row, View } from "../../styles/styles.styled";
+import format from "../../utils/format";
 import { Wrapper } from "./search.styled";
 
 export const TagSearch = () => {
     const [eventsByTag, setEventsByTag] = useState();    
     const navigate = useNavigate();
-    const location = useLocation()
-    const tagName = location.search.split("=")[1]
+    const location = useLocation();
+    const tagName = location.search.split("=")[1];
 
     useEffect(()=>{
         if(!tagName) return;
@@ -36,7 +37,7 @@ export const TagSearch = () => {
                             <BackButtonRelative callback={()=>navigate(-1)}/>
                         </Col>
                         <Col>
-                            <TitleCard>With tag {tagName}</TitleCard>
+                            <TitleCard>By tag: {format.uppercaseFirstLetter(tagName)}</TitleCard>
                         </Col>
                     </Row>
                     

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { BackButtonRelative } from "../../components/buttons";
 import { TitleCard } from "../../components/cards/cards.styled";
 import { ModuleVerticalMultiCard } from "../../components/feeds/ModuleVerticalMultiCard";
@@ -10,20 +10,17 @@ import { Col, DetailText, Row, View } from "../../styles/styles.styled";
 import { Wrapper } from "../search/search.styled";
 
 export const JoinedList = () => {
-    const [eventsByTag, setEventsByTag] = useState();    
+    const [joinedEvents, setJoinedEvents] = useState();    
     const navigate = useNavigate();
-    const location = useLocation()
-    const tagName = location.search.split("=")[1]
 
     useEffect(()=>{
-        if(!tagName) return;
-        getEventsByTag(tagName)
-    },[tagName]);
+        getJoinedEvents()
+    },[]);
 
-    const getEventsByTag = (tagName) => {
-        eventService.getEventsByTag(tagName).then(res => {
+    const getJoinedEvents = () => {
+        eventService.getJoinedEvents().then(res => {
             if (!res) return
-            setEventsByTag(res)
+            setJoinedEvents(res)
         })
     }
 
@@ -36,15 +33,15 @@ export const JoinedList = () => {
                             <BackButtonRelative callback={()=>navigate(-1)}/>
                         </Col>
                         <Col>
-                            <TitleCard>With tag {tagName}</TitleCard>
+                            <TitleCard>Joined to:</TitleCard>
                         </Col>
                     </Row>
                     
                     <Col height='85%'>
-                        {eventsByTag && eventsByTag.length > 0 ?
-                        <ModuleVerticalMultiCard tag={tagName} events={eventsByTag} title={eventsByTag.length === 1?`${eventsByTag.length} event found`: eventsByTag.length > 1? `${eventsByTag.length} events found` : ''}/>
+                        {joinedEvents && joinedEvents.length > 0 ?
+                        <ModuleVerticalMultiCard events={joinedEvents} title={joinedEvents.length === 1?`You have joined to ${joinedEvents.length} event`: joinedEvents.length > 1? `You have joined to ${joinedEvents.length} events` : ''}/>
                         :
-                        <DetailText>There are no events with this tag.</DetailText>
+                        <DetailText>You haven't joined to any event yet.</DetailText>
                         }
                     </Col>
                 </Wrapper>

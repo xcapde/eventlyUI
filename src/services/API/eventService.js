@@ -33,16 +33,12 @@ export const eventService = {
         return event;
     },
     updateEvent({ id, ...rest }) {
-        console.log(id);
-        console.log(rest);
         const event = axios.put(`/events/${id}`, rest).then(res => {
             return res.data;
         })
         return event;
     },
     deleteEvent(id) {
-        console.log(id)
-
         const event = axios.delete(`/events/${id}`).then(res => {
             return res.data;
         })
