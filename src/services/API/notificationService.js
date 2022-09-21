@@ -15,7 +15,6 @@ export const notificationService = {
 
     getAuthNotifications() {
         const notifications = axios.get(`/auth-notifications`).then(res => {
-            console.log(res.data)
             return res.data;
         })
         return notifications;

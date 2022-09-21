@@ -11,7 +11,6 @@ export const NotificationCard = ({ notification, toggleCheck, deleteNotification
     const [deleted, setDeleted] = useState();
 
     const setAction = (end) => {
-        console.log(end - start)
         if (end - start <= 50 && end - start >= -50) return;
         if (end - start <= -130 && notification.checked) toggleCheck(notification.id);
         if (end - start >= 51 && end - start <= 250 && !notification.checked) toggleCheck(notification.id);
@@ -24,7 +23,7 @@ export const NotificationCard = ({ notification, toggleCheck, deleteNotification
         setTimeout(() => {
             setDeleted();
         }, 1500);
-        
+
     }
 
     return (
@@ -38,8 +37,13 @@ export const NotificationCard = ({ notification, toggleCheck, deleteNotification
             <DetailText>
                 {notification.description.includes("http://") ?
                     <>
-                        {format.cutNotification(notification.description)}
-                        <a href={format.cutNotificationLink(notification.description)}>event detail page !</a>
+                        {format.cutNotification(notification.description).includes("https://") ?
+                            <>{format.cutNotification(notification.description).split("location:")[0]}
+                            <a href={format.cutNotification(notification.description).split("location:")[1].substring(0,format.cutNotification(notification.description).split("location:")[1].indexOf(". Check") )}> location</a>
+                            {". Check it out at "}
+                            </>
+                            : format.cutNotification(notification.description)}
+                        <a href={format.cutNotificationLink(notification.description)}>{"event detail page !"}</a>
                     </>
                     : notification.description}
             </DetailText>
