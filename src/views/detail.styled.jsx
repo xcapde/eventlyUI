@@ -30,35 +30,37 @@ export const DetailTitle = styled(FeedTitle)`
 
 export const MainDesktop = styled.section`
     border: 4px solid red;
-    height: 100%;
-    width: 100%;
+    height: 99%;
+    width: calc(100% - 3rem);
+    margin-left: 3rem;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    margin: auto;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(9, 1fr);
     & > div{
         height: 100%;
         width: 100%;
     } 
     & > div:nth-child(1){
         grid-column: 1/4;
-        grid-row: 1/6;
+        grid-row: 1/7;
         & >div{
             height: 100%;
         }
     }
     & > div:nth-child(2){
         border: 2px solid green;
-        grid-column: 4/6;
-        grid-row: 1/5;
+        grid-column: 4/8;
+        grid-row: 1/6;
     }
     & > div:nth-child(3){
         border: 2px solid blue;
         grid-column: 1/4;
-        grid-row: 6/8;
+        grid-row: 7/10;
     }
     & > div:nth-child(4){
         border: 2px solid yellow;
-        grid-column: 4/6;
-        grid-row: 5/8;
+        grid-column: 4/8;
+        grid-row: 6/10;
     }
 `;

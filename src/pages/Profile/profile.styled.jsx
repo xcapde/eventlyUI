@@ -60,9 +60,10 @@ export const MainMobile = styled(Col)`
 export const MainDesktop = styled.section`  
     display: none;
     @media(min-width: 820px){
-        border: 1px solid red;
-        height: 99%;
-        width: 99%;
+        display: grid;
+        border: 4px solid red;
+        height: 100%;
+        width: 100%;
     }
     
 `;
