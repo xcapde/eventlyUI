@@ -5,30 +5,24 @@ import { BackButton, JoinButton } from "../components/buttons";
 import { OptionsModule } from "../components/buttons/burgers/OptionsModule";
 import { ModuleContent } from "../components/information/ModuleContent"
 import { ModuleDetails } from "../components/information/ModuleDetails";
-import { Gradient, NoNavView, Col } from "../styles/styles.styled";
-import { ImgCnt, InfoCnt, DetailTitle, SideControl } from "./detail.styled";
+import { NoNavView, Col } from "../styles/styles.styled";
+import { ImgCnt, InfoCnt, DetailTitle } from "./detail.styled";
 import { Slider } from "../components/slider/Slider";
 
 
-export const VDetailMobile = ({ event, participations, join, unjoin, deletConfirmation }) => {
-    const navigate = useNavigate();
+export const VDetailMobile = ({ event, participations, join, unjoin, deletConfirmation, updateEvent }) => {
     const [key, setKey] = useState("description");
-    const tabContent = ["description", "requirements", "tags", "map"];
-    const [centralIndex, setCentralIndex] = useState(0);
-
-    const updateEvent = () => {
-        navigate(`/update/${event.id}`);
-    }
+    const tabContent = ["description", "requirements", "tags"];
+    const navigate = useNavigate();
 
     return (
         <NoNavView id="no-nav" displayD="none">
             <Col>
-                <Gradient />
                 <BackButton callback={() => navigate(-1)} />
-                <OptionsModule event={event} remove={deletConfirmation} edit={updateEvent} />
+                <OptionsModule event={event} remove={deletConfirmation} edit={updateEvent}/>
 
                 <ImgCnt>
-                    <Slider images={event.images} coordinateSliders={setCentralIndex} />
+                    <Slider images={event.images}/>
                 </ImgCnt>
 
                 <InfoCnt id="info">

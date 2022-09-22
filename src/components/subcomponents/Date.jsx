@@ -4,7 +4,7 @@ import format from "../../utils/format"
 export const Date = ({event}) => {
     
     return (
-        <Row style={{width: 'fit-content'}}>
+        <Row>
             <DetailIcon>
                 <i className="fa-solid fa-calendar-day"></i>
             </DetailIcon>

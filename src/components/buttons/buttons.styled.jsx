@@ -96,7 +96,7 @@ export const OpacityButton = styled(Button)`
     position: absolute;
     font-size: var(--font-size-opacity-icon);
     background:none;
-    color:var(--opacity-button-color-icon);
+    color: ${props => props.color || 'var(--opacity-button-color-icon)'};
     z-index: var(--index-opacity-button);
     &:hover{
         /* scale:1.2;

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { ImgCnt } from "../../views/detail.styled";
-import { Img, Touchable } from "../../styles/styles.styled";
+import { Gradient, Img, Touchable } from "../../styles/styles.styled";
 import { SliderPiker } from "./SliderPicker";
 
 export const Slider = ({ images, coordinateSliders }) => {
@@ -58,6 +58,8 @@ export const Slider = ({ images, coordinateSliders }) => {
                 position="relative"
                 onTouchStart={(e) => setStart(e.changedTouches[0].clientX)}
                 onTouchEnd={slide}>
+            
+                <Gradient />
 
                 <Img
                     imgUrl={

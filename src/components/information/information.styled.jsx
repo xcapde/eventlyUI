@@ -9,8 +9,9 @@ export const NavTabs = styled(Row)`
     gap: 0;
 
     @media(min-width:${Breakpoint.md}){
+        height: 3rem;
         flex-wrap:nowrap;
-
+        border-bottom: 1px solid lightgray;
     }
 `
 

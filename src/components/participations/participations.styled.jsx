@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Col } from "../../styles/styles.styled";
 
 export const Wrapper = styled(Col)`
-    height: 55px;
+    height: ${props => props.height || '55px'};
     width: fit-content;
     align-self: center;
     gap: 5px;

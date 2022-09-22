@@ -3,7 +3,7 @@ import { DetailIcon, DetailText, Row } from "../../styles/styles.styled"
 export const Time = ({event}) => {
     
     return (
-        <Row style={{width: 'fit-content'}}>
+        <Row>
             <DetailIcon>
                 <i className="fa-solid fa-clock"></i>   
             </DetailIcon> 

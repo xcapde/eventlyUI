@@ -31,6 +31,10 @@ export const eventService = {
         const event = axios.post(`/events`, req).then(res => {
             return res.data;
         })
+        .catch(err=>{ 
+            console.log(err)
+            return { error : err.response.data ? err.response.data : err}
+        })
         return event;
     },
     updateEvent({ id, ...rest }) {

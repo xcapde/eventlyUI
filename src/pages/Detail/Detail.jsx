@@ -68,12 +68,16 @@ export const Detail = () => {
         })
     }
 
+    const updateEvent = () => {
+        navigate(`/update/${event.id}`);
+    }
+
     return (
         <Page>
             <NavRail />
             {modalIsActive && <Modal message={message} callback={deleteEvent} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive} modalIsAlert={modalIsAlert}/>}
-            {event && <VDetailMobile event={event} participations={participations} join={join} unjoin={unjoin} deletConfirmation={deletConfirmation} deleteEvent={deleteEvent}/>}
-            {event && <VDetailDesktop event={event} participations={participations} join={join} unjoin={unjoin} deletConfirmation={deletConfirmation} deleteEvent={deleteEvent}/>}
+            {event && <VDetailMobile event={event} participations={participations} join={join} unjoin={unjoin} deletConfirmation={deletConfirmation} deleteEvent={deleteEvent} updateEvent={updateEvent}/>}
+            {event && <VDetailDesktop event={event} participations={participations} join={join} unjoin={unjoin} deletConfirmation={deletConfirmation} deleteEvent={deleteEvent} updateEvent={updateEvent}/>}
             <Footer />
         </Page>
     )

@@ -7,7 +7,7 @@ export const Badge = ({ content, callback, field, editMode }) => {
     const navigate = useNavigate();
 
     const action = (content) => {
-        if(location.includes('events')){
+        if(location.includes('events') && field !== 'requirements'){
                 navigate({
                 pathname: `/events`,
                 search: `?tag=${content}`,
