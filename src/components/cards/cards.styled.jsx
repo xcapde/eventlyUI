@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Col, Img, Row, Title} from "../../styles/styles.styled";
+import { Breakpoint, Col, Img, Row, Title} from "../../styles/styles.styled";
 
 /*SIZING*/
 export const CardMain = styled(Col)`
@@ -11,7 +11,7 @@ export const CardMain = styled(Col)`
     color: var(--color-detail-text);
     border-radius: var(--cardMain-radius);
     box-shadow: 0px 0px 5px var(--card-shadow-opacity);;
-    @media (min-width: 820px) {
+    @media (min-width:${Breakpoint.md}) {
         height: var(--cardMain-height-desktop);
         /* width: ${props => `calc( ${props.width} *.85)` || 'var(--cardMain-width-desktop)'}; */
         width: var(--cardMain-width-desktop);
@@ -25,7 +25,7 @@ export const CardXS = styled(CardMain)`
     flex-direction: row;
     justify-content: space-between;
 /* 
-    @media (min-width: 820px) {
+    @media (min-width:${Breakpoint.md}) {
         width: var(--cardXS-width-desktop);
     } */
 `;
@@ -62,7 +62,7 @@ export const TitleCard = styled(Title)`
     font-size: var(--font-size-card-title);
     font-weight: bolder;
     padding:0.5rem 0;
-        @media(min-width:820px){
+        @media(min-width:${Breakpoint.md}){
             font-size: var(--font-size-card-title-desktop);
         }
 `

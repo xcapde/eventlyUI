@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Breakpoint } from "../../styles/styles.styled";
 import { FormBtn } from "../buttons/buttons.styled";
 
 export const Form = styled.form`
@@ -20,7 +21,7 @@ export const Form = styled.form`
         bottom: 0;
         left: calc((100% - var(--form-button-width)) / 2);
     }
-    @media (min-width: 820px) {
+    @media (min-width:${Breakpoint.md}) {
         width: 100%;
         place-content: center;
     }
@@ -66,7 +67,7 @@ export const Input = styled.input`
     &::placeholder{
         text-transform: capitalize;
     }
-    @media (min-width: 820px) {
+    @media (min-width:${Breakpoint.md}) {
         margin-bottom: 1%;
     }
     :focus-within ~ ${Label},
@@ -122,7 +123,7 @@ export const FormGrid = styled(Form)`
         grid-column-start: 2;
         grid-column-end: 2;
     }
-    @media (min-width: 820px) {
+    @media (min-width:${Breakpoint.md}) {
         grid-column-gap: 14%;
         place-content: flex-start;
     }
@@ -150,7 +151,7 @@ export const Select = styled.select`
     &::placeholder{
         text-transform: capitalize;
     }
-    @media (min-width: 820px) {
+    @media (min-width:${Breakpoint.md}) {
         margin-bottom: 1%;
     }
     :focus-within ~ ${Label},

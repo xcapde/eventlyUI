@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Row, Col, Title } from "../../styles/styles.styled";
+import { Row, Col, Title, Breakpoint } from "../../styles/styles.styled";
 
 export const Wrapper = styled(Col)`
     width: 95%;
@@ -7,7 +7,7 @@ export const Wrapper = styled(Col)`
     justify-content: 'flex-start';
     margin: 2.5% auto;
     overflow: hidden;
-    @media (min-width: 820px) {
+    @media (min-width:${Breakpoint.md}) {
         
     }
 `;
@@ -37,7 +37,7 @@ export const VerticalFeed = styled.div`
     overflow: hidden;
     overflow-y: scroll;
     padding: ${props => props.padding || '1rem 0 2rem 0'};
-    @media (min-width: 820px) {
+    @media (min-width:${Breakpoint.md}) {
         height: 100%;        
         grid-template-columns: auto auto auto auto auto;
         grid-gap: 2rem 1rem;
@@ -47,21 +47,21 @@ export const VerticalFeed = styled.div`
 `;
 
 export const VerticalFeedMainCard = styled(VerticalFeed)`
-    @media (min-width: 820px) {
+    @media (min-width:${Breakpoint.md}) {
             grid-template-columns: repeat(auto-fill, minmax(var(--cardMain-width), 1fr));
             grid-gap: 3rem 3rem;
     }
 `;
 
 export const VerticalFeedMobile = styled(VerticalFeed)`
-     @media (min-width: 820px) {
+     @media (min-width:${Breakpoint.md}) {
         display:none;
     }
 `;
 
 export const VerticalFeedDesktop = styled(VerticalFeedMainCard)`
     display: none;
-    @media (min-width: 820px) {
+    @media (min-width:${Breakpoint.md}) {
         display: grid;
     }
 `;
@@ -92,7 +92,7 @@ export const HorizontalFeed = styled(Row)`
     ::-webkit-scrollbar {
         display: none;
     }
-    @media (min-width: 820px) {
+    @media (min-width:${Breakpoint.md}) {
         ::-webkit-scrollbar {
         display: flex;
         }

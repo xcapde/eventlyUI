@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Breakpoint } from "../../styles/styles.styled";
 
 
 export const BadgeCnt = styled.div`
@@ -23,7 +24,7 @@ export const BadgeCnt = styled.div`
     background-color: ${props => props.backgroundColor || 'var(--color-badgetBG-default)'};
 
     border-radius: var(--badge-radius);
-    @media(min-width:820px){
+    @media(min-width:${Breakpoint.md}){
         cursor: pointer;
         outline: none;
     }

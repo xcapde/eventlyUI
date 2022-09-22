@@ -41,7 +41,7 @@ export const View = styled.section`
     align-items: center;
     align-self: flex-start;
     z-index: ${props => props.index || 'inherit'};
-    @media (min-width: 820px) {
+    @media (min-width:${Breakpoint.md}) {
         top: ${props => props.topD || 0};
         height: ${props => props.heightD || '100%'};
         width: calc( 100% - 5rem);
@@ -107,16 +107,20 @@ export const DetailIcon = styled(DetailText)`
     color: var(--color-detail-icon);
 `;
 
-/*Images*/
-export const Img = styled.img.attrs(props => ({
-    src: props.imgUrl,
-}))`
+/*Background*/
+export const OpacityBackground = styled.div`
     height: 100%;
     width: 100%;
-    object-fit: cover;
-    position: relative;
+    position: fixed;
+    top:0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: var(--card-shadow-opacity);
+    z-index: var(--index-opacityBG);
 `;
 
+/*Images*/
 export const Gradient = styled.div` 
     height: 30%;
     width: 100%;
@@ -137,15 +141,13 @@ export const FloatingCnt = styled(Col)`
     right: ${props => props.right || 'unset'};
 `;
 
-/*Background*/
-export const OpacityBackground = styled.div`
+export const Img = styled.img.attrs(props => ({
+    src: props.imgUrl,
+}))`
     height: 100%;
     width: 100%;
-    position: fixed;
-    top:0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    background-color: var(--card-shadow-opacity);
-    z-index: var(--index-opacityBG);
+    object-fit: cover;
+    position: relative;
 `;
+
+

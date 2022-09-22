@@ -247,7 +247,7 @@ export const UploadButton = styled.button`
         border-radius: 50%;
         transition: all 2s ease , width 1s ease, height 1s ease, border-radius 1s ease;
     }
-    @media (min-width: 820px) {
+    @media (min-width:${Breakpoint.md}) {
         margin-top: 0%;
     }
 `;

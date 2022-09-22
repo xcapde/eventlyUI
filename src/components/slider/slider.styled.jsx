@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Breakpoint } from "../../styles/styles.styled";
 
 export const Wrapper = styled.div`
     height: fit-content;
@@ -16,7 +17,7 @@ export const Wrapper = styled.div`
     & > article{
         padding: 5% 0;
     }
-    @media(min-width:820px){
+    @media(min-width:${Breakpoint.md}){
             top: unset;
             bottom: 3%;
             right: 3%;

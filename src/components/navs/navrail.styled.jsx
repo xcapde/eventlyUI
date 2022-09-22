@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Img } from "../../styles/styles.styled";
+import { Breakpoint, Img } from "../../styles/styles.styled";
 
 export const ToggleBtn = styled.button`
     height: 3rem;
@@ -30,7 +30,7 @@ export const Logo = styled(Img)`
 
 export const Wrapper = styled.section`
     display: none;
-   @media (min-width: 820px) {
+   @media (min-width:${Breakpoint.md}) {
         height: 100vh;
         width: ${props => props.width || '6rem'};
         position: fixed;
