@@ -35,7 +35,7 @@ export const TagSearch = () => {
             <NavRail />
             <View height='80%'  heightD='90%' topD="0vh">
                 <Wrapper>
-                    <Row height='15%'>
+                    <Row height='10%'>
                         <Col width='4rem' alignItems='flex-start'>
                             <BackButtonRelative callback={() => navigate(-1)} />
                         </Col>
@@ -44,7 +44,7 @@ export const TagSearch = () => {
                         </Col>
                     </Row>
 
-                    <Col height='85%'>
+                    <Col height='90%'>
                         {eventsByTag && eventsByTag.length > 0 ?
                             <ModuleVerticalMultiCard tag={tagName} events={eventsByTag} title={eventsByTag.length === 1 ? `${eventsByTag.length} event found` : eventsByTag.length > 1 ? `${eventsByTag.length} events found` : ''} />
                             :

@@ -31,7 +31,7 @@ export const PublishedList = () => {
             <NavRail />
             <View height='80%' heightD='90%' topD="0vh">
                 <Wrapper>
-                    <Row height='15%'>
+                    <Row height='10%'>
                         <Col width='4rem' alignItems='flex-start'>
                             <BackButtonRelative callback={() => navigate(-1)} />
                         </Col>
@@ -40,7 +40,7 @@ export const PublishedList = () => {
                         </Col>
                     </Row>
 
-                    <Col height='85%'>
+                    <Col height='90%'>
                         {publishedEvents && publishedEvents.length > 0 ?
                             <ModuleVerticalMultiCard events={publishedEvents} title={publishedEvents.length === 1 ? `You have posted ${publishedEvents.length} event` : publishedEvents.length > 1 ? `You have posted ${publishedEvents.length} events` : ''} />
                             :

@@ -31,6 +31,7 @@ export const VerticalFeed = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+    place-content: center;
     align-content:${props => props.alignContent || "start"};
     grid-gap: 1rem 1rem;
     overflow: hidden;

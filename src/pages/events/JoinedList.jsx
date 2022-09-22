@@ -31,7 +31,7 @@ export const JoinedList = () => {
             <NavRail />
             <View height='80%' heightD='90%' topD="0vh">
                 <Wrapper>
-                    <Row height='15%'>
+                    <Row height='10%'>
                         <Col width='4rem' alignItems='flex-start'>
                             <BackButtonRelative callback={() => navigate(-1)} />
                         </Col>
@@ -40,7 +40,7 @@ export const JoinedList = () => {
                         </Col>
                     </Row>
 
-                    <Col height='85%'>
+                    <Col height='90%'>
                         {joinedEvents && joinedEvents.length > 0 ?
                             <ModuleVerticalMultiCard events={joinedEvents} title={joinedEvents.length === 1 ? `You have joined to ${joinedEvents.length} event` : joinedEvents.length > 1 ? `You have joined to ${joinedEvents.length} events` : ''} />
                             :
