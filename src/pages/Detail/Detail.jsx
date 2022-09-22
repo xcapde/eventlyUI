@@ -21,6 +21,7 @@ export const Detail = () => {
     useEffect(() => {
         if (!id) return;
         getEvent();
+        // eslint-disable-next-line
     }, [id]);
 
     const getEvent = () => {

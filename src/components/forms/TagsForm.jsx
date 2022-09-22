@@ -28,6 +28,7 @@ export const TagsForm = ({ event, addTags, deleteTags }) => {
 
     useEffect(() => {
         moveLabel();
+        // eslint-disable-next-line
     }, [newTags])
 
     const getAll = () => {

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { eventService } from "../../services/API/eventService";
 import { AuthService } from "../../services/AuthService";
-import { Row, Title, NoNavView } from "../../styles/styles.styled";
+import { Row, Title, NoNavView, Page } from "../../styles/styles.styled";
 import { Footer } from "../../components/footer/Footer";
-import { NavCnt, Header, Main } from "./profile.styled";
+import { NavCnt, Header, MainMobile } from "./profile.styled";
 import { Navigation } from "../../components/information/Navigation";
 import { OptionsModule } from "../../components/buttons/burgers/OptionsModule";
 import { NavRail } from "../../components/navs";
@@ -74,29 +74,31 @@ export const Profile = () => {
     }
 
     return (
-        <NoNavView>
+        <Page>
             <NavRail />
-            <Header>
-                <Row>
-                    <Title>Hi {username}!</Title>
-                    <OptionsModule callback={logOut} />
-                </Row>
-                <Row>
-                    <Calendar pickDay={pickDay} pickedDay={pickedDay} />
-                </Row>
+            <NoNavView>
+                <Header>
+                    <Row>
+                        <Title>Hi {username}!</Title>
+                        <OptionsModule callback={logOut} />
+                    </Row>
+                    <Row>
+                        <Calendar pickDay={pickDay} pickedDay={pickedDay} />
+                    </Row>
 
-            </Header>
+                </Header>
 
-            <Main>
-                <NavCnt>
-                    <Navigation tabContent={tabContent} callback={setKey} field={key} />
-                </NavCnt>
-                {byDate &&
-                    views[key]
-                }
-
-            </Main>
+                <MainMobile>
+                    <NavCnt>
+                        <Navigation tabContent={tabContent} callback={setKey} field={key} />
+                    </NavCnt>
+                    {byDate &&
+                        views[key]
+                    }
+                </MainMobile>
+            </NoNavView>
             <Footer />
-        </NoNavView>
+        </Page>
+
     )
 }
