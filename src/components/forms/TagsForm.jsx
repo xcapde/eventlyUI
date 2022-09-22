@@ -56,7 +56,7 @@ export const TagsForm = ({ event, addTags, deleteTags }) => {
 
     return (
         <Col>
-            <Col>
+            <Col width='95%' margin='0 auto'>
                 <OutputCnt>
                     {event && event.tags.length > 0 ?
                         event.tags.map((tag, key) => (<Badge key={key} content={tag} field={'tags'} callback={deleteTags} editMode={true} />))

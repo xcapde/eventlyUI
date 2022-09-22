@@ -3,7 +3,7 @@ import { Row } from "../../styles/styles.styled";
 
 // Estructure
 export const ModalCnt = styled.div`
-    width: 80%;
+    width: var(--modal-width);
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -34,14 +34,14 @@ export const ModalAskingCnt = styled(ModalCnt)`
 `;
 
 export const ModalAlertCnt = styled(ModalAskingCnt)`
-    background-color: var(--color-alertBG);
+    background-color: ${props => props.backgroundColor || 'var(--color-alertBG)'};
     > p{
-        color: var(--color-alertText);
+        color: ${props => props.color || 'var(--color-alertText)'};
     }
     > div > button{
-        background-color: var(--color-button-alert);
+        background-color: ${props => props.buttonBGColor || 'var(--color-button-alert)'};
         &:hover{
-            background-color: var(--color-button-alert-hover);
+            background-color: ${props => props.buttonBGHover || 'var(--color-button-alert-hover)'};
         }
     }
 `;

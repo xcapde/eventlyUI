@@ -11,7 +11,7 @@ const useModal = () => {
         setModalIsAsking(false);
         setModalIsAlert(false)
         setMessage(msg);
-        setTimeout(()=>setModalIsActive(false), 1500);
+        setTimeout(()=>setModalIsActive(false), 2000);
     }
 
     const runAskingModal = (msg) => {

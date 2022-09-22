@@ -167,14 +167,15 @@ export const Select = styled.select`
 `
 export const OutputCnt = styled.div`
     width: fit-content;
+    max-width: 95vw;
     min-width: 50vw;
     height: 100%;
     display: grid;
-    grid-template-columns: ${props => props.grid || 'auto auto auto'};
-    grid-template-rows: auto auto;
+    grid-auto-rows: max-content;
     place-content: center;
-    /* margin: 2.5%; */
-    gap: .5rem;
+    gap: 0.5rem;
+    grid-template-columns: auto auto;
+    grid-auto-flow: row;
 `;
 
 export const SmallForm = styled.form`

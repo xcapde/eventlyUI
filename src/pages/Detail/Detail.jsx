@@ -53,8 +53,7 @@ export const Detail = () => {
     const join = () => {
         participationService.join(id).then(res => {
             if (!res) return;
-            // runModal(res.message);
-            runAlertModal(res.message);
+            runModal(res.message);
             getEvent(id);
         })
     }
