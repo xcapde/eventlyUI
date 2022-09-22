@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Row, Col } from "../../styles/styles.styled";
+import { Row, Col, Breakpoint } from "../../styles/styles.styled";
 
 export const NavTabs = styled(Row)`
     position: relative;
@@ -8,7 +8,7 @@ export const NavTabs = styled(Row)`
     flex-wrap: wrap;
     gap: 0;
 
-    @media(min-width: 820px){
+    @media(min-width:${Breakpoint.md}){
         flex-wrap:nowrap;
 
     }
@@ -27,7 +27,7 @@ export const ContentGrid = styled.div`
     height: 10vh;
     margin: 2.5%;
     width: 95%;
-    @media(min-width: 820px){
+    @media(min-width:${Breakpoint.md}){
         height: 22vh;
         grid-template-rows: auto auto auto auto auto;
     } 

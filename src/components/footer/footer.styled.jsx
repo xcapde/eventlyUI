@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Row } from "../../styles/styles.styled";
+import { Breakpoint, Row } from "../../styles/styles.styled";
 import { TabButton } from "../buttons/buttons.styled";
 
 export const Wrapper = styled.footer`
@@ -16,7 +16,7 @@ export const Wrapper = styled.footer`
     border-radius: var(--footer-radius);
     border: 1px solid lightgray;
     
-    @media(min-width: 820px){
+    @media(min-width:${Breakpoint.md}){
         display: none;
     }
 `

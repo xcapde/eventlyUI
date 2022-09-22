@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Row } from "../../styles/styles.styled";
+import { Breakpoint, Row } from "../../styles/styles.styled";
 
 // Estructure
 export const ModalCnt = styled.div`
@@ -18,7 +18,7 @@ export const ModalCnt = styled.div`
     gap: 1rem;    
     z-index: var(--index-modal);
     
-    @media(min-width: 820px){
+    @media(min-width:${Breakpoint.md}){
         width: 30rem;
     }
 `;
@@ -27,7 +27,7 @@ export const ModalAskingCnt = styled(ModalCnt)`
     top: 60%;
     padding: 1.5rem 1rem 0 1rem;
     gap: 0.5rem;    
-    @media(min-width: 820px){
+    @media(min-width:${Breakpoint.md}){
         top: 2.5%;
         width: 30rem;
     }

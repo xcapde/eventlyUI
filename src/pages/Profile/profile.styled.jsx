@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { Col, Title } from "../../styles/styles.styled";
+import { Breakpoint, Col, Title } from "../../styles/styles.styled";
 
 export const Header = styled(Col)`
     height: 30vh;
     color: var(--color-white);
     font-family: var(--header-font);
     background-color: var(--color-dark);
-    @media(min-width: 820px){
+    @media(min-width:${Breakpoint.md}){
         height: 30vh;
         }
     & > div > div {
@@ -52,14 +52,14 @@ export const MainMobile = styled(Col)`
     background-color: var(--color-white);
     color:var(--color-dark);
     font-family: var(--header-font);
-    @media(min-width: 820px){
+    @media(min-width:${Breakpoint.md}){
         display: none;
     }
 `;
 
 export const MainDesktop = styled.section`  
     display: none;
-    @media(min-width: 820px){
+    @media(min-width:${Breakpoint.md}){
         display: grid;
         border: 4px solid red;
         height: 100%;

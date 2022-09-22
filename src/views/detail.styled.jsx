@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FeedTitle } from "../components/feeds/feed.styled";
-import { Col, View } from "../styles/styles.styled";
+import { Breakpoint, Col } from "../styles/styles.styled";
 
 export const ImgCnt = styled.div`
     height: var(--detail-image-height);
@@ -16,7 +16,7 @@ export const InfoCnt = styled(Col)`
     & > div:nth-child(3){
         height: calc(100% - (35% + 5vh + (.75rem * 2)));
     }
-    @media(min-width: 820px){
+    @media(min-width:${Breakpoint.md}){
         height: calc(100% - var(--detail-image-height));
         height: 100%;
         justify-content: flex-start;

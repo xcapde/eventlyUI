@@ -1,5 +1,9 @@
 import styled from "styled-components";
-
+//Breakpoints 
+export const Breakpoint = {
+    xs: '600px',
+    md: '820px',
+  };
 
 //Flex model
 export const Col = styled.div`
@@ -52,7 +56,7 @@ export const NoNavView = styled(View)`
     top: 0;
     align-items: flex-start;
     display: ${props => props.displayM || 'flex'};
-    @media(min-width: 820px){
+    @media(min-width:${Breakpoint.md}){
         height: 100%;
         width: calc( 100% - 5rem);
         margin-left: 5rem;
@@ -93,7 +97,7 @@ export const DetailText = styled.p`
     font-size:var(--font-size-detail);
     font-weight: var(--font-weigth-detail);
     text-align: ${props => props.textAlign || 'inherit'};
-    @media(min-width: 820px){
+    @media(min-width:${Breakpoint.md}){
         font-size:var(--font-size-detail-desktop);
     }
 `;

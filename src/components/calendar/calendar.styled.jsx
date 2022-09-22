@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Col, DetailText, Row } from "../../styles/styles.styled";
+import { Breakpoint, Col, DetailText, Row } from "../../styles/styles.styled";
 
 export const Wrapper = styled(Col)`
 `;
@@ -10,14 +10,14 @@ export const Month = styled(DetailText)`
     align-self: flex-start;
     height: 20px;
     line-height: 20px;
-    @media(min-width: 820px){
+    @media(min-width:${Breakpoint.md}){
         text-transform: uppercase;
     }
 `;
 
 export const CalendarCnt = styled(Row)`
    gap: 1rem;
-   @media(min-width: 820px){
+   @media(min-width:${Breakpoint.md}){
         width: 80% !important;
         justify-content: space-evenly;
         margin-right: 10rem !important;
@@ -36,7 +36,7 @@ export const Day = styled(Col)`
     & > p{
         color: var(--color-white);
     }
-    @media(min-width: 820px){
+    @media(min-width:${Breakpoint.md}){
         gap: 3rem;
         cursor: pointer;
         width: calc(100%/7);

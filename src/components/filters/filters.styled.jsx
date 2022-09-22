@@ -1,4 +1,5 @@
 import styled from "styled-components"  
+import { Breakpoint } from "../../styles/styles.styled"
 
 export const FilterCnt = styled.form`
     width: 100%;
@@ -9,7 +10,7 @@ export const FilterCnt = styled.form`
     padding:0;
     box-shadow: 0px 4px 2px var(--card-shadow-opacity);
 
-    @media(min-width: 820px){
+    @media(min-width:${Breakpoint.md}){
         width: 30rem;
     }
 `

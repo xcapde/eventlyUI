@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Breakpoint } from "../../styles/styles.styled"
 
 export const Wrapper = styled.header`
 height: var(--navbar-top-height);
@@ -14,7 +15,7 @@ box-shadow: 1px 1px 8px lightgrey;
 border-radius: var(--navtop-radius);
 border: 1px solid lightgray;
 
-@media(min-width: 820px){
+@media(min-width:${Breakpoint.md}){
     display: none;
 }
 `

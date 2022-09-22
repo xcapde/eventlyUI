@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { Breakpoint } from "../../styles/styles.styled";
 
 export const Button = styled.button`
     display: flex;
@@ -33,7 +34,7 @@ export const FormBtn = styled(Button)`
 
 export const JoinBtn = styled(FormBtn)`
     width:100%;
-    @media(min-width: 820px){
+    @media(min-width:${Breakpoint.md}){
         width: var(--form-button-width);    
         }
 `

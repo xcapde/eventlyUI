@@ -63,7 +63,7 @@ export const Slider = ({ images, coordinateSliders }) => {
                     imgUrl={
                         image ?
                             image :
-                            "https://i0.wp.com/eltallerdehector.com/wp-content/uploads/2022/06/ac0d1-luca-y-alberto-png-disney.png?fit=500%2C500&ssl=1"
+                            "https://images.unsplash.com/photo-1611366376326-5eaf36b54355?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bW91bnRhaW4lMjBzdW5zZXR8ZW58MHx8MHx8&w=1000&q=80"
                     } />
                 {images.length > 0 && <SliderPiker images={images} current={current} callback={slideOnClick} />}
             </Touchable>

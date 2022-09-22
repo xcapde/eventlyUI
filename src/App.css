@@ -156,16 +156,11 @@
     --badge-font-weight: 500;
     --badge-margin: 0.15rem;
 
-    /* BREAKPOINTS */
-    --xsBP: 600px;
-    --mBP: 820px;
-
     /* INDEX */
     --index-gradient: 2;
     --index-sidebar: 6;
     --index-footer: 6;
     --index-navtop: 6;
-    --index-header:6;
     --index-options: 4;
     --index-opacity-button: 4;
     --index-opacityBG:5;

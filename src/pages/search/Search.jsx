@@ -47,8 +47,8 @@ export const Search = () => {
                 <Wrapper>
                     <Row height='15%' width="90%">
                         <SearchInput submit={handleSubmit} callback={onInputChange} data={searchValue || ''} field={"search.."} />
-                        {/* <FilterButton/> */}
-                        <FiltersModule />
+                        <FilterButton/>
+                        {/* <FiltersModule /> */}
                     </Row>
 
 

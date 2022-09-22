@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { View } from "../../styles/styles.styled";
+import { Breakpoint, View } from "../../styles/styles.styled";
 
 export const LoginView = styled(View)`
     & form > button{
@@ -14,7 +14,7 @@ export const LogoCntrl = styled.div`
     margin-bottom: 2.5rem;
     display: flex;
     align-items: flex-end;
-    @media(min-width: 820px){
+    @media(min-width:${Breakpoint.md}){
         margin-bottom: 1rem;
         height:35%;
     }
