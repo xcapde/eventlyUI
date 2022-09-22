@@ -26,6 +26,11 @@ export const contents = {
             content: 'Upload',
             link: '/upload'
         },
+        search: {
+            icon: <i className="fa-solid fa-magnifying-glass"></i>,
+            content: 'Search',
+            link: '/search'
+        },
     },
     sec: {
         settings: {

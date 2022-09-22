@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
     height: fit-content;
     width: fit-content;
-    position: fixed;
+    position: absolute;
     top: 10%;
     right: 2%;
     display: grid;
@@ -17,10 +17,9 @@ export const Wrapper = styled.div`
         padding: 5% 0;
     }
     @media(min-width:820px){
-            top: 20%;
-            right: 32%;
-            top: 35%;
-            right: calc( 100% / 3); 
+            top: unset;
+            bottom: 3%;
+            right: 3%;
             display: flex;
             flex-direction: row;
             padding: 8px;

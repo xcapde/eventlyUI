@@ -10,7 +10,7 @@ import { Wrapper, FeedCnt } from "./feed.styled.jsx";
 export const HomeFeed = ({ events, tags, tag, setTag, eventsByTag, setEventsByTag, onlineEvents, offlineEvents, seeAll, setSeeAll, participations }) => {
 
     return (
-        <View>
+        <View id="view">
             <Wrapper>
                 <Row height='5vh' justifyContent="flex-end">
                     {tag ?

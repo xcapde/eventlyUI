@@ -120,6 +120,9 @@ export const Section = styled.div`
     & > div:nth-child(3){
         grid-row: 4/5;
     }
+    & > div:nth-child(4){
+        grid-row: 5/6;
+    }
     /* &::before{
         content: "";
         position: absolute;

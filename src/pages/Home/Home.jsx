@@ -89,7 +89,7 @@ export function Home() {
     }
 
     return (
-        <Page>
+        <Page id="home-page" alignment="flex-start">
             <NavTop />
             <NavRail />
             <HomeFeed

@@ -1,5 +1,5 @@
 import { eventService } from "../../services/API/eventService";
-import { View } from "../../styles/styles.styled";
+import { Page, View } from "../../styles/styles.styled";
 import { NavRail } from "../../components/navs/NavRail";
 import { Footer } from "../../components/footer/Footer";
 import { useState } from "react";
@@ -29,7 +29,7 @@ export const Upload = () => {
         // eslint-disable-next-line
     }, [eventId])
 
-    useEffect(() =>{}, [event])
+    useEffect(() => { }, [event])
 
     const getEvent = (id) => {
         eventService.getEvent(id).then(res => {
@@ -138,25 +138,28 @@ export const Upload = () => {
 
     console.log(event);
     return (
-        <View>
-            <NavRail />
-            {modalIsActive && <Modal message={message} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive} />}
-            <MultiStepForm
-                event={event}
-                postEvent={postEvent}
-                updateEvent={updateEvent}
-                addDirection={addDirection}
-                eventDirection={direction}
-                addWebUrl={addWebUrl}
-                eventUrl={url}
-                uploadImg={uploadImg}
-                deleteImg={deleteImg}
-                addReq={addReq}
-                deleteReq={deleteReq}
-                addTags={addTags}
-                deleteTags={deleteTags}
-            />
-            <Footer />
-        </View>
+        <Page>
+            <View>
+                <NavRail />
+                {modalIsActive && <Modal message={message} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive} />}
+                <MultiStepForm
+                    event={event}
+                    postEvent={postEvent}
+                    updateEvent={updateEvent}
+                    addDirection={addDirection}
+                    eventDirection={direction}
+                    addWebUrl={addWebUrl}
+                    eventUrl={url}
+                    uploadImg={uploadImg}
+                    deleteImg={deleteImg}
+                    addReq={addReq}
+                    deleteReq={deleteReq}
+                    addTags={addTags}
+                    deleteTags={deleteTags}
+                />
+                <Footer />
+            </View>
+        </Page>
+
     )
 }

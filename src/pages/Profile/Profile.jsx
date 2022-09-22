@@ -3,7 +3,7 @@ import { eventService } from "../../services/API/eventService";
 import { AuthService } from "../../services/AuthService";
 import { Row, Title, NoNavView, Page } from "../../styles/styles.styled";
 import { Footer } from "../../components/footer/Footer";
-import { NavCnt, Header, MainMobile } from "./profile.styled";
+import { NavCnt, Header, MainMobile, MainDesktop } from "./profile.styled";
 import { Navigation } from "../../components/information/Navigation";
 import { OptionsModule } from "../../components/buttons/burgers/OptionsModule";
 import { NavRail } from "../../components/navs";
@@ -96,9 +96,11 @@ export const Profile = () => {
                         views[key]
                     }
                 </MainMobile>
+                <MainDesktop>
+
+                </MainDesktop>
             </NoNavView>
             <Footer />
         </Page>
-
     )
 }

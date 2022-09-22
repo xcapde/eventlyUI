@@ -24,7 +24,7 @@ export const Page = styled.main`
     width: 100vw;
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: ${props => props.alignment || 'center'} ;
 `;
 
 export const View = styled.section`
@@ -38,10 +38,10 @@ export const View = styled.section`
     align-self: flex-start;
     z-index: ${props => props.index || 'inherit'};
     @media (min-width: 820px) {
-        height: 100vh;
-        width: 95vw;
-        top:0;
-        margin-left: 5vw;
+        top: ${props => props.topD || 0};
+        height: ${props => props.heightD || '100%'};
+        width: calc( 100% - 5rem);
+        margin-left: 5rem;
     }
 `;
 
@@ -51,9 +51,12 @@ export const NoNavView = styled(View)`
     width: 100%;
     top: 0;
     align-items: flex-start;
+    display: ${props => props.displayM || 'flex'};
     @media(min-width: 820px){
         height: 100%;
-        width: 100%;
+        width: calc( 100% - 5rem);
+        margin-left: 5rem;
+        display: ${props => props.displayD || 'flex'};
     }
 `;
 
@@ -89,7 +92,7 @@ export const DetailText = styled.p`
     font-family: var(--detail-font);
     font-size:var(--font-size-detail);
     font-weight: var(--font-weigth-detail);
-    text-align: ${props=> props.textAlign || 'inherit'};
+    text-align: ${props => props.textAlign || 'inherit'};
     @media(min-width: 820px){
         font-size:var(--font-size-detail-desktop);
     }

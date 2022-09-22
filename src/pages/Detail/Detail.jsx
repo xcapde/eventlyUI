@@ -8,7 +8,8 @@ import useModal from "../../hooks/useModal";
 import { eventService } from "../../services/API/eventService";
 import { participationService } from "../../services/API/participationService";
 import { Page } from "../../styles/styles.styled";
-import { VDetail } from "../../views/VDetail";
+import { VDetailDesktop } from "../../views/VDetailDesktop";
+import { VDetailMobile } from "../../views/VDetailMobile";
 
 export const Detail = () => {
     const [event, setEvent] = useState();
@@ -71,8 +72,8 @@ export const Detail = () => {
         <Page>
             <NavRail />
             {modalIsActive && <Modal message={message} callback={deleteEvent} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive} modalIsAlert={modalIsAlert}/>}
-            
-            {event && <VDetail event={event} participations={participations} join={join} unjoin={unjoin} deletConfirmation={deletConfirmation} deleteEvent={deleteEvent}/>}
+            {event && <VDetailMobile event={event} participations={participations} join={join} unjoin={unjoin} deletConfirmation={deletConfirmation} deleteEvent={deleteEvent}/>}
+            {event && <VDetailDesktop event={event} participations={participations} join={join} unjoin={unjoin} deletConfirmation={deletConfirmation} deleteEvent={deleteEvent}/>}
             <Footer />
         </Page>
     )

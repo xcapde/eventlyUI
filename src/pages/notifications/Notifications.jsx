@@ -1,4 +1,4 @@
-import { View } from "../../styles/styles.styled"
+import { Page, View } from "../../styles/styles.styled"
 import { Footer } from "../../components/footer/Footer"
 import { NavTop } from "../../components/navs"
 import { useEffect, useState } from "react"
@@ -37,10 +37,12 @@ export const Notifications = () => {
     }
 
     return (
-        <View style={{ justifyContent: 'center' }}>
-            <NavTop />
-            <NotificationFeed notifications={notifications} toggleCheck={toggleCheck} deleteNotification={deleteNotification} />
-            <Footer />
-        </View>
+        <Page>
+            <View>
+                <NavTop />
+                <NotificationFeed notifications={notifications} toggleCheck={toggleCheck} deleteNotification={deleteNotification} />
+                <Footer />
+            </View>
+        </Page>
     )
 }

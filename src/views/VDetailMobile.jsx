@@ -5,12 +5,12 @@ import { BackButton, JoinButton } from "../components/buttons";
 import { OptionsModule } from "../components/buttons/burgers/OptionsModule";
 import { ModuleContent } from "../components/information/ModuleContent"
 import { ModuleDetails } from "../components/information/ModuleDetails";
-import { Gradient, Img, NoNavView } from "../styles/styles.styled";
-import { Main, ImgCnt, InfoCnt, DetailTitle, SideControl } from "./detail.styled";
+import { Gradient, NoNavView, Col } from "../styles/styles.styled";
+import { ImgCnt, InfoCnt, DetailTitle, SideControl } from "./detail.styled";
 import { Slider } from "../components/slider/Slider";
 
 
-export const VDetail = ({ event, participations, join, unjoin, deletConfirmation }) => {
+export const VDetailMobile = ({ event, participations, join, unjoin, deletConfirmation }) => {
     const navigate = useNavigate();
     const [key, setKey] = useState("description");
     const tabContent = ["description", "requirements", "tags", "map"];
@@ -21,14 +21,8 @@ export const VDetail = ({ event, participations, join, unjoin, deletConfirmation
     }
 
     return (
-        <NoNavView direction="row">
-            <SideControl>
-                <ImgCnt>
-                    <Img imgUrl={event.images.length > 0 ? event.images[centralIndex - 1] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} />
-                </ImgCnt>
-            </SideControl>
-
-            <Main>
+        <NoNavView id="no-nav" displayD="none">
+            <Col>
                 <Gradient />
                 <BackButton callback={() => navigate(-1)} />
                 <OptionsModule event={event} remove={deletConfirmation} edit={updateEvent} />
@@ -43,14 +37,7 @@ export const VDetail = ({ event, participations, join, unjoin, deletConfirmation
                     <ModuleContent callback={setKey} tabContent={tabContent} field={key} event={event} />
                     <JoinButton content={event.participant ? "Unjoin" : "Join"} callback={() => event.participant ? unjoin() : join()} color={event.participant ? "var(--button-unjoin)" : ""} />
                 </InfoCnt>
-            </Main>
-
-
-            <SideControl>
-                <ImgCnt>
-                    <Img imgUrl={event.images.length > 0 ? event.images[centralIndex + 1] : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k1pCRW8-jZW5i3csCFggpsnYKWpi1axTyQ&usqp=CAU'} />
-                </ImgCnt>
-            </SideControl>
+            </Col>
         </NoNavView>
     )
 }

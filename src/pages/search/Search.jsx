@@ -1,4 +1,4 @@
-import { Col, DetailText, Row, View } from "../../styles/styles.styled"
+import { Col, DetailText, Page, Row, View } from "../../styles/styles.styled"
 import { Footer } from "../../components/footer/Footer"
 import { NavTop } from "../../components/navs/NavTop"
 import { useState } from "react"
@@ -16,51 +16,53 @@ export const Search = () => {
     const [searchList, setSearchList] = useState();
 
 
-    const onInputChange=(e)=>{
+    const onInputChange = (e) => {
         const value = e.target.value;
-        setSearchValue(value); 
-        if(value.length === 0){
+        setSearchValue(value);
+        if (value.length === 0) {
             setSearchList();
         }
-        if(value.length < 3) return;
-            getEventsBySearch(value);
-    }    
+        if (value.length < 3) return;
+        getEventsBySearch(value);
+    }
 
-    const handleSubmit=(e)=>{
-        e.preventDefault(); 
+    const handleSubmit = (e) => {
+        e.preventDefault();
         getEventsBySearch(searchValue);
     }
 
     const getEventsBySearch = (searchValue) => {
         eventService.getEventsBySearch(searchValue).then(res => {
-            if(!res)return
+            if (!res) return
             setSearchList(res)
         })
     }
 
 
     return (
-        <View height='80%'>
-            <NavTop/>
-            <NavRail/>
+        <Page>
+            <NavTop />
+            <NavRail />
+            <View height='80%' heightD='80%' topD="10vh">
                 <Wrapper>
                     <Row height='15%' width="90%">
-                            <SearchInput submit={handleSubmit} callback={onInputChange} data={searchValue || ''} field={"search.."}/>               
-                            {/* <FilterButton/> */}
-                            <FiltersModule/>
+                        <SearchInput submit={handleSubmit} callback={onInputChange} data={searchValue || ''} field={"search.."} />
+                        {/* <FilterButton/> */}
+                        <FiltersModule />
                     </Row>
-                    
-                    
+
+
                     <Col height='85%'>
                         {searchList && searchList.length > 0 ?
-                        <ModuleVerticalMultiCard events={searchList} title={searchList.length === 1?`${searchList.length} event found`: searchList.length > 1? `${searchList.length} events found` : ''}/>
-                        :
-                        <DetailText>There are no results.</DetailText>
+                            <ModuleVerticalMultiCard events={searchList} title={searchList.length === 1 ? `${searchList.length} event found` : searchList.length > 1 ? `${searchList.length} events found` : ''} />
+                            :
+                            <DetailText>There are no results.</DetailText>
                         }
                     </Col>
                 </Wrapper>
 
-            <Footer/>
-        </View>
+            </View>
+            <Footer />
+        </Page>
     )
 }

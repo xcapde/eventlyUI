@@ -2,12 +2,6 @@ import styled from "styled-components";
 import { FeedTitle } from "../components/feeds/feed.styled";
 import { Col, View } from "../styles/styles.styled";
 
-export const Main = styled(Col)`
-    @media(min-width: 820px){
-        width: calc( 100% / 3);
-    }
-`
-
 export const ImgCnt = styled.div`
     height: var(--detail-image-height);
     width: 100%;
@@ -34,12 +28,37 @@ export const DetailTitle = styled(FeedTitle)`
     padding: .75rem;
 `;
 
-export const SideControl = styled(Col)`
-    display:none;
-    @media(min-width: 820px){
-        width: 32%;
-        display: flex;
-        justify-content: flex-start;
-        opacity: 0.8;
+export const MainDesktop = styled.section`
+    border: 4px solid red;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    & > div{
+        height: 100%;
+        width: 100%;
+    } 
+    & > div:nth-child(1){
+        grid-column: 1/4;
+        grid-row: 1/6;
+        & >div{
+            height: 100%;
+        }
     }
-`
+    & > div:nth-child(2){
+        border: 2px solid green;
+        grid-column: 4/6;
+        grid-row: 1/5;
+    }
+    & > div:nth-child(3){
+        border: 2px solid blue;
+        grid-column: 1/4;
+        grid-row: 6/8;
+    }
+    & > div:nth-child(4){
+        border: 2px solid yellow;
+        grid-column: 4/6;
+        grid-row: 5/8;
+    }
+`;
