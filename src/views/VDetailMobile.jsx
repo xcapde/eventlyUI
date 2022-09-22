@@ -14,7 +14,6 @@ export const VDetailMobile = ({ event, participations, join, unjoin, deletConfir
     const navigate = useNavigate();
     const [key, setKey] = useState("description");
     const tabContent = ["description", "requirements", "tags", "map"];
-    const [centralIndex, setCentralIndex] = useState(0);
 
     const updateEvent = () => {
         navigate(`/update/${event.id}`);
@@ -28,7 +27,7 @@ export const VDetailMobile = ({ event, participations, join, unjoin, deletConfir
                 <OptionsModule event={event} remove={deletConfirmation} edit={updateEvent} />
 
                 <ImgCnt>
-                    <Slider images={event.images} coordinateSliders={setCentralIndex} />
+                    <Slider images={event.images} />
                 </ImgCnt>
 
                 <InfoCnt id="info">

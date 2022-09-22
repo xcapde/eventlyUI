@@ -18,6 +18,7 @@ export const FeedCnt = styled(Col)`
     margin: ${props => props.margin || 'inherit'};
     overflow: hidden;
     align-items: flex-start;
+    justify-content: flex-start;
     gap: ${props => props.gap || '2.5%'};
 `;
 
@@ -106,7 +107,6 @@ export const ProfFeed = styled(Col)`
     overflow-x: hidden;
     gap: 2.5%;
     margin: 0 auto;
-    /* padding: 2%; */
     padding: 2%;
 `;
 
@@ -127,4 +127,47 @@ export const NotiFeed = styled.section`
     place-content: flex-start;
     row-gap: 1rem;
     padding: 1rem;
+    @media (min-width: 820px) {
+        height: 43vh;
+        padding: 0;
+        padding-top: 1rem;
+        ::-webkit-scrollbar {
+        display: none;
+        }
+    }
+`;
+
+export const ScheduleFeed = styled(NotiFeed)`
+    height: 55vh;
+    grid-template-columns: repeat(1, 1fr);
+    & > div{
+        grid-column: 1/1;
+        margin: 0 auto;
+    }
+`;
+
+export const ProfileFeedDt = styled.section`
+        height: 55vh;
+        max-height: 80%;
+        width: 100%;
+        max-width: 99%;
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(var(--cardMain-width),1fr));
+        grid-template-rows: repeat(auto-fit,minmax(var(--cardMain-height),1fr));
+        grid-auto-flow: row;
+        place-content:center;
+        align-content: flex-start;
+        -webkit-column-gap: 1rem;
+        column-gap: 1rem;
+        row-gap: 4rem;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        margin: auto;
+        ::-webkit-scrollbar {
+        display: none;
+        }
+        & > div{
+            margin: 0 auto;
+        }
 `;

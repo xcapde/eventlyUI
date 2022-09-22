@@ -9,7 +9,8 @@ export const authService = {
             return res.data;
         })
         .catch(err=>{
-            console.error(err.response.data ? err.response.data : err);
+            console.log(err)
+            return { error : err.response.data ? err.response.data : err}
         })
         return newUser;
     },
@@ -19,7 +20,7 @@ export const authService = {
             return res.data;
         })
         .catch(err=>{
-            console.error(err.response.data ? err.response.data : err);
+            return { error : err.response.data ? err.response.data : err}
         })
         return user;
     }

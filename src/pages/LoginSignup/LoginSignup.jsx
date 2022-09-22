@@ -11,22 +11,33 @@ import { authService } from '../../services/API/authService';
 import { AuthService } from '../../services/AuthService';
 import { Footer } from '../../components/footer/Footer';
 import { LoginView, LogoCntrl } from './loginsSignup.styled';
+import { Modal } from "../../components/modal/Modal";
+import useModal from "../../hooks/useModal";
 
 export const LoginSignup = () => {
 
+
+
     let location = formatUtil.cutString(useLocation().pathname);
     const navigate = useNavigate();
+    const { modalIsActive, modalIsAsking, message, setModalIsActive, runAlertModal } = useModal();
 
     const signup = (data) => {
         authService.signup(data).then(res => {
-            if (!res) return;
+            if (res.error) {
+                runAlertModal(res.error.message)
+                return;
+            }
             navigate("/log-in")
         })
     };
 
     const login = (data) => {
         authService.login(data).then(res => {
-            if (!res) return;
+            if (res.error) {
+                runAlertModal(res.error.message)
+                return;
+            }
             const authUser = {
                 token: res.token,
                 username: res.username,
@@ -42,6 +53,7 @@ export const LoginSignup = () => {
     return (
         <Page>
             <NavRail />
+            {modalIsActive && <Modal message={message} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive} />}
             <noscript>arreglar desktop</noscript>
             <LoginView>
                 <LogoCntrl>

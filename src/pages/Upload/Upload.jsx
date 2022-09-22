@@ -42,6 +42,7 @@ export const Upload = () => {
     const postEvent = (data) => {
         eventService.postEvent(data).then(res => {
             if (!res) return;
+            runModal(`${res.title} has been created!`)
             getEvent(res.id);
         })
     }
@@ -139,9 +140,9 @@ export const Upload = () => {
     console.log(event);
     return (
         <Page>
+            <NavRail />
+            {modalIsActive && <Modal message={message} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive} />}
             <View>
-                <NavRail />
-                {modalIsActive && <Modal message={message} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive} />}
                 <MultiStepForm
                     event={event}
                     postEvent={postEvent}
@@ -157,8 +158,8 @@ export const Upload = () => {
                     addTags={addTags}
                     deleteTags={deleteTags}
                 />
-                <Footer />
             </View>
+            <Footer />
         </Page>
 
     )

@@ -3,6 +3,7 @@ import { NotificationCard } from "../cards/NotificationCard"
 import { FeedCnt, NotiFeedTitle, NotiFeed } from "./feed.styled"
 
 export const NotificationFeed = ({ notifications, toggleCheck, deleteNotification }) => {
+
     return (
         <FeedCnt height="95%" margin="auto 0">
             <NotiFeedTitle>Your notifications</NotiFeedTitle>

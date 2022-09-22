@@ -4,7 +4,7 @@ import { ImgCnt } from "../../views/detail.styled";
 import { Img, Touchable } from "../../styles/styles.styled";
 import { SliderPiker } from "./SliderPicker";
 
-export const Slider = ({ images, coordinateSliders }) => {
+export const Slider = ({ images }) => {
 
     const [image, setImage] = useState();
     const [current, setCurrent] = useState(0);
@@ -31,7 +31,6 @@ export const Slider = ({ images, coordinateSliders }) => {
 
     const autoSlide = () => {
         setCurrent(defineIndex());
-        coordinateSliders(defineIndex());
     }
 
     const slide = (e) => {
@@ -42,13 +41,11 @@ export const Slider = ({ images, coordinateSliders }) => {
         if (index < 0) index = images.length - 1;
         if (index > images.length - 1) index = 0;
         setCurrent(index);
-        coordinateSliders(index);
         setImage(images[index]);
     }
 
     const slideOnClick = (index) => {
         setCurrent(index);
-        coordinateSliders(index);
         setImage(images[index]);
     }
 

@@ -62,9 +62,9 @@ export const TitleCard = styled(Title)`
     font-size: var(--font-size-card-title);
     font-weight: bolder;
     padding:0.5rem 0;
-        @media(min-width:820px){
-            font-size: var(--font-size-card-title-desktop);
-        }
+    @media(min-width:820px){
+        font-size: var(--font-size-card-title-desktop);
+    }
 `
 
 export const NotiCard = styled.article`
@@ -111,6 +111,16 @@ export const NotiStatus = styled.div`
     align-self: flex-end;
     justify-self: center;
     border-radius: 50%;
+    @media(min-width:820px){
+        height: 100%;
+        width: 0.5rem;
+        border-radius: 0;
+        grid-column: 1/1;
+        grid-row: 1/5;
+        justify-self: baseline;
+        border-radius: 0.75rem 0 0 0.75rem;
+        padding-left: 3px;
+    }
 `;
 
 export const CreatedAt = styled.span`
