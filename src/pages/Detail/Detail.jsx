@@ -13,7 +13,7 @@ import { VDetail } from "../../views/VDetail";
 export const Detail = () => {
     const [event, setEvent] = useState();
     const [participations, setParticipations] = useState();
-    const { modalIsActive, modalIsAsking, modalIsAlert, message, setModalIsActive, runModal, runAskingModal, runAlertModal } = useModal();
+    const { modalIsActive, modalIsAsking, modalIsAlert, message, setModalIsActive, runModal, runAskingModal } = useModal();
     
     const navigate = useNavigate();
     const id = useParams().id;
