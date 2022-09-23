@@ -20,7 +20,8 @@ export const Upload = () => {
     const [direction, setDirection] = useState();
     const [url, setUrl] = useState();
     const { eventId } = useParams();
-    const { modalIsActive, modalIsAsking, message, setModalIsActive, runModal } = useModal();
+    const [error, setError] = useState();
+    const { modalIsActive, modalIsAsking, message, setModalIsActive, runModal, runAlertModal } = useModal();
 
 
     useEffect(() => {
@@ -41,7 +42,11 @@ export const Upload = () => {
 
     const postEvent = (data) => {
         eventService.postEvent(data).then(res => {
-            if (!res) return;
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             runModal(`${res.title} has been created!`)
             getEvent(res.id);
         })
@@ -49,7 +54,11 @@ export const Upload = () => {
 
     const updateEvent = (data) => {
         eventService.updateEvent({ ...data, id: event.id }).then(res => {
-            if (!res) return;
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             runModal(`${res.title} has been updated!`)
             if (event.type !== res.type) {
                 setDirection("");
@@ -62,8 +71,11 @@ export const Upload = () => {
 
     const addDirection = (data) => {
         directionService.createDirection({ ...data, id: event.id }).then(res => {
-            if (!res) return;
-            // runModal(res.message)
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             getEvent(event.id);
             getDirection(event.id);
         })
@@ -78,7 +90,11 @@ export const Upload = () => {
 
     const addWebUrl = (data) => {
         webUrlService.createWebUrl({ ...data, id: event.id }).then(res => {
-            if (!res) return;
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             getEvent(event.id);
             getWebUrl(event.id);
         })
@@ -93,6 +109,11 @@ export const Upload = () => {
 
     const uploadImg = (data) => {
         imageService.postImg(data, event.id).then(res => {
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             runModal(res.message);
             getEvent(event.id);
         })
@@ -100,6 +121,11 @@ export const Upload = () => {
 
     const deleteImg = (data) => {
         imageService.deleteByUrl(data).then(res => {
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             runModal(res.message);
             getEvent(event.id);
         })
@@ -107,7 +133,11 @@ export const Upload = () => {
 
     const addReq = (data) => {
         requirementService.createRequirement({ name: data.requirement, id: event.id }).then(res => {
-            if (!res) return;
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             // runModal(res.message)
             getEvent(event.id);
         })
@@ -115,7 +145,11 @@ export const Upload = () => {
 
     const deleteReq = (data) => {
         requirementService.deleteRequirement({ name: data, id: event.id }).then(res => {
-            if (!res) return;
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             // runModal(res.message)
             getEvent(event.id);
         })
@@ -123,7 +157,11 @@ export const Upload = () => {
 
     const addTags = (data) => {
         tagService.addTagsToEvent({ data, id: event.id }).then(res => {
-            if (!res) return;
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             // runModal(res.message)
             getEvent(event.id);
         })
@@ -131,7 +169,11 @@ export const Upload = () => {
 
     const deleteTags = (data) => {
         tagService.deleteEventTag({ name: data, id: event.id }).then(res => {
-            if (!res) return;
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             // runModal(res.message)
             getEvent(event.id);
         })
@@ -157,6 +199,7 @@ export const Upload = () => {
                     deleteReq={deleteReq}
                     addTags={addTags}
                     deleteTags={deleteTags}
+                    error={error}
                 />
             </View>
             <Footer />

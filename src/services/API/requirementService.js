@@ -1,5 +1,6 @@
 import axios from "axios";
 import { AuthService } from "../AuthService";
+import validation from "../../utils/validation";
 
 axios.defaults.baseURL = "http://localhost:8080";
 axios.defaults.headers.post["Content-Type"] = "application/json";
@@ -17,6 +18,9 @@ export const requirementService = {
         const requirements = axios.get(`/requirements`).then(res => {
             return res.data;
         })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
+        })
         return requirements;
     },
 
@@ -24,11 +28,17 @@ export const requirementService = {
         const requirement = axios.get(`/requirements/${id}`).then(res => {
             return res.data;
         })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
+        })
         return requirement;
     },
     getByEventId(id) {
         const requirements = axios.get(`/events/${id}/requirements`).then(res => {
             return res.data;
+        })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
         })
         return requirements;
     },
@@ -40,6 +50,9 @@ export const requirementService = {
         const msg = axios.post(`/events/${id}/requirements`, req).then(res => {
             return res.data;
         })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
+        })
         return msg;
     },
 
@@ -50,6 +63,9 @@ export const requirementService = {
     deleteRequirement({ id, ...req }) {
         const msg = axios.delete(`/events/${id}/requirements`, { data: req }).then(res => {
             return res.data;
+        })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
         })
         return msg;
     }

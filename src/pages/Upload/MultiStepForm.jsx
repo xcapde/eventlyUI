@@ -10,11 +10,12 @@ import { DesktopWrapper, Footer, Header, Main, Progress, ProgressBar } from "./m
 
 export const MultiStepForm = ({
     event, postEvent, updateEvent,
-    addDirection, addWebUrl, 
+    addDirection, addWebUrl,
     eventDirection, eventUrl,
     uploadImg, deleteImg,
     addReq, deleteReq,
-    addTags, deleteTags }) => {
+    addTags, deleteTags,
+    error }) => {
 
     const hasDetails = () => {
         if (!event) return;
@@ -28,11 +29,11 @@ export const MultiStepForm = ({
     const forms = [
         {
             title: `${event ? "Update" : "Upload"} your event!`,
-            view: <EventForm postEvent={postEvent} updateEvent={updateEvent} eventToUpdate={event} next={() => setPage(page + 1)} />
+            view: <EventForm postEvent={postEvent} updateEvent={updateEvent} eventToUpdate={event} next={!error ? () => setPage(page + 1) : () => setPage(0)} />
         },
         {
             title: `${event && !event.location ? 'Add' : 'Update'} a location!`,
-            view: <LocationForm event={event} addDirection={addDirection} eventDirection={eventDirection} eventUrl={eventUrl} addWebUrl={addWebUrl} next={() => setPage(page + 1)} />
+            view: <LocationForm event={event} addDirection={addDirection} eventDirection={eventDirection} eventUrl={eventUrl} addWebUrl={addWebUrl} next={!error ? () => setPage(page + 1) : () => setPage(0)} />
         },
         {
             title: `${hasDetails() ? "Update" : "Add"} event requirements'!`,
@@ -58,6 +59,12 @@ export const MultiStepForm = ({
         setProgress((page + 1) / (forms.length) * 100)
     }, [page])
 
+    useEffect(()=>{
+        if(!error) return;
+    },[error])
+
+
+    console.log(error)
     return (
         <DesktopWrapper>
             <Header>
@@ -75,7 +82,7 @@ export const MultiStepForm = ({
                 <LinkButton
                     disabled={!event || (page === 1 && event.location === "")}
                     content={page <= 1 ? 'next' : page === forms.length - 1 ? 'done' : 'skip'}
-                    callback={ page === forms.length - 1 ? ()=> navigate(`/events/${event.id}`): () => setPage(page + 1)} />
+                    callback={page === forms.length - 1 ? () => navigate(`/events/${event.id}`) : !error ? () => setPage(page + 1) : () => setPage(0)} />
             </Footer>
         </DesktopWrapper>
     )

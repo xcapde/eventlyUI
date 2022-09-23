@@ -100,6 +100,7 @@ export const Profile = () => {
         by_Date: <ProfileFeed events={byDate} title={"joined"} date={pickedDay ? pickedDay.date : 'this day'} />
     }
 
+    console.log(window.innerHeight, window.innerWidth)
     return (
         <Page>
             <NavRail />

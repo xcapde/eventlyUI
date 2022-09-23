@@ -29,7 +29,7 @@ export function LoginSignupForm({ location, login, signup }) {
     };
 
     return (
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} justify={'center'}>
             {Object.keys(user).map((field, key) => (
                 <FormControlInput key={key} field={field} data={user} callback={setUser} />
             ))}

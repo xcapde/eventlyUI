@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Col, Img, Row, Title} from "../../styles/styles.styled";
+import { Col, Img, Row, Title } from "../../styles/styles.styled";
+import { TrashIcon } from "../buttons/buttons.styled";
 
 /*SIZING*/
 export const CardMain = styled(Col)`
@@ -49,7 +50,7 @@ export const CardXSImage = styled(Img)`
     border-top-right-radius: 0;
 `;
 
-/* TEXT */ 
+/* TEXT */
 export const BodyCntrl = styled(Col)`
     height: ${props => props.height || '90%'};
     width: ${props => props.width || '90%'};
@@ -100,6 +101,22 @@ export const NotiCard = styled.article`
             display: initial;
         }
     }
+    @media(min-width:820px){
+        grid-template-columns: repeat(15, 1fr);
+        max-height: 7rem;
+        min-height: 5rem;
+        & > p:nth-child(1), p:nth-child(2){
+            grid-column: ${props => props.colD || '3/15'}
+        }
+        & > span:nth-child(1){
+            grid-column: 12/16;
+        }
+        & > ${TrashIcon}{
+            grid-column: 15/16;
+            grid-row: 2/3;
+            display: block;
+        }
+    }
 `;
 
 export const NotiStatus = styled.div`
@@ -120,6 +137,7 @@ export const NotiStatus = styled.div`
         justify-self: baseline;
         border-radius: 0.75rem 0 0 0.75rem;
         padding-left: 3px;
+        cursor:pointer;
     }
 `;
 
@@ -129,4 +147,7 @@ export const CreatedAt = styled.span`
     grid-column: 6/12;
     grid-row: 4/5;
     align-self: center;
+    @media(min-width:820px){
+        grid-column: 11/15;
+    }
 `;

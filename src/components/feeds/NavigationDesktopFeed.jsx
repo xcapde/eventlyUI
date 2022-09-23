@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
 import { NavCntDt } from "../../pages/profile/profile.styled";
 import { Col } from "../../styles/styles.styled";
 import { MainCard } from "../cards/MainCard";
 import { Navigation } from "../information/Navigation";
-import { FeedCnt, NotiFeedTitle, ProfileFeedDt } from "./feed.styled";
+import { FeedCnt, ProfileFeedDt } from "./feed.styled";
 
 export const NavigationDesktopFeed = ({ joined, published, callback, field }) => {
 
@@ -11,8 +10,7 @@ export const NavigationDesktopFeed = ({ joined, published, callback, field }) =>
 
     return (
         <Col>
-            <NotiFeedTitle>Your events</NotiFeedTitle>
-            <FeedCnt height="100%" gap="0">
+            <FeedCnt gap="0">
                 <NavCntDt>
                     <Navigation tabContent={tabs} callback={callback} field={field && field !== 'by_Date' ? field : 'joined'} />
                 </NavCntDt>

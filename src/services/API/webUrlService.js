@@ -1,5 +1,6 @@
 import axios from "axios";
 import { AuthService } from "../AuthService";
+import validation from "../../utils/validation";
 
 axios.defaults.baseURL = "http://localhost:8080";
 axios.defaults.headers.post["Content-Type"] = "application/json";
@@ -17,11 +18,17 @@ export const webUrlService = {
         const urls = axios.get(`/webUrls`).then(res => {
             return res.data;
         })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
+        })
         return urls;
     },
     getById(id) {
         const url = axios.get(`/webUrls/${id}`).then(res => {
             return res.data;
+        })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
         })
         return url;
     },
@@ -29,11 +36,17 @@ export const webUrlService = {
         const url = axios.get(`/events/${id}/webUrls`).then(res => {
             return res.data;
         })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
+        })
         return url;
     },
     createWebUrl({ id, ...req }) {
         const msg = axios.post(`/events/${id}/webUrls`, req).then(res => {
             return res.data;
+        })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
         })
         .catch(err =>{
             console.log(err)
@@ -43,6 +56,9 @@ export const webUrlService = {
     deleteByEventId(id) {
         const msg = axios.delete(`/events/${id}/webUrls`).then(res => {
             return res.data;
+        })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
         })
         return msg;
     }

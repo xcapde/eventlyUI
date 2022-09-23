@@ -1,5 +1,6 @@
 import axios from "axios";
 import { AuthService } from "../AuthService";
+import validation from "../../utils/validation";
 
 axios.defaults.baseURL = "http://localhost:8080";
 axios.defaults.headers.post["Content-Type"] = "application/json";
@@ -17,17 +18,26 @@ export const directionService = {
         const directions = axios.get(`/directions`).then(res => {
             return res.data;
         })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
+        })
         return directions;
     },
     getById(id) {
         const direction = axios.get(`/directions/${id}`).then(res => {
             return res.data;
         })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
+        })
         return direction;
     },
     getByEventId(id) {
         const direction = axios.get(`/events/${id}/directions`).then(res => {
             return res.data;
+        })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
         })
         return direction;
     },
@@ -45,14 +55,17 @@ export const directionService = {
         const msg = axios.post(`/events/${id}/directions`, req).then(res => {
             return res.data;
         })
-        .catch(err =>{
-            console.log(err)
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
         })
         return msg;
     },
     deleteByEventId(id) {
         const msg = axios.delete(`/events/${id}/directions`).then(res => {
             return res.data;
+        })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
         })
         return msg;
     }

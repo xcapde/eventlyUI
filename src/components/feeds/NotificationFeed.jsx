@@ -1,5 +1,8 @@
+import { ProfileNotisScrollCnt } from "../../pages/profile/profile.styled"
 import { Col, DetailText } from "../../styles/styles.styled"
+import { DownBtn, UpBtn } from "../buttons/buttons.styled"
 import { NotificationCard } from "../cards/NotificationCard"
+import { ContainerScroller } from "../subcomponents/ContainerScroller"
 import { FeedCnt, NotiFeedTitle, NotiFeed } from "./feed.styled"
 
 export const NotificationFeed = ({ notifications, toggleCheck, deleteNotification }) => {
@@ -8,7 +11,8 @@ export const NotificationFeed = ({ notifications, toggleCheck, deleteNotificatio
         <FeedCnt height="95%" margin="auto 0">
             <NotiFeedTitle>Your notifications</NotiFeedTitle>
             {notifications && notifications.length > 0 ?
-                <NotiFeed>
+                <NotiFeed >
+                    <ContainerScroller size={8}/>
                     {notifications.map((noti, key) => (
                         <NotificationCard key={key} notification={noti} toggleCheck={toggleCheck} deleteNotification={deleteNotification} />
                     ))}

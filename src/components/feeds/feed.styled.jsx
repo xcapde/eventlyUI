@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Row, Col, Title } from "../../styles/styles.styled";
+import { ContainerScrollerCnt } from "../buttons/buttons.styled";
 
 export const Wrapper = styled(Col)`
     width: 95%;
@@ -113,6 +114,9 @@ export const ProfFeed = styled(Col)`
 export const NotiFeedTitle = styled(FeedTitle)`
     width: 95%;
     margin: 0 auto;
+    @media (min-width: 820px) {
+        display: none;
+    }
 `;
 
 export const NotiFeed = styled.section`
@@ -126,11 +130,14 @@ export const NotiFeed = styled.section`
     overflow-y: scroll;
     place-content: flex-start;
     row-gap: 1rem;
-    padding: 1rem;
+    padding: 1rem 0;
+    & > ${ContainerScrollerCnt}{
+        display:none;
+    }
     @media (min-width: 820px) {
-        height: 43vh;
-        padding: 0;
-        padding-top: 1rem;
+        & > ${ContainerScrollerCnt}{
+        display:flex;
+    }
         ::-webkit-scrollbar {
         display: none;
         }
@@ -138,8 +145,8 @@ export const NotiFeed = styled.section`
 `;
 
 export const ScheduleFeed = styled(NotiFeed)`
-    height: 55vh;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(var(--cardMain-height), 1fr));
+    max-height: inherit;
     & > div{
         grid-column: 1/1;
         margin: 0 auto;
@@ -147,27 +154,27 @@ export const ScheduleFeed = styled(NotiFeed)`
 `;
 
 export const ProfileFeedDt = styled.section`
-        height: 55vh;
-        max-height: 80%;
-        width: 100%;
+        max-height: 57vh;
         max-width: 99%;
+        width: fit-content;
         position: relative;
         display: grid;
         grid-template-columns: repeat(auto-fit,minmax(var(--cardMain-width),1fr));
         grid-template-rows: repeat(auto-fit,minmax(var(--cardMain-height),1fr));
         grid-auto-flow: row;
-        place-content:center;
+        place-content:flex-start;
         align-content: flex-start;
         -webkit-column-gap: 1rem;
         column-gap: 1rem;
-        row-gap: 4rem;
+        row-gap: 1rem;
         overflow-x: hidden;
         overflow-y: scroll;
-        margin: auto;
+        margin: 0 auto;
+        padding: 1rem;
         ::-webkit-scrollbar {
         display: none;
         }
         & > div{
-            margin: 0 auto;
+            margin: 0;
         }
 `;

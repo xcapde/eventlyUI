@@ -25,7 +25,7 @@ export const LoginSignup = () => {
     const signup = (data) => {
         authService.signup(data).then(res => {
             if (res.error) {
-                runAlertModal(res.error.message)
+                runAlertModal(res.error)
                 return;
             }
             navigate("/log-in")
@@ -35,7 +35,7 @@ export const LoginSignup = () => {
     const login = (data) => {
         authService.login(data).then(res => {
             if (res.error) {
-                runAlertModal(res.error.message)
+                runAlertModal(res.error)
                 return;
             }
             const authUser = {

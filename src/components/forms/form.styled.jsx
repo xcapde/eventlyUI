@@ -8,7 +8,7 @@ export const Form = styled.form`
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: auto;
-    place-content: flex-start;
+    place-content: ${props => props.justify || 'flex-start'};
     margin: 0 auto;
     grid-gap: calc(30px - (3rem / 2) + 1.25rem);
     & > div{

@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { Col } from "../../styles/styles.styled";
 
 export const Button = styled.button`
     display: flex;
@@ -291,3 +292,29 @@ export const TrashIcon = styled.span`
         color: indianred;
     }
 `;
+
+
+export const ContainerScrollerCnt = styled(Col)`
+    @media(min-width: 820px){
+        height: ${props => props.height || '7rem'};
+        width: fit-content;
+        top: 1rem;
+        left: 1rem;
+        position: absolute;
+    }
+`;
+
+export const UpBtn = styled(TrashIcon)`
+    cursor:pointer;
+    &::after{
+        content: "\f106";
+    }
+`;
+
+export const DownBtn = styled(UpBtn)`
+    &::after{
+        content: "\f107";
+    }
+`;
+
+

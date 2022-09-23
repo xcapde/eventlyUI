@@ -33,6 +33,7 @@ export const EventForm = ({ eventToUpdate, postEvent, updateEvent, next }) => {
         e.preventDefault(e);
         eventToUpdate ? updateEvent(event) : postEvent(event);
         // resetValues();
+        console.log(next)
         setTimeout(next, ms)
         resetValues();
     }
@@ -46,6 +47,7 @@ export const EventForm = ({ eventToUpdate, postEvent, updateEvent, next }) => {
         });
     }
 
+    
     return (
         <Form onSubmit={handleSubmit}>
             {Object.keys(event).map((field, key) => (
