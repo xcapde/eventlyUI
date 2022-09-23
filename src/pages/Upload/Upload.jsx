@@ -20,7 +20,7 @@ export const Upload = () => {
     const [direction, setDirection] = useState();
     const [url, setUrl] = useState();
     const { eventId } = useParams();
-    const { modalIsActive, modalIsAsking, message, setModalIsActive, runAlertModal, runModal } = useModal();
+    const { modalIsActive, modalIsAsking, message, setModalIsActive, runModal } = useModal();
 
 
     useEffect(() => {
@@ -42,10 +42,10 @@ export const Upload = () => {
     const postEvent = (data) => {
         eventService.postEvent(data).then(res => {
             if(!res) return;
-            if (res.error.message){
-                runAlertModal(res.error.message)
-                return;
-            };                 
+            // if (res.error.message){
+            //     runAlertModal(res.error.message)
+            //     return;
+            // };                 
             runModal(`${res.title} has been created!`)
             getEvent(res.id);
         })
