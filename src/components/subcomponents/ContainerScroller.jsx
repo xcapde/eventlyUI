@@ -4,7 +4,7 @@ export const ContainerScroller = ({ contSize, scrollSize }) => {
 
 
     const scroll = (e) => {
-        let dir = e.target.id === 'up-btn' ? + e.target.parentElement.offsetTop * scrollSize : - e.target.parentElement.offsetTop * scrollSize;
+        let dir = e.target.id === 'up-btn' ? - e.target.parentElement.offsetTop * scrollSize : + e.target.parentElement.offsetTop * scrollSize;
         e.target.parentElement.parentElement.scrollTop += dir;
     }
 
