@@ -1,3 +1,5 @@
+import { AuthService } from "../../services/AuthService";
+
 export const contents = {
     main: {
         home: {
@@ -49,14 +51,14 @@ export const contents = {
             content: 'Profile',
             subcontent: {
                 prof: {
-                    icon: <i className="fa-solid fa-calendar"></i>,
+                    icon: <i className="fa-solid fa-frog"></i>,
                     content: 'Profile',
-                    link: '/profile',
+                    link: '/profile'
                 },
-                others: {
-                    icon: <i className="fa-solid fa-calendar"></i>,
-                    content: 'Others',
-                    link: '/events',
+                logout: {
+                    icon: <i className="fa-solid fa-right-from-bracket"></i>,
+                    content: 'Log out',
+                    callback: ()=>AuthService.logOut(true)
                 }
             }
         }

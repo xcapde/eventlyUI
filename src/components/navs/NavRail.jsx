@@ -28,8 +28,9 @@ export const NavRail = () => {
         setBottom(section.includes("profile") ? '1%' : null);
     }
 
-    const callback = (e, sec, field, link) => {
-        !link ? openSubContent(e, sec, field) : navigate(link);
+    const callback = (e, sec, field, link, action) => {
+        console.log(action)
+        action ? action() :  !link ? openSubContent(e, sec, field) : navigate(link);  
     }
 
     const close = () => {

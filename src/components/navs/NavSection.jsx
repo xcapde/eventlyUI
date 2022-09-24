@@ -5,7 +5,7 @@ import { Avatar } from "../avatar/Avatar";
 import { NavIcon, NavCont, NavRow, Section } from "./navrail.styled";
 import { AuthService } from "../../services/AuthService";
 
-export const NavSection = ({ opened, content, section, openSub, callback }) => {
+export const NavSection = ({ opened, content, section, callback }) => {
 
     const [publisher, setPublisher] = useState();
 
@@ -17,7 +17,7 @@ export const NavSection = ({ opened, content, section, openSub, callback }) => {
         <Section columns={opened && 'repeat(7, 1fr)'} flow={opened && 'row'}>
             {Object.keys(content).map((field, key) => (
                 <NavRow row={field === "profile" ? "4/7 !important" : null}
-                    onClick={(e) => callback(e, section, field, content[field].link)}
+                    onClick={(e) => {console.log("content: ",content[field]); callback(e, section, field, content[field].link, content[field].callback)}}
                     style={!opened ? { pointerEvents: 'none' } : { pointerEvents: 'all' }} key={key}>
                     {!field.includes("profile") ?
                         <NavIcon column={opened && '1/2'}>{content[field].icon}</NavIcon> :
