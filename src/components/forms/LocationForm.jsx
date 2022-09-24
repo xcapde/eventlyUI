@@ -29,7 +29,7 @@ export const LocationForm = ({ event, addDirection, addWebUrl, eventDirection, e
     useEffect(() => {
         if (!event) return;
         event.type.includes("online") ? setFormData(eventUrl ? eventUrl : webUrl) : setFormData(eventDirection ? eventDirection : direction);
-        event.type.includes("online") ? setStyles(style) : setStyles({});
+        event.type.includes("online") ? setStyles(style) : setStyles({placeContent:'flex-start'});
          // eslint-disable-next-line
     }, [event, eventUrl, eventDirection]);
 
@@ -42,7 +42,7 @@ export const LocationForm = ({ event, addDirection, addWebUrl, eventDirection, e
 
     if (styles)
         return (
-            <FormGrid styles={styles} onSubmit={handleSubmit}>
+            <FormGrid styles={styles} placeContent="flex-start" onSubmit={handleSubmit}>
                 {Object.keys(formData).map((field, key) => (
                     <FormControlInput
                         key={key}

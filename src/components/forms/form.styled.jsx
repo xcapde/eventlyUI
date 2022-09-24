@@ -99,7 +99,7 @@ export const Searcher = styled.form`
 export const FormGrid = styled(Form)`
     position: relative;
     display: grid;
-    place-content: center;
+    place-content: ${props => props.placeContent || 'center'};
     grid-template-columns: ${props => props.styles.grid || 'repeat(2,1fr)'};
     grid-template-rows: auto;
     grid-column-gap: 0%;

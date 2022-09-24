@@ -33,22 +33,19 @@ export const FormControlReactSelect = ({ data, field, options, callback }) => {
         data[field] === "" ? setDisplay() : setDisplay(style);
     }
 
-    console.log({ value: data[field], label: data[field] })
-    console.log(style)
-    if (data)
-        return (
-            <FormCntrl>
-                <Select
-                    options={values}
-                    defaultValue={""}
-                    value={data[field] ? { value: data[field], label: data[field] } : ""}
-                    placeholder={""}
-                    styles={customStyles}
-                    onChange={handleChange}
-                    onFocus={() => setDisplay(style)}
-                    onBlur={() => moveLabel()}
-                />
-                <CreatableLabel style={display}>{field}</CreatableLabel>
-            </FormCntrl>
-        )
+    return (
+        <FormCntrl>
+            <Select
+                options={values}
+                defaultValue={""}
+                value={data[field] ? { value: data[field], label: data[field] } : ""}
+                placeholder={""}
+                styles={customStyles}
+                onChange={handleChange}
+                onFocus={() => setDisplay(style)}
+                onBlur={() => moveLabel()}
+            />
+            <CreatableLabel style={display}>{field}</CreatableLabel>
+        </FormCntrl>
+    )
 }
