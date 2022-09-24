@@ -149,6 +149,8 @@
     /* --cardAllTags-width:29rem; */
     --cardAllTags-width:80%;
 
+    /*SLIDER PREVIEW*/
+    --slider-cube: 5rem;
 
     /* BADGE */
     --badge-padding: 8px 12px;
