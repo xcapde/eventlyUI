@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { OptionsCnt } from "../../components/buttons/burgers/options.styled";
-import { CloseBtn, EllipsisBtn } from "../../components/buttons/buttons.styled";
-import { OptionButton } from "../../components/buttons/OptionButton";
+import { CloseBtn, EllipsisBtn, OptionBtn } from "../../components/buttons/buttons.styled";
 import { Col, DetailText, Title } from "../../styles/styles.styled";
 
 export const Header = styled(Col)`
@@ -13,7 +12,7 @@ export const Header = styled(Col)`
         height: 30vh;
         & > ${OptionsCnt}, ${CloseBtn}, ${EllipsisBtn}{
             display: none;
-            & > ${OptionsCnt} > ${OptionButton}{
+            & > ${OptionsCnt} > ${OptionBtn}{
                 display: none;
             }
         }
@@ -91,9 +90,7 @@ export const MainDesktop = styled.section`
             width: 100%;
             border-radius: .75rem;
             box-shadow: 0px 0px 8px lightgray;
-            /* border: 3px solid red; */
             background-color: rgba(255, 255, 255, .8);
-            /* padding: 6px; */
         }
         & > div:nth-child(1){
             grid-column: 4/33;

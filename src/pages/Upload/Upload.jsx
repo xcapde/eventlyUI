@@ -179,7 +179,6 @@ export const Upload = () => {
         })
     }
 
-    console.log(event);
     return (
         <Page>
             <NavRail />

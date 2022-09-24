@@ -40,8 +40,6 @@ export const LocationForm = ({ event, addDirection, addWebUrl, eventDirection, e
         setTimeout(next, ms)
     }
 
-    console.log(styles)
-
     if (styles)
         return (
             <FormGrid styles={styles} onSubmit={handleSubmit}>

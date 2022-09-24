@@ -63,8 +63,6 @@ export const MultiStepForm = ({
         if(!error) return;
     },[error])
 
-
-    console.log(error)
     return (
         <DesktopWrapper>
             <Header>
