@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { OptionsCnt } from "../../components/buttons/burgers/options.styled";
 import { CloseBtn, EllipsisBtn } from "../../components/buttons/buttons.styled";
+import { OptionButton } from "../../components/buttons/OptionButton";
 import { Col, DetailText, Title } from "../../styles/styles.styled";
 
 export const Header = styled(Col)`
@@ -12,6 +13,9 @@ export const Header = styled(Col)`
         height: 30vh;
         & > ${OptionsCnt}, ${CloseBtn}, ${EllipsisBtn}{
             display: none;
+            & > ${OptionsCnt} > ${OptionButton}{
+                display: none;
+            }
         }
     }
     & > div > div {
