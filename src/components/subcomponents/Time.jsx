@@ -1,13 +1,13 @@
 import { DetailIcon, DetailText, Row } from "../../styles/styles.styled"
 
-export const Time = ({event}) => {
+export const Time = ({event, fontSize}) => {
     
     return (
         <Row>
-            <DetailIcon>
+            <DetailIcon fontSize={fontSize}>
                 <i className="fa-solid fa-clock"></i>   
             </DetailIcon> 
-            <DetailText style={{fontFamily:'var(--numbers-font)', fontWeight:'500', width:'100%'}}>
+            <DetailText fontFamily='var(--numbers-font)' fontWeight='500' width='100%' fontSize={fontSize}>
                 {event.hour}
             </DetailText>
         </Row>

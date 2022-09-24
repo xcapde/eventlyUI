@@ -1,13 +1,13 @@
 import React from "react"
 import { DetailIcon, DetailText, Row } from "../../styles/styles.styled"
 
-export const Location = ({ event }) => {
+export const Location = ({ event, fontSize}) => {
     return (
         <Row>
-            <DetailIcon>
+            <DetailIcon fontSize={fontSize}>
                 <i className="fa-solid fa-location-dot"></i>
             </DetailIcon>
-            <DetailText style={{ textTransform: 'capitalize', lineHeight: '20px', width:'100%' }}>
+            <DetailText width='100%' textTransform='capitalize' lineHeight='18px' fontSize={fontSize}>
                     {event.location ?
                         `${event.location.substring(0, (event.location.lastIndexOf(',') - 3))}` 
                         : 

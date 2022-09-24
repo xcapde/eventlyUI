@@ -3,7 +3,7 @@ import { SmallCard } from "../cards/SmallCard"
 import { MainCard } from "../cards/MainCard"
 import { FeedTitle, VerticalFeed, VerticalFeedDesktop, VerticalFeedMobile } from "./feed.styled"
 
-export const ModuleVerticalMulti = ({ title, events, tag, width, height }) => {
+// export const ModuleVerticalMulti = ({ title, events, tag, width, height }) => {
 
 
     return (

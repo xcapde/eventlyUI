@@ -4,7 +4,7 @@ import { TitleCard } from "../cards/cards.styled";
 import { MainCard } from "../cards/MainCard";
 import { VerticalFeedMainCard } from "./feed.styled";
 
-export const ModuleVerticalMainCard = ({ title, events, tag, width, justify, participations}) => {
+export const ModuleVerticalMainCard = ({ title, events, tag, width, height, justify, participations}) => {
 
 
     return (
@@ -13,7 +13,7 @@ export const ModuleVerticalMainCard = ({ title, events, tag, width, justify, par
             <VerticalFeedMainCard justify={justify}>
                 {events && events.length > 0 ?
                     events.map((event, key) =>
-                        <MainCard key={key} event={event} width={width} participations={participations} />
+                        <MainCard key={key} event={event} width={width} height={height} participations={participations} />
                     ) :
                     <Col>
                         <DetailText>{title.includes("tag") ? "No events found with "+tag : "No events found"}</DetailText>

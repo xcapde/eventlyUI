@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
-import { AvatarImg } from "./avatar.styled"
+import { Col, DetailText } from "../../styles/styles.styled";
+import { PartAvatar } from "../images/images.styled";
+import { UserCardCnt } from "./cards.styled";
 
 
-export const Avatar = ({imgUrl, scale, left, size, publisher}) => {
+export const UserCard = ({imgUrl, user}) => {
 
     const [img, setImg] = useState();
 
     useEffect(() => {
-        if(!publisher) return;
+        if(!user) return;
 
         const images = {
             afonttorres: "https://images2.alphacoders.com/521/521982.jpg",
@@ -17,14 +19,21 @@ export const Avatar = ({imgUrl, scale, left, size, publisher}) => {
             default: "https://i.pinimg.com/474x/b7/cf/46/b7cf46c96e503fdec995645e70d95705.jpg"
         }
 
-        let username = Object.keys(images).includes(publisher.username) ?
-        publisher.username
+        let username = Object.keys(images).includes(user.username) ?
+        user.username
             : 'default';
 
         setImg(images[username]);
-    }, [publisher])
+    }, [user])
 
     return (
-            <AvatarImg size={size} left={left} imgUrl={publisher ? img : imgUrl} scale={scale}/>
+        <UserCardCnt>
+            <Col width='60px'>
+                <PartAvatar imgUrl={user ? img : imgUrl}/>
+            </Col>
+            <Col alignItems='flex-start'>
+                <DetailText>{user.username}</DetailText>
+            </Col>
+        </UserCardCnt>
     )
 }

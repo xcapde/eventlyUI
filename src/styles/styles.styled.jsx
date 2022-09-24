@@ -71,6 +71,7 @@ export const Wrapper = styled(Col)`
     gap: ${props => props.gap || '1%'};
     background-color: ${props => props.backgroundColor || 'inherit'};
     justify-content: ${props => props.justifyContent || 'center'};
+    border-radius: ${props => props.borderRadius || 'none'};
 `;
 
 export const Touchable = styled(Col)`
@@ -82,6 +83,7 @@ export const Touchable = styled(Col)`
 
 //Text
 export const Title = styled.h1`
+    height: ${props => props.height || 'initial'};
     width: 100%;
     display: flex;
     align-items: center;
@@ -92,17 +94,20 @@ export const Title = styled.h1`
 `;
 
 export const DetailText = styled.p` 
+    width: ${props => props.width ||'initial'};
     color: var(--color-detail-text);
-    font-family: var(--detail-font);
-    font-size:var(--font-size-detail);
-    font-weight: var(--font-weigth-detail);
+    font-family: ${props => props.fontFamily ||'var(--detail-font)'};
+    font-size: var(--font-size-detail);
+    font-weight: ${props => props.fontWeight ||'var(--font-weigth-detail)'};
     text-align: ${props => props.textAlign || 'inherit'};
+    text-transform: ${props => props.textTransform || 'initial'};
+    line-height: ${props => props.lineHeight ||'normal'};
     @media(min-width:${Breakpoint.md}){
-        font-size:var(--font-size-detail-desktop);
+        font-size: ${props => props.fontSize ||'var(--font-size-detail-desktop)'};
     }
 `;
 export const DetailIcon = styled(DetailText)`
-    width: unset;
+    width: ${props => props.width || 'unset'};
     padding-right: 0.5rem;
     color: var(--color-detail-icon);
 `;

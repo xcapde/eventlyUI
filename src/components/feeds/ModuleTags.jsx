@@ -11,7 +11,7 @@ export const ModuleTags = ({ tags, callback }) => {
     return (
         <Col height='15%'>
             <FeedTitle>Tags</FeedTitle>
-            <HorizontalFeed style={{ overflowY: 'hidden' }}>
+            <HorizontalFeed overflowY='hidden'>
                 {tags && tags.map((tag, key) =>
                     <Badge callback={callback} key={key} content={tag.name} tag={tag} />
                 )}

@@ -3,7 +3,7 @@ import { Breakpoint, Col, Img, Row, Title} from "../../styles/styles.styled";
 
 /*SIZING*/
 export const CardMain = styled(Col)`
-    height: var(--cardMain-height);
+    height: ${props => props.height || 'var(--cardMain-height)'};
     width: ${props => props.width || 'var(--cardMain-width)'};
     position: relative;
     margin: 0 1rem;
@@ -20,7 +20,6 @@ export const CardMain = styled(Col)`
 
 export const CardXS = styled(CardMain)`
     width: var(--cardXS-width);
-    /* max-width: 400px; */
     height: var(--cardXS-height);
     flex-direction: row;
     justify-content: space-between;
@@ -47,6 +46,16 @@ export const CardXSImage = styled(Img)`
     border-radius: var(--cardXS-img-radius);
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
+`;
+
+export const UserCardCnt = styled(Row)`
+        width: var(--cardUser-width);
+        height: var(--cardUser-height);
+        flex-direction: row;
+        justify-content: space-between;
+        border: 1px solid lightgray;
+        border-radius: var(--cardUser-radius);
+        gap: 10px
 `;
 
 /* TEXT */ 

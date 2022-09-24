@@ -2,13 +2,13 @@ import { Col } from "../../styles/styles.styled"
 import { Location, Participation, Url } from "../subcomponents"
 import { Schedule } from "../subcomponents/Schedule"
 
-export const Details = ({ event }) => {
+export const Details = ({ event, gap, fontSize }) => {
     return (
-        <Col>
-        <Schedule event={event}/>
+        <Col alignItems="flex-start">
+        <Schedule event={event} fontSize={fontSize}/>
         {event.type === "online" ?
-            <Url event={event} /> : <Location event={event} />}
-        <Participation event={event}/>
+            <Url event={event} fontSize={fontSize} /> : <Location event={event} fontSize={fontSize}/>}
+        <Participation event={event} fontSize={fontSize}/>
         </Col>
     )
 }

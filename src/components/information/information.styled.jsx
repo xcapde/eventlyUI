@@ -9,13 +9,12 @@ export const NavTabs = styled(Row)`
     gap: 0;
 
     @media(min-width:${Breakpoint.md}){
-        height: 3rem;
+        height: 7.5vh;
         flex-wrap:nowrap;
-        border-bottom: 1px solid lightgray;
     }
 `
 
-export const ModuleContentCnt = styled(Col)`
+export const ContentModuleCnt = styled(Col)`
     height: fit-content;
 `;
 
@@ -29,7 +28,8 @@ export const ContentGrid = styled.div`
     margin: 2.5%;
     width: 95%;
     @media(min-width:${Breakpoint.md}){
-        height: 22vh;
+        height: 38vh;
         grid-template-rows: auto auto auto auto auto;
+        align-content: flex-start;
     } 
 `;

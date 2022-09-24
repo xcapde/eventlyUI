@@ -1,12 +1,12 @@
 import React from "react"
-import { DetailText, Row } from "../../styles/styles.styled"
+import { Row } from "../../styles/styles.styled"
 import { ParticipationAvatar } from "./ParticipationAvatar"
 import { PartsCounter, Wrapper } from "./participations.styled"
 
 
-export const ParticipationModule = ({ participations, participantsCount }) => {
+export const ParticipationModule = ({ participations, participantsCount, display }) => {
     return (
-        <Wrapper>
+        <Wrapper display={display}>
             {participantsCount > 0 &&
                 <React.Fragment>
                     <Row marginLeft='38px'>

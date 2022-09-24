@@ -47,9 +47,10 @@ export const VerticalFeed = styled.div`
 `;
 
 export const VerticalFeedMainCard = styled(VerticalFeed)`
+    grid-gap: 2rem 1rem;
     @media (min-width:${Breakpoint.md}) {
             grid-template-columns: repeat(auto-fill, minmax(var(--cardMain-width), 1fr));
-            grid-gap: 3rem 3rem;
+            grid-gap: ${props => props.gap || '3rem 3rem'};
     }
 `;
 
@@ -87,6 +88,7 @@ export const UlFeed = styled.ul`
 export const HorizontalFeed = styled(Row)`
     height: ${props => props.height || '100%'};
     overflow-x: auto; 
+    overflow-y: ${props => props.overflowY ||'auto'};
     justify-content: flex-start;
     display: -webkit-box;
     ::-webkit-scrollbar {

@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BackButton, JoinButton } from "../components/buttons";
 import { OptionsModule } from "../components/buttons/burgers/OptionsModule";
-import { ModuleContent } from "../components/information/ModuleContent"
-import { ModuleDetails } from "../components/information/ModuleDetails";
+import { ContentModule } from "../components/information/ContentModule"
+import { DetailsModule } from "../components/information/DetailsModule";
 import { NoNavView, Col } from "../styles/styles.styled";
 import { ImgCnt, InfoCnt, DetailTitle } from "./detail.styled";
 import { Slider } from "../components/slider/Slider";
@@ -27,8 +27,8 @@ export const VDetailMobile = ({ event, participations, join, unjoin, deletConfir
 
                 <InfoCnt id="info">
                     <DetailTitle>{event.title}</DetailTitle>
-                    <ModuleDetails event={event} participations={participations} />
-                    <ModuleContent callback={setKey} tabContent={tabContent} field={key} event={event} />
+                    <DetailsModule event={event} participations={participations} />
+                    <ContentModule callback={setKey} tabContent={tabContent} field={key} event={event} />
                     <JoinButton content={event.participant ? "Unjoin" : "Join"} callback={() => event.participant ? unjoin() : join()} color={event.participant ? "var(--button-unjoin)" : ""} />
                 </InfoCnt>
             </Col>

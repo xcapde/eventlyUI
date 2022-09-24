@@ -4,6 +4,7 @@ import { Col } from "../../styles/styles.styled";
 export const Wrapper = styled(Col)`
     height: ${props => props.height || '55px'};
     width: fit-content;
+    display: ${props => props.display || 'flex'};
     align-self: center;
     gap: 5px;
     margin: 0 auto;

@@ -35,7 +35,7 @@ export const FormBtn = styled(Button)`
 export const JoinBtn = styled(FormBtn)`
     width:100%;
     @media(min-width:${Breakpoint.md}){
-        width: var(--form-button-width);    
+        width: ${props => props.widthD || 'var(--form-button-width)'};    
         }
 `
 

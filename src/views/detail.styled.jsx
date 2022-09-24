@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { TitleCard } from "../components/cards/cards.styled";
 import { FeedTitle } from "../components/feeds/feed.styled";
-import { Breakpoint, Col, DetailIcon } from "../styles/styles.styled";
+import { Breakpoint, Col } from "../styles/styles.styled";
 
 export const ImgCnt = styled.div`
     height: var(--detail-image-height);
@@ -34,11 +34,8 @@ export const ModuleCnt = styled(Col)`
     justify-content: flex-start;
     position: relative;
     border-radius: var(--module-radius);
-    box-shadow: 0px 0px 5px var(--card-shadow-opacity);
-`
-export const ModuleIcon = styled(DetailIcon)`
-    width: 2rem;
-    text-align: right;
+    box-shadow: 0px 0px 8px var(--card-shadow-opacity);
+    overflow-y: ${props => props.overflowY || 'auto'};
 `
 
 export const ModuleTitle = styled(TitleCard)`
@@ -49,7 +46,6 @@ export const ModuleTitle = styled(TitleCard)`
     align-items: center;
     color: inherit;
     color: ${props => props.color || 'var(--color-detail-text)'};
-    border-bottom: 1px solid lightgray;
     font-size:var(--font-size-detail-tab-button);
     font-weight: bold;
     padding: 0%;;
@@ -89,6 +85,11 @@ export const MainDesktop = styled.section`
         /* border: 2px solid blue; */
         grid-column: 1/4;
         grid-row: 7/10;
+        height: 175px;
+        place-self: flex-start;
+        align-items: flex-start;
+        position: relative;
+        top: 5%;
     }
     & > div:nth-child(4){
         /* border: 2px solid yellow; */

@@ -74,6 +74,7 @@
     --button-border-width: 0.15rem;
 
     --form-button-width: 333px;
+    --form-button-width-desktop:150px;
     --form-button-height: 50px;
 
     --header-button-position-top: 3rem;
@@ -97,6 +98,7 @@
     --font-size-title: x-large;
     --font-size-detail: small;
     --font-size-detail-desktop: small;
+    --font-size-detail-detailDesktop: 16px;
 
     --font-size-card-title: medium;
     --font-size-card-title-desktop: medium;
@@ -109,6 +111,22 @@
     --font-size-detail-tab-button: medium;
     --font-size-opacity-icon: x-large;
     --font-size-form-button: large;
+
+    /* --font-size-title: 20px;
+    --font-size-detail: 12px;
+    --font-size-detail-desktop: 12px;
+
+    --font-size-card-title: 14px;
+    --font-size-card-title-desktop: 16px;
+
+    --font-size-button: 16px;
+    --font-size-badge: 14px;
+
+    --font-size-nav-icon: 24px;
+    --font-size-navRail: 24px;
+    --font-size-detail-tab-button: 16px;
+    --font-size-opacity-icon: 24px;
+    --font-size-form-button: 20px; */
     
     /* FONT WEIGTH */
     --font-weigth-detail: 600;
@@ -119,16 +137,15 @@
 
     /* RADIUS */
     --footer-radius: 1.15rem 1.15rem 0 0;
-    /* --cardMain-radius: 1.5rem; */
     --cardMain-radius: 1rem;
     --cardXS-img-radius: 1rem;
-    --card-radius: 0.5rem;
+    --module-radius: 0.75rem;
+    --cardUser-radius: 0.5rem;
     --avatar-radius: 0.5rem;
     --button-radius: 0.5rem;
     --options-radius: 0.5rem;
     --modal-radius: 0.5rem;
     --input-radius: 0.5rem;
-    --module-radius: 0.5rem;
     --badge-radius: 0.25rem;
     --navtop-radius: 0;
 
@@ -139,16 +156,19 @@
     --cardMain-height-desktop: 280px;
     --cardMain-img-size: 100%;
 
-    /* --cardXS-width: 310px; */
     --cardXS-width: 350px;
     --cardXS-height: 100px;
     /* --cardXS-width-desktop: 22rem; */
     --cardXS-imgCntrl-size: var(--cardXS-height);
-    /* --cardXS-img-size: 90%; */
     --cardXS-img-size: 100%;
+    
+    --cardAllTags-width:280px;
+    --cardAllTags-height:370px;
+    /* --cardAllTags-width:300px; */
 
-    /* --cardAllTags-width:29rem; */
-    --cardAllTags-width:80%;
+    /* --cardUser-width:95%; */
+    --cardUser-width:200px;
+    --cardUser-height:50px;
 
 
     /* BADGE */

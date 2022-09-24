@@ -1,8 +1,8 @@
 import { JoinBtn } from "./buttons.styled"
 
-export const JoinButton = ({ content, callback }) => {
+export const JoinButton = ({ content, callback, widthD }) => {
     return (
-        <JoinBtn onClick={() => callback()}>
+        <JoinBtn widthD={widthD} onClick={() => callback()}>
             {content}
         </JoinBtn>
     )

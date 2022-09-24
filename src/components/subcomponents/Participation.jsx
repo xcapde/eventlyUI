@@ -1,13 +1,13 @@
 import { DetailIcon, DetailText, Row } from "../../styles/styles.styled"
 
-export const Participation = ({event}) => {
+export const Participation = ({event, fontSize}) => {
     
     return (
         <Row>
-            <DetailIcon>
+            <DetailIcon fontSize={fontSize}>
                 <i className="fa-solid fa-user"></i>
             </DetailIcon>
-            <DetailText style={{width:'100%'}}>
+            <DetailText width='100%' fontSize={fontSize}>
                     {event.participantsCount === 0? 
                         'Be the first!' 
                         : 
