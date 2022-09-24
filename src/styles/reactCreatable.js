@@ -30,6 +30,18 @@ export const customStyles = {
         ...provided,
         display: 'none',
     }),
+    menu:(provided, state) => ({
+        ...provided,
+        height: 'fit-content',
+        maxHeight: '25vh',
+        overflow: 'hidden',
+    }),
+    menuList:(provided, state)=>({
+        ...provided,
+        "::-webkit-scrollbar": {
+            display:'none',
+          }
+    }),
     multiValue: (provided, state) => {
         const color = 'var(--color-badgetText-default)';
         const backgroundColor = 'var(--color-badgetBG-default)';
