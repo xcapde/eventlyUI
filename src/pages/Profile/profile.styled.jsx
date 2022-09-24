@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { OptionsCnt } from "../../components/buttons/burgers/options.styled";
+import { CloseBtn, EllipsisBtn } from "../../components/buttons/buttons.styled";
 import { Col, DetailText, Title } from "../../styles/styles.styled";
 
 export const Header = styled(Col)`
@@ -8,7 +10,10 @@ export const Header = styled(Col)`
     background-color: var(--color-dark);
     @media(min-width: 820px){
         height: 30vh;
+        & > ${OptionsCnt}, ${CloseBtn}, ${EllipsisBtn}{
+            display: none;
         }
+    }
     & > div > div {
         width: 90%;
         margin: 0 auto;
