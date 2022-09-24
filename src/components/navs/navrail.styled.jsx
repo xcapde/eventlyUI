@@ -155,13 +155,15 @@ export const NavIcon = styled.span`
 `
 export const NavCont = styled.span`
     display: ${props => props.display || 'none'};
-    grid-column: 3/8;
+    grid-column: ${props => props.col || '3/8'};
+    grid-row: ${props => props.row};
     width: fit-content;
     font-family: var(--detail-font);
     font-size: var(--font-size-navRail);
     color: ${props => props.color || 'transparent'};
     white-space: nowrap;
     transition: display 6s ease, color 2s linear, grid-column none;
+    padding-top: ${props => props.paddingTop || 'none'};
     &:hover{
         color: lightgray;
     }
