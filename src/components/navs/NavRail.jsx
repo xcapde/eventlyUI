@@ -24,12 +24,11 @@ export const NavRail = () => {
 
     const openSubContent = (e, section, field) => {
         setSubcontent(contents[section][field].subcontent);
-        setTop(section.includes("profile") ? null : e.target.offsetTop + 'px');
+        setTop(section.includes("profile") ? null : e.clientY + 'px');
         setBottom(section.includes("profile") ? '1%' : null);
     }
 
     const callback = (e, sec, field, link, action) => {
-        console.log(action)
         action ? action() :  !link ? openSubContent(e, sec, field) : navigate(link);  
     }
 
@@ -43,7 +42,7 @@ export const NavRail = () => {
 
     return (
         <React.Fragment>
-            <Wrapper id="navrail" width={opened && '12rem'} column={opened && '2/3'}>
+            <Wrapper id="navrail" width={opened ? '12rem' : ''} column={opened ? '2/3' : ''}>
                 <ToggleBtn onClick={() => setOpened(!opened)} />
                 <Logo imgUrl={logo} />
                 <NavSection content={contents.main} opened={opened} section={'main'} callback={callback} />
