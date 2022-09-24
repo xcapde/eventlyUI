@@ -155,22 +155,19 @@ export const ScheduleFeed = styled(NotiFeed)`
 
 export const ProfileFeedDt = styled.section`
         max-height: 57vh;
-        max-width: 99%;
+        max-width: 98%;
         width: fit-content;
         position: relative;
         display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(var(--cardMain-width),1fr));
-        grid-template-rows: repeat(auto-fit,minmax(var(--cardMain-height),1fr));
+        grid-template-columns: repeat(auto-fill,minmax(var(--cardMain-width),1fr));
+        grid-template-rows: repeat(auto-fill,minmax(var(--cardMain-height),1fr));
         grid-auto-flow: row;
         place-content:flex-start;
         align-content: flex-start;
-        -webkit-column-gap: 1rem;
-        column-gap: 1rem;
-        row-gap: 1rem;
+        grid-gap: 1rem;
         overflow-x: hidden;
         overflow-y: scroll;
         margin: 0 auto;
-        padding: 1rem;
         ::-webkit-scrollbar {
         display: none;
         }
