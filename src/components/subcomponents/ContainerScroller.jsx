@@ -1,16 +1,15 @@
 import { DownBtn, UpBtn, ContainerScrollerCnt } from "../buttons/buttons.styled";
 
-export const ContainerScroller = ({size}) => {
+export const ContainerScroller = ({ contSize, scrollSize }) => {
 
 
     const scroll = (e) => {
-        let dir = e.target.id === 'up-btn' ? + e.target.parentElement.offsetTop * size : - e.target.parentElement.offsetTop * size;
+        let dir = e.target.id === 'up-btn' ? + e.target.parentElement.offsetTop * scrollSize : - e.target.parentElement.offsetTop * scrollSize;
         e.target.parentElement.parentElement.scrollTop += dir;
     }
 
-    console.log(size)
     return (
-        <ContainerScrollerCnt>
+        <ContainerScrollerCnt height={contSize}>
             <UpBtn id="up-btn" onClick={(e) => scroll(e)} />
             <DownBtn onClick={(e) => scroll(e)} />
         </ContainerScrollerCnt>

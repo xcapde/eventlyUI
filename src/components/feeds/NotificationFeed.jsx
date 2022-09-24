@@ -1,9 +1,7 @@
-import { ProfileNotisScrollCnt } from "../../pages/profile/profile.styled"
-import { Col, DetailText } from "../../styles/styles.styled"
-import { DownBtn, UpBtn } from "../buttons/buttons.styled"
-import { NotificationCard } from "../cards/NotificationCard"
-import { ContainerScroller } from "../subcomponents/ContainerScroller"
-import { FeedCnt, NotiFeedTitle, NotiFeed } from "./feed.styled"
+import { Col, DetailText } from "../../styles/styles.styled";
+import { NotificationCard } from "../cards/NotificationCard";
+import { ContainerScroller } from "../subcomponents/ContainerScroller";
+import { FeedCnt, NotiFeedTitle, NotiFeed } from "./feed.styled";
 
 export const NotificationFeed = ({ notifications, toggleCheck, deleteNotification }) => {
 
@@ -12,7 +10,7 @@ export const NotificationFeed = ({ notifications, toggleCheck, deleteNotificatio
             <NotiFeedTitle>Your notifications</NotiFeedTitle>
             {notifications && notifications.length > 0 ?
                 <NotiFeed >
-                    <ContainerScroller size={8}/>
+                    <ContainerScroller scrollSize={8}/>
                     {notifications.map((noti, key) => (
                         <NotificationCard key={key} notification={noti} toggleCheck={toggleCheck} deleteNotification={deleteNotification} />
                     ))}

@@ -15,7 +15,7 @@ export const NavigationDesktopFeed = ({ joined, published, callback, field }) =>
                     <Navigation tabContent={tabs} callback={callback} field={field && field !== 'by_Date' ? field : 'joined'} />
                 </NavCntDt>
                 <ProfileFeedDt>
-                    {field && field === 'joined' ? joined.map((event, key) => (
+                    {field && field !== 'published' ? joined.map((event, key) => (
                         <MainCard key={key} event={event} />
                     )) :
                         published.map((event, key) => (

@@ -3,7 +3,6 @@ import { NavTabs } from "./information.styled"
 
 export const Navigation = ({ callback, tabContent, field }) => {
 
-    console.log(field)
     return (
         <NavTabs>
             {tabContent.map((tab, key) => (

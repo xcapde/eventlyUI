@@ -51,7 +51,7 @@ export const VerticalFeed = styled.div`
 export const VerticalFeedMainCard = styled(VerticalFeed)`
     @media (min-width: 820px) {
             grid-template-columns: repeat(auto-fill, minmax(var(--cardMain-width), 1fr));
-            grid-gap: 3rem 3rem;
+            grid-gap: 1rem 1rem;
     }
 `;
 

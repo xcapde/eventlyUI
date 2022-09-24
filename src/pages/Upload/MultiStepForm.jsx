@@ -57,7 +57,7 @@ export const MultiStepForm = ({
 
     useEffect(() => {
         setProgress((page + 1) / (forms.length) * 100)
-    }, [page])
+    }, [page, forms.length])
 
     useEffect(()=>{
         if(!error) return;
@@ -87,11 +87,3 @@ export const MultiStepForm = ({
         </DesktopWrapper>
     )
 }
-
-{/* <PlusForm event={event}
-                uploadImg={uploadImg}
-                deleteImg={deleteImg}
-                addReq={addReq}
-                deleteReq={deleteReq}
-                addTags={addTags}
-                deleteTags={deleteTags} /> */}

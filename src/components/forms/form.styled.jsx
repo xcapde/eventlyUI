@@ -22,7 +22,7 @@ export const Form = styled.form`
     }
     @media (min-width: 820px) {
         width: 100%;
-        place-content: center;
+        place-content: ${props => props.justifyD || 'flex-start'};;
     }
 `
 
@@ -124,7 +124,7 @@ export const FormGrid = styled(Form)`
     }
     @media (min-width: 820px) {
         grid-column-gap: 14%;
-        place-content: flex-start;
+        place-content: ${props => props.styles.placeContent || 'flex-start'};
     }
     
 `;

@@ -101,6 +101,9 @@ export const NotiCard = styled.article`
             display: initial;
         }
     }
+    & > ${TrashIcon}{
+        display:none;
+    }
     @media(min-width:820px){
         grid-template-columns: repeat(15, 1fr);
         max-height: 7rem;

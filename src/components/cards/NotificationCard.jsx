@@ -22,7 +22,7 @@ export const NotificationCard = ({ notification, toggleCheck, deleteNotification
         deleteNotification(id);
         setTimeout(() => {
             setDeleted();
-        }, 1500);
+        }, 2500);
 
     }
 

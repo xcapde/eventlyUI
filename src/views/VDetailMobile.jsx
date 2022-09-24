@@ -6,7 +6,7 @@ import { OptionsModule } from "../components/buttons/burgers/OptionsModule";
 import { ModuleContent } from "../components/information/ModuleContent"
 import { ModuleDetails } from "../components/information/ModuleDetails";
 import { Gradient, NoNavView, Col } from "../styles/styles.styled";
-import { ImgCnt, InfoCnt, DetailTitle, SideControl } from "./detail.styled";
+import { ImgCnt, InfoCnt, DetailTitle } from "./detail.styled";
 import { Slider } from "../components/slider/Slider";
 
 

@@ -109,7 +109,7 @@ export const MainDesktop = styled.section`
             gap: 0;
             max-height: 46vh;
         }
-        & > p{
+        & > ${DetailText}{
             height: fit-content;
             margin: auto 0;
             margin-bottom: 0.5rem;
@@ -117,15 +117,15 @@ export const MainDesktop = styled.section`
             font-weight: 900;
             color: var(--color-dark);
         }
-        & > p:nth-child(4){
+        & > ${DetailText}:nth-child(4){
             grid-column: 5/34;
             grid-row: 1/1;
         }
-        & > p:nth-child(5){
+        & > ${DetailText}:nth-child(5){
             grid-column: 35/42;
             grid-row: 1/1;
         }
-        & > p:nth-child(6){
+        & > ${DetailText}:nth-child(6){
             grid-column: 35/42;
             grid-row: 5/5;
         }
@@ -144,7 +144,7 @@ export const MainDesktop = styled.section`
             z-index: -1;
             background-image: url(https://images.unsplash.com/photo-1466781783364-36c955e42a7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80);
             background-size: 100%;
-            filter: blur(2px);
+            /* filter: blur(2px); */
         }
     }
     
