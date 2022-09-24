@@ -56,6 +56,7 @@ export const MultiStepForm = ({
 
     useEffect(() => {
         setProgress((page + 1) / (forms.length) * 100)
+    // eslint-disable-next-line
     }, [page])
 
     return (
@@ -80,11 +81,3 @@ export const MultiStepForm = ({
         </DesktopWrapper>
     )
 }
-
-{/* <PlusForm event={event}
-                uploadImg={uploadImg}
-                deleteImg={deleteImg}
-                addReq={addReq}
-                deleteReq={deleteReq}
-                addTags={addTags}
-                deleteTags={deleteTags} /> */}

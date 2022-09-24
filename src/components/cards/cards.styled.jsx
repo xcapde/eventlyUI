@@ -67,6 +67,7 @@ export const BodyCntrl = styled(Col)`
 `
 
 export const TitleCard = styled(Title)`
+    height: 30px;
     justify-content: ${props => props.justifyContent || 'flex-start'};
     font-size: var(--font-size-card-title);
     font-weight: bolder;

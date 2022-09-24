@@ -158,13 +158,12 @@
 
     --cardXS-width: 350px;
     --cardXS-height: 100px;
-    /* --cardXS-width-desktop: 22rem; */
     --cardXS-imgCntrl-size: var(--cardXS-height);
-    --cardXS-img-size: 100%;
+    --cardXS-img-size: var(--cardXS-imgCntrl-size);
     
+    /* --cardAllTags-width:300px; */
     --cardAllTags-width:280px;
     --cardAllTags-height:370px;
-    /* --cardAllTags-width:300px; */
 
     /* --cardUser-width:95%; */
     --cardUser-width:200px;

@@ -14,7 +14,6 @@ export const MainCard = ({ event, width, height }) => {
         </Link>
       </Wrapper>
 
-      {/* <BodyCntrl height='35%'> */}
       <BodyCntrl height='120px'>
         <Title event={event} />
         <Details event={event}/>      
