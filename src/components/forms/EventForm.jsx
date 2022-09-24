@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FormButton } from "../buttons";
 import { Form } from "./form.styled";
 import { FormControlInput } from "./FormControlInput";
-import { FormControlSelect } from "./FormControlSelect";
+import { FormControlReactSelect } from "./FromControlReactSelect";
 
 export const EventForm = ({ eventToUpdate, postEvent, updateEvent, next }) => {
 
@@ -14,7 +14,7 @@ export const EventForm = ({ eventToUpdate, postEvent, updateEvent, next }) => {
             date: eventToUpdate ? eventToUpdate.date : ""
         });
 
-    const eventTypes = ["offline", "online"];
+    const eventTypes = [{ name: "offline" }, { name: "online" }];
     const s = 1;
     const ms = s * 1000;
 
@@ -47,7 +47,7 @@ export const EventForm = ({ eventToUpdate, postEvent, updateEvent, next }) => {
         });
     }
 
-    
+
     return (
         <Form onSubmit={handleSubmit}>
             {Object.keys(event).map((field, key) => (
@@ -55,7 +55,7 @@ export const EventForm = ({ eventToUpdate, postEvent, updateEvent, next }) => {
                     {!field.includes("type") &&
                         <FormControlInput key={key} field={field} data={event} callback={setEvent} />}
                     {field.includes("type") &&
-                        <FormControlSelect key={key} field={field} data={event} callback={setEvent} options={["", ...eventTypes]} />}
+                        <FormControlReactSelect key={key} field={field} data={event} callback={setEvent} options={eventTypes} />}
                 </React.Fragment>
             ))}
             <FormButton content={eventToUpdate ? "Update" : "Upload"} />

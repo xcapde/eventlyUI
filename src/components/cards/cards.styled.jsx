@@ -69,32 +69,32 @@ export const TitleCard = styled(Title)`
 `
 
 export const NotiCard = styled.article`
-    max-height: 9rem;
-    height: fit-content;
-    min-height: 7rem;
+    height: 7rem;
     left: ${props => props.left};
-    grid-column: ${props => props.col || '2/13'};
+    grid-column: ${props => props.col || '2/16'};
     box-shadow: 0px 0px 8px lightgray;
     border-radius: 1.25rem 0 0 1.25rem;
     position: relative;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(15, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-auto-flow: column;
     place-content: center;
     transition: left 1.5s linear;
+    & > p:nth-child(1), p:nth-child(2){
+            grid-column: ${props => props.colCheck || '2/15'}
+        }
     & > p:nth-child(1){
         height: fit-content;
-        grid-column: 2/7;
         grid-row: 2/3;
         font-weight: 900 !important;
         color: var(--color-dark);
     }
     & > p:nth-child(2){
-        grid-column: 2/7;
         grid-row: 3/4;
         font-weight: lighter;
         line-height: 125%;
+        padding-right: 0.85rem;
         & > a{
             color: var(--color-main);
             text-decoration: underline !important;
@@ -105,15 +105,6 @@ export const NotiCard = styled.article`
         display:none;
     }
     @media(min-width:820px){
-        grid-template-columns: repeat(15, 1fr);
-        max-height: 7rem;
-        min-height: 5rem;
-        & > p:nth-child(1), p:nth-child(2){
-            grid-column: ${props => props.colD || '3/15'}
-        }
-        & > span:nth-child(1){
-            grid-column: 12/16;
-        }
         & > ${TrashIcon}{
             grid-column: 15/16;
             grid-row: 2/3;
@@ -125,7 +116,7 @@ export const NotiCard = styled.article`
 export const NotiStatus = styled.div`
     height: 8px;
     width: 8px;
-    grid-column: 7/8;
+    grid-column: 14/15;
     grid-row: 1/2;
     background-color: ${props => props.color || 'var(--color-main)'};
     align-self: flex-end;
@@ -147,10 +138,7 @@ export const NotiStatus = styled.div`
 export const CreatedAt = styled.span`
     font-size: xx-small;
     font-family: var(--numbers-font);
-    grid-column: 6/12;
+    grid-column: 12/16;
     grid-row: 4/5;
     align-self: center;
-    @media(min-width:820px){
-        grid-column: 11/15;
-    }
 `;

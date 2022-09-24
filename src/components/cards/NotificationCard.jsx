@@ -30,8 +30,8 @@ export const NotificationCard = ({ notification, toggleCheck, deleteNotification
         <NotiCard
             onTouchStart={(e) => setStart(e.changedTouches[0].clientX)}
             onTouchEnd={(e) => setAction(e.changedTouches[0].clientX)}
-            col={notification.checked ? '3/13' : '2/13'}
-            colD={notification.checked ? '2/16' : '3/15'}
+            col={notification.checked ? '3/16' : '2/16'}
+            colCheck={notification.checked ? '2/16' : '2/15'}
             left={!deleted ? 0 : deleted === notification.id ? deletedLeft : deleted !== notification.id ? 'inherit' : 0}
         >
             <DetailText>{notification.subject}</DetailText>

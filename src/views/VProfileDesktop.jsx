@@ -21,7 +21,7 @@ export const VProfileDesktop = ({ joined, published, byDate, notifications, togg
             <ByDateFeed events={byDate} date={date} />
 
             <DetailText>Your events</DetailText>
-            <DetailText>You have <span style={{color:"indianred"}}>{notiCounter} {notiCounter !== 1 ? "notifications" : "notification"} </span></DetailText>
+            <DetailText>You have <span style={{color:"indianred"}}>{notiCounter} unchecked {notiCounter !== 1 ? "notifications" : "notification"} </span></DetailText>
             <DetailText>Events in {date}</DetailText>
         </MainDesktop>
     )

@@ -128,11 +128,11 @@ export const MainDesktop = styled.section`
             grid-row: 1/1;
         }
         & > ${DetailText}:nth-child(5){
-            grid-column: 35/42;
+            grid-column: 35/46;
             grid-row: 1/1;
         }
         & > ${DetailText}:nth-child(6){
-            grid-column: 35/42;
+            grid-column: 35/46;
             grid-row: 5/5;
         }
         &::before{

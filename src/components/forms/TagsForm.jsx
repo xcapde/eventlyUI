@@ -34,13 +34,13 @@ export const TagsForm = ({ event, addTags, deleteTags }) => {
     const getAll = () => {
         tagService.getAll().then(res => {
             if (!res) return;
-            setTags(format.tagsToOptions(res));
+            setTags(format.optionsToReactSelectOptions(res));
         })
     }
 
 
     const handleChange = (newValue) => {
-        setNewTags(format.optionsToTags(newValue));
+        setNewTags(format.reactCreatableOptionsToOptions(newValue));
     }
 
     const handleSubmit = (e) => {
@@ -66,7 +66,6 @@ export const TagsForm = ({ event, addTags, deleteTags }) => {
             </Col>
             <Col>
                 <Form onSubmit={handleSubmit}>
-                    {/* {tags && */}
                     <FormCntrl>
                         <CreatableSelect
                             styles={customStyles}
@@ -80,7 +79,6 @@ export const TagsForm = ({ event, addTags, deleteTags }) => {
                         />
                         <CreatableLabel style={display}>Tags</CreatableLabel>
                     </FormCntrl>
-                    {/* } */}
                     <AddButton />
                 </Form>
             </Col>
