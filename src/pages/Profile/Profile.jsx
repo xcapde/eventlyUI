@@ -12,6 +12,7 @@ import { Calendar } from "../../components/calendar";
 import format from "../../utils/format";
 import { VProfileDesktop } from "../../views/VProfileDesktop";
 import { notificationService } from "../../services/API/notificationService";
+import { VProfileMobile } from "../../views/VProfileMobile";
 
 export const Profile = () => {
     const [username, setUsername] = useState([]);
@@ -20,7 +21,6 @@ export const Profile = () => {
     const [byDate, setByDate] = useState();
     const [notifications, setNotifications] = useState([]);
     const [key, setKey] = useState("by_Date");
-    const tabContent = ["by_Date", "joined", "published"];
     const [pickedDay, setPickedDay] = useState();
 
     useEffect(() => {
@@ -34,7 +34,7 @@ export const Profile = () => {
     useEffect(() => {
         if (!pickedDay || !joined) return;
         getByDay();
-         // eslint-disable-next-line
+        // eslint-disable-next-line
     }, [pickedDay, joined])
 
 
@@ -95,12 +95,6 @@ export const Profile = () => {
         })
     }
 
-    const views = {
-        joined: <ProfileFeed events={joined} title={"joined"} />,
-        published: <ProfileFeed events={published} title={"published"} />,
-        by_Date: <ProfileFeed events={byDate} title={"joined"} date={pickedDay ? pickedDay.date : 'this day'} />
-    }
-
     return (
         <Page>
             <NavRail />
@@ -116,14 +110,15 @@ export const Profile = () => {
 
                 </Header>
 
-                <MainMobile>
-                    <NavCnt>
-                        <Navigation tabContent={tabContent} callback={setKey} field={key} />
-                    </NavCnt>
-                    {byDate &&
-                        views[key]
-                    }
-                </MainMobile>
+                <VProfileMobile
+                    joined={joined}
+                    published={published}
+                    byDate={byDate}
+                    date={pickedDay ? pickedDay.date : 'this day'}
+                    callback={setKey}
+                    field={key}
+                />
+
                 <VProfileDesktop
                     joined={joined}
                     published={published}
