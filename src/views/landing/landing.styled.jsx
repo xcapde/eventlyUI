@@ -16,7 +16,7 @@ export const DesktopCnt = styled.section`
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        & > ${Col} > ${Col} > ${Row}{
+        & #buttons{
             height: 10%;
             width: fit-content;
             top: 0;
