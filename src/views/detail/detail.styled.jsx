@@ -53,7 +53,6 @@ export const ModuleTitle = styled(TitleCard)`
 `
 
 export const MainDesktop = styled.section`
-    /* border: 4px solid red; */
     height: 99%;
     width: calc(100% - 3rem);
     margin-left: 3rem;
@@ -63,40 +62,45 @@ export const MainDesktop = styled.section`
     grid-template-rows: repeat(9, 1fr);
     & > div{
         height: 90%;
-        width: 100%;
-        place-self: center;
+        border-radius: .75rem;
+        box-shadow: 0px 0px 8px lightgray;
+        background-color: rgba(255, 255, 255, .8);
     } 
     & > div:nth-child(1){
         grid-column: 1/4;
         grid-row: 1/7;
         height: 100%;
-        /* & >div{
-            height: 100%;
-        } */
     }
     & > div:nth-child(2){
-        /* border: 2px solid green; */
-        grid-column: 4/8;
-        grid-row: 1/6;
-
-        width: 95%;
+        grid-column: 4/6;
+        grid-row: 1/5;
     }
     & > div:nth-child(3){
-        /* border: 2px solid blue; */
-        grid-column: 1/4;
-        grid-row: 7/10;
-        height: 175px;
-        place-self: flex-start;
-        align-items: flex-start;
-        position: relative;
-        top: 5%;
+        grid-column: 6/8;
+        grid-row: 1/5;
     }
     & > div:nth-child(4){
-        /* border: 2px solid yellow; */
         grid-column: 4/8;
-        grid-row: 6/10;
-
-        width: 95%;
-        column-gap: 2rem;
+        grid-row: 5/10;
+        width: 85%;
+        justify-self: flex-start;
+        margin-left: 1.75rem;
     }
+    &::before{
+            content:"";
+            top:0;
+            left:0;
+            right: 0;
+            bottom:0;
+            height: 100vh;
+            width: 100vw;
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            z-index: -1;
+            background-image: url(https://images.unsplash.com/photo-1466781783364-36c955e42a7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80);
+            background-size: 100%;
+            filter: blur(1px);
+        }
 `;

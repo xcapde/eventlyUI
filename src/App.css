@@ -98,7 +98,7 @@
     --font-size-title: x-large;
     --font-size-detail: small;
     --font-size-detail-desktop: small;
-    --font-size-detail-detailDesktop: 16px;
+    --font-size-detail-detailDesktop: medium; /*16px*/
 
     --font-size-card-title: medium;
     --font-size-card-title-desktop: medium;
