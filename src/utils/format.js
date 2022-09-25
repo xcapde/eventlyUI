@@ -34,6 +34,11 @@ const format = {
     cutNotificationLink(str) {
         let cutIn = 'http://';
         return str.substring(str.indexOf(cutIn), str.length-1);
+    },
+    shortLocation(location) {
+        let city = location.split(",")[2];
+        let region = location.split(",")[1].slice(1);
+        return `${city}, (${region})`;
     }
 }
 
