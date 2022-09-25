@@ -103,13 +103,13 @@ export const NavRow = styled.div`
 
 export const Section = styled.div`
     height: 30vh;
-    /* position: relative; */
+    position: relative;
     display: grid;
     grid-column: 1/8;
     grid-template-columns: ${props => props.columns || 'auto'};
     grid-template-rows: repeat(5, 1fr);
     grid-auto-flow: ${props => props.flow || 'row'};
-    /* border-top: 1px solid rgba(255, 255, 255, .45); */
+    border-top: 1px solid rgba(255, 255, 255, .25);
     place-content: space-evenly;
     & > div:nth-child(1){
         grid-row: 2/3;
@@ -123,7 +123,7 @@ export const Section = styled.div`
     & > div:nth-child(4){
         grid-row: 5/6;
     }
-    /* &::before{
+    &::before{
         content: "";
         position: absolute;
         top: -3px;
@@ -140,7 +140,7 @@ export const Section = styled.div`
         height: 5px;
         width: 2rem;
         background-color: var(--color-navrail-contrast);
-    } */
+    }
 `;
 
 
@@ -155,13 +155,15 @@ export const NavIcon = styled.span`
 `
 export const NavCont = styled.span`
     display: ${props => props.display || 'none'};
-    grid-column: 3/8;
+    grid-column: ${props => props.col || '3/8'};
+    grid-row: ${props => props.row};
     width: fit-content;
     font-family: var(--detail-font);
     font-size: var(--font-size-navRail);
     color: ${props => props.color || 'transparent'};
     white-space: nowrap;
     transition: display 6s ease, color 2s linear, grid-column none;
+    padding-top: ${props => props.paddingTop || 'none'};
     &:hover{
         color: lightgray;
     }
@@ -192,5 +194,8 @@ export const Aside = styled.aside`
         & > div > span:nth-child(2){
             grid-column: 2/7;
         }
+    }
+    & > ${Section}{
+        border-top: none;
     }
 `;

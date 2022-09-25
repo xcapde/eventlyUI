@@ -23,7 +23,6 @@ export const Notifications = () => {
     const toggleCheck = (id) => {
         notificationService.toggleCheck(id).then(res => {
             if (!res) return;
-            console.log(res);
             getNotifications();
         })
     }
@@ -31,7 +30,6 @@ export const Notifications = () => {
     const deleteNotification = (id) => {
         notificationService.delete(id).then(res => {
             if (!res) return;
-            console.log(res);
             getNotifications();
         })
     }

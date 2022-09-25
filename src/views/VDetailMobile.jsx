@@ -22,7 +22,7 @@ export const VDetailMobile = ({ event, participations, join, unjoin, deletConfir
                 <OptionsModule event={event} remove={deletConfirmation} edit={updateEvent}/>
 
                 <ImgCnt>
-                    <Slider images={event.images}/>
+                    <Slider images={event.images} />
                 </ImgCnt>
 
                 <InfoCnt id="info">

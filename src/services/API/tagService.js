@@ -1,5 +1,6 @@
 import axios from "axios";
 import { AuthService } from "../AuthService";
+import validation from "../../utils/validation";
 
 axios.defaults.baseURL = "http://localhost:8080";
 axios.defaults.headers.post["Content-Type"] = "application/json";
@@ -18,7 +19,9 @@ export const tagService = {
             .then(res => {
                 return res.data;
             })
-            .catch(err => console.log(err))
+            .catch(err=>{
+                return { error: validation.errorHandler(err) }
+            })
         return tags;
     },
 
@@ -29,16 +32,20 @@ export const tagService = {
         return tag;
     },
     addTagsToEvent({id, ...req}) {
-        console.log(id)
-        console.log({tags: req.data})
         const msg = axios.post(`/events/${id}/tags`, {tags: req.data}).then(res => {
             return res.data;
+        })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
         })
         return msg;
     },
     deleteEventTag({id, ...req}) {
         const msg = axios.delete(`/events/${id}/tags`,  { data: req }).then(res => {
             return res.data;
+        })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
         })
         return msg;
     }

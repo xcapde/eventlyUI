@@ -41,23 +41,5 @@ export const customStyles = {
         "::-webkit-scrollbar": {
             display:'none',
           }
-    }),
-    multiValue: (provided, state) => {
-        const color = 'var(--color-badgetText-default)';
-        const backgroundColor = 'var(--color-badgetBG-default)';
-        const textTransform = 'uppercase';
-        const fontFamily = 'var(--detail-font)';
-        const fontSize = 'var(--font-size-badge)';
-        const fontWeight = 'var(--badge-font-weight)';
-        const borderRadius = 'var(--badge-radius)';
-        const padding = 'var(--react-select-badge-padding)';
-        const opacity = state.isDisabled ? 0.5 : 1;
-        const transition = 'opacity 300ms';
-        return { ...provided, color, backgroundColor, textTransform, fontFamily, fontSize, fontWeight, borderRadius, padding, opacity, transition };
-    },
-    multiValueLabel: (provided, state) => {
-        const color = 'var(--color-badgetText-default)';
-        const fontSize = 'unset';
-        return { ...provided, color, fontSize }
-    }
+    })
 }

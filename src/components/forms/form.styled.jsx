@@ -9,7 +9,7 @@ export const Form = styled.form`
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: auto;
-    place-content: center;
+    place-content: ${props => props.justify || 'flex-start'};
     margin: 0 auto;
     grid-gap: calc(30px - (3rem / 2) + 1.25rem);
     & > div{
@@ -23,7 +23,7 @@ export const Form = styled.form`
     }
     @media (min-width:${Breakpoint.md}) {
         width: 100%;
-        place-content: center;
+        place-content: ${props => props.justifyD || 'flex-start'};;
     }
 `
 
@@ -100,7 +100,7 @@ export const Searcher = styled.form`
 export const FormGrid = styled(Form)`
     position: relative;
     display: grid;
-    place-content: center;
+    place-content: ${props => props.placeContent || 'center'};
     grid-template-columns: ${props => props.styles.grid || 'repeat(2,1fr)'};
     grid-template-rows: auto;
     grid-column-gap: 0%;
@@ -125,7 +125,7 @@ export const FormGrid = styled(Form)`
     }
     @media (min-width:${Breakpoint.md}) {
         grid-column-gap: 14%;
-        place-content: flex-start;
+        place-content: ${props => props.styles.placeContent || 'flex-start'};
     }
     
 `;

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { AuthService } from "../AuthService";
+import validation from "../../utils/validation";
 
 axios.defaults.baseURL = "http://localhost:8080";
 axios.defaults.headers.post["Content-Type"] = "application/json";
@@ -17,11 +18,17 @@ export const participationService = {
         const participations = axios.get(`/events/${id}/participations`).then(res => {
             return res.data;
         })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
+        })
         return participations;
     },
     join(id) {
         const participations = axios.post(`/events/${id}/participations`).then(res => {
             return res.data;
+        })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
         })
         return participations;
     },
@@ -29,11 +36,17 @@ export const participationService = {
         const participations = axios.delete(`/events/${id}/unjoin`).then(res => {
             return res.data;
         })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
+        })
         return participations;
     },
     getAll(){
         const participations = axios.get(`/participations`).then(res => {
             return res.data;
+        })
+        .catch(err=>{
+            return { error: validation.errorHandler(err) }
         })
         return participations;
     }

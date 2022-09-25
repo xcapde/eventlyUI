@@ -37,16 +37,20 @@ export const Day = styled(Col)`
         color: var(--color-white);
     }
     @media(min-width:${Breakpoint.md}){
-        gap: 3rem;
+        gap: 2rem;
         cursor: pointer;
         width: calc(100%/7);
-        border-right: 1px solid rgba(255, 255, 255, .25);
+        border-right: 1px solid rgba(255,255,255,.25);
         border-radius: inherit;
         align-items: flex-end;
         padding-right: 1rem;
         background-color: transparent;
+        justify-content: center;
         & > p{
+            font-size: .95rem;
             color: ${props => props.color};
+            font-family: var(--numbers-font);
+            font-weight: 400;
         }
         & > p:nth-child(2){
             font-size: 24px;

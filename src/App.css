@@ -169,6 +169,8 @@
     --cardUser-width:200px;
     --cardUser-height:50px;
 
+    /*SLIDER PREVIEW*/
+    --slider-cube: 5rem;
 
     /* BADGE */
     --badge-padding: 8px 12px;

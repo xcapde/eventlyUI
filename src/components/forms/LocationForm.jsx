@@ -19,7 +19,7 @@ export const LocationForm = ({ event, addDirection, addWebUrl, eventDirection, e
         url: ""
     }
 
-    const style = { grid: 'auto', inputWidth: 'var(--input-width)' }
+    const style = { grid: 'auto', inputWidth: 'var(--input-width)', placeContent:'center'}
 
     const [formData, setFormData] = useState();
     const [styles, setStyles] = useState();
@@ -29,7 +29,8 @@ export const LocationForm = ({ event, addDirection, addWebUrl, eventDirection, e
     useEffect(() => {
         if (!event) return;
         event.type.includes("online") ? setFormData(eventUrl ? eventUrl : webUrl) : setFormData(eventDirection ? eventDirection : direction);
-        event.type.includes("online") ? setStyles(style) : setStyles({});
+        event.type.includes("online") ? setStyles(style) : setStyles({placeContent:'flex-start'});
+         // eslint-disable-next-line
     }, [event, eventUrl, eventDirection]);
 
     const handleSubmit = (e) => {
@@ -39,18 +40,18 @@ export const LocationForm = ({ event, addDirection, addWebUrl, eventDirection, e
         setTimeout(next, ms)
     }
 
-    if(styles)
-    return (
-        <FormGrid styles={styles} onSubmit={handleSubmit}>
-            {Object.keys(formData).map((field, key) => (
-                <FormControlInput
-                    key={key}
-                    field={field}
-                    data={formData}
-                    callback={setFormData}
-                />
-            ))}
-            <FormButton content={!event.location ? "Add" : "Update"} />
-        </FormGrid>
-    )
+    if (styles)
+        return (
+            <FormGrid styles={styles} placeContent={ event.type.includes("online") ? 'center' : "flex-start"} onSubmit={handleSubmit}>
+                {Object.keys(formData).map((field, key) => (
+                    <FormControlInput
+                        key={key}
+                        field={field}
+                        data={formData}
+                        callback={setFormData}
+                    />
+                ))}
+                <FormButton content={!event.location ? "Add" : "Update"} />
+            </FormGrid>
+        )
 }

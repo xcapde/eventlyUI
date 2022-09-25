@@ -5,7 +5,7 @@ export const ImagePreview = ({ url, callback }) => {
     return (
         <SmallPreview>
             <SmallPreviewImg imgUrl={url} />
-            <IconBg onClick={()=>callback(url)} />
+            {url.includes("blob") ? null : <IconBg onClick={()=>callback(url)} />}
         </SmallPreview>
     )
 }

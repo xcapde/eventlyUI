@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Row, Col, Title, Breakpoint } from "../../styles/styles.styled";
+import { ContainerScrollerCnt } from "../buttons/buttons.styled";
 
 export const Wrapper = styled(Col)`
     width: 95%;
@@ -18,6 +19,7 @@ export const FeedCnt = styled(Col)`
     margin: ${props => props.margin || 'inherit'};
     overflow: hidden;
     align-items: flex-start;
+    justify-content: flex-start;
     gap: ${props => props.gap || '2.5%'};
 `;
 
@@ -50,7 +52,7 @@ export const VerticalFeedMainCard = styled(VerticalFeed)`
     grid-gap: 2rem 1rem;
     @media (min-width:${Breakpoint.md}) {
             grid-template-columns: repeat(auto-fill, minmax(var(--cardMain-width), 1fr));
-            grid-gap: ${props => props.gap || '3rem 3rem'};
+            grid-gap: 1rem 1rem;
     }
 `;
 
@@ -108,13 +110,15 @@ export const ProfFeed = styled(Col)`
     overflow-x: hidden;
     gap: 2.5%;
     margin: 0 auto;
-    /* padding: 2%; */
     padding: 2%;
 `;
 
 export const NotiFeedTitle = styled(FeedTitle)`
     width: 95%;
     margin: 0 auto;
+    @media (min-width: 820px) {
+        display: none;
+    }
 `;
 
 export const NotiFeed = styled.section`
@@ -128,5 +132,48 @@ export const NotiFeed = styled.section`
     overflow-y: scroll;
     place-content: flex-start;
     row-gap: 1rem;
-    padding: 1rem;
+    padding: 1rem 0;
+    & > ${ContainerScrollerCnt}{
+        display:none;
+    }
+    @media (min-width: 820px) {
+        & > ${ContainerScrollerCnt}{
+        display:flex;
+    }
+        ::-webkit-scrollbar {
+        display: none;
+        }
+    }
+`;
+
+export const ScheduleFeed = styled(NotiFeed)`
+    grid-template-columns: repeat(auto-fit, minmax(var(--cardMain-height), 1fr));
+    max-height: inherit;
+    & > div{
+        grid-column: 1/1;
+        margin: 0 auto;
+    }
+`;
+
+export const ProfileFeedDt = styled.section`
+        max-height: 57vh;
+        max-width: 98%;
+        width: fit-content;
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(var(--cardMain-width),1fr));
+        grid-template-rows: repeat(auto-fill,minmax(var(--cardMain-height),1fr));
+        grid-auto-flow: row;
+        place-content:flex-start;
+        align-content: flex-start;
+        grid-gap: 1rem;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        margin: 0 auto;
+        ::-webkit-scrollbar {
+        display: none;
+        }
+        & > div{
+            margin: 0;
+        }
 `;

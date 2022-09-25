@@ -3,21 +3,22 @@ import { eventService } from "../../services/API/eventService";
 import { AuthService } from "../../services/AuthService";
 import { Row, Title, NoNavView, Page } from "../../styles/styles.styled";
 import { Footer } from "../../components/footer/Footer";
-import { NavCnt, Header, MainMobile, MainDesktop } from "./profile.styled";
-import { Navigation } from "../../components/information/Navigation";
+import { Header } from "./profile.styled";
 import { OptionsModule } from "../../components/buttons/burgers/OptionsModule";
 import { NavRail } from "../../components/navs";
-import { ProfileFeed } from "../../components/feeds/ProfileFeed";
 import { Calendar } from "../../components/calendar";
 import format from "../../utils/format";
+import { VProfileDesktop } from "../../views/VProfileDesktop";
+import { notificationService } from "../../services/API/notificationService";
+import { VProfileMobile } from "../../views/VProfileMobile";
 
 export const Profile = () => {
     const [username, setUsername] = useState([]);
     const [joined, setJoined] = useState([]);
     const [published, setPublished] = useState([]);
     const [byDate, setByDate] = useState();
+    const [notifications, setNotifications] = useState([]);
     const [key, setKey] = useState("by_Date");
-    const tabContent = ["by_Date", "joined", "published"];
     const [pickedDay, setPickedDay] = useState();
 
     useEffect(() => {
@@ -25,11 +26,13 @@ export const Profile = () => {
         getAuth();
         getJoined();
         getPublished();
+        getNotifications();
     }, [key])
 
     useEffect(() => {
         if (!pickedDay || !joined) return;
         getByDay();
+        // eslint-disable-next-line
     }, [pickedDay, joined])
 
 
@@ -67,10 +70,27 @@ export const Profile = () => {
         setByDate(joined.filter(e => format.eventDateToCalendarDate(e.date) === pickedDay.date));
     }
 
-    const views = {
-        joined: <ProfileFeed events={joined} title={"joined"} />,
-        published: <ProfileFeed events={published} title={"published"} />,
-        by_Date: <ProfileFeed events={byDate} title={"joined"} date={pickedDay ? pickedDay.date : 'this day'} />
+    const getNotifications = () => {
+        notificationService.getAuthNotifications().then(res => {
+            if (!res) return;
+            setNotifications(res);
+        })
+    }
+
+    const toggleCheck = (id) => {
+        notificationService.toggleCheck(id).then(res => {
+            if (!res) return;
+            console.log(res);
+            getNotifications();
+        })
+    }
+
+    const deleteNotification = (id) => {
+        notificationService.delete(id).then(res => {
+            if (!res) return;
+            console.log(res);
+            getNotifications();
+        })
     }
 
     return (
@@ -88,17 +108,26 @@ export const Profile = () => {
 
                 </Header>
 
-                <MainMobile>
-                    <NavCnt>
-                        <Navigation tabContent={tabContent} callback={setKey} field={key} />
-                    </NavCnt>
-                    {byDate &&
-                        views[key]
-                    }
-                </MainMobile>
-                <MainDesktop>
+                <VProfileMobile
+                    joined={joined}
+                    published={published}
+                    byDate={byDate}
+                    date={pickedDay ? pickedDay.date : 'this day'}
+                    callback={setKey}
+                    field={key}
+                />
 
-                </MainDesktop>
+                <VProfileDesktop
+                    joined={joined}
+                    published={published}
+                    byDate={byDate}
+                    notifications={notifications}
+                    date={pickedDay ? pickedDay.date : 'this day'}
+                    navigationCallback={setKey}
+                    field={key}
+                    toggleCheck={toggleCheck}
+                    deleteNotification={deleteNotification}
+                />
             </NoNavView>
             <Footer />
         </Page>

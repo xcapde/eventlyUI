@@ -20,7 +20,8 @@ export const Upload = () => {
     const [direction, setDirection] = useState();
     const [url, setUrl] = useState();
     const { eventId } = useParams();
-    const { modalIsActive, modalIsAsking, message, setModalIsActive, runModal } = useModal();
+    const [error, setError] = useState();
+    const { modalIsActive, modalIsAsking, message, setModalIsActive, runModal, runAlertModal } = useModal();
 
 
     useEffect(() => {
@@ -34,6 +35,7 @@ export const Upload = () => {
     const getEvent = (id) => {
         eventService.getEvent(id).then(res => {
             setEvent(res);
+            setError();
             if (res.location === "") return;
             res.type === "offline" ? getDirection(id) : getWebUrl(id);
         })
@@ -41,11 +43,11 @@ export const Upload = () => {
 
     const postEvent = (data) => {
         eventService.postEvent(data).then(res => {
-            if(!res) return;
-            // if (res.error.message){
-            //     runAlertModal(res.error.message)
-            //     return;
-            // };                 
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             runModal(`${res.title} has been created!`)
             getEvent(res.id);
         })
@@ -53,7 +55,11 @@ export const Upload = () => {
 
     const updateEvent = (data) => {
         eventService.updateEvent({ ...data, id: event.id }).then(res => {
-            if (!res) return;
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             runModal(`${res.title} has been updated!`)
             if (event.type !== res.type) {
                 setDirection("");
@@ -66,8 +72,11 @@ export const Upload = () => {
 
     const addDirection = (data) => {
         directionService.createDirection({ ...data, id: event.id }).then(res => {
-            if (!res) return;
-            // runModal(res.message)
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             getEvent(event.id);
             getDirection(event.id);
         })
@@ -77,12 +86,17 @@ export const Upload = () => {
         directionService.getByEventId(id).then(res => {
             delete res.id;
             setDirection(res);
+            setError();
         })
     }
 
     const addWebUrl = (data) => {
         webUrlService.createWebUrl({ ...data, id: event.id }).then(res => {
-            if (!res) return;
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             getEvent(event.id);
             getWebUrl(event.id);
         })
@@ -92,11 +106,20 @@ export const Upload = () => {
         webUrlService.getByEventId(id).then(res => {
             delete res.id;
             setUrl(res);
+            setError();
         })
     }
 
     const uploadImg = (data) => {
         imageService.postImg(data, event.id).then(res => {
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                setTimeout(() => {
+                    setError();
+                }, 3000);
+                return;
+            }
             runModal(res.message);
             getEvent(event.id);
         })
@@ -104,6 +127,11 @@ export const Upload = () => {
 
     const deleteImg = (data) => {
         imageService.deleteByUrl(data).then(res => {
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             runModal(res.message);
             getEvent(event.id);
         })
@@ -111,42 +139,53 @@ export const Upload = () => {
 
     const addReq = (data) => {
         requirementService.createRequirement({ name: data.requirement, id: event.id }).then(res => {
-            if (!res) return;
-            // runModal(res.message)
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             getEvent(event.id);
         })
     }
 
     const deleteReq = (data) => {
         requirementService.deleteRequirement({ name: data, id: event.id }).then(res => {
-            if (!res) return;
-            // runModal(res.message)
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             getEvent(event.id);
         })
     }
 
     const addTags = (data) => {
         tagService.addTagsToEvent({ data, id: event.id }).then(res => {
-            if (!res) return;
-            // runModal(res.message)
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             getEvent(event.id);
         })
     }
 
     const deleteTags = (data) => {
         tagService.deleteEventTag({ name: data, id: event.id }).then(res => {
-            if (!res) return;
-            // runModal(res.message)
+            if (res.error) {
+                setError(res.error)
+                runAlertModal(res.error)
+                return;
+            }
             getEvent(event.id);
         })
     }
 
-    console.log(event);
     return (
         <Page>
+            <NavRail />
+            {modalIsActive && <Modal message={message} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive} />}
             <View>
-                <NavRail />
-                {modalIsActive && <Modal message={message} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive} />}
                 <MultiStepForm
                     event={event}
                     postEvent={postEvent}
@@ -161,9 +200,10 @@ export const Upload = () => {
                     deleteReq={deleteReq}
                     addTags={addTags}
                     deleteTags={deleteTags}
+                    error={error}
                 />
-                <Footer />
             </View>
+            <Footer />
         </Page>
 
     )

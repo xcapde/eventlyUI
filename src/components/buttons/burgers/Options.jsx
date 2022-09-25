@@ -25,8 +25,8 @@ export const Options = ({ event, remove, edit, callback }) => {
     const content = {
         detail: {
             isAuth: [
-                { content: "Delete", callback: () => { (remove())(callback()) } },
-                { content: "Edit", callback: () => { (edit())(callback()) } }
+                { content: "Delete", callback: () => { remove(); callback() } },
+                { content: "Edit", callback: () => { edit(); callback() } }
             ],
             default: [
                 { content: "Report", callback: () => console.log("not implemented yet") },
@@ -46,10 +46,10 @@ export const Options = ({ event, remove, edit, callback }) => {
     }
 
     return (
-            <OptionsCnt>
-                {view && client && content[view][client].map((button, key) => (
-                    <OptionButton key={key} content={button.content} callback={button.callback} />
-                ))}
-            </OptionsCnt>
+        <OptionsCnt>
+            {view && client && content[view][client].map((button, key) => (
+                <OptionButton key={key} content={button.content} callback={button.callback} />
+            ))}
+        </OptionsCnt>
     )
 }
