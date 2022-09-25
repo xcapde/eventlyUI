@@ -29,11 +29,11 @@ export const ImageForm = ({ event, uploadImg, deleteImg, error }) => {
         // eslint-disable-next-line
     }, [event, error])
 
-    useEffect(() => {
-        if (uploaded || error) {
-            setPreview(false);
-        }
-    }, [uploaded, error])
+    // useEffect(() => {
+    //     if (uploaded || error) {
+    //         setPreview(false);
+    //     }
+    // }, [uploaded, error])
 
     const isUploaded = () => {
         if (images === 0) return;

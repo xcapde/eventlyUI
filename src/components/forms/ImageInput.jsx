@@ -20,9 +20,10 @@ export const ImageInput = ({ uploadImg, uploaded, setPreview, error }) => {
         if (!uploaded) return;
         if (uploaded) {
             setTimeout(() => {
-                setIsLoading(false)
-                setStyles(defaultStyle)
+                setIsLoading(false);
+                setStyles(defaultStyle);
             }, ms * .35)
+            setPreview();
             return;
         }
         // eslint-disable-next-line
@@ -31,8 +32,9 @@ export const ImageInput = ({ uploadImg, uploaded, setPreview, error }) => {
     useEffect(() => {
         if (!error) return;
         setTimeout(() => {
-            setIsLoading(false)
+            setIsLoading(false);
             setStyles(defaultStyle);
+            setPreview();
         }, ms * .35)
         // eslint-disable-next-line
     }, [error])
