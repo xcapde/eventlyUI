@@ -1,8 +1,6 @@
 import { DesktopCnt } from "./landing.styled";
-import { PrimaryButton } from "../../components/buttons/PrimaryButton";
 import { Col, Row } from "../../styles/styles.styled";
-import { useNavigate } from "react-router-dom";
-import { SecondaryButton } from "../../components/buttons";
+import { JoinButton, SecondaryButton } from "../../components/buttons";
 
 export const VLandingDesktop = ({goHome, goLogin, goSignup}) => {
 
@@ -14,7 +12,7 @@ export const VLandingDesktop = ({goHome, goLogin, goSignup}) => {
                         <h1>Welcome to Evently!</h1>
                         <h3>Share your hobbies</h3>
                     </Col>
-                    <PrimaryButton content={'Get started'} callback={goHome} />
+                    <JoinButton content={'Get started'} callback={goHome} />
                 </Col>
                 <Col>
                     <noscript>image ?</noscript>

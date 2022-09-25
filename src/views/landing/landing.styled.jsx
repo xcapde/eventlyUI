@@ -1,10 +1,31 @@
 import styled from "styled-components";
-import { Breakpoint, Col, Row } from "../../styles/styles.styled";
+import { Breakpoint } from "../../styles/styles.styled";
 
 export const MobileCnt = styled.section`
+        height: 100%;
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1, h3{
+            color: black;
+            font-weight: 900;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, .8);
+            text-align: center;
+        }
+        & h1{
+            font-size: 26px;
+        }
+        & h3{
+            font-size: 20px;
+            width: 65%;
+            margin: 0 auto;
+        }
     @media (min-width:${Breakpoint.md}) {
             display:none;
-        }
+    }
 `;
 
 export const DesktopCnt = styled.section`
@@ -28,6 +49,7 @@ export const DesktopCnt = styled.section`
             color: black;
             font-weight: 900;
             text-shadow: 1px 1px 2px rgba(255, 255, 255, .8);
+            text-align: center;
         }
         & h1{
             font-size: 32px;
@@ -55,3 +77,10 @@ export const DesktopCnt = styled.section`
     }
 `;
 
+export const Dot = styled.span`
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: ${props => props.bg || 'var(--color-main)'};
+    margin: 1rem;
+`;
