@@ -170,6 +170,7 @@ export const ProfileFeedDt = styled.section`
         overflow-x: hidden;
         overflow-y: scroll;
         margin: 0 auto;
+        padding: .25rem;
         ::-webkit-scrollbar {
         display: none;
         }

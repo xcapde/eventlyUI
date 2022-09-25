@@ -26,7 +26,7 @@ export const HomeFeed = ({ events, tags, tag, setTag, eventsByTag, setEventsByTa
                 <FeedCnt margin="0" gap="0">
                     {!eventsByTag && !seeAll &&
                         <React.Fragment>
-                            <ModuleHorizontalMainCard title={'Offline'} events={offlineEvents} participations={participations} />
+                            <ModuleHorizontalMainCard title={'Offline'} events={offlineEvents} participations={participations}  />
                             <ModuleVerticalSmallCard title={'Online'} height={'30%'} widht="100%" events={onlineEvents} />
                         </React.Fragment>
                     }

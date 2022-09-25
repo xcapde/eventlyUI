@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Breakpoint, Col, Img, Row, Title} from "../../styles/styles.styled";
+import { Breakpoint, Col, Img, Row, Title, Wrapper} from "../../styles/styles.styled";
 import { TrashIcon } from "../buttons/buttons.styled";
 
 /*SIZING*/
@@ -11,7 +11,7 @@ export const CardMain = styled(Col)`
     background-color: var(--color-white);
     color: var(--color-detail-text);
     border-radius: var(--cardMain-radius);
-    box-shadow: 0px 0px 5px var(--card-shadow-opacity);;
+    box-shadow: 0px 0px 5px var(--card-shadow-opacity);
     @media (min-width:${Breakpoint.md}) {
         height: var(--cardMain-height-desktop);
         /* width: ${props => `calc( ${props.width} *.85)` || 'var(--cardMain-width-desktop)'}; */
@@ -24,16 +24,17 @@ export const CardXS = styled(CardMain)`
     height: var(--cardXS-height);
     flex-direction: row;
     justify-content: space-between;
-/* 
-    @media (min-width:${Breakpoint.md}) {
-        width: var(--cardXS-width-desktop);
-    } */
 `;
 
 /*IMAGES*/
+export const ImgCnt = styled(Wrapper)`
+    border-radius: var(--cardMain-radius);
+    height:  calc(var(--cardMain-height) - var(--cardMain-body-height));
+    width: 100%;
+`;
+
 export const CardMainImage = styled(Img)`
-    height: var(--cardMain-img-size);
-    width: var(--cardMain-img-size);
+    object-fit: cover;
     border-radius: var(--cardMain-radius) var(--cardMain-radius) 0 0;
 `;
 export const ImgCntrl = styled(Row)`

@@ -155,11 +155,12 @@
     --cardMain-width-desktop: 210px;
     --cardMain-height-desktop: 280px;
     --cardMain-img-size: 100%;
+    --cardMain-body-height: 120px;
 
     --cardXS-width: 350px;
     --cardXS-height: 100px;
     --cardXS-imgCntrl-size: var(--cardXS-height);
-    --cardXS-img-size: var(--cardXS-imgCntrl-size);
+    --cardXS-img-size: var(--cardXS-height);
     
     /* --cardAllTags-width:300px; */
     --cardAllTags-width:280px;
@@ -187,8 +188,6 @@
     --index-opacity-button: 4;
     --index-opacityBG:5;
     --index-modal:6;
-    
-    --index: 10;
 }
 
 .App {
