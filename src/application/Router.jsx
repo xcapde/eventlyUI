@@ -11,6 +11,7 @@ import App from "../App";
 import { JoinedList } from "../pages/events/JoinedList";
 import { PublishedList } from "../pages/events/PublishedList";
 import { Landing } from "../pages/landing/Landing";
+import { Home } from "../pages/home/Home";
 
 export default function Router() {
 
@@ -31,7 +32,7 @@ export default function Router() {
             <Routes>
                 <Route path="/" element={<App />} />
                 <Route path="/landing" element={<Landing />} />
-                <Route path="/home" element={<App />} />
+                <Route path="/home" element={<Home />} />
                 <Route path="/events/:id" element={<Detail />} />
                 <Route path="/search" element={<Search />} />
                 <Route path="/events" search="?tag=tag" element={<TagSearch />} />

@@ -16,12 +16,12 @@ export const VLandingMobile = ({ goHome }) => {
     ]
 
     const slide = (end) => {
+        if(Math.abs(end-start) < 50 ) return;
         if ((view === 0 && end < start) || (view === views.length - 1 && end > start)) return;
         end > start ? setView(view + 1) : setView(view - 1);
 
     }
 
-    console.log(view)
     return (
         <MobileCnt onTouchStart={(e) => setStart(e.changedTouches[0].clientX)} onTouchEnd={(e) => slide(e.changedTouches[0].clientX)}>
             <Col height="15%" />
