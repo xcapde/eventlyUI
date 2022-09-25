@@ -40,6 +40,7 @@ export const imageService = {
             return res.data;
         })
         .catch(err=>{
+            console.log(err)
             return { error: validation.errorHandler(err) }
         })
         return imgRes;
@@ -53,9 +54,6 @@ export const imageService = {
         })
         return msg;
     },
-    // imageReqDelete:{
-    //     "url":"http://res.cloudinary.com/dxfdgwcka/image/upload/v1662665016/s66mtsexosvvefcmbxhk.jpg"
-    // }
     deleteByUrl(req) {
         req = { url: req };
         const msg = axios.delete(`/images`, { data: req }).then(res => {

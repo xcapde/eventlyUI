@@ -6,13 +6,14 @@ import { NoPreviewSmall } from "../images/images.styled"
 import { OutputCnt } from "./form.styled"
 import { ImageInput } from "./ImageInput"
 
-export const ImageForm = ({ event, uploadImg, deleteImg }) => {
+export const ImageForm = ({ event, uploadImg, deleteImg, error }) => {
 
     const [images, setImages] = useState(0);
     const [uploaded, setUploaded] = useState(false);
 
     useEffect(() => {
         setImages(event && event.images ? event.images : images);
+        // eslint-disable-next-line
     }, [])
 
     useEffect(() => {
@@ -23,14 +24,17 @@ export const ImageForm = ({ event, uploadImg, deleteImg }) => {
         setTimeout(() => {
             setUploaded(false);
         }, ms);
-    }, [event])
+        // eslint-disable-next-line
+    }, [event, error])
 
     const isUploaded = () =>{
         if(images === 0) return;
+        if(error){
+            setUploaded(false);
+            return;
+        }
         return event.images.map((num, key)=> event.images[key] === images[key]).includes(false);
     }
-
-    console.log(images)
 
     return (
         <Col>
@@ -50,7 +54,7 @@ export const ImageForm = ({ event, uploadImg, deleteImg }) => {
                 </OutputCnt>
             </Col>
             <Col>
-                <ImageInput uploadImg={uploadImg} uploaded={uploaded} />
+                <ImageInput uploadImg={uploadImg} uploaded={uploaded} error={error} />
             </Col>
         </Col>
     )

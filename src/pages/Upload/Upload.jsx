@@ -115,6 +115,9 @@ export const Upload = () => {
             if (res.error) {
                 setError(res.error)
                 runAlertModal(res.error)
+                setTimeout(() => {
+                    setError();
+                }, 3000);
                 return;
             }
             runModal(res.message);
@@ -178,7 +181,6 @@ export const Upload = () => {
         })
     }
 
-    console.log(error);
     return (
         <Page>
             <NavRail />

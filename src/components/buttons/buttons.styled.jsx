@@ -208,20 +208,24 @@ export const Pulse = styled.div`
     &::before{
         content: "";
         position: absolute;
-        height: calc(100% + 15px);
-        width: calc(100% + 15px);
+        height: 60px;
+        width: 60px;
         border: ${props => props.border};
         border-radius: 50%;
         animation: ${pulse} 1.5s linear infinite;
+        transition: border-width 2s linear;
+        transition-delay: 1s;
     }
     &::after{
         content: "";
         position: absolute;
-        height: calc(100% + 15px);
-        width: calc(100% + 15px);
+        height: 60px;
+        width: 60px;
         border: ${props => props.border};
         border-radius: 50%;
         animation: ${pulse} 1.5s linear infinite;
+        transition: border-width 2s linear;
+        transition-delay: 1s;
         animation-delay: .4s;
     }
 `;
@@ -234,19 +238,14 @@ export const UploadButton = styled.button`
     font-weight: 400;
     background-color: var(--button-main);
     color: var(--color-white);
-    border-radius: ${props => props.borderRadius};
-    pointer-events: ${props => props.pointer};
+    border-radius: var(--button-radius);
+    pointer-events: all;
     border: var(--button-border-width) solid var(--button-main);
     padding: unset;
     z-index: 2;
     /* margin-top:calc(var(--input-height) + calc(30px - (3rem / 2) + 1.25rem)); */
+    transition: all 2s ease , width 1s ease, height 1s ease, border-radius 1s ease;
     cursor:pointer;
-    &:hover{
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        transition: all 2s ease , width 1s ease, height 1s ease, border-radius 1s ease;
-    }
     @media (min-width: 820px) {
         margin-top: 0%;
     }

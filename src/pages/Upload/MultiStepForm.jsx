@@ -67,7 +67,8 @@ export const MultiStepForm = ({
             title: `${hasDetails() ? "Update" : "Add"} event pictures'!`,
             view: <ImageForm event={event}
                 uploadImg={uploadImg}
-                deleteImg={deleteImg} />,
+                deleteImg={deleteImg}
+                error={error} />,
             keyWords: ["image"]
         }
     ]
