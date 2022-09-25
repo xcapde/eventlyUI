@@ -58,7 +58,7 @@ export const ImageForm = ({ event, uploadImg, deleteImg, error }) => {
                         event.images.map((image, key) => (
                             <ImagePreview key={key} url={image} callback={deleteImg} />
                         )) :
-                        <NoPreviewSmall />
+                        !preview && <NoPreviewSmall />
                     }
                     {preview && <ImagePreview url={preview} />}
                 </OutputCnt>
