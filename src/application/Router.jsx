@@ -10,6 +10,7 @@ import { AuthService } from "../services/AuthService";
 import App from "../App";
 import { JoinedList } from "../pages/events/JoinedList";
 import { PublishedList } from "../pages/events/PublishedList";
+import { Landing } from "../pages/landing/Landing";
 
 export default function Router() {
 
@@ -29,6 +30,7 @@ export default function Router() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<App />} />
+                <Route path="/landing" element={<Landing />} />
                 <Route path="/home" element={<App />} />
                 <Route path="/events/:id" element={<Detail />} />
                 <Route path="/search" element={<Search />} />
