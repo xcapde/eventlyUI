@@ -85,6 +85,14 @@ export const MainDesktop = styled.section`
         width: 85%;
         justify-self: flex-start;
         margin-left: 1.75rem;
+        & ${Col} > div:nth-child(2){
+            width: fit-content;
+            min-width: 60%;
+            max-width: 80%;
+            margin: auto;
+            align-content: center;
+            justify-content: space-around;
+        }
     }
     &::before{
             content:"";

@@ -1,15 +1,14 @@
 import { Col, DetailText } from "../../styles/styles.styled";
 import format from "../../utils/format";
-import { TitleCard } from "../cards/cards.styled";
 import { MainCard } from "../cards/MainCard";
-import { VerticalFeedMainCard } from "./feed.styled";
+import { FeedTitle, VerticalFeedMainCard } from "./feed.styled";
 
 export const ModuleVerticalMainCard = ({ title, events, tag, width, height, justify, participations}) => {
 
 
     return (
         <Col>
-            <TitleCard>{format.uppercaseFirstLetter(title)}</TitleCard>
+            <FeedTitle>{format.uppercaseFirstLetter(title)}</FeedTitle>
             <VerticalFeedMainCard justify={justify}>
                 {events && events.length > 0 ?
                     events.map((event, key) =>

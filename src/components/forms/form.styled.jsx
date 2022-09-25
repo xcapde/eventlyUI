@@ -36,6 +36,11 @@ export const Label = styled.label`
     font-weight: 400;
     text-transform: capitalize;
     /* transition: 1s ease; */
+    &:hover{
+        top: -40px;
+        left: 2.5%;
+        color: var(--color-main);
+    }
 `;
 
 export const CreatableLabel = styled.label`

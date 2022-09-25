@@ -14,6 +14,7 @@ export const Col = styled.div`
     align-items: ${props => props.alignItems || 'center'};
     justify-content: ${props => props.justifyContent || 'center'};
     gap: ${props => props.gap || 'unset'};
+    padding: ${props => props.padding ||'unset'};
 `;
 
 export const Row = styled(Col)`

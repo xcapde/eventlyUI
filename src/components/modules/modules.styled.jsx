@@ -20,13 +20,13 @@ export const MainDetailCnt = styled.div`
         color: var(--color-dark);
     }
     & > ${DetailTitle}{
-        grid-column: 1/5;
+        grid-column: 1/6;
         grid-row: 1/2;
         padding: 0;
         align-self: center;
     }
     & > ${Col}{
-        grid-column: 1/5;
+        grid-column: 1/4;
         grid-row: 2/4;
     }
     & > ${AvatarImg}{

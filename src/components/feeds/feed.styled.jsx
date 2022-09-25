@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Row, Col, Title, Breakpoint } from "../../styles/styles.styled";
 import { ContainerScrollerCnt } from "../buttons/buttons.styled";
+import { CardXS } from "../cards/cards.styled";
 
 export const Wrapper = styled(Col)`
     width: 95%;
@@ -45,8 +46,29 @@ export const VerticalFeed = styled.div`
         grid-gap: 2rem 1rem;
         justify-content: ${props => props.justify || 'flex-start'};
         padding: 1rem 0 0 0;
+        ::-webkit-scrollbar {
+        display: none;
+    }
     }
 `;
+
+export const VerticalFeedSmallCard = styled(VerticalFeed)`
+        @media (min-width:${Breakpoint.md}) {
+        height: 100%;        
+        grid-template-columns: repeat(auto-fill, minmax(var(--cardXS-width), 1fr));
+        grid-gap: 1rem;
+        width: 90%;
+        place-content: baseline;
+        margin-right: 10%;
+        ::-webkit-scrollbar {
+        display: none;
+        }
+        & > ${CardXS}{
+            justify-self: flex-start;
+        }
+    }
+`;
+
 
 export const VerticalFeedMainCard = styled(VerticalFeed)`
     grid-gap: 2rem 1rem;
