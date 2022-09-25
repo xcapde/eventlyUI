@@ -5,7 +5,7 @@ import { Col } from "../../styles/styles.styled";
 import { Pulse, UploadButton } from "../buttons/buttons.styled";
 import { Input } from "./form.styled"
 
-export const ImageInput = ({ uploadImg, uploaded, error }) => {
+export const ImageInput = ({ uploadImg, uploaded, setPreview, error }) => {
 
     const [isLoading, setIsLoading] = useState(false);
     const [styles, setStyles] = useState();
@@ -46,6 +46,7 @@ export const ImageInput = ({ uploadImg, uploaded, error }) => {
     const handleFileChange = (e) => {
         e.preventDefault();
         uploadImg(e.target.files[0]);
+        setPreview( URL.createObjectURL(e.target.files[0]));
         setIsLoading(true);
     }
 

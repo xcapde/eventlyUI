@@ -1,3 +1,4 @@
+import React from "react"
 import { useEffect } from "react"
 import { useState } from "react"
 import { Col } from "../../styles/styles.styled"
@@ -8,7 +9,10 @@ import { ImageInput } from "./ImageInput"
 
 export const ImageForm = ({ event, uploadImg, deleteImg, error }) => {
 
+    const s = 3;
+    const ms = s * 1000;
     const [images, setImages] = useState(0);
+    const [preview, setPreview] = useState();
     const [uploaded, setUploaded] = useState(false);
 
     useEffect(() => {
@@ -17,8 +21,6 @@ export const ImageForm = ({ event, uploadImg, deleteImg, error }) => {
     }, [])
 
     useEffect(() => {
-        const s = 3;
-        const ms = s * 1000;
         if (!event) return;
         setUploaded(isUploaded());
         setTimeout(() => {
@@ -27,15 +29,22 @@ export const ImageForm = ({ event, uploadImg, deleteImg, error }) => {
         // eslint-disable-next-line
     }, [event, error])
 
-    const isUploaded = () =>{
-        if(images === 0) return;
-        if(error){
+    useEffect(() => {
+        if (uploaded || error) {
+            setPreview(false);
+        }
+    }, [uploaded, error])
+
+    const isUploaded = () => {
+        if (images === 0) return;
+        if (error) {
             setUploaded(false);
             return;
         }
-        return event.images.map((num, key)=> event.images[key] === images[key]).includes(false);
+        return event.images.map((num, key) => event.images[key] === images[key]).includes(false);
     }
 
+    console.log(preview)
     return (
         <Col>
             <Col>
@@ -43,7 +52,7 @@ export const ImageForm = ({ event, uploadImg, deleteImg, error }) => {
                     display: 'flex',
                     flexDirection: 'row',
                     justifyContent: 'center',
-                    alignItems:'center'
+                    alignItems: 'center'
                 } : {}}>
                     {event && event.images.length > 0 ?
                         event.images.map((image, key) => (
@@ -51,10 +60,11 @@ export const ImageForm = ({ event, uploadImg, deleteImg, error }) => {
                         )) :
                         <NoPreviewSmall />
                     }
+                    {preview && <ImagePreview url={preview} />}
                 </OutputCnt>
             </Col>
             <Col>
-                <ImageInput uploadImg={uploadImg} uploaded={uploaded} error={error} />
+                <ImageInput uploadImg={uploadImg} uploaded={uploaded} error={error} setPreview={setPreview} />
             </Col>
         </Col>
     )
