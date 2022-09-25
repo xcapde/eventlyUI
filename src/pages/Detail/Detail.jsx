@@ -8,14 +8,14 @@ import useModal from "../../hooks/useModal";
 import { eventService } from "../../services/API/eventService";
 import { participationService } from "../../services/API/participationService";
 import { Page } from "../../styles/styles.styled";
-import { VDetailDesktop } from "../../views/VDetailDesktop";
-import { VDetailMobile } from "../../views/VDetailMobile";
+import { VDetailMobile } from "../../views/detail/VDetailMobile";
+import { VDetailDesktop } from "../../views/detail/VDetailDesktop";
 
 export const Detail = () => {
     const [event, setEvent] = useState();
     const [participations, setParticipations] = useState();
     const { modalIsActive, modalIsAsking, modalIsAlert, message, setModalIsActive, runModal, runAskingModal } = useModal();
-    
+
     const navigate = useNavigate();
     const id = useParams().id;
 
@@ -39,9 +39,9 @@ export const Detail = () => {
 
     const deleteEvent = () => {
         eventService.deleteEvent(id).then(res => {
-            if(!res) return
+            if (!res) return
             runModal(`${event.title} deleted!`)
-            setTimeout(()=>navigate('/home'), 1500);
+            setTimeout(() => navigate('/home'), 1500);
         })
     }
 
@@ -75,9 +75,9 @@ export const Detail = () => {
     return (
         <Page>
             <NavRail />
-            {modalIsActive && <Modal message={message} callback={deleteEvent} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive} modalIsAlert={modalIsAlert}/>}
-            {event && <VDetailMobile event={event} participations={participations} join={join} unjoin={unjoin} deletConfirmation={deletConfirmation} deleteEvent={deleteEvent} updateEvent={updateEvent}/>}
-            {event && <VDetailDesktop event={event} participations={participations} join={join} unjoin={unjoin} deletConfirmation={deletConfirmation} deleteEvent={deleteEvent} updateEvent={updateEvent}/>}
+            {modalIsActive && <Modal message={message} callback={deleteEvent} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive} modalIsAlert={modalIsAlert} />}
+            {event && <VDetailMobile event={event} participations={participations} join={join} unjoin={unjoin} deletConfirmation={deletConfirmation} deleteEvent={deleteEvent} updateEvent={updateEvent} />}
+            {event && <VDetailDesktop event={event} participations={participations} join={join} unjoin={unjoin} deletConfirmation={deletConfirmation} deleteEvent={deleteEvent} updateEvent={updateEvent} />}
             <Footer />
         </Page>
     )

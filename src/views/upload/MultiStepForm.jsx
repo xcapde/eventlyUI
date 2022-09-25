@@ -5,7 +5,7 @@ import { LinkButton } from "../../components/buttons";
 import { ImageForm, LocationForm, ReqsForm, TagsForm } from "../../components/forms";
 import { EventForm } from "../../components/forms/EventForm";
 import { Title } from "../../styles/styles.styled";
-import { DesktopWrapper, Footer, Header, Main, Progress, ProgressBar } from "./multistepform.styled";
+import { DesktopWrapper, Footer, Header, Main, Progress, ProgressBar } from "../upload/multistepform.styled";
 
 export const MultiStepForm = ({
     event, postEvent, updateEvent,
@@ -29,7 +29,9 @@ export const MultiStepForm = ({
 
     const errorHandler = () => {
         let err = error.toLowerCase().split(" ");
+        // eslint-disable-next-line
         err.map((w, k) => {
+            // eslint-disable-next-line
             forms.filter((f, fk) => {
                 if (f.keyWords.includes(w)) {
                     setErrIndex(+fk);
@@ -83,10 +85,11 @@ export const MultiStepForm = ({
             return;
         }
         errorHandler();
+        // eslint-disable-next-line
     }, [error])
 
     useEffect(() => {
-        if (errIndex == -1) return;
+        if (errIndex === -1) return;
         if (errIndex === page) return;
         setTimeout(setPage(errIndex), 3000);
         setErrIndex(-1);

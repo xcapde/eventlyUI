@@ -1,8 +1,8 @@
-import { ByDateFeed } from "../components/feeds/ByDateFeedDesktop";
-import { NavigationDesktopFeed } from "../components/feeds/NavigationDesktopFeed";
-import { MainDesktop } from "../pages/profile/profile.styled";
-import { NotificationFeed } from "../components/feeds/NotificationFeed";
-import { DetailText } from "../styles/styles.styled";
+import { ByDateFeed } from "../../components/feeds/ByDateFeedDesktop";
+import { NavigationDesktopFeed } from "../../components/feeds/NavigationDesktopFeed";
+import { MainDesktop } from "../../pages/profile/profile.styled";
+import { NotificationFeed } from "../../components/feeds/NotificationFeed";
+import { DetailText } from "../../styles/styles.styled";
 import { useState } from "react";
 import { useEffect } from "react";
 

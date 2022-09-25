@@ -1,13 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { BackButton, JoinButton } from "../components/buttons";
-import { OptionsModule } from "../components/buttons/burgers/OptionsModule";
-import { ModuleDetails } from "../components/information/ModuleDetails";
-import { ModuleContent } from "../components/information/ModuleContent";
-import { NoNavView, Col } from "../styles/styles.styled";
+import { BackButton, JoinButton } from "../../components/buttons";
+import { OptionsModule } from "../../components/buttons/burgers/OptionsModule";
+import { ModuleDetails } from "../../components/information/ModuleDetails";
+import { ModuleContent } from "../../components/information/ModuleContent";
+import { NoNavView, Col } from "../../styles/styles.styled";
 import { ImgCnt, InfoCnt, DetailTitle } from "./detail.styled";
-import { Slider } from "../components/slider/Slider";
+import { Slider } from "../../components/slider/Slider";
 
 
 export const VDetailMobile = ({ event, participations, join, unjoin, deletConfirmation, updateEvent }) => {

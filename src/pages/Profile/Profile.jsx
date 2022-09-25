@@ -8,9 +8,9 @@ import { OptionsModule } from "../../components/buttons/burgers/OptionsModule";
 import { NavRail } from "../../components/navs";
 import { Calendar } from "../../components/calendar";
 import format from "../../utils/format";
-import { VProfileDesktop } from "../../views/VProfileDesktop";
 import { notificationService } from "../../services/API/notificationService";
-import { VProfileMobile } from "../../views/VProfileMobile";
+import { VProfileMobile } from "../../views/profile/VProfileMobile";
+import { VProfileDesktop } from "../../views/profile/VProfileDesktop";
 
 export const Profile = () => {
     const [username, setUsername] = useState([]);

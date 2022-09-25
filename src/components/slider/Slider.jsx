@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { ImgCnt } from "../../views/detail.styled";
+import { ImgCnt } from "../../views/detail/detail.styled";
 import { Gradient, Img, Touchable } from "../../styles/styles.styled";
 import { SliderPiker } from "./SliderPicker";
 

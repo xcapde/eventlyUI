@@ -1,6 +1,6 @@
-import { ProfileFeed } from "../components/feeds/ProfileFeed"
-import { Navigation } from "../components/information/Navigation"
-import { MainMobile, NavCnt } from "../pages/profile/profile.styled"
+import { ProfileFeed } from "../../components/feeds/ProfileFeed"
+import { Navigation } from "../../components/information/Navigation"
+import { MainMobile, NavCnt } from "../../pages/profile/profile.styled"
 
 export const VProfileMobile = ({ joined, published, byDate, date, field, callback }) => {
 

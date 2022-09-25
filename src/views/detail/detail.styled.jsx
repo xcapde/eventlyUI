@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { TitleCard } from "../components/cards/cards.styled";
-import { FeedTitle } from "../components/feeds/feed.styled";
-import { Breakpoint, Col } from "../styles/styles.styled";
+import { TitleCard } from "../../components/cards/cards.styled";
+import { FeedTitle } from "../../components/feeds/feed.styled";
+import { Breakpoint, Col } from "../../styles/styles.styled";
 
 export const ImgCnt = styled.div`
     height: var(--detail-image-height);

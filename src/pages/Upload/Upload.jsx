@@ -3,7 +3,7 @@ import { Page, View } from "../../styles/styles.styled";
 import { NavRail } from "../../components/navs/NavRail";
 import { Footer } from "../../components/footer/Footer";
 import { useState } from "react";
-import { MultiStepForm } from "./MultiStepForm";
+import { MultiStepForm } from "../../views/upload/MultiStepForm";
 import { directionService } from "../../services/API/directionService";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
