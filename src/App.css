@@ -185,6 +185,8 @@
     --index-opacity-button: 4;
     --index-opacityBG:5;
     --index-modal:6;
+    
+    --index: 10;
 }
 
 .App {
