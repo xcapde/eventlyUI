@@ -38,7 +38,7 @@ const format = {
     shortLocation(location) {
         let city = location.split(",")[2];
         let region = location.split(",")[1].slice(1);
-        return `${city}, (${region})`;
+        return `${city}, ${region}`;
     }
 }
 
