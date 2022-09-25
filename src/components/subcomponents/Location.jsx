@@ -12,7 +12,9 @@ export const Location = ({ event, fontSize}) => {
                 <i className="fa-solid fa-location-dot"></i>
             </DetailIcon>
             <DetailText width='100%' textTransform='capitalize' lineHeight='18px' fontSize={fontSize}>
-                    {event.location && !location.includes(`/events/`)?
+                    {event.location && (!location.includes(`/events/`) 
+                    || location.includes(`published`) 
+                    || location.includes(`joined`))?
                         format.shortLocation(event.location)
                         : event.location? 
                         `${event.location.substring(0, (event.location.lastIndexOf(',') - 3))}` 

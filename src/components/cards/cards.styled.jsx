@@ -13,9 +13,8 @@ export const CardMain = styled(Col)`
     border-radius: var(--cardMain-radius);
     box-shadow: 0px 0px 5px var(--card-shadow-opacity);
     @media (min-width:${Breakpoint.md}) {
-        height: var(--cardMain-height-desktop);
-        /* width: ${props => `calc( ${props.width} *.85)` || 'var(--cardMain-width-desktop)'}; */
-        width: var(--cardMain-width-desktop);
+        height: var(--cardMain-height);
+        width: var(--cardMain-width);
     }
 `;
 
@@ -28,9 +27,8 @@ export const CardXS = styled(CardMain)`
 
 /*IMAGES*/
 export const ImgCnt = styled(Wrapper)`
-    border-radius: var(--cardMain-radius);
-    height:  calc(var(--cardMain-height) - var(--cardMain-body-height));
-    width: 100%;
+    height:var(--cardMain-imgCnt-height);
+    gap: 0px;
 `;
 
 export const CardMainImage = styled(Img)`
