@@ -2,7 +2,7 @@ import { Row } from "../../styles/styles.styled"
 import { PrimaryButton } from "../buttons"
 import { Participation } from "../subcomponents/Participation"
 
-export const JoinModule = ({event, height}) => {
+export const ModuleJoin = ({event, height}) => {
     
     return (
         <Row height={height} justifyContent='space-between' gap='0.5rem' width='95%' margin=' 2%'>

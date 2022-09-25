@@ -1,13 +1,13 @@
 import { Content } from "./Content";
-import { ContentModuleCnt } from "./information.styled";
+import { ModuleContentCnt } from "./information.styled";
 import { Navigation } from "./Navigation";
 
-export const ContentModule = ({ callback, tabContent, event, field }) => {
+export const ModuleContent = ({ callback, tabContent, event, field }) => {
 
     return (
-        <ContentModuleCnt id="content" >
+        <ModuleContentCnt id="content" >
             <Navigation callback={callback} tabContent={tabContent} field={field} />
             <Content event={event} field={field} />
-        </ContentModuleCnt>
+        </ModuleContentCnt>
     )
 }

@@ -14,7 +14,7 @@ export const NavTabs = styled(Row)`
     }
 `
 
-export const ContentModuleCnt = styled(Col)`
+export const ModuleContentCnt = styled(Col)`
     height: fit-content;
 `;
 

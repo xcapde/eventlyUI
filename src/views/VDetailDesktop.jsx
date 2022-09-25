@@ -5,7 +5,7 @@ import { BackButton, JoinButton } from "../components/buttons"
 import { OptionsModule } from "../components/buttons/burgers/OptionsModule"
 import { TitleCard } from "../components/cards/cards.styled"
 import { ModuleVerticalUserCard } from "../components/feeds"
-import { ContentModule } from "../components/information/ContentModule"
+import { ModuleContent } from "../components/information/ModuleContent"
 import { Slider } from "../components/slider/Slider"
 import { Col, DetailText, NoNavView, Row, Wrapper } from "../styles/styles.styled"
 import { MainDesktop, ModuleCnt } from "./detail.styled"
@@ -25,7 +25,7 @@ export const VDetailDesktop = ({ event, participations, join, unjoin, deletConfi
                 <Slider images={event.images}/>
                 
                 <ModuleCnt overflowY='none'>
-                    <ContentModule callback={setKey} tabContent={tabContent} field={key} event={event} />
+                    <ModuleContent callback={setKey} tabContent={tabContent} field={key} event={event} />
                 </ModuleCnt>
                 
                 <Row gap='20px'>

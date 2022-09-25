@@ -1,18 +1,10 @@
-import { Col, Row } from "../../styles/styles.styled"
-import { Input } from "../forms/form.styled"
+import { Col } from "../../styles/styles.styled"
 
 export const Filters = () => {
 
     return (
         <Col >
             Feature not implemented yet
-            <Row>
-            <Input type={'radio'}/>
-            <Input type={'radio'}/>
-            </Row>
-            <Input type={'range'}/>
-            <Input type={'date'}/>
-
         </Col>
     )
 }

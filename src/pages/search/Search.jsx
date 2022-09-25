@@ -7,8 +7,6 @@ import { SearchInput } from "../../components/forms/SearchInput"
 import { eventService } from "../../services/API/eventService"
 import { Wrapper } from "./search.styled"
 import { ModuleVerticalMultiCard } from "../../components/feeds/ModuleVerticalMultiCard"
-import { FeedTitle } from "../../components/feeds/feed.styled"
-import { FiltersModule } from "../../components/filters/FiltersModule"
 import { NavRail } from "../../components/navs"
 
 export const Search = () => {

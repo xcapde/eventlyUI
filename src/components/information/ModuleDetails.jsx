@@ -3,7 +3,7 @@ import { Avatar } from "../avatar/Avatar"
 import { ParticipationModule } from "../participations/ParticipationModule"
 import { Details } from "./Details"
 
-export const DetailsModule = ({ event, participations, gap, display, height }) => {
+export const ModuleDetails = ({ event, participations, gap, display, height }) => {
 
     return (
         <Col alignItems="flex-start" height={height}>
