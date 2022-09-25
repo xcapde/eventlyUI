@@ -128,7 +128,7 @@ export const OpacityBackground = styled.div`
 
 /*Images*/
 export const Gradient = styled.div` 
-    height: 30%;
+    height: 50%;
     width: 100%;
     position:absolute;
     top: 0;

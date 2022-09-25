@@ -24,7 +24,7 @@ export const ModalCnt = styled.div`
 `;
 
 export const ModalAskingCnt = styled(ModalCnt)`
-    top: 60%;
+    top: 50%;
     padding: 1.5rem 1rem 0 1rem;
     gap: 0.5rem;    
     @media(min-width:${Breakpoint.md}){

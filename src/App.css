@@ -152,21 +152,18 @@
     /* CARD */
     --cardMain-width: 210px;
     --cardMain-height: 280px;
-    --cardMain-width-desktop: 210px;
-    --cardMain-height-desktop: 280px;
-    --cardMain-img-size: 100%;
-    --cardMain-body-height: 120px;
+    --cardMain-imgCnt-height: 65%;
+    --cardMain-body-height: 35%;
+
 
     --cardXS-width: 350px;
     --cardXS-height: 100px;
     --cardXS-imgCntrl-size: var(--cardXS-height);
     --cardXS-img-size: var(--cardXS-height);
     
-    /* --cardAllTags-width:300px; */
     --cardAllTags-width:280px;
     --cardAllTags-height:370px;
 
-    /* --cardUser-width:95%; */
     --cardUser-width:200px;
     --cardUser-height:50px;
 

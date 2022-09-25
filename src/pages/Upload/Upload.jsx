@@ -21,7 +21,7 @@ export const Upload = () => {
     const [url, setUrl] = useState();
     const { eventId } = useParams();
     const [error, setError] = useState();
-    const { modalIsActive, modalIsAsking, message, setModalIsActive, runModal, runAlertModal } = useModal();
+    const { modalIsActive, modalIsAlert, message, setModalIsActive, runModal, runAlertModal } = useModal();
 
 
     useEffect(() => {
@@ -184,7 +184,7 @@ export const Upload = () => {
     return (
         <Page>
             <NavRail />
-            {modalIsActive && <Modal message={message} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive} />}
+            {modalIsActive && <Modal message={message} modalIsAlert={modalIsAlert} setModalIsActive={setModalIsActive} />}
             <View>
                 <MultiStepForm
                     event={event}

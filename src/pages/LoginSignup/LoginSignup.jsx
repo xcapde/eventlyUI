@@ -20,12 +20,12 @@ export const LoginSignup = () => {
 
     let location = formatUtil.cutString(useLocation().pathname);
     const navigate = useNavigate();
-    const { modalIsActive, modalIsAsking, message, setModalIsActive, runAlertModal } = useModal();
+    const { modalIsActive, modalIsAlert, message, setModalIsActive, runAlertModal } = useModal();
 
     const signup = (data) => {
         authService.signup(data).then(res => {
             if (res.error) {
-                runAlertModal(res.error)
+                runAlertModal(res.error);
                 return;
             }
             navigate("/log-in")
@@ -53,7 +53,7 @@ export const LoginSignup = () => {
     return (
         <Page>
             <NavRail />
-            {modalIsActive && <Modal message={message} modalIsAsking={modalIsAsking} setModalIsActive={setModalIsActive} />}
+            {modalIsActive && <Modal message={message} modalIsAlert={modalIsAlert} setModalIsActive={setModalIsActive} />}
             <noscript>arreglar desktop</noscript>
             <LoginView>
                 <LogoCntrl>
