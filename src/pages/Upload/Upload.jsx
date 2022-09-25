@@ -35,6 +35,7 @@ export const Upload = () => {
     const getEvent = (id) => {
         eventService.getEvent(id).then(res => {
             setEvent(res);
+            setError();
             if (res.location === "") return;
             res.type === "offline" ? getDirection(id) : getWebUrl(id);
         })
@@ -85,6 +86,7 @@ export const Upload = () => {
         directionService.getByEventId(id).then(res => {
             delete res.id;
             setDirection(res);
+            setError();
         })
     }
 
@@ -104,6 +106,7 @@ export const Upload = () => {
         webUrlService.getByEventId(id).then(res => {
             delete res.id;
             setUrl(res);
+            setError();
         })
     }
 
@@ -138,7 +141,6 @@ export const Upload = () => {
                 runAlertModal(res.error)
                 return;
             }
-            // runModal(res.message)
             getEvent(event.id);
         })
     }
@@ -150,7 +152,6 @@ export const Upload = () => {
                 runAlertModal(res.error)
                 return;
             }
-            // runModal(res.message)
             getEvent(event.id);
         })
     }
@@ -162,7 +163,6 @@ export const Upload = () => {
                 runAlertModal(res.error)
                 return;
             }
-            // runModal(res.message)
             getEvent(event.id);
         })
     }
@@ -174,11 +174,11 @@ export const Upload = () => {
                 runAlertModal(res.error)
                 return;
             }
-            // runModal(res.message)
             getEvent(event.id);
         })
     }
 
+    console.log(error);
     return (
         <Page>
             <NavRail />

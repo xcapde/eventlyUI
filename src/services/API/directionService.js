@@ -51,7 +51,6 @@ export const directionService = {
     //     "eventId": id
     // }
     createDirection({ id, ...req }) {
-        console.log(id, req)
         const msg = axios.post(`/events/${id}/directions`, req).then(res => {
             return res.data;
         })

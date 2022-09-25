@@ -28,13 +28,10 @@ export const EventForm = ({ eventToUpdate, postEvent, updateEvent, next }) => {
         })
     }, [eventToUpdate]);
 
-
     const handleSubmit = (e) => {
         e.preventDefault(e);
         eventToUpdate ? updateEvent(event) : postEvent(event);
-        // resetValues();
-        console.log(next)
-        setTimeout(next, ms)
+        setTimeout(next, ms);
         resetValues();
     }
 

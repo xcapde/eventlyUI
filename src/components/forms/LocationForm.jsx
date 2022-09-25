@@ -42,7 +42,7 @@ export const LocationForm = ({ event, addDirection, addWebUrl, eventDirection, e
 
     if (styles)
         return (
-            <FormGrid styles={styles} placeContent="flex-start" onSubmit={handleSubmit}>
+            <FormGrid styles={styles} placeContent={ event.type.includes("online") ? 'center' : "flex-start"} onSubmit={handleSubmit}>
                 {Object.keys(formData).map((field, key) => (
                     <FormControlInput
                         key={key}
