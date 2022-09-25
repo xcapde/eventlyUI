@@ -38,7 +38,7 @@
     
     --color-modalBG: var(--color-white);
     --color-modalText:var(--color-detail-text);
-    --color-alertBG:#ffc8c8;
+    --color-alertBG:var(--color-white);
     --color-alertText:#8d0101;    
     --color-button-alert:#f55e5e;
     --color-button-alert-hover:#e04040;

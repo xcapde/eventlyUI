@@ -35,6 +35,7 @@ export const ModalAskingCnt = styled(ModalCnt)`
 
 export const ModalAlertCnt = styled(ModalAskingCnt)`
     background-color: ${props => props.backgroundColor || 'var(--color-alertBG)'};
+    border: 1px solid var(--color-alertText);
     > p{
         color: ${props => props.color || 'var(--color-alertText)'};
     }

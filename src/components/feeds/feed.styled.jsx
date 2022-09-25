@@ -86,6 +86,7 @@ export const VerticalFeedMobile = styled(VerticalFeed)`
 
 export const VerticalFeedDesktop = styled(VerticalFeedMainCard)`
     display: none;
+    padding: .5rem;
     @media (min-width:${Breakpoint.md}) {
         display: grid;
     }

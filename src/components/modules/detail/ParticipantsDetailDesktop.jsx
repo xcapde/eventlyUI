@@ -1,4 +1,3 @@
-import { ModuleCnt } from "../../../views/detail/detail.styled";
 import { TitleCard } from "../../cards/cards.styled";
 import { ModuleVerticalUserCard } from "../../feeds/ModuleVerticalUserCard";
 import { ParticipantsDetailCnt } from "../modules.styled";
