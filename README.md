@@ -1,71 +1,140 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Evently App 📅📌
+React App developed as Final Project for Factoria F5 FullStack Web Development Bootcamp. 
 
-## Available Scripts
+This application is the result of merging the different projects our team members had in mind. Before starting with the development we gathered to brainstorm and came along with three potential projects. The first one was an application to share hobbies with other users, the second one was an application to help either students and mentors getting in touch, and finally, the last one had the aim to provide a solution for social entities or councils to organize their social activities.
 
-In the project directory, you can run:
+Evently was designed to achieve all the features we spoke about in those three projects. It allows the user organize events and share them with other users becoming a small social network to share hobbies, knowledge and create bonds.
 
-### `npm start`
+## Tech Stack
++ HTML 5
++ CSS 3
++ ES6
++ REACT
++ Axios
++ npm
++ Styled-Components
++ React Select
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Rest API
++ [Evently API](https://github.com/afonttorres/eventlyAPI)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Version control
++ GIT
++ Git Hub
 
-### `npm test`
+### Development tools
++ Visual Studio Code
++ Postman
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Objectives
+The objectives of this project were described by the group teammates and all the functional requirements were divided in sprints which were developed by importance using Agile Methodologies as Kanban and Scrum.
 
-### `npm run build`
+Being the Event the main entity of the application our first objective was to display a list of all Events, allow logged users to create new ones, update or delete them. Every Event should contain a title, description, location, date and its publisher. Moving on with our requirements, the next one was to be able to add a location to them. Depending on Event type (offline or online) users should be able to add an Adress in offline events and a URL in online events.
+Continuing with the application features, we thought about adding details such as Tags, Requirements and Images to Events. Each of these details should be able to be seen by everyone and created and deleted by the Event Publisher.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once we got satisfied with the Events we moved to the next feature, to allow users to join or unjoin events by becoming  participants and show the user if they are participating or not. Logged users should be able to see if they joined an Event and not logged users should appear as non-participants.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To help users find their target Events, we added a seacher so users could look for Events by its Tags, location, title, description, date or type. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Since one of the aims of our project was to ease user's social life we decided to add a week calendar in users' profile so users can see those Events they joined planned for the week.
 
-### `npm run eject`
+Lastly we thought it would be a shame for users to miss if Events had been modified or deleted so we thought about notifing Event participants of those changes by sending an email on each modification and display a Notification in our application. This notification could be seen in user's profile on Desktop version and in notifications in Mobile version. Each of this Notifications should be able to be deleted or to be modified by checking or unchecking them.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Given the deadline of the project (four weeks time) this project turns out to be unfinished but we are looking forward to add new features and end those which are not finished yet.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Features
+### Event CRUD
++ Display all Events
++ Display the detail of a single Event
++ Create an Event
++ Update an Event
++ Delete an Event
++ Search Events by location, description, title, date or Tag
++ Display Users' joined Events
++ Display Users' published Events
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Join CRUD
++ Create a participation (between authenticated User and Event)
++ Delete a participation
++ Display if User is participating
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Details CRD
++ Create, delete and display Tags
++ Create, delete and display Requirements
++ Create, delete and display Images
 
-## Learn More
+### Notifications CRUD
++ Create a Notification (when the Event is deleted or modified)
++ Display all Notifications
++ Delete a modification
++ Update a Notification (checking or uncheking it)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### User CR
++ Create a User (sign up)
++ Display Users
++ Authenticate User (log in)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### Design
++ Responsive Web Design
++ Modularity and Scalability (by using React components)
++ UX (Calendar, Slider, Multistep form, Notifications...)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Preview
+#### Desktop
+![App Screenshot]()
+![App Screenshot]()
+![App Screenshot]()
+![App Screenshot]()
+![App Screenshot]()
 
-### Analyzing the Bundle Size
+#### Mobile
+![App Screenshot]()
+![App Screenshot]()
+![App Screenshot]()
+![App Screenshot]()
+![App Screenshot]()
+![App Screenshot]()
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Next
+Since we've just got started we are planning to add a lot of new features to our application . 
 
-### Making a Progressive Web App
+First of all we'd like to add a map to spot Event location on its detail page so User does not need to look for it himself. Following with this feature we'd like to fetch address data from a location API and use it in our location form to ensure the adress is real. It could be also cool to add realtime weather in Event detail page keeping in mind the idea of easing user's experience when using the app.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+On the user side we thougth about updating users data by allowing them to upload avatars, banners and modify their information in their profile.
 
-### Advanced Configuration
+One of the features we've been thinking about since the first day is to let users upload their Social Proof of the Events they participated in so they can rate the Events and other users can take this information into account to decide wether to join an Event or not. It is also important for Event publisher to have a feedback about its Event and how it went.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Following with the user side we'd like to add volunteering so those who want to actively participate in Event organization can do so.
 
-### Deployment
+Finally, we'd like to add a reminder when user has an incoming event.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+We'd like to add many more features, some of them are: groupal chats so participants can chat about the Events, giving the user the ability to save an Event without joining it,  print the details and following user accounts. 
 
-### `npm run build` fails to minify
+We expect many more features will come on the go.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# evently
+## Authors
++ [Xavier Capdevila](https://github.com/xcapde)
++ [Laura Parra](https://github.com/lauraparra00)
++ [Joel Blasi](https://github.com/JoelBlasi)
++ [Robert Camara](https://github.com/rocailos)
++ [Agnès Font](https://github.com/afonttorres)
+
+
+## Design
+The design of the application was inspired by [Azizul Haque](https://dribbble.com/shots/17979187-Events-App/attachments/13161575?mode=media).
+
+## Installation
+This project was bootstrapped with Create React App therefore requires node.js and npm.  Once you've verified node is installed in your directory take the following steps:
+
+#### 1. Clone the repository
+```bash
+ https://github.com/xcapde/eventlyUI.git
+```
+
+
+#### 2. Run the app in development mode
+```bash
+ npm start
+ ``` 
