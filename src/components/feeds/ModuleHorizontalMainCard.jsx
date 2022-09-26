@@ -11,7 +11,7 @@ export const ModuleHorizontalMainCard = ({ title, events, participations }) => {
                 {events && events.length > 0 ?
                     events.map((event, key) =>
                         <MainCard key={key} event={event} participations={participations}/>
-                    ).reverse()
+                    )
                     :
                     <Col>
                         <DetailText>There are no {title.toLowerCase()} events.</DetailText>

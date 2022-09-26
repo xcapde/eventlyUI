@@ -13,7 +13,7 @@ export const ModuleVerticalMultiCard = ({ events, width, height, title }) => {
                     <VerticalFeedMobile>
                             {events.map((event, key) =>
                                 <SmallCard key={key} event={event} />
-                            ).reverse()}
+                            )}
                     </VerticalFeedMobile>
 
                     <VerticalFeedDesktop>                    

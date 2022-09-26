@@ -10,7 +10,7 @@ export const ModuleVerticalUserCard = ({ participations, height, width }) => {
             <VerticalFeedDesktop gap='0.5rem'>
                     {participations.map((participation, key) =>
                         <UserCard key={key} user={participation.participant} />
-                    ).reverse()}
+                    )}
             </VerticalFeedDesktop>
             :
             <Col>

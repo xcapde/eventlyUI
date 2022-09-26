@@ -11,7 +11,7 @@ export const ModuleVerticalSmallCard = ({ title, events, height, width, padding 
             <VerticalFeedSmallCard>
                     {events.map((event, key) =>
                         <SmallCard key={key} event={event} />
-                    ).reverse()}
+                    )}
             </VerticalFeedSmallCard>
             :
             <Col>

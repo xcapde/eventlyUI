@@ -7,7 +7,7 @@ export const TagsFilter = ({events, tag}) => {
         <VerticalFeed>
             {events && events.filter(event => event.tag.contains(tag)).map((event, key) =>
                 <SmallCard key={key} event={event} />
-            ).reverse()}        
+            )}        
         </VerticalFeed>
     )
 }

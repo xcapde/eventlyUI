@@ -14,7 +14,7 @@ import { VDetailDesktop } from "../../views/detail/VDetailDesktop";
 export const Detail = () => {
     const [event, setEvent] = useState();
     const [participations, setParticipations] = useState();
-    const { modalIsActive, modalIsAsking, modalIsAlert, message, setModalIsActive, runModal, runAskingModal } = useModal();
+    const { modalIsActive, modalIsAsking, modalIsAlert, message, setModalIsActive, runModal, runAskingModal, runAlertModal } = useModal();
 
     const navigate = useNavigate();
     const id = useParams().id;
@@ -54,7 +54,10 @@ export const Detail = () => {
 
     const join = () => {
         participationService.join(id).then(res => {
-            if (!res) return;
+            if (res.error) {
+                runAlertModal(res.error)
+                return;
+            }
             runModal(res.message);
             getEvent(id);
         })
@@ -62,7 +65,10 @@ export const Detail = () => {
 
     const unjoin = () => {
         participationService.unjoin(id).then(res => {
-            if (!res) return;
+            if (res.error) {
+                runAlertModal(res.error)
+                return;
+            }
             runModal(res.message);
             getEvent(id);
         })
