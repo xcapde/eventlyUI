@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Page } from "../../styles/styles.styled";
+import { LandingBg } from "../../views/landing/landing.styled";
 import { VLandingDesktop } from "../../views/landing/VLandingDesktop";
 import { VLandingMobile } from "../../views/landing/VLandingMobile";
 
@@ -11,9 +11,9 @@ export const Landing = () => {
     const goSignup = () => navigate("/sign-up");
 
     return (
-        <Page>
+        <LandingBg>
             <VLandingMobile goHome={goHome} goLogin={goLogin} goSignup={goSignup} />
             <VLandingDesktop goHome={goHome} goLogin={goLogin} goSignup={goSignup} />
-        </Page>
+        </LandingBg>
     )
 }

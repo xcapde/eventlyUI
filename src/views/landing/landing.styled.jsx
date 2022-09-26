@@ -1,5 +1,28 @@
 import styled from "styled-components";
-import { Breakpoint } from "../../styles/styles.styled";
+import { Breakpoint, Page } from "../../styles/styles.styled";
+
+export const LandingBg = styled(Page)`
+&::before{
+            content:"";
+            top:0;
+            left:0;
+            right: 0;
+            bottom:0;
+            height: 100vh;
+            width: 100vw;
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: fixed;
+            z-index: -1;
+            background-image: url(https://images.unsplash.com/photo-1533038590840-1cde6e668a91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+            background-size: 150%;
+            filter: blur(3px);
+            @media (min-width:${Breakpoint.md}) {
+                background-size: 100%;
+            }
+        }
+`;
 
 export const MobileCnt = styled.section`
         height: 100%;
@@ -22,6 +45,7 @@ export const MobileCnt = styled.section`
             font-size: 20px;
             width: 65%;
             margin: 0 auto;
+            line-height: 1.5;
         }
     @media (min-width:${Breakpoint.md}) {
             display:none;
@@ -56,23 +80,9 @@ export const DesktopCnt = styled.section`
         }
         & h3{
             font-size: 28px;
-        }
-        &::before{
-            content:"";
-            top:0;
-            left:0;
-            right: 0;
-            bottom:0;
-            height: 100vh;
-            width: 100vw;
-            display: block;
-            background-repeat: no-repeat;
-            background-position: center;
-            position: absolute;
-            z-index: -1;
-            background-image: url(https://images.unsplash.com/photo-1533038590840-1cde6e668a91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
-            background-size: 100%;
-            filter: blur(2px);
+            width: 70%;
+            margin: 0 auto;
+            line-height: 1.5;
         }
     }
 `;
