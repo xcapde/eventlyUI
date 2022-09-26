@@ -49,7 +49,7 @@ export const MultiStepForm = ({
         {
             title: `${event && !event.location ? 'Add' : 'Update'} a location!`,
             view: <LocationForm event={event} addDirection={addDirection} eventDirection={eventDirection} eventUrl={eventUrl} addWebUrl={addWebUrl} next={() => setPage(page + 1)} />,
-            keyWords: ["location", "direction", "url", "country", "province", "city", "street", "builing", "door"]
+            keyWords: ["location", "direction", "url", "country", "province", "city", "street", "building", "door"]
         },
         {
             title: `${hasDetails() ? "Update" : "Add"} event requirements'!`,
@@ -81,6 +81,7 @@ export const MultiStepForm = ({
 
     useEffect(() => {
         if (!error){
+            console.log("no hi ha error?")
             setErrIndex(-1);
             return;
         }
@@ -89,12 +90,14 @@ export const MultiStepForm = ({
     }, [error])
 
     useEffect(() => {
+        console.log(errIndex, page)
         if (errIndex === -1) return;
         if (errIndex === page) return;
         setTimeout(setPage(errIndex), 3000);
-        setErrIndex(-1);
     }, [errIndex, page])
 
+    
+    console.log(error)
     return (
         <DesktopWrapper>
             <Header>

@@ -33,6 +33,7 @@ export const Upload = () => {
     useEffect(() => { }, [event])
 
     const getEvent = (id) => {
+        console.log('getting event')
         eventService.getEvent(id).then(res => {
             setEvent(res);
             setError();
@@ -42,6 +43,7 @@ export const Upload = () => {
     }
 
     const postEvent = (data) => {
+        setError();
         eventService.postEvent(data).then(res => {
             if (res.error) {
                 setError(res.error)
@@ -54,10 +56,12 @@ export const Upload = () => {
     }
 
     const updateEvent = (data) => {
+        setError();
         eventService.updateEvent({ ...data, id: event.id }).then(res => {
             if (res.error) {
-                setError(res.error)
-                runAlertModal(res.error)
+                setError(res.error);
+                runAlertModal(res.error);
+                getEvent(event.id);
                 return;
             }
             runModal(`${res.title} has been updated!`)
@@ -65,16 +69,17 @@ export const Upload = () => {
                 setDirection("");
                 setUrl("");
             }
-            console.log(res.id);
             getEvent(res.id);
         })
     }
 
     const addDirection = (data) => {
+        setError();
         directionService.createDirection({ ...data, id: event.id }).then(res => {
             if (res.error) {
-                setError(res.error)
-                runAlertModal(res.error)
+                setError(res.error);
+                runAlertModal(res.error);
+                getEvent(event.id);
                 return;
             }
             getEvent(event.id);
@@ -91,6 +96,7 @@ export const Upload = () => {
     }
 
     const addWebUrl = (data) => {
+        setError();
         webUrlService.createWebUrl({ ...data, id: event.id }).then(res => {
             if (res.error) {
                 setError(res.error)
@@ -181,6 +187,7 @@ export const Upload = () => {
         })
     }
 
+    console.log(error)
     return (
         <Page>
             <NavRail />
