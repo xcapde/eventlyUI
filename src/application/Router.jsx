@@ -30,8 +30,16 @@ export default function Router() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<App />} />
-                <Route path="/landing" element={<Landing />} />
+            <Route path="/" element={
+                    <AuthRoute>
+                        <Landing />
+                    </AuthRoute>
+                } />
+                <Route path="/landing" element={
+                    <AuthRoute>
+                        <Landing />
+                    </AuthRoute>
+                } />
                 <Route path="/home" element={<Home />} />
                 <Route path="/events/:id" element={<Detail />} />
                 <Route path="/search" element={<Search />} />
