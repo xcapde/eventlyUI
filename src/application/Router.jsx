@@ -32,7 +32,7 @@ export default function Router() {
             <Routes>
             <Route path="/" element={
                     <AuthRoute>
-                        <Landing />
+                        <App />
                     </AuthRoute>
                 } />
                 <Route path="/landing" element={
