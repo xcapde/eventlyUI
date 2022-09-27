@@ -1,7 +1,7 @@
 import axios from "axios";
 import validation from "../../utils/validation";
 
-const baseURL = "http://localhost:8080";
+const baseURL = "http://localhost:8080/api";
 export const authService = {
 
     signup(data) {

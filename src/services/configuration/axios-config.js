@@ -1,7 +1,7 @@
 import axios from "axios";
 import { AuthService } from "../AuthService";
 
-axios.defaults.baseURL = `http://localhost:8080`;
+axios.defaults.baseURL = `http://localhost:8080/api`;
 axios.defaults.headers.post["Content-Type"] = "application/json";
 axios.defaults.headers.post["Accept"] = "application/json";
 axios.defaults.withCredentials = false;
