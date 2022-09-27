@@ -10,7 +10,7 @@ export const VLandingMobile = ({ goHome }) => {
     const [view, setView] = useState(0);
     const [start, setStart] = useState();
     const views = [
-        { title: "Welcome to Evently", description: "Share yourself", element: null, logo: true },
+        { title: "Welcome to Evently", description: <p>Share <span>hobbies</span>, share your <span>skills</span>, share <span>yourself</span></p>, element: null, logo: true },
         { title: "", description: "Join events happening next to you or a miles a way.", element: <Img imgUrl={'https://res.cloudinary.com/dkju5on5v/image/upload/v1664182340/party-hard_rnnfp7.png'}/>, logo: false },
         { title: "", description: "Schedule your life putting yourself first.", element: <Img imgUrl={'https://res.cloudinary.com/dkju5on5v/image/upload/v1664182344/planning-hard_smnnm9.png'}/>, logo: false },
         { title: "", description: "Start sharing your social life!", element: <JoinButton content={'Get started'} callback={goHome} />, logo: false }

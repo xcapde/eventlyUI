@@ -127,7 +127,7 @@ export const NotiStatus = styled.div`
     width: 8px;
     grid-column: 14/15;
     grid-row: 1/2;
-    background-color: ${props => props.color || 'var(--color-main)'};
+    background-color: ${props => props.color || 'var(--color-compl)'};
     align-self: flex-end;
     justify-self: center;
     border-radius: 50%;

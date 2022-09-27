@@ -7,9 +7,10 @@ export const Header = styled(Col)`
     height: 30vh;
     color: var(--color-white);
     font-family: var(--header-font);
-    background-color: var(--color-dark);
+    background-color: var(--color-main);
     @media(min-width:${Breakpoint.md}){
         height: 30vh;
+        background-color: rgba(255, 255, 255, .85);
         & > ${OptionsCnt}, ${CloseBtn}, ${EllipsisBtn}{
             display: none;
             & > ${OptionsCnt} > ${OptionBtn}{
@@ -22,7 +23,7 @@ export const Header = styled(Col)`
         margin: 0 auto;
     }
     & > div:nth-child(1){
-        background-color: var(--color-dark);
+        background-color: var(--color-main);
         justify-content: flex-start;
         height: 40%;
         & > h1{
@@ -31,6 +32,12 @@ export const Header = styled(Col)`
             top: 0.85rem;
             color: var(--color-white-contrast);
             margin: 0 auto;
+        }
+        @media(min-width:${Breakpoint.md}){
+        background-color: transparent;
+        & > h1{
+            color: var(--color-main);
+            }
         }
     }
     & > div:nth-child(2){
@@ -150,7 +157,7 @@ export const MainDesktop = styled.section`
             z-index: -1;
             background-image: url(https://images.unsplash.com/photo-1466781783364-36c955e42a7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80);
             background-size: 100%;
-            filter: blur(1px);
+            /* filter: blur(1px); */
         }
     }
     

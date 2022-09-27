@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Breakpoint, Page } from "../../styles/styles.styled";
+import { JoinBtn } from "../../components/buttons/buttons.styled";
+import { Breakpoint, Col, Page } from "../../styles/styles.styled";
 
 export const LandingBg = styled(Page)`
 &::before{
@@ -38,6 +39,9 @@ export const MobileCnt = styled.section`
             text-shadow: 1px 1px 2px rgba(255, 255, 255, .8);
             text-align: center;
         }
+        & span{
+            color: var(--color-main)
+        }
         & h1{
             font-size: 26px;
         }
@@ -46,6 +50,13 @@ export const MobileCnt = styled.section`
             width: 65%;
             margin: 0 auto;
             line-height: 1.5;
+        }
+        & > ${Col}:nth-child(2){
+            background-color: rgba(255, 255, 255, .25);
+            border-radius: 2rem;
+        }
+        & ${JoinBtn}{
+            width: 85%;
         }
     @media (min-width:${Breakpoint.md}) {
             display:none;

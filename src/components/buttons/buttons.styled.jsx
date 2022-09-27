@@ -281,7 +281,7 @@ export const TrashIcon = styled.span`
     align-items: center;
     justify-content: center;
     display: contents;
-    color: var(--color-main);
+    color: var(--color-compl);
     cursor:pointer;
     &::after{
         font: var(--fa-font-solid);
@@ -306,8 +306,12 @@ export const ContainerScrollerCnt = styled(Col)`
 
 export const UpBtn = styled(TrashIcon)`
     cursor:pointer;
+    color: var(--color-secondary);
     &::after{
         content: "\f106";
+    }
+    &:hover{
+        color: var(--color-compl);
     }
 `;
 

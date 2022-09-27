@@ -25,16 +25,18 @@
     --color-white-contrast: #F4F6F5;
     --color-white: #ffffff;
 
-    --color-main: #31B595;
-    --color-main-hover: #43ccaa;
-    --color-input-outline: #78e2c8;
+    --color-main: #CD5360;
+    --color-secondary: #FF7C5A;
+    --color-compl: #31B595;
+    --color-main-hover: var(--color-secondary);
+    --color-input-outline: rgba(205, 83, 96,.5);
 
     /* --color-footer: #F4F6F5; */
     --color-footer: var(--color-white);
     --color-item-footer: lightgray;
     --color-navtop: var(--color-white);
     --color-navrail: rgba(26, 92, 76, 1);
-    --color-navrail-contrast: rgba(18, 112, 89, 1);
+    --color-navrail-contrast: var(--color-main);
     
     --color-modalBG: var(--color-white);
     --color-modalText:var(--color-detail-text);
@@ -43,10 +45,10 @@
     --color-button-alert:#f55e5e;
     --color-button-alert-hover:#e04040;
 
-    --color-badgetBG-default: #ffc941;
-    --color-badgetText-default: #cf8d0c;
-    --color-badgetBG-requirement: lightblue;
-    --color-badgetText-requirement: #7d7d7d;
+    --color-badgetBG-default: var(--color-secondary);
+    --color-badgetText-default: var(--color-white);
+    --color-badgetBG-requirement: var(--color-compl);
+    --color-badgetText-requirement: var(--color-white);
 
     --color-options-cnt: var(--color-white-contrast);
 

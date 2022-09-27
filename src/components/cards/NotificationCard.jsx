@@ -45,7 +45,7 @@ export const NotificationCard = ({ notification, toggleCheck, deleteNotification
                     notification.description.includes("https://") ? format.cutNotification(notification.description) : notification.description}
             </DetailText>
             <CreatedAt>{format.timeStampToDateAndHour(notification.createdAt)}</CreatedAt>
-            <NotiStatus onClick={() => toggleCheck(notification.id)} color={notification.checked ? 'var(--color-main)' : 'indianred'} />
+            <NotiStatus onClick={() => toggleCheck(notification.id)} color={notification.checked ? 'var(--color-compl)' : 'indianred'} />
             <TrashIcon onClick={() => runDelete(notification.id)} />
         </NotiCard>
     )

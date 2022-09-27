@@ -114,6 +114,6 @@ export const MainDesktop = styled.section`
             z-index: -1;
             background-image: url(https://images.unsplash.com/photo-1466781783364-36c955e42a7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80);
             background-size: 100%;
-            filter: blur(1px);
+            /* filter: blur(1px); */
         }
 `;

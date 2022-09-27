@@ -6,7 +6,7 @@ export const ViewPicker = ({ current, views, setView }) => {
         <Row>
             {views.map((view, key) => (
                 <Dot key={key}
-                    bg={current === key ? 'var(--color-dark)' : ''}
+                    bg={current === key ? 'var(--color-compl)' : ''}
                     onClick={() => setView(key)}
                 />
             ))}

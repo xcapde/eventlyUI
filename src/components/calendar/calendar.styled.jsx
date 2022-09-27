@@ -12,6 +12,7 @@ export const Month = styled(DetailText)`
     line-height: 20px;
     @media(min-width:${Breakpoint.md}){
         text-transform: uppercase;
+        color: var(--color-main);
     }
 `;
 
@@ -40,7 +41,7 @@ export const Day = styled(Col)`
         gap: 2rem;
         cursor: pointer;
         width: calc(100%/7);
-        border-right: 1px solid rgba(255,255,255,.25);
+        border-right: 1px solid var(--color-main);
         border-radius: inherit;
         align-items: flex-end;
         padding-right: 1rem;
@@ -48,7 +49,7 @@ export const Day = styled(Col)`
         justify-content: center;
         & > p{
             font-size: .95rem;
-            color: ${props => props.color};
+            color: ${props => props.color || 'var(--color-main)'};
             font-family: var(--numbers-font);
             font-weight: 400;
         }

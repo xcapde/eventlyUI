@@ -29,7 +29,7 @@ export const Form = styled.form`
 
 export const Label = styled.label`
     position: absolute;
-    left: 5%;
+    left: 2.5%;
     display: ${props => props.display || "block"};
     line-height: var(--input-height);
     color: var(--color-detail-text);
@@ -46,7 +46,7 @@ export const Label = styled.label`
 export const CreatableLabel = styled.label`
     position: absolute;
     z-index: 1;
-    left: 5%;
+    left: 2.5%;
     line-height: calc( var(--input-height));
     color: var(--color-detail-text);
     font-weight: 400;

@@ -68,8 +68,8 @@ export const Calendar = ({ pickDay, pickedDay }) => {
                         onClick={() => pickDay(day)}
                         bg={pickedDay && day.date === pickedDay.date ? 'rgba(255, 255, 255, .25)' :
                             !pickedDay && day.date === today.toLocaleString().split(",")[0] ? 'rgba(255, 255, 255, .25)' : 'transparent'}
-                        color={pickedDay && day.date === pickedDay.date ? 'var(--color-main)' :
-                            !pickedDay && day.date === today.toLocaleString().split(",")[0] ? 'var(--color-main)' : 'var(--color-white)'}
+                        color={pickedDay && day.date === pickedDay.date ? 'var(--color-compl)' :
+                            !pickedDay && day.date === today.toLocaleString().split(",")[0] ? 'var(--color-compl)' : 'var(--color-main)'}
                         key={key}>
                         <DetailText>{day.day}</DetailText>
                         <DetailText>{day.date.split("/")[0]}</DetailText>

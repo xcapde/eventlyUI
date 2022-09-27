@@ -64,6 +64,7 @@ export const eventService = {
             return res.data;
         })
         .catch(err=>{
+            console.log(err)
             return { error: validation.errorHandler(err) }
         })
         return events;
