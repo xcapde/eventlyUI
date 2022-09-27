@@ -20,7 +20,7 @@ export const LoginSignup = () => {
 
     let location = formatUtil.cutString(useLocation().pathname);
     const navigate = useNavigate();
-    const { modalIsActive, modalIsAlert, message, setModalIsActive, runAlertModal } = useModal();
+    const { modalIsActive, modalIsAlert, message, setModalIsActive, runModal, runAlertModal } = useModal();
 
     const signup = (data) => {
         authService.signup(data).then(res => {
@@ -28,7 +28,11 @@ export const LoginSignup = () => {
                 runAlertModal(res.error);
                 return;
             }
-            navigate("/log-in")
+            console.log(res)
+            runModal(res)
+            setTimeout(()=>{
+                navigate("/log-in")
+            },[1500])
         })
     };
 
