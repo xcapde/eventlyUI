@@ -81,7 +81,6 @@ export const MultiStepForm = ({
 
     useEffect(() => {
         if (!error){
-            console.log("no hi ha error?")
             setErrIndex(-1);
             return;
         }
@@ -90,14 +89,14 @@ export const MultiStepForm = ({
     }, [error])
 
     useEffect(() => {
-        console.log(errIndex, page)
+        
         if (errIndex === -1) return;
         if (errIndex === page) return;
         setTimeout(setPage(errIndex), 3000);
     }, [errIndex, page])
 
     
-    console.log(error)
+   
     return (
         <DesktopWrapper>
             <Header>

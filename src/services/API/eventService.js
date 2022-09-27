@@ -24,7 +24,6 @@ export const eventService = {
     },
     postEvent(req) {
         const event = axios.post(`/events`, req).then(res => {
-            console.log(res)
             return res.data;
         })
         .catch(err=>{
@@ -64,7 +63,6 @@ export const eventService = {
             return res.data;
         })
         .catch(err=>{
-            console.log(err)
             return { error: validation.errorHandler(err) }
         })
         return events;

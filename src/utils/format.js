@@ -10,7 +10,6 @@ const format = {
         return Object.keys(obj).map(k => obj[k].value);
     },
     reactSelectOptionToOption(obj){
-        console.log(obj.value)
         return obj.value;
     },
     eventDateToCalendarDate(str) {
@@ -33,7 +32,6 @@ const format = {
         return `${date} at ${hour}`;
     },
     cutNotification(str) {
-        console.log(str)
         let cutIn = 'http://';
         let description = str;
         if(description.includes(cutIn)){
@@ -50,7 +48,6 @@ const format = {
         return <span>{desc}<a style={{color:'indianred'}} href={`${link1}`}>link</a> {desc2} <a style={{color:'indianred'}} href={`${link2}`}>link</a> {desc3}</span>
     },
     cutNotificationLink(str, cut, end) {
-        console.log(cut, end)
         let cutIn = cut;
         return str.substring(str.indexOf(cutIn), end);
     },

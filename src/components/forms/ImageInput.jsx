@@ -58,7 +58,6 @@ export const ImageInput = ({ uploadImg, uploaded, setPreview, error }) => {
         setIsLoading(false);
     };
 
-    console.log(error)
     return (
         <>
             <Col>

@@ -80,7 +80,6 @@ export const Profile = () => {
     const toggleCheck = (id) => {
         notificationService.toggleCheck(id).then(res => {
             if (!res) return;
-            console.log(res);
             getNotifications();
         })
     }
@@ -88,7 +87,6 @@ export const Profile = () => {
     const deleteNotification = (id) => {
         notificationService.delete(id).then(res => {
             if (!res) return;
-            console.log(res);
             getNotifications();
         })
     }

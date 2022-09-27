@@ -39,7 +39,6 @@ export const ImageForm = ({ event, uploadImg, deleteImg, error }) => {
         return event.images.map((num, key) => event.images[key] === images[key]).includes(false);
     }
 
-    console.log(preview)
     return (
         <Col>
             <Col>

@@ -38,7 +38,6 @@ export const webUrlService = {
             return { error: validation.errorHandler(err) }
         })
         .catch(err =>{
-            console.log(err)
         })
         return msg;
     },

@@ -189,7 +189,7 @@ export const Upload = () => {
         })
     }
 
-    console.log(error)
+
     return (
         <Page>
             <NavRail />

@@ -29,7 +29,6 @@ export const imageService = {
             return res.data;
         })
         .catch(err=>{
-            console.log(err)
             return { error: validation.errorHandler(err) }
         })
         return imgRes;
