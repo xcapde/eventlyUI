@@ -28,8 +28,7 @@ export const LoginSignup = () => {
                 runAlertModal(res.error);
                 return;
             }
-            console.log(res)
-            runModal(res)
+            runModal(res.message)
             setTimeout(()=>{
                 navigate("/log-in")
             },[1500])

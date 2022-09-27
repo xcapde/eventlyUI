@@ -33,10 +33,9 @@ export const Upload = () => {
     useEffect(() => { }, [event])
 
     const getEvent = (id) => {
-        console.log('getting event')
         eventService.getEvent(id).then(res => {
             setEvent(res);
-            setError();
+            // setError();
             if (res.location === "") return;
             res.type === "offline" ? getDirection(id) : getWebUrl(id);
         })
@@ -52,6 +51,7 @@ export const Upload = () => {
             }
             runModal(`${res.title} has been created!`)
             getEvent(res.id);
+            setError();
         })
     }
 
@@ -84,6 +84,7 @@ export const Upload = () => {
             }
             getEvent(event.id);
             getDirection(event.id);
+            setError();
         })
     }
 
@@ -105,6 +106,7 @@ export const Upload = () => {
             }
             getEvent(event.id);
             getWebUrl(event.id);
+            setError();
         })
     }
 

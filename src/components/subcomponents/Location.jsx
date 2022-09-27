@@ -17,7 +17,7 @@ export const Location = ({ event, fontSize}) => {
                     || location.includes(`joined`))?
                         format.shortLocation(event.location)
                         : event.location? 
-                        `${event.location.substring(0, (event.location.lastIndexOf(',') - 3))}` 
+                        `${event.location}` 
                         : 
                         'location'
                     }
