@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Breakpoint } from "../../styles/styles.styled";
 
 export const Wrapper = styled.div`
         height: fit-content;

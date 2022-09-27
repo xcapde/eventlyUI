@@ -28,16 +28,21 @@ export const Calendar = ({ pickDay, pickedDay }) => {
         setMonth(today.getMonth());
         setYear(today.getFullYear());
         setDaysInMonth(calcMonthDays(today.getFullYear(), today.getMonth()));
+        // eslint-disable-next-line
     }, [today]);
+
+
 
     useEffect(() => {
         if (!daysInMonth) return;
         setWeekDates();
         // eslint-disable-next-line
     }, [daysInMonth])
+    // eslint-disable-next-line
 
     useEffect(() => {
-        pickDay(week.filter(d => d.date === today.toLocaleString().split(",")[0])[0])
+        pickDay(week.filter(d => d.date === today.toLocaleString().split(",")[0])[0]);
+        // eslint-disable-next-line
     }, [week])
 
     const calcMonthDays = (year, month) => {
