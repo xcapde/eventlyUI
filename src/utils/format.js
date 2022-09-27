@@ -33,12 +33,26 @@ const format = {
         return `${date} at ${hour}`;
     },
     cutNotification(str) {
+        console.log(str)
         let cutIn = 'http://';
-        return str.substring(0, str.indexOf(cutIn));
+        let description = str;
+        if(description.includes(cutIn)){
+           description = str.substring(0, str.indexOf(cutIn));
+        }
+        if(!description.includes('https://')) return description;
+        let desc = description.split('https://')[0];
+        let link1 = description.split('https://')[1];
+        link1 = 'https://'+this.cutNotificationLink(link1, 'https://', link1.indexOf(' the'))
+        if(!description.split('https://')[2]) return <p>{desc}<a style={{color:'indianred'}} href={`${link1}`}>link</a> </p>
+        let desc2 =  description.split('https://')[1].substring(description.split('https://')[1].indexOf(' the'), description.split('https://')[1].indexOf(' in') )+' in'
+        let link2 = 'https://'+this.cutNotificationLink(description.split('https://')[2], 'https://', description.split('https://')[2].indexOf(' the') );
+        let desc3 = description.split('https://')[2].substring(description.split('https://')[2].indexOf(' the'), str.length-1)
+        return <span>{desc}<a style={{color:'indianred'}} href={`${link1}`}>link</a> {desc2} <a style={{color:'indianred'}} href={`${link2}`}>link</a> {desc3}</span>
     },
-    cutNotificationLink(str) {
-        let cutIn = 'http://';
-        return str.substring(str.indexOf(cutIn), str.length-1);
+    cutNotificationLink(str, cut, end) {
+        console.log(cut, end)
+        let cutIn = cut;
+        return str.substring(str.indexOf(cutIn), end);
     },
     shortLocation(location) {
         let city = location.split(",")[2];

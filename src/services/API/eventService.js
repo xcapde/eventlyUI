@@ -24,6 +24,7 @@ export const eventService = {
     },
     postEvent(req) {
         const event = axios.post(`/events`, req).then(res => {
+            console.log(res)
             return res.data;
         })
         .catch(err=>{

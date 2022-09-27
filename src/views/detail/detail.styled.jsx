@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { TitleCard } from "../../components/cards/cards.styled";
 import { FeedTitle } from "../../components/feeds/feed.styled";
-import { Breakpoint, Col } from "../../styles/styles.styled";
+import { Breakpoint, Col, Img } from "../../styles/styles.styled";
 
 export const ImgCnt = styled.div`
     height: var(--detail-image-height);
@@ -70,6 +70,11 @@ export const MainDesktop = styled.section`
         grid-column: 1/4;
         grid-row: 1/7;
         height: 100%;
+        height: 50vh;
+        margin-top: 3.75vh;
+        & > div, & div div, & > div ${Img}{
+            border-radius: .75rem;
+        }
     }
     & > div:nth-child(2){
         grid-column: 4/6;

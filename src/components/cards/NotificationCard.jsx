@@ -36,17 +36,13 @@ export const NotificationCard = ({ notification, toggleCheck, deleteNotification
         >
             <DetailText>{notification.subject}</DetailText>
             <DetailText>
-                {notification.description.includes("http://") ?
+                {notification.description.includes("http://")?
                     <>
-                        {format.cutNotification(notification.description).includes("https://") ?
-                            <>{format.cutNotification(notification.description).split("location:")[0]}
-                                <a href={format.cutNotification(notification.description).split("location:")[1].substring(0, format.cutNotification(notification.description).split("location:")[1].indexOf(". Check"))}> location</a>
-                                {". Check it out at "}
-                            </>
-                            : format.cutNotification(notification.description)}
-                        <a href={format.cutNotificationLink(notification.description)}>{"event detail page !"}</a>
+                        {format.cutNotification(notification.description)}
+                        <a href={format.cutNotificationLink(notification.description, "http://", notification.description.length-1)}>{"event detail page !"}</a>
                     </>
-                    : notification.description}
+                    :
+                    notification.description.includes("https://") ? format.cutNotification(notification.description) : notification.description}
             </DetailText>
             <CreatedAt>{format.timeStampToDateAndHour(notification.createdAt)}</CreatedAt>
             <NotiStatus onClick={() => toggleCheck(notification.id)} color={notification.checked ? 'var(--color-main)' : 'indianred'} />
