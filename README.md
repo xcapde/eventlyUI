@@ -125,6 +125,9 @@ We expect many more features will come on the go.
 ## Design
 The design of the application was inspired by [Azizul Haque](https://dribbble.com/shots/17979187-Events-App/attachments/13161575?mode=media).
 
+## Color reference
+![palette](https://user-images.githubusercontent.com/9727006/192609275-3f40f38b-cc98-49fb-9949-4464a4e9ec8d.png)
+
 ## Installation
 This project was bootstrapped with Create React App therefore requires node.js and npm.  Once you've verified node is installed in your directory take the following steps:
 
