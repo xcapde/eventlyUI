@@ -2,6 +2,7 @@ import { BodyCntrl, CardXS, CardXSImage, ImgCntrl } from "./cards.styled";
 import { Link } from "react-router-dom";
 import { Title } from "../subcomponents";
 import { Details } from "../information/Details";
+import Default from "../../assets/default/default.png"
 
 export const SmallCard = ({ event }) => {
   
@@ -9,7 +10,7 @@ export const SmallCard = ({ event }) => {
     <CardXS>
         <Link to={`/events/${event.id}`}>
           <ImgCntrl>
-            <CardXSImage imgUrl={event.images[0] ? event.images[0] : 'https://images.hola.com/imagenes/cocina/tecnicas-de-cocina/20210804194039/mejores-trucos-para-hacer-barbacoas/0-981-794/barbacoa-port-adobe-t.jpg'} />
+            <CardXSImage imgUrl={event.images[0] ? event.images[0] : Default} />
           </ImgCntrl>
         </Link>
 

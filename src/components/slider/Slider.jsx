@@ -3,6 +3,8 @@ import { useState } from "react";
 import { ImgCnt } from "../../views/detail/detail.styled";
 import { Gradient, Img, Touchable } from "../../styles/styles.styled";
 import { SliderPiker } from "./SliderPicker";
+import Default from "../../assets/default/default.png";
+
 
 export const Slider = ({ images }) => {
 
@@ -62,7 +64,7 @@ export const Slider = ({ images }) => {
                     imgUrl={
                         image ?
                             image :
-                            "https://images.unsplash.com/photo-1611366376326-5eaf36b54355?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bW91bnRhaW4lMjBzdW5zZXR8ZW58MHx8MHx8&w=1000&q=80"
+                                Default
                     } />
                 {images.length > 0 && <SliderPiker images={images} current={current} callback={slideOnClick} />}
             </Touchable>
