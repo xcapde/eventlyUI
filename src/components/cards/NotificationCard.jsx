@@ -36,17 +36,17 @@ export const NotificationCard = ({ notification, toggleCheck, deleteNotification
         >
             <DetailText>{notification.subject}</DetailText>
             <DetailText>
-                {notification.description.includes("http://")?
+                {notification.description.includes("http://") ?
                     <>
-                        {format.cutNotification(notification.description)}
-                        <a href={format.cutNotificationLink(notification.description, "http://", notification.description.length-1)}>{"event detail page !"}</a>
+                        {format.cutNotification(notification.description).length > 160 ? format.cutNotification(notification.description).substring(0, 160) + "... It's been modified. Check it out at " : format.cutNotification(notification.description)}
+                        <a href={format.cutNotificationLink(notification.description, "http://", notification.description.length - 1)}>{"event detail page !"}</a>
                     </>
                     :
                     notification.description.includes("https://") ? format.cutNotification(notification.description) : notification.description}
             </DetailText>
             <CreatedAt>{format.timeStampToDateAndHour(notification.createdAt)}</CreatedAt>
             <NotiStatus onClick={() => toggleCheck(notification.id)} color={notification.checked ? 'var(--color-main)' : 'indianred'} />
-            <TrashIcon onClick={()=>runDelete(notification.id)}/>
+            <TrashIcon onClick={() => runDelete(notification.id)} />
         </NotiCard>
     )
 }
