@@ -82,20 +82,22 @@ Given the deadline of the project (four weeks time) this project turns out to be
 + UX (Calendar, Slider, Multistep form, Notifications...)
 
 ## Preview
-#### Desktop
-![App Screenshot]()
-![App Screenshot]()
-![App Screenshot]()
-![App Screenshot]()
-![App Screenshot]()
-
 #### Mobile
-![App Screenshot]()
-![App Screenshot]()
-![App Screenshot]()
-![App Screenshot]()
-![App Screenshot]()
-![App Screenshot]()
+![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353281/localhost_3000__iPhone_12_Pro_1_cppwqn.png)
+![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353279/localhost_3000__iPhone_12_Pro_2_fkgnvq.png)
+![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353281/localhost_3000_update_2_iPhone_12_Pro_ewsxzo.png)
+![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353701/localhost_3000__iPhone_12_Pro_1_gkyvnv.png)
+![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353279/localhost_3000_update_2_iPhone_12_Pro_2_somupu.png)
+![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353280/localhost_3000_events_17_iPhone_12_Pro_1_szsqpf.png)
+![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353280/localhost_3000_events_17_iPhone_12_Pro_cfrobt.png)
+![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353280/localhost_3000_update_2_iPhone_12_Pro_1_h1jmgx.png)
+
+#### Desktop
+![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353593/localhost_3000__bav8eh.png)
+![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353305/localhost_3000_profile_2_vvs19f.png)
+![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353305/localhost_3000_profile_1_kpif15.png)
+![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353305/localhost_3000_profile_h94bph.png)
+![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353304/localhost_3000_profile_3_vlztrr.png)
 
 ## Next
 Since we've just got started we are planning to add a lot of new features to our application . 
