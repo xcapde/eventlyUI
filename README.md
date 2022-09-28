@@ -83,14 +83,13 @@ Given the deadline of the project (four weeks time) this project turns out to be
 
 ## Preview
 #### Mobile
-![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353281/localhost_3000__iPhone_12_Pro_1_cppwqn.png)
-![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353279/localhost_3000__iPhone_12_Pro_2_fkgnvq.png)
-![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353281/localhost_3000_update_2_iPhone_12_Pro_ewsxzo.png)
-![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353701/localhost_3000__iPhone_12_Pro_1_gkyvnv.png)
-![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353279/localhost_3000_update_2_iPhone_12_Pro_2_somupu.png)
-![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353280/localhost_3000_events_17_iPhone_12_Pro_1_szsqpf.png)
-![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353280/localhost_3000_events_17_iPhone_12_Pro_cfrobt.png)
-![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353280/localhost_3000_update_2_iPhone_12_Pro_1_h1jmgx.png)
+![Landing](https://user-images.githubusercontent.com/9727006/192732469-9bcd1db6-9f67-4de6-aa35-dd017ceed053.png)
+![Login](https://user-images.githubusercontent.com/9727006/192732487-98a295d5-cb82-4369-b7d4-d31222ab4694.png)
+![Home](https://user-images.githubusercontent.com/9727006/192732507-0bd98dff-b8b8-4bbc-a921-e08466927d7b.png)
+![Detail](https://user-images.githubusercontent.com/9727006/192732538-99731396-c765-4c07-95c5-0e131f678b52.png)
+![Upload](https://user-images.githubusercontent.com/9727006/192732582-57c2742b-7ab4-4a37-8d96-8cdc79562c0e.png)
+![Notifications](https://user-images.githubusercontent.com/9727006/192732555-151ad5a9-2052-439a-93d4-8875384bd9fb.png)
+![Search](https://user-images.githubusercontent.com/9727006/192732576-fa65fbc4-d8ca-4dac-9df1-147fb08c0bf6.png)
 
 #### Desktop
 ![App Screenshot](https://res.cloudinary.com/dkju5on5v/image/upload/v1664353593/localhost_3000__bav8eh.png)
