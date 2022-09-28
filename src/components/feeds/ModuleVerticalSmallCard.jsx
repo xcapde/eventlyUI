@@ -8,7 +8,7 @@ export const ModuleVerticalSmallCard = ({ title, events, height, width, padding 
         <Col width={width} height={height} padding={padding}>
             <FeedTitle>{title}</FeedTitle>
             {events && events.length > 0? 
-            <VerticalFeedSmallCard>
+            <VerticalFeedSmallCard padding={padding}>
                     {events.map((event, key) =>
                         <SmallCard key={key} event={event} />
                     )}

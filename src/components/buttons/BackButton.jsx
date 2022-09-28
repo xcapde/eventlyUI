@@ -1,8 +1,8 @@
 import { BackArrowButton } from "./buttons.styled";
 
-export const BackButton = ({ callback }) => {
+export const BackButton = ({ callback, color }) => {
     return (
-        <BackArrowButton onClick={callback} />
+        <BackArrowButton color={color} onClick={callback} />
     )
 }
 

@@ -116,6 +116,9 @@ export const BackArrowButton = styled(OpacityButton)`
     &::before{
 	    content: "\f060";
     }
+    @media (min-width: 820px) {
+        color: ${props => props.color || 'var(--opacity-button-color-icon)'}
+    }
 `
 export const BackBtn = styled(BackArrowButton)`
     top:unset;
@@ -129,6 +132,9 @@ export const EllipsisBtn = styled(OpacityButton)`
     right: var(--header-button-position-side);
     &::before{
 	    content: "\f141";
+    }
+    @media (min-width: 820px) {
+        color: var(--color-main);
     }
 `
 

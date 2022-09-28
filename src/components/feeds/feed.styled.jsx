@@ -60,6 +60,7 @@ export const VerticalFeedSmallCard = styled(VerticalFeed)`
         width: 90%;
         place-content: baseline;
         margin-right: 10%;
+        padding: ${props => props.padding ||'.5rem'};
         ::-webkit-scrollbar {
         display: none;
         }

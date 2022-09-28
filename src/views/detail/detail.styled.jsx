@@ -71,7 +71,7 @@ export const MainDesktop = styled.section`
         grid-row: 1/7;
         height: 100%;
         height: 50vh;
-        margin-top: 3.75vh;
+        margin-top: 4.25vh;
         & > div, & div div, & > div ${Img}{
             border-radius: .75rem;
         }

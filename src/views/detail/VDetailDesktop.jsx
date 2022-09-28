@@ -16,7 +16,7 @@ export const VDetailDesktop = ({ event, participations, join, unjoin, deletConfi
 
     return (
         <NoNavView id="no-nav" displayM="none">
-            <BackButton callback={() => navigate(-1)} />
+            <BackButton color="var(--color-white)" callback={() => navigate(-1)} />
             <OptionsModule event={event} remove={deletConfirmation} edit={updateEvent} />
             <MainDesktop>
                 <Slider images={event.images} />
