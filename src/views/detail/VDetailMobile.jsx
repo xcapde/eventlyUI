@@ -17,7 +17,7 @@ export const VDetailMobile = ({ event, participations, join, unjoin, deletConfir
 
     return (
         <NoNavView id="no-nav" displayD="none">
-            <Col>
+            <Col height="98%">
                 <BackButton callback={() => navigate(-1)} />
                 <OptionsModule event={event} remove={deletConfirmation} edit={updateEvent}/>
 
